@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Drum" id="161">
+  <samples>
+    <sample id="439" name="Electric Tom" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone ampReleaseTime="0" scaleTuning="50">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="439" loopStart="1" loopEnd="14998"/>
+    </zone>
+  </zones>
+</instrument>

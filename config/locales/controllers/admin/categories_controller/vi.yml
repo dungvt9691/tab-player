@@ -1,0 +1,14 @@
+vi:
+  controllers:
+    admin:
+      categories:
+        create:
+          success: "Thêm danh mục <b>%{name}</b> thành công"
+        update:
+          success: "Chỉnh sửa danh mục <b>%{name}</b> thành công"
+        destroy:
+          success: "Xoá danh mục <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể xoá danh mục <b>%{name}</b>"
+        multi_destroy:
+          success: "Xoá danh mục <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể xoá danh mục <b>%{name}</b>"

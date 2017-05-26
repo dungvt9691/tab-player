@@ -1,0 +1,49 @@
+<h4><b><%= t('.title') %></b></h4>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:google_app_id) %>">
+      <%= f.label :google_app_id, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :google_app_id, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:google_app_id) %>
+          <%= @setting.errors[:google_app_id].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:google_app_secret) %>">
+      <%= f.label :google_app_secret, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :google_app_secret, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:google_app_secret) %>
+          <%= @setting.errors[:google_app_secret].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:google_api_key) %>">
+      <%= f.label :google_api_key, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :google_api_key, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:google_api_key) %>
+          <%= @setting.errors[:google_api_key].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:google_analytics_id) %>">
+      <%= f.label :google_analytics_id, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :google_analytics_id, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:google_analytics_id) %>
+          <%= @setting.errors[:google_analytics_id].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

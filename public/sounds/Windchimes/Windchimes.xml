@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Windchimes" id="185">
+  <samples>
+    <sample id="471" name="Windchimes" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="14400" ampAttackTime="-10057" ampReleaseTime="3050" modReleaseTime="74" coarseTune="-9" scaleTuning="40" freqVibLfo="-1118" freqModLfo="-1118" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="471" loopStart="10" loopEnd="23118"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Howling Winds" id="291">
+  <samples>
+    <sample id="363" name="WhiteNoiseWave" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="6726" filterQ="190" ampAttackTime="1828" ampReleaseTime="3084" modAttackTime="-8800" coarseTune="-20" freqVibLfo="-6725" freqModLfo="-7925" vibLfoToPitch="1191" modLfoToFilterFc="393" reverb="109" pan="500" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-2400" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="363" loopStart="7" loopEnd="8289"/>
+    </zone>
+    <zone attenuation="150" filterFc="6726" filterQ="79" ampAttackTime="1828" ampReleaseTime="3084" modAttackTime="-8800" coarseTune="-20" freqVibLfo="-5308" freqModLfo="-7624" vibLfoToPitch="553" modLfoToVolume="62" reverb="109" pan="-500" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-2400" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="363" loopStart="7" loopEnd="8289"/>
+    </zone>
+  </zones>
+</instrument>

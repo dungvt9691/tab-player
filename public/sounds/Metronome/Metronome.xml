@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<instrument name="Metronome" id="305">
+  <samples>
+    <sample id="1246" name="click" originalPitch="6700"/>
+  </samples>
+  <zones>
+    <zone attenuation="100" fineTune="-1" ampHoldTime="-6772" ampReleaseTime="-2400" modAttackTime="-8800" coarseTune="2" freqVibLfo="-15600" freqModLfo="-725" pan="-287">
+      <keyRange low="62" high="62"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="1246" loopStart="1" loopEnd="3007"/>
+    </zone>
+  </zones>
+</instrument>

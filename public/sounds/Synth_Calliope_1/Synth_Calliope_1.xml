@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Calliope_1" id="239">
+  <samples>
+    <sample id="648" name="Chiff Flute" originalPitch="6200"/>
+  </samples>
+  <zones>
+    <zone modFilterFc="750" ampAttackTime="-8359" ampReleaseTime="-2084" modReleaseTime="6712" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="648" loopStart="7613" loopEnd="16105"/>
+    </zone>
+  </zones>
+</instrument>

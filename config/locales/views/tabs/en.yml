@@ -1,0 +1,9 @@
+en:
+  tabs:
+    index:
+      no_data: "No tabs found"
+    modal_update_tab:
+      title: "Update informations"
+      artists: "Artitst"
+      artist_placeholder: "Select artists..."
+      category_placeholder: "Select categories..."

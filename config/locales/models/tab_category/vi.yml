@@ -1,0 +1,14 @@
+vi:
+  activerecord:
+    attributes:
+      tab_category:
+        tab_id: "Tab"
+        category_id: "Thể loại"
+        created_at: "Tạo lúc"
+        updated_at: "Chỉnh sửa lúc"
+    errors:
+      models:
+        tab_category:
+          attributes:
+            category_id:
+              taken: "này đã tồn tại"

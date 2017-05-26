@@ -1,0 +1,110 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_admin, Setting.featured_image) %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= t('.title') %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+    <small><strong>(<span class="object-count"><%= number_with_delimiter(@count) %></span>)</strong></small>
+    <%= button_tag '', class: 'btn has-text btn-danger btn-action pull-right', id: 'btn-multi-destroy-admins' do %>
+    <i class="fa fa-user-times"></i>
+    <%= t('.multi_destroy') %>
+    <% end %>
+    <%= link_to new_admin_administrator_path, class: 'btn pull-right btn-secondary has-text' do %>
+    <i class="fa fa-pencil"></i>
+    <%= t('.new') %>
+    <% end %>
+  </h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped datatables table-bordered" id="table-administrators">
+        <thead>
+          <tr>
+            <th class="text-center"><%= check_box_tag 'checkbox', '', false, id: 'check-all' %></th>
+            <th><%= t('.table.avatar') %></th>
+            <th><%= t('.table.email') %></th>
+            <th><%= t('.table.username') %></th>
+            <th><%= t('.table.fullname') %></th>
+            <th><%= t('.table.permissions') %></th>
+            <th><%= t('manage') %></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div> <!-- container -->
+<script type="text/javascript">
+$(function(){
+  window.selected_id = []
+  $("#check-all").click(function () {
+    $('.check-one').prop('checked', this.checked);
+    showMultiBtnActions();
+  });
+
+  $("#table-administrators").on("click", ".check-one", function(){
+    if($(".check-one").length == $(".check-one:checked").length) {
+      $("#check-all").prop("checked", true);
+    } else {
+      $("#check-all").prop("checked", false);
+    }
+    showMultiBtnActions();
+  });
+
+  administrators_ajax = {
+    url :"<%= admin_administrators_path %>?format=json",
+    type: "get"
+  }
+
+  window.administrators_table = dataTableInitialize({
+    element: $("#table-administrators"),
+    un_sorted_arr: [0, 1, 6],
+    ajax: administrators_ajax,
+    sDom: "<'row'<'col-lg-6'l><'col-lg-6'f>r>t<'row'<'col-lg-12'p>>"
+  })
+
+  $("#btn-multi-destroy-admins").click(function(){
+    $("#launch-modal").html("<%=j render 'shared/modal_confirm_destroy' %>")
+    $("#modal-confirm-destroy").find("#btn-confirm").attr("href", "<%= multi_destroy_admin_administrators_path %>?admin_ids="+window.selected_id.join(','))
+    $("#modal-confirm-destroy").find("h2").html("<%= t('.destroy_selected') %>?")
+    $("#modal-confirm-destroy").modal({
+      keyboard: false,
+      backdrop: 'static'
+    })
+  })
+
+  $("#table-administrators").on("click", ".btn-destroy-admin", function(){
+    $("#launch-modal").html("<%=j render 'shared/modal_confirm_destroy' %>")
+    $("#modal-confirm-destroy").find("#btn-confirm").attr("href", $(this).data("href"))
+    $("#modal-confirm-destroy").find("h2").html("<%= t('.destroy') %> " + $(this).data("admin-username") + "?")
+    $("#modal-confirm-destroy").modal({
+      keyboard: false,
+      backdrop: 'static'
+    })
+  })
+});
+
+function showMultiBtnActions(){
+  window.selected_id = []
+  if($(".check-one:checked").length > 0){
+    $(".btn-action").fadeIn(0)
+    $(".check-one:checked").each(function(){
+      window.selected_id.push($(this).val())
+    })
+  }
+  else{
+    $(".btn-action").fadeOut(0)
+    $("#check-all").prop("checked", false);
+  }
+}
+</script>

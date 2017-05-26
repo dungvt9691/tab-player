@@ -1,0 +1,8 @@
+vi:
+  controllers:
+    tabs:
+      create:
+        success: "Đăng tải Tab thành công"
+      update:
+        permission_denied: "Không có quyền chỉnh sửa Tab này"
+        success: "Cập nhật thành công"

@@ -1,0 +1,101 @@
+<% provide(:og_title, t('.title')) %>
+<%= form_for @setting, url: admin_setting_path, method: 'post' do |f| %>
+<div class="panel-body">
+  <h4 class="text-center">
+    <%= t('.title') %>
+  </h4>
+  <% flash.each do |key, value| %>
+  <% if value %>
+  <div class="alert alert-<%= render_key(key) %>">
+    <ul>
+      <li><%= value.html_safe %></li>
+    </ul>
+  </div>
+  <br>
+  <% end %>
+  <% end %>
+  <div class="form-group <%= 'has-error' if @setting.errors.has_key?(:app_name) %>">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-edit"></i></span>
+          <%= f.text_field :app_name, autofocus: true, placeholder: t('.form.app_name'), class: "form-control" %>
+        </div>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:app_name) %>
+          <%= @setting.errors[:app_name].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="form-group <%= 'has-error' if @setting.errors.has_key?(:app_url) %>">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+          <%= f.text_field :app_url, autofocus: true, placeholder: t('.form.app_url'), class: "form-control" %>
+        </div>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:app_url) %>
+          <%= @setting.errors[:app_url].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="form-group <%= 'has-error' if @setting.errors.has_key?(:app_email) %>">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+          <%= f.text_field :app_email, autofocus: true, placeholder: t('.form.app_email'), class: "form-control" %>
+        </div>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:app_email) %>
+          <%= @setting.errors[:app_email].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="form-group <%= 'has-error' if @setting.errors.has_key?(:admin_username) %>">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user-secret"></i></span>
+          <%= f.text_field :admin_username, autofocus: true, placeholder: t('.form.admin_username'), class: "form-control" %>
+        </div>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:admin_username) %>
+          <%= @setting.errors[:admin_username].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="form-group <%= 'has-error' if @setting.errors.has_key?(:admin_password) %>">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <%= f.password_field :admin_password, autofocus: true, placeholder: t('.form.admin_password'), class: "form-control" %>
+        </div>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:admin_password) %>
+          <%= @setting.errors[:admin_password].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel-footer">
+  <div class="pull-left">
+    <%= f.submit t('.form.reset'), type: 'reset', class: 'btn btn-default pull-left' %>
+  </div>
+  <div class="pull-right">
+    <%= f.submit t('.form.submit'), class: 'btn btn-secondary' %>
+  </div>
+</div>
+<% end %>

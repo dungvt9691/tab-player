@@ -1,0 +1,125 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= t('.title') %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+    <small><strong>(<span class="object-count"><%= number_with_delimiter(@count) %></span>)</strong></small>
+    <%= button_tag '', class: 'btn has-text btn-danger btn-action pull-right', id: 'btn-multi-destroy-tutorials' do %>
+    <i class="fa fa-trash-o"></i>
+    <%= t('.multi_destroy') %>
+    <% end %>
+  </h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped datatables table-bordered" id="table-tutorials">
+        <thead>
+          <tr>
+            <th class="text-center"><%= check_box_tag 'checkbox', '', false, id: 'check-all' %></th>
+            <th><%= t('.table.avatar') %></th>
+            <th><%= t('.table.link') %></th>
+            <th><%= t('.table.tab') %></th>
+            <th><%= t('.table.status') %></th>
+            <th><%= t('.table.created_at') %></th>
+            <th><%= t('manage') %></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div> <!-- container -->
+<script type="text/javascript">
+$(function(){
+  window.selected_id = []
+  $("#check-all").click(function () {
+    $('.check-one').prop('checked', this.checked);
+    showMultiBtnActions();
+  });
+
+  $("#table-tutorials").on("click", ".check-one", function(){
+    if($(".check-one").length == $(".check-one:checked").length) {
+      $("#check-all").prop("checked", true);
+    } else {
+      $("#check-all").prop("checked", false);
+    }
+    showMultiBtnActions();
+  });
+  tutorial_ajax = {
+    url :"<%= admin_tutorials_path %>?format=json",
+    type: "get"
+  }
+
+  window.tutorials_table = dataTableInitialize({
+    element: $("#table-tutorials"),
+    un_sorted_arr: [0, 1, 6],
+    ajax: tutorial_ajax,
+    sDom: "<'row'<'col-lg-6'l><'col-lg-6'f>r>t<'row'<'col-lg-12'p>>"
+  })
+
+  $("#btn-multi-destroy-tutorials").click(function(){
+    $("#launch-modal").html("<%=j render 'shared/modal_confirm_destroy' %>")
+    $("#modal-confirm-destroy").find("#btn-confirm").attr("href", "<%= multi_destroy_admin_tutorials_path %>?tutorial_ids="+window.selected_id.join(','))
+    $("#modal-confirm-destroy").find("h2").html("<%= t('.destroy_selected') %>?")
+    $("#modal-confirm-destroy").modal({
+      keyboard: false,
+      backdrop: 'static'
+    })
+  })
+
+  $("#table-tutorials").on("click", ".btn-destroy", function(){
+    $("#launch-modal").html("<%=j render 'shared/modal_confirm_destroy' %>")
+    $("#modal-confirm-destroy").find("#btn-confirm").attr("href", $(this).data("href"))
+    $("#modal-confirm-destroy").find("#confirm-text").html("<%= t('admin.tutorials.index.title').mb_chars.downcase %> Tab " + $(this).data('tutorial-title'))
+    $("#modal-confirm-destroy").modal({
+      keyboard: false,
+      backdrop: 'static'
+    })
+  })
+
+  $("#table-tutorials").on("click", ".btn-unpublish", function(){
+    $.ajax({
+      type: "GET",
+      url: "/admin/tutorials/"+$(this).data("tutorial-id")+"/edit?type=unpublish"
+    })
+  })
+
+  $("#table-tutorials").on("click", ".btn-publish", function(){
+    $.ajax({
+      type: "GET",
+      url: "/admin/tutorials/"+$(this).data("tutorial-id")+"/edit?type=publish"
+    })
+  })
+
+  $("#table-tutorials").on("click", ".btn-update", function(){
+    $.ajax({
+      type: "GET",
+      url: "/admin/tutorials/"+$(this).data("tutorial-id")+"/edit?type=update"
+    })
+  })
+});
+function showMultiBtnActions(){
+  window.selected_id = []
+  if($(".check-one:checked").length > 0){
+    $(".btn-action").fadeIn(0)
+    $(".check-one:checked").each(function(){
+      window.selected_id.push($(this).val())
+    })
+  }
+  else{
+    $(".btn-action").fadeOut(0)
+    $("#check-all").prop("checked", false);
+  }
+}
+</script>

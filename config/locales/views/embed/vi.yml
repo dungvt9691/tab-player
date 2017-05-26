@@ -1,0 +1,7 @@
+vi:
+  embed:
+    show:
+      title: "Nhúng"
+    modal_embed:
+      copy: "Copy to Clipboard"
+      copied: "Mã nhúng đã được copy vào Clipboard"

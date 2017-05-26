@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Recorder" id="271">
+  <defaultSetts freqVibLfo="-851" freqModLfo="-536" vibLfoToPitch="14" delayVibLfo="0">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="741" name="Recorder-D3" originalPitch="6200"/>
+    <sample id="740" name="Recorder-A4" originalPitch="6900"/>
+    <sample id="739" name="Recorder-B4" originalPitch="7100"/>
+    <sample id="738" name="Recorder-C#5" originalPitch="7300"/>
+    <sample id="737" name="Recorder-D5" originalPitch="7400"/>
+    <sample id="736" name="Recorder-A5" originalPitch="8000"/>
+    <sample id="735" name="Recorder-A#5" originalPitch="8200"/>
+  </samples>
+  <zones>
+    <zone fineTune="-15" loopType="loop">
+      <keyRange low="0" high="66"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="741" loopStart="26851" loopEnd="39280"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="67" high="69"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="740" loopStart="3151" loopEnd="10618"/>
+    </zone>
+    <zone fineTune="-18" loopType="loop">
+      <keyRange low="70" high="71"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="739" loopStart="11895" loopEnd="22646"/>
+    </zone>
+    <zone fineTune="25" loopType="loop">
+      <keyRange low="72" high="73"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="738" loopStart="4089" loopEnd="9800"/>
+    </zone>
+    <zone fineTune="-40" loopType="loop">
+      <keyRange low="74" high="77"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="737" loopStart="8278" loopEnd="12457"/>
+    </zone>
+    <zone fineTune="-34" loopType="loop">
+      <keyRange low="78" high="80"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="736" loopStart="7630" loopEnd="7999"/>
+    </zone>
+    <zone fineTune="30" loopType="loop">
+      <keyRange low="81" high="105"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="735" loopStart="3651" loopEnd="9256"/>
+    </zone>
+  </zones>
+</instrument>

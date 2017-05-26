@@ -1,0 +1,7 @@
+en:
+  admin:
+    test_smtp_mailer:
+      test:
+        hi: "Hi, %{email}"
+        subject: "Test SMTP"
+        body: "The email feature on the website is still working normally."

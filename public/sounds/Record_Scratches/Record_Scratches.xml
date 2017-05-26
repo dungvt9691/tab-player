@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Record Scratches" id="74">
+  <defaultSetts ampReleaseTime="0">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="413" name="Scratch Pull" originalPitch="3000"/>
+    <sample id="224" name="Scratch Push" originalPitch="2900"/>
+  </samples>
+  <zones>
+    <zone>
+      <keyRange low="30" high="30"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="413" loopStart="8" loopEnd="10149"/>
+    </zone>
+    <zone>
+      <keyRange low="29" high="29"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="224" loopStart="8" loopEnd="7836"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,23 @@
+vi:
+  admin:
+    tutorials:
+      index:
+        title: "Hướng dẫn"
+        table:
+          link: "Đường dẫn"
+          avatar: "Ảnh"
+          status: "Trạng thái"
+          tab_id: "Tab"
+          created_at: "Đăng lúc"
+        multi_destroy: "Xoá hướng dẫn đã chọn"
+        destroy_selected: "Xoá các hướng dẫn đã chọn"
+      modal_publish:
+        are_you_sure: "Bạn muốn công khai hướng dẫn này"
+        note: "Người dùng có thể xem hướng dẫn Tab sau khi hướng dẫn được công khai!"
+        publish: "Công khai"
+      modal_unpublish:
+        are_you_sure: "Bạn muốn ngưng công khai hướng dẫn này"
+        note: "Hướng dẫn Tab sẽ bị ẩn sau khi ngưng công khai!"
+        unpublish: "Ngưng công khai"
+      modal_update:
+        title: "Chỉnh sửa hướng dẫn"

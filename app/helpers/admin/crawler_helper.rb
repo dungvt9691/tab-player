@@ -1,0 +1,2 @@
+module Admin::CrawlerHelper
+end

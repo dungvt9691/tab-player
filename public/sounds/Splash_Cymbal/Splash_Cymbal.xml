@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Splash Cymbal" id="84">
+  <defaultSetts attenuation="185" ampDecayTime="5064" ampSustainTime="1440" ampReleaseTime="3615" pan="-119">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="265" name="Splash Cymbal" originalPitch="5500"/>
+  </samples>
+  <zones>
+    <zone>
+      <keyRange low="55" high="55"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="265" loopStart="8" loopEnd="52367"/>
+    </zone>
+  </zones>
+</instrument>

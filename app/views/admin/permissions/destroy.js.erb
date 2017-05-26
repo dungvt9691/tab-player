@@ -1,0 +1,8 @@
+<% if @errors.empty? %>
+window.location.reload()
+<% else %>
+$('body').css("cursor", 'auto')
+$("#modal-confirm-destroy #btn-confirm").removeClass("disabled")
+$("#modal-confirm-destroy #btn-cancel").prop("disabled", false)
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>

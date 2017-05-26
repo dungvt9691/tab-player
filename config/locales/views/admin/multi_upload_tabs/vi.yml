@@ -1,0 +1,11 @@
+vi:
+  admin:
+    multi_upload_tabs:
+      new:
+        title: "Đăng nhiều Tab"
+        form:
+          category_placeholder: "Chọn thể loại nhạc..."
+          select: "Chọn file"
+          upload: "Tải lên"
+          upload_files_count: "Số file tải lên"
+          upload_error: "Lỗi khi tải lên tệp tin"

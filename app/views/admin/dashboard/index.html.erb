@@ -1,0 +1,337 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<script type="text/javascript">
+(function(w,d,s,g,js,fs){
+  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
+  js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
+  js.src='https://apis.google.com/js/platform.js';
+  fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
+}(window,document,'script'));
+</script>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= t('.title') %>
+    </li>
+  </ol>
+  <h1><%= t('.title') %></h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-lg-12">
+          <header>
+            <div id="embed-api-auth-container"></div>
+            <div style='display: none' id="view-selector-container"></div>
+            <br>
+            <div id="view-name"></div>
+            <br>
+            <div id="active-users-container"></div>
+          </header>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="Chartjs">
+                <header class="Titles">
+                  <h1 class="Titles-main"><%= t('.site_traffic') %></h1>
+                  <div class="Titles-sub"><%= t('.via_sessions_users') %></div>
+                </header>
+                <figure class="Chartjs-figure" id="chart-1-container"></figure>
+                <ol class="Chartjs-legend" id="legend-1-container"></ol>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="Chartjs">
+                <header class="Titles">
+                  <h1 class="Titles-main"><%= t('.site_traffic') %></h1>
+                  <div class="Titles-sub"><%= t('.via_page_views') %></div>
+                </header>
+                <figure class="Chartjs-figure" id="chart-2-container"></figure>
+                <ol class="Chartjs-legend" id="legend-2-container"></ol>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="Chartjs">
+                <header class="Titles">
+                  <h1 class="Titles-main"><%= t('.site_traffic') %></h1>
+                  <div class="Titles-sub"><%= t('.via_new_users') %></div>
+                </header>
+                <figure class="Chartjs-figure" id="chart-3-container"></figure>
+                <ol class="Chartjs-legend" id="legend-3-container"></ol>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="Chartjs">
+                <header class="Titles">
+                  <h1 class="Titles-main"><%= t('.favourite') %></h1>
+                  <div class="Titles-sub"><%= t('.via_page_views') %></div>
+                </header>
+                <figure class="Chartjs-figure" id="chart-4-container"></figure>
+                <ol class="Chartjs-legend" id="legend-4-container"></ol>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="Chartjs">
+                <header class="Titles">
+                  <h1 class="Titles-main"><%= t('.top_browsers') %></h1>
+                  <div class="Titles-sub"><%= t('.via_page_views') %></div>
+                </header>
+                <figure class="Chartjs-figure" id="chart-5-container"></figure>
+                <ol class="Chartjs-legend" id="legend-5-container"></ol>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="Chartjs">
+                <header class="Titles">
+                  <h1 class="Titles-main"><%= t('.top_cities') %></h1>
+                  <div class="Titles-sub"><%= t('.via_sessions') %></div>
+                </header>
+                <figure class="Chartjs-figure" id="chart-6-container"></figure>
+                <ol class="Chartjs-legend" id="legend-6-container"></ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- container -->
+<script src="/ga/Chart.min.js"></script>
+<script src="/ga/moment.min.js"></script>
+<script src="/ga/view-selector2.js"></script>
+<!-- Include the DateRangeSelector component script. -->
+<script src="/ga/date-range-selector.js"></script>
+<!-- Include the ActiveUsers component script. -->
+<script src="/ga/active-users.js"></script>
+
+<script>
+gapi.analytics.ready(function() {
+
+  gapi.analytics.auth.authorize({
+    container: 'embed-api-auth-container',
+    clientid: '<%= Setting.google_app_id %>'
+  });
+
+
+  var activeUsers = new gapi.analytics.ext.ActiveUsers({
+    container: 'active-users-container',
+    pollingInterval: 5,
+  });
+
+  activeUsers.once('success', function() {
+    var element = this.container.firstChild;
+    var timeout;
+
+    this.on('change', function(data) {
+      var element = this.container.firstChild;
+      var animationClass = data.delta > 0 ? 'is-increasing' : 'is-decreasing';
+      element.className += (' ' + animationClass);
+
+      clearTimeout(timeout);
+      timeout = setTimeout(function() {
+        element.className =
+        element.className.replace(/ is-(increasing|decreasing)/g, '');
+      }, 3000);
+    });
+  });
+
+
+  var viewSelector = new gapi.analytics.ext.ViewSelector2({
+    container: 'view-selector-container',
+  })
+  .execute();
+
+
+  viewSelector.on('viewChange', function(data) {
+    var title = document.getElementById('view-name');
+    title.innerHTML = data.property.name + ' (' + data.view.name + ')';
+
+    activeUsers.set(data).execute();
+
+    renderTrafficChart(data.ids)
+    renderTrafficPageviewsChart(data.ids)
+    renderTrafficNewUsersChart(data.ids);
+    renderMostPopularChart(data.ids)
+    renderTopBrowsersChart(data.ids);
+    renderTopCountriesChart(data.ids);
+  });
+
+  function renderTrafficChart(ids){
+    var dataChart = new gapi.analytics.googleCharts.DataChart({
+      query: {
+        'ids': ids,
+        'start-date': '30daysAgo',
+        'end-date': 'yesterday',
+        'metrics': 'ga:sessions,ga:users',
+        'dimensions': 'ga:date'
+      },
+      chart: {
+        'container': 'chart-1-container',
+        'type': 'LINE',
+        'options': {
+          'width': '100%'
+        }
+      }
+    });
+    dataChart.execute();
+  }
+
+  function renderTrafficPageviewsChart(ids){
+    var dataChart = new gapi.analytics.googleCharts.DataChart({
+      query: {
+        'ids': ids,
+        'start-date': '30daysAgo',
+        'end-date': 'yesterday',
+        'metrics': 'ga:pageviews',
+        'dimensions': 'ga:date'
+      },
+      chart: {
+        'container': 'chart-2-container',
+        'type': 'LINE',
+        'options': {
+          'width': '100%'
+        }
+      }
+    });
+    dataChart.execute();
+  }
+
+  function renderTrafficNewUsersChart(ids) {
+    var dataChart = new gapi.analytics.googleCharts.DataChart({
+      query: {
+        'ids': ids,
+        'start-date': '30daysAgo',
+        'end-date': 'yesterday',
+        'metrics': 'ga:newUsers',
+        'dimensions': 'ga:date'
+      },
+      chart: {
+        'container': 'chart-3-container',
+        'type': 'LINE',
+        'options': {
+          'width': '100%'
+        }
+      }
+    });
+    dataChart.execute();
+  }
+
+  function renderMostPopularChart(ids) {
+    var dataChart = new gapi.analytics.googleCharts.DataChart({
+      query: {
+        'ids': ids,
+        'start-date': '30daysAgo',
+        'end-date': 'yesterday',
+        'metrics': 'ga:pageviews',
+        'dimensions': 'ga:pagePathLevel1',
+        'sort': '-ga:pageviews',
+        'filters': 'ga:pagePathLevel1!=/',
+        'max-results': 7
+      },
+      chart: {
+        'container': 'chart-4-container',
+        'type': 'PIE',
+        'options': {
+          'width': '100%',
+          'pieHole': 4/9,
+        }
+      }
+    });
+    dataChart.execute();
+  }
+
+  function renderTopBrowsersChart(ids) {
+
+    query({
+      'ids': ids,
+      'dimensions': 'ga:browser',
+      'metrics': 'ga:pageviews',
+      'sort': '-ga:pageviews',
+      'max-results': 5
+    })
+    .then(function(response) {
+
+      var data = [];
+      var colors = ['#4D5360','#949FB1','#D4CCC5','#E2EAE9','#F7464A'];
+
+      response.rows.forEach(function(row, i) {
+        data.push({ value: +row[1], color: colors[i], label: row[0] });
+      });
+
+      new Chart(makeCanvas('chart-5-container')).Doughnut(data);
+      generateLegend('legend-5-container', data);
+    });
+  }
+
+  function renderTopCountriesChart(ids) {
+    query({
+      'ids': ids,
+      'dimensions': 'ga:country',
+      'metrics': 'ga:sessions',
+      'sort': '-ga:sessions',
+      'max-results': 5
+    })
+    .then(function(response) {
+
+      var data = [];
+      var colors = ['#4D5360','#949FB1','#D4CCC5','#E2EAE9','#F7464A'];
+
+      response.rows.forEach(function(row, i) {
+        data.push({
+          label: row[0],
+          value: +row[1],
+          color: colors[i]
+        });
+      });
+
+      new Chart(makeCanvas('chart-6-container')).Doughnut(data);
+      generateLegend('legend-6-container', data);
+    });
+  }
+
+
+  function query(params) {
+    return new Promise(function(resolve, reject) {
+      var data = new gapi.analytics.report.Data({query: params});
+      data.once('success', function(response) { resolve(response); })
+      .once('error', function(response) { reject(response); })
+      .execute();
+    });
+  }
+
+
+  function makeCanvas(id) {
+    var container = document.getElementById(id);
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+
+    container.innerHTML = '';
+    canvas.width = container.offsetWidth;
+    canvas.height = container.offsetHeight;
+    container.appendChild(canvas);
+
+    return ctx;
+  }
+
+
+  function generateLegend(id, items) {
+    var legend = document.getElementById(id);
+    legend.innerHTML = items.map(function(item) {
+      var color = item.color || item.fillColor;
+      var label = item.label;
+      return '<li><i style="background:' + color + '"></i>' + label + '</li>';
+    }).join('');
+  }
+
+
+  // Set some global Chart.js defaults.
+  Chart.defaults.global.animationSteps = 60;
+  Chart.defaults.global.animationEasing = 'easeInOutQuart';
+  Chart.defaults.global.responsive = true;
+  Chart.defaults.global.maintainAspectRatio = false;
+
+});
+</script>

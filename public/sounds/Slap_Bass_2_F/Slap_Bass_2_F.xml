@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Slap Bass 2_F" id="36">
+  <defaultSetts filterFc="7437" ampDecayTime="5186" ampSustainTime="1000" modDecayTime="-1200" modSustainTime="1000">
+    <modulators/>
+  </defaultSetts>
+  <samples>
+    <sample id="158" name="Slap Bass 2-A2F" originalPitch="3300"/>
+    <sample id="157" name="Slap Bass 2-F3F" originalPitch="4100"/>
+  </samples>
+  <zones>
+    <zone fineTune="28" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="0" high="38"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="158" loopStart="11300" loopEnd="11836"/>
+    </zone>
+    <zone fineTune="17" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="39" high="47"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="157" loopStart="10529" loopEnd="10854"/>
+    </zone>
+    <zone modFilterFc="-1500" fineTune="17" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="48" high="72"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="157" loopStart="10529" loopEnd="10854"/>
+    </zone>
+  </zones>
+</instrument>

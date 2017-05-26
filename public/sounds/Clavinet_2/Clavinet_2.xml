@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Clavinet_2" id="215">
+  <defaultSetts ampAttackTime="-8359" ampDecayTime="3986" ampSustainTime="1000" ampReleaseTime="-2786" modDecayTime="3986" modSustainTime="1000" modReleaseTime="-2786">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="542" name="Clavinet-B1" originalPitch="3500"/>
+    <sample id="541" name="Clavinet-F#2" originalPitch="4200"/>
+    <sample id="540" name="Clavinet-D3" originalPitch="5000"/>
+    <sample id="539" name="Clavinet-A3" originalPitch="5700"/>
+    <sample id="538" name="Clavinet-E4" originalPitch="6400"/>
+    <sample id="537" name="Clavinet-D5" originalPitch="7400"/>
+    <sample id="536" name="Clavinet-A5" originalPitch="8100"/>
+    <sample id="535" name="Clavinet-E6" originalPitch="8800"/>
+  </samples>
+  <zones>
+    <zone filterFc="8321" modFilterFc="2000" fineTune="-10" ampHoldTime="-2400" modHoldTime="-2400" loopType="loop">
+      <keyRange low="36" high="38"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="542" loopStart="22354" loopEnd="22868"/>
+    </zone>
+    <zone attenuation="20" filterFc="8321" modFilterFc="2000" fineTune="5" ampHoldTime="-1973" modHoldTime="-1973" loopType="loop">
+      <keyRange low="44" high="46"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="541" loopStart="23391" loopEnd="23737"/>
+    </zone>
+    <zone filterFc="8563" modFilterFc="2250" fineTune="35" ampHoldTime="-1868" modHoldTime="-1868" loopType="loop">
+      <keyRange low="51" high="53"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="540" loopStart="15344" loopEnd="15789"/>
+    </zone>
+    <zone attenuation="130" filterFc="8600" modFilterFc="2250" fineTune="35" ampHoldTime="-1099" modHoldTime="-1099" loopType="loop">
+      <keyRange low="58" high="60"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="539" loopStart="18220" loopEnd="18368"/>
+    </zone>
+    <zone attenuation="100" filterFc="8563" modFilterFc="2250" fineTune="35" ampHoldTime="-1004" modHoldTime="-1004" loopType="loop">
+      <keyRange low="66" high="70"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="538" loopStart="12884" loopEnd="12983"/>
+    </zone>
+    <zone attenuation="80" filterFc="8563" modFilterFc="2250" fineTune="30" ampHoldTime="-386" modHoldTime="-386" loopType="loop">
+      <keyRange low="75" high="77"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="537" loopStart="10757" loopEnd="10923"/>
+    </zone>
+    <zone attenuation="130" filterFc="8708" modFilterFc="2500" fineTune="30" ampHoldTime="969" modHoldTime="969" loopType="loop">
+      <keyRange low="82" high="84"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="536" loopStart="19325" loopEnd="19362"/>
+    </zone>
+    <zone attenuation="100" filterFc="8708" modFilterFc="2500" fineTune="35" ampHoldTime="1018" modHoldTime="1018" loopType="loop">
+      <keyRange low="91" high="115"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="535" loopStart="13902" loopEnd="14001"/>
+    </zone>
+  </zones>
+</instrument>

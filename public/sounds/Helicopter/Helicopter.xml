@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Helicopter" id="304">
+  <samples>
+    <sample id="863" name="Helicopter" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="45" filterFc="9971" modPitch="94" modFilterFc="3037" fineTune="2" ampAttackTime="2768" ampReleaseTime="768" modAttackTime="1347" modReleaseTime="6041" coarseTune="-13" scaleTuning="50" freqVibLfo="-7925" freqModLfo="-7925" vibLfoToPitch="-8" modLfoToFilterFc="562" modLfoToVolume="1" delayModLfo="-735" loopType="loop">
+      <keyRange low="0" high="108"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="863" loopStart="3" loopEnd="12902"/>
+    </zone>
+  </zones>
+</instrument>

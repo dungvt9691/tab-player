@@ -1,0 +1,12 @@
+vi:
+  controllers:
+    admin:
+      images:
+        create:
+          fail: "Đăng tải tệp tin thất bại"
+        destroy:
+          success: "Xoá hình ảnh <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể xoá hình ảnh <b>%{name}</b>"
+        multi_destroy:
+          success: "Xoá hình ảnh <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể xoá hình ảnh <b>%{name}</b>"

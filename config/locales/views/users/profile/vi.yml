@@ -1,0 +1,5 @@
+vi:
+  users:
+    profile:
+      show:
+        title: "Thông tin cá nhân"

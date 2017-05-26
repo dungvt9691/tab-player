@@ -1,0 +1,101 @@
+<script type="text/javascript">
+  var playerParams = {
+    assets: {
+      soundFontUrl: '/sounds/soundfont.xml',
+      notesPlayerFlashUrl: '<%= asset_path("players/NotesPlayerFlash.swf") %>',
+      fretBoardImagesPreUrl: '/players/fretboard/',
+      fretBoardSwfUrl: '<%= asset_path("players/FretBoard.swf") %>'
+    },
+    notesPlayerType: 'html5',
+    canvasType: 'canvas',
+    fretBoardType: 'canvas',
+    autoPlay: false,
+    freatBoardHeight: 116,
+    offsetTop: 0,
+    minHeight: 715,
+    maxHeight: 920,
+    showNames: false,
+    fitToScreen: false,
+    tracklistStyle: 'Smekhov_0929',
+    scalableTabOffsets: true,
+    songFilters: ['TracksRenameByInstruments', 'TracksSortByInstruments', 'RecognizeChords'],
+    controlPanelStyle: 'Smekhov_0701',
+    onStageLoad: function(stage, isStart) {
+    },
+    onEndPlay: function() {
+      console.log("2313212312312")
+    },
+    onStartPlay: function() {
+      console.log("2313212312312")
+    },
+    onStopPlay: function() {
+    },
+    onSaveSettings: function(settings)  { ; },
+    onApplicationReady: function(tab) {
+      $('.hxRootView').i18n();
+    },
+    onFlashNotesPlayerReady: function() {
+    },
+    onSoundsLoaded: function() {
+    },
+    onTrackChanged: function(trackNumber) {
+    },
+    onTrackSoloChanged: function(trackNumber, solo) {
+    },
+    onPositionChanged: function(instanceId, measureIndex, beatIndex) {
+    },
+    onFretboardReady: function() {
+    },
+    playerEventListener: function(action, value, keyboard) {
+    },
+    i18nResources: {
+      "Loading sounds": "<%= t('.loading_sounds') %>",
+      "Play / Pause [Space]": "<%= t('.play_pause_data_tooltip') %>",
+      "down": "<%= t('.down') %>",
+      "up": "<%= t('.up') %>",
+      "original": "<%= t('.original') %>",
+      "SOLO": "<%= t('.solo').mb_chars.upcase %>",
+      "MUTE": "<%= t('.mute').mb_chars.upcase %>",
+      "Capo on fret %fret%": "<%= t('.capo_on_fret') %>",
+    }
+  };
+
+  var tabParams = {
+    tabUrl: '<%= download_path(hash: @tab.download_hash) %>',
+    pitchNotificationShown: true,
+    tabDataOnBasisOfHits: null,
+    onPitchNotificationShow: function() { ; }
+  };
+
+  var playerSetts = {
+    fretboard: false,
+    highlightMeasures: false,
+    drawDurations: false
+  };
+
+  $(document).ready(function() {
+    var tab_player = TabProPlayer.init(playerParams, playerSetts);
+    TabProPlayer.loadTab(tabParams)
+    <% if !@tab.fill_full_informations? && @tab.uploader == current_user %>
+    if($.cookie('fill_informations') != "<%= @tab.id %>"){
+      $("#launch-modal").html("<%=j render 'tabs/modal_update_tab' %>")
+      $("#modal-update-tab").modal({
+        keyboard: false,
+        backdrop: "static"
+      })
+      $.cookie('fill_informations', "<%= @tab.id %>", { expires: 1 })
+    }
+    <% end %>
+  })
+
+  $(window).resize(function(){
+    TabProPlayer.loadTab(tabParams)
+  })
+
+  $.i18n.init({
+    lng: '<%= I18n.locale %>',
+    fallbackLng: ['vi']
+  },function(){
+    $(document).trigger('i18n-load');
+  });
+  </script>

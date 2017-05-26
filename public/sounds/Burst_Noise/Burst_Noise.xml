@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Burst Noise" id="117">
+  <samples>
+    <sample id="450" name="White Noise" originalPitch="6000"/>
+    <sample id="464" name="Siren" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="150" filterFc="11402" coarseTune="-33" scaleTuning="50" freqVibLfo="-2211" freqModLfo="-253" vibLfoToPitch="1200" modLfoToPitch="1200" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="450" loopStart="17" loopEnd="32733"/>
+    </zone>
+    <zone filterFc="9477" filterQ="180" coarseTune="-20" scaleTuning="50" freqVibLfo="6" freqModLfo="-216" vibLfoToPitch="809" modLfoToFilterFc="1711" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="464" loopStart="14" loopEnd="7978"/>
+    </zone>
+  </zones>
+</instrument>

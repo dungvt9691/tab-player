@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Orchestral Cymbal" id="46">
+  <samples>
+    <sample id="189" name="Orchestral Cymbal" originalPitch="5900"/>
+  </samples>
+  <zones>
+    <zone ampDecayTime="6712" ampSustainTime="960" ampReleaseTime="6712">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="189" loopStart="8" loopEnd="62804"/>
+    </zone>
+  </zones>
+</instrument>

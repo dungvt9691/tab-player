@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Acoustic Bass_2" id="156">
+  <defaultSetts ampDecayTime="2833" ampSustainTime="960" ampReleaseTime="165" coarseTune="12">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="428" name="Acoustic Bass-G#2" originalPitch="6400"/>
+    <sample id="427" name="Acoustic Bass-G#3" originalPitch="7600"/>
+    <sample id="426" name="Acoustic Bass-C5" originalPitch="9200"/>
+  </samples>
+  <zones>
+    <zone fineTune="-1" ampAttackTime="-8857" ampHoldTime="-1817" loopType="loop">
+      <keyRange low="43" high="47"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="428" loopStart="10179" loopEnd="10446"/>
+    </zone>
+    <zone attenuation="30" fineTune="25" ampHoldTime="-2084" loopType="loop">
+      <keyRange low="48" high="60"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="427" loopStart="5751" loopEnd="5837"/>
+    </zone>
+    <zone filterQ="70" fineTune="18" ampHoldTime="-2400" loopType="loop">
+      <keyRange low="61" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="426" loopStart="2108" loopEnd="2142"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Breath Noise" id="159">
+  <defaultSetts ampAttackTime="-8359" ampDecayTime="-1200" ampSustainTime="960" ampReleaseTime="-1200">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-3600" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="437" name="Breath Noise-1" originalPitch="6000"/>
+    <sample id="436" name="Breath Noise-2" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone fineTune="-25" coarseTune="-1">
+      <keyRange low="48" high="78"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="437" loopStart="8" loopEnd="7417"/>
+    </zone>
+    <zone fineTune="-25" coarseTune="-1">
+      <keyRange low="79" high="108"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="436" loopStart="8" loopEnd="2112"/>
+    </zone>
+    <zone fineTune="-25" ampDecayTime="-498" ampReleaseTime="-498" coarseTune="-1">
+      <keyRange low="0" high="47"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="437" loopStart="8" loopEnd="7417"/>
+    </zone>
+  </zones>
+</instrument>

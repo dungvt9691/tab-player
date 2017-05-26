@@ -1,0 +1,16 @@
+vi:
+  admin:
+    passwords:
+      new:
+        title: "Quên mật khẩu"
+        form:
+          email: "Nhập vào địa chỉ email"
+          signin: "Quay lại đăng nhập"
+          submit: "Lấy lại mật khẩu"
+      edit:
+        title: "Đổi mật khẩu"
+        form:
+          new_password: "Mật khẩu mới"
+          password_confirmation: "Nhập lại mật khẩu mới"
+          signin: "Quay lại đăng nhập"
+          submit: "Đổi mật khẩu"

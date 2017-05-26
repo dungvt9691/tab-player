@@ -1,0 +1,14 @@
+$("body").css("cursor", "auto")
+$(".table.permissions .btn").prop("disabled", false)
+<% if @errors.empty? %>
+showMessage("<%= t_scope(@params, 'success', name: @administrator.username).html_safe %>", "success")
+<% if @can_action %>
+$(".label-permission[data-permission-id=<%= @permission.permission.id %>][data-action-name=<%= @action_name %>]").addClass("label-success")
+<% else %>
+$(".label-permission[data-permission-id=<%= @permission.permission.id %>][data-action-name=<%= @action_name %>]").removeClass("label-success")
+<% end %>
+$(".label-permission[data-permission-id=<%= @permission.permission.id %>][data-action-name=<%= @action_name %>]").data("can-action", <%= @can_action %>)
+$(".label-permission[data-permission-id=<%= @permission.permission.id %>][data-action-name=<%= @action_name %>]").attr("data-can-action", <%= @can_action %>)
+<% else %>
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>

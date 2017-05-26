@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Accessory Drums 2" id="76">
+  <samples>
+    <sample id="227" name="Chinese Cymbal" originalPitch="5800"/>
+    <sample id="226" name="Cowbell" originalPitch="6100"/>
+  </samples>
+  <zones>
+    <zone attenuation="90" filterFc="11092" modFilterFc="787" fineTune="7" ampHoldTime="-2292" ampDecayTime="3191" ampSustainTime="1000" ampReleaseTime="3382" modHoldTime="-6386" modDecayTime="2706" modSustainTime="1000" modReleaseTime="2516" freqVibLfo="-808" freqModLfo="-808" pan="-153" loopType="loop">
+      <keyRange low="52" high="52"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="227" loopStart="37423" loopEnd="44310"/>
+    </zone>
+    <zone attenuation="70" modFilterFc="3375" fineTune="-1" ampHoldTime="-1200" ampReleaseTime="2335" coarseTune="-2" pan="146">
+      <keyRange low="56" high="56"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="226" loopStart="0" loopEnd="4831"/>
+    </zone>
+  </zones>
+</instrument>

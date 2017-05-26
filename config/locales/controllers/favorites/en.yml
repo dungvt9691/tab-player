@@ -1,0 +1,9 @@
+en:
+  controllers:
+    favorites:
+      create:
+        fail: "Error"
+        success: "Add to favorites successfully."
+      destroy:
+        fail: "Error"
+        success: "Delete from favorites successfully."

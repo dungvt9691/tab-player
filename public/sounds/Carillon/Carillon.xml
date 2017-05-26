@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Carillon" id="118">
+  <samples>
+    <sample id="390" name="Carillon" originalPitch="8400"/>
+  </samples>
+  <zones>
+    <zone fineTune="-5" ampDecayTime="4688" ampSustainTime="1000" ampReleaseTime="1902" modSustainTime="1000" freqVibLfo="-851" freqModLfo="-783" modLfoToPitch="1" modLfoToVolume="1" delayModLfo="-2286" loopType="loop">
+      <keyRange low="0" high="89"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="390" loopStart="292" loopEnd="1164"/>
+    </zone>
+    <zone filterFc="11108" fineTune="-5" ampDecayTime="4688" ampSustainTime="1000" ampReleaseTime="702" modSustainTime="1000" freqVibLfo="-851" freqModLfo="-783" modLfoToPitch="1" modLfoToVolume="1" delayModLfo="-2286" loopType="loop">
+      <keyRange low="90" high="108"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="390" loopStart="292" loopEnd="1164"/>
+    </zone>
+  </zones>
+</instrument>

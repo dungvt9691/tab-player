@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Tambourine" id="138">
+  <samples>
+    <sample id="610" name="Tambourine" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="75" filterFc="9381" modFilterFc="3375" fineTune="-1" ampHoldTime="-7656" ampDecayTime="932" ampSustainTime="1000" ampReleaseTime="546" modReleaseTime="2900" scaleTuning="40" freqVibLfo="-808" freqModLfo="-808" pan="4" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="610" loopStart="1862" loopEnd="6692"/>
+    </zone>
+  </zones>
+</instrument>

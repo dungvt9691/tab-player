@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Marimba" id="111">
+  <defaultSetts fineTune="20" ampAttackTime="-8359" ampSustainTime="1000" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-3986" delayVibLfo="-3986">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="383" name="Marimba-C4" originalPitch="6000"/>
+    <sample id="382" name="Marimba-C6" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="11108" ampDecayTime="3600" ampReleaseTime="3600" loopType="loop">
+      <keyRange low="0" high="48"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="383" loopStart="17230" loopEnd="17400"/>
+    </zone>
+    <zone filterFc="11423" ampDecayTime="3102" ampReleaseTime="3102" loopType="loop">
+      <keyRange low="49" high="60"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="383" loopStart="17230" loopEnd="17400"/>
+    </zone>
+    <zone filterFc="11423" ampDecayTime="2400" ampReleaseTime="2400" loopType="loop">
+      <keyRange low="61" high="72"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="383" loopStart="17230" loopEnd="17400"/>
+    </zone>
+    <zone filterFc="11108" ampDecayTime="1586" ampReleaseTime="1586" loopType="loop">
+      <keyRange low="73" high="84"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="383" loopStart="17230" loopEnd="17400"/>
+    </zone>
+    <zone filterFc="10925" ampDecayTime="702" ampReleaseTime="702" loopType="loop">
+      <keyRange low="85" high="92"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="383" loopStart="17230" loopEnd="17400"/>
+    </zone>
+    <zone filterFc="10721" ampDecayTime="-617" ampReleaseTime="-617" loopType="loop">
+      <keyRange low="93" high="108"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="382" loopStart="6251" loopEnd="6313"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,87 @@
+<script type="text/javascript">
+var dataTableInitialize = function(options) {
+  if(typeof options.sDom === 'undefined'){
+    options.sDom = "<'row'<'col-lg-6'l><'col-lg-6'f>r>t<'row'<'col-lg-2'i><'col-lg-10'p>>"
+  }
+
+  if(typeof options.un_sorted_arr === 'undefined'){
+    options.un_sorted_arr = []
+  }
+
+  language = {
+    "emptyTable":     "<%= I18n.t('datatable.emptyTable') %>",
+    "info":           "<%= I18n.t('datatable.info') %>",
+    "infoEmpty":      "<%= I18n.t('datatable.infoEmpty') %>",
+    "infoPostFix":    "",
+    "thousands":      ",",
+    "lengthMenu":     "<%= I18n.t('datatable.lengthMenu') %>",
+    "loadingRecords": "<%= I18n.t('datatable.loading').html_safe %>",
+    "processing":     "<%= I18n.t('datatable.loading').html_safe %>",
+    "search":         "",
+    "zeroRecords":    "",
+    "paginate": {
+      "first":      "<%= I18n.t('datatable.paginate_first').html_safe %>",
+      "last":       "<%= I18n.t('datatable.paginate_last').html_safe %>",
+      "next":       "<%= I18n.t('datatable.paginate_next').html_safe %>",
+      "previous":   "<%= I18n.t('datatable.paginate_previous').html_safe %>"
+    },
+    "infoFiltered": "<%= I18n.t('datatable.infoFiltered') %>"
+  }
+
+  if(typeof options.ajax === 'undefined'){
+    table = options.element.dataTable({
+      "sDom": options.sDom,
+      "sPaginationType": "full_numbers",
+      "language": language,
+      "aaSorting": [],
+      "iDisplayLength": 10,
+      "aoColumnDefs" : [ {
+        'bSortable' : false,
+        'aTargets' : options.un_sorted_arr
+      }],
+      fnDrawCallback: function (oSettings) {
+        $('.show-tooltip').tooltip()
+
+        if(options.element.parents('.dataTables_wrapper').find(".paginate_button").length <= 5){
+          options.element.parents('.dataTables_wrapper').find(".dataTables_paginate").fadeOut(0)
+        }
+        else{
+          options.element.parents('.dataTables_wrapper').find(".dataTables_paginate").fadeIn(0)
+        }
+      }
+    });
+  }
+  else{
+    table = options.element.dataTable({
+      "sDom": options.sDom,
+      "sPaginationType": "full_numbers",
+      "language": language,
+      "aaSorting": [],
+      "iDisplayLength": 10,
+      "aoColumnDefs" : [ {
+        'bSortable' : false,
+        'aTargets' : options.un_sorted_arr
+      }],
+      "bProcessing": true,
+      "serverSide": true,
+      "ajax": options.ajax,
+      fnDrawCallback: function (oSettings) {
+        $('[data-toggle="tooltip"]').tooltip({
+          html: true
+        })
+
+        if(options.element.parents('.dataTables_wrapper').find(".paginate_button").length <= 5){
+          options.element.parents('.dataTables_wrapper').find(".dataTables_paginate").fadeOut(0)
+        }
+        else{
+          options.element.parents('.dataTables_wrapper').find(".dataTables_paginate").fadeIn(0)
+        }
+      }
+    });
+  }
+
+  $('.dataTables_filter input').addClass('form-control').attr('placeholder',"<%= I18n.t('datatable.search') %>");
+  
+  return table
+}
+</script>

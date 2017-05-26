@@ -1,0 +1,30 @@
+en:
+  admin:
+    images:
+      index:
+        title: "Image"
+        new: "Upload"
+        table:
+          attachment: "Image"
+          attachment_file_name: "File name"
+          attachment_file_size: "File size"
+          attachment_content_type: "File type"
+          created_at: "Created at"
+        destroy_selected: "Delete selected images"
+        multi_destroy: "Delete selected images"
+      modal_select_images:
+        select_image: "Select image"
+        computer: "Computer"
+        uploaded_images: "Uploaded images"
+        drop_images_here: "Drop images here"
+        or: "Or"
+        select_file: "Select file"
+        selected_image: "selected images"
+        loading: "Loading data"
+        destroy: "Delete image"
+        use: "Use image"
+      modal_upload_images:
+        new: "Upload"
+        drop_images_here: "Drop image here"
+        or: "Or"
+        select_file: "Select file"

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Strings 2_1" id="286">
+  <defaultSetts filterFc="7437" modFilterFc="3600" ampAttackTime="-3986" ampDecayTime="0" ampReleaseTime="1200" modAttackTime="-2786" modDecayTime="2786" modSustainTime="500" modReleaseTime="6712">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="816" name="Synth Strings 2-C2" originalPitch="5700"/>
+    <sample id="815" name="Synth Strings 2-C3" originalPitch="6900"/>
+    <sample id="814" name="Synth Strings 2-C4" originalPitch="8000"/>
+    <sample id="813" name="Synth Strings 2-C5" originalPitch="9200"/>
+  </samples>
+  <zones>
+    <zone fineTune="19" loopType="loop">
+      <keyRange low="0" high="55"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="816" loopStart="5" loopEnd="19100"/>
+    </zone>
+    <zone fineTune="-12" loopType="loop">
+      <keyRange low="56" high="67"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="815" loopStart="5" loopEnd="19816"/>
+    </zone>
+    <zone fineTune="-46" loopType="loop">
+      <keyRange low="68" high="79"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="814" loopStart="5" loopEnd="25642"/>
+    </zone>
+    <zone fineTune="16" loopType="loop">
+      <keyRange low="80" high="127"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="813" loopStart="5" loopEnd="22927"/>
+    </zone>
+  </zones>
+</instrument>

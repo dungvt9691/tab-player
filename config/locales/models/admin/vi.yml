@@ -1,0 +1,47 @@
+vi:
+  administrators:
+    set_permissions: "Cài đặt quyền hạn"
+    add_permissions: "Thêm quyền hạn"
+    set_permissions_note: "Nhấp vào để bật/tắt"
+    select_permission: "Chọn quyền hạn cho tài khoản"
+    destroy_permission: "Xoá quyền hạn"
+    not_found: "Không tìm thấy quản trị viên tương ứng"
+
+  activerecord:
+    attributes:
+      admin:
+        username: "Tài khoản"
+        email: "Địa chỉ email"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        reset_password_token: "Mã lấy lại mật khẩu"
+        fullname: "Họ và tên"
+        phone: "Số điện thoại"
+        rate: "Đánh giá"
+        system: ""
+    errors:
+      models:
+        admin:
+          attributes:
+            username:
+              blank: "không được để trống."
+              invalid: "không hợp lệ."
+              taken: "đã tồn tại."
+            email:
+              blank: "không được để trống."
+              taken: "đã tồn tại."
+            phone:
+              invalid: "không hợp lệ."
+            password:
+              blank: "không được để trống."
+              too_short: "quá ngắn (6 đến 30 ký tự)."
+              too_long: "quá dài (6 đến 30 ký tự)."
+            password_confirmation:
+              blank: "không được để trống."
+              too_short: "quá ngắn (6 đến 30 ký tự)."
+              too_long: "quá dài (6 đến 30 ký tự)."
+              confirmation: "không khớp."
+            reset_password_token:
+              invalid: "không hợp lệ."
+            system:
+              error: "Lỗi hệ thống."

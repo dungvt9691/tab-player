@@ -1,0 +1,42 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= link_to t('admin.setting.title'), admin_setting_page_info_path %>
+    </li>
+    <li>
+      <%= t('.title') %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+  </h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tab-container tab-left" id="setting-tabs">
+        <%= render 'setting_tabs' %>
+        <%= form_for @setting, url: admin_setting_path, method: 'put' do |f| %>
+        <%= hidden_field_tag :update_type, @current_tab %>
+        <%= hidden_field_tag :redirect_path, admin_setting_page_info_path %>
+        <div class="tab-content">
+          <div class="tab-pane active">
+            <%= render 'general_setting', f: f %>
+          </div>
+          <div class="tab-footer">
+            <%= f.submit t('save'), class: 'btn btn-secondary btn-sm' %>
+            <%= link_to t('cancel'), admin_path, class: 'btn btn-default btn-sm' %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div> <!-- container -->

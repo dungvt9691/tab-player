@@ -1,0 +1,19 @@
+<%= link_to tab_show_path(language: I18n.locale, t: tab.sid), class: 'tab' do %>
+  <div class="index">
+    <%= index %>.
+  </div>
+  <div class="informations">
+    <h3 class="title">
+      <%= tab.try(:highlight).try(:title) ? tab.highlight.title[0].html_safe : tab.title.html_safe %>
+    </h3>
+    <h4 class="artists">
+      <% if tab.artists.empty? %>
+      <span><%= t('untitled') %></span>
+      <% else %>
+      <span>
+        <%= tab.try(:highlight).try(:'artists.name') ? tab.highlight['artists.name'].join(', ').html_safe : tab.artists.map{|x| x.name}.join(', ').html_safe rescue t('untitled') %>
+      </span>
+      <% end %>
+    </h4>
+  </div>
+<% end %>

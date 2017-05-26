@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Whistle-Hard" id="243">
+  <defaultSetts filterFc="8139" ampAttackTime="-8359" ampDecayTime="2400" ampSustainTime="70" ampReleaseTime="-2786" modReleaseTime="-4373" coarseTune="-12">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="647" name="Whistle-E4" originalPitch="6400"/>
+    <sample id="646" name="Whistle-B4" originalPitch="7100"/>
+    <sample id="645" name="Whistle-A4" originalPitch="6900"/>
+    <sample id="644" name="Whistle-A5" originalPitch="8100"/>
+    <sample id="643" name="Whistle-D5" originalPitch="7400"/>
+  </samples>
+  <zones>
+    <zone loopType="loop">
+      <keyRange low="0" high="78"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="647" loopStart="7031" loopEnd="12203"/>
+    </zone>
+    <zone attenuation="60" fineTune="-10" loopType="loop">
+      <keyRange low="82" high="85"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="646" loopStart="4006" loopEnd="8545"/>
+    </zone>
+    <zone attenuation="80" fineTune="-6" loopType="loop">
+      <keyRange low="79" high="81"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="645" loopStart="4343" loopEnd="9229"/>
+    </zone>
+    <zone attenuation="70" fineTune="-9" loopType="loop">
+      <keyRange low="90" high="127"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="644" loopStart="1715" loopEnd="4154"/>
+    </zone>
+    <zone fineTune="-20" loopType="loop">
+      <keyRange low="86" high="89"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="643" loopStart="2781" loopEnd="5578"/>
+    </zone>
+  </zones>
+</instrument>

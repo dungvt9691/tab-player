@@ -1,0 +1,85 @@
+#panel-search
+  .panel-header
+    background: $secondary-white-color
+    .search
+      .form-group
+        margin-bottom: 0
+        input
+          background-image: image-url('icon/search.png')
+          background-repeat: no-repeat
+          background-size: 18px
+          background-position: $margin-min
+          padding-left: 38px
+          border-color: $secondary-white-color
+  .tab-results
+    position: relative
+    overflow: scroll
+    overflow-x: hidden
+    height: 100%
+    padding-bottom: $margin-min
+    #alert-no-tabs
+      text-align: center
+      .icon
+        .material-icons
+          font-size: 150px
+          color: $secondary-gray-hover-color
+      h1
+        font-size: 30px
+        color: $secondary-color
+      h3
+        color: $secondary-gray-hover-color
+        font-size: 18px
+    .loading
+      display: none
+      padding: $margin-min
+      padding-top: 150px
+      position: fixed
+      width: 35%
+      top: 70px
+      left: 0
+      left: 100px
+      height: 100%
+      background-color: rgba(255, 255, 255, 0.8)
+      text-align: center
+      font-size: 35px
+      z-index: 10
+      .fa
+        font-size: 100px
+        display: block
+        margin-bottom: $margin-small
+    .tab
+      padding: $margin-min
+      border-bottom: 1px solid $gray-color
+      display: block
+      text-decoration: none
+      +animation-common
+      .index
+        width: 20px
+        float: left
+        font-size: $font-size-large
+        color: $secondary-gray-color
+        text-align: right
+        margin-top: -4px
+      .informations
+        margin-left: $margin-base
+        .title
+          margin-top: 0
+          margin-bottom: 5px
+          font-size: 18px
+          em
+            color: $primary-color
+            font-weight: bold
+            font-style: normal
+        .artists
+          font-size: $font-size-base
+          color: $secondary-gray-color
+          margin: 0
+          span
+            em
+              color: $primary-color
+              font-weight: bold
+              font-style: normal
+      &:last-child
+        border-bottom: none
+      &:hover, &:focus, &:active
+        background-color: $secondary-white-color

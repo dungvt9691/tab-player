@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Hand Clap" id="75">
+  <samples>
+    <sample id="225" name="Hand Clap" originalPitch="5400"/>
+  </samples>
+  <zones>
+    <zone fineTune="-50" ampDecayTime="2786" ampSustainTime="960" ampReleaseTime="2786">
+      <keyRange low="39" high="39"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="225" loopStart="8" loopEnd="4534"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,7 @@
+<% if @errors.empty? %>
+$(".play-tutorial-video[data-tutorial-id=<%= @tutorial.id %>]").data("disliked", false)
+$(".play-tutorial-video[data-tutorial-id=<%= @tutorial.id %>]").data("dislikes", "<%= number_with_delimiter(@tutorial.get_dislikes.size) %>")
+setTutorialControlData()
+<% else %>
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>

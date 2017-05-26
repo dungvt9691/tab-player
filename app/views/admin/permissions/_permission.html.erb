@@ -1,0 +1,35 @@
+<div class="row permission" data-id="<%= id %>">
+  <div class="col-sm-5">
+    <%= select_tag "permission-#{id}", options_for_select(Permission.filter(@administrator).collect { |x| [t("permissions.#{x.name}"),  x.id] }), class: "form-control input-lg select-permission" %>
+  </div>
+  <div class="col-sm-6">
+    <div class="action-permissions">
+      <label>
+        <%= check_box_tag 'read' %>
+        <%= t('permissions.read') %>
+      </label>
+      <label>
+        <%= check_box_tag 'create' %>
+        <%= t('permissions.create') %>
+      </label>
+      <label>
+        <%= check_box_tag 'update' %>
+        <%= t('permissions.update') %>
+      </label>
+      <label>
+        <%= check_box_tag 'destroy' %>
+        <%= t('permissions.destroy') %>
+      </label>
+    </div>
+  </div>
+  <div class='col-sm-1'>
+    <%= button_tag '', type: 'button', class: 'btn-sm btn btn-danger btn-block btn-remove-permission' do %>
+    <i class="fa fa-minus"></i>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+$(".permission[data-id=<%= id %>] .select-permission").select2({
+  language: "<%= I18n.locale %>",
+})
+</script>

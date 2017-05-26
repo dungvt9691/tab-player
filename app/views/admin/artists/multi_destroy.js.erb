@@ -1,0 +1,20 @@
+$('body').css("cursor", 'auto')
+$("#modal-confirm-destroy #btn-confirm").removeClass("disabled")
+$("#modal-confirm-destroy #btn-cancel").prop("disabled", false)
+<% if @errors.empty? %>
+<% @destroyed_artists.each do |artist| %>
+showMessage("<%= t_scope(@params, 'success', name: artist.name).html_safe %>.", "success")
+$('.modal#modal-confirm-destroy').modal('hide');
+var row = $(".btn-destroy[data-artist-id=<%= artist.id %>]").parents('tr')
+window.artists_table.fnDeleteRow(row[0])
+window.selected_id = []
+$(".check-one").prop("checked", false)
+$("#check-all").prop("checked", false)
+<% end %>
+<% else %>
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>
+$('.object-count').text("<%= @count %>")
+setTimeout(function(){
+  showMultiBtnActions()
+}, 200)

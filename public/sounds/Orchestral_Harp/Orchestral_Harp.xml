@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Orchestral Harp" id="154">
+  <defaultSetts ampAttackTime="-8359" ampHoldTime="-11959" ampDecayTime="3986" ampSustainTime="960" ampReleaseTime="2786">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="422" name="Orchestral Harp-E3" originalPitch="5200"/>
+    <sample id="421" name="Orchestral Harp-C4" originalPitch="6000"/>
+    <sample id="425" name="Orchestral Harp-C#4" originalPitch="6100"/>
+    <sample id="424" name="Orchestral Harp-F#5" originalPitch="7800"/>
+    <sample id="423" name="Orchestral Harp-A6" originalPitch="9300"/>
+  </samples>
+  <zones>
+    <zone attenuation="80" pan="-240" loopType="loop">
+      <keyRange low="0" high="33"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="422" loopStart="16217" loopEnd="18317"/>
+    </zone>
+    <zone attenuation="80" pan="-180" loopType="loop">
+      <keyRange low="34" high="43"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="422" loopStart="16217" loopEnd="18317"/>
+    </zone>
+    <zone attenuation="80" pan="-120" loopType="loop">
+      <keyRange low="44" high="53"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="422" loopStart="16217" loopEnd="18317"/>
+    </zone>
+    <zone attenuation="60" pan="-60" loopType="loop">
+      <keyRange low="54" high="60"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="421" loopStart="12971" loopEnd="15118"/>
+    </zone>
+    <zone fineTune="10" ampHoldTime="165" loopType="loop">
+      <keyRange low="61" high="71"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="425" loopStart="40255" loopEnd="42975"/>
+    </zone>
+    <zone fineTune="17" ampHoldTime="1586" pan="60" loopType="loop">
+      <keyRange low="72" high="80"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="424" loopStart="40148" loopEnd="42855"/>
+    </zone>
+    <zone fineTune="17" ampHoldTime="1586" pan="120" loopType="loop">
+      <keyRange low="81" high="86"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="424" loopStart="40148" loopEnd="42855"/>
+    </zone>
+    <zone attenuation="50" fineTune="31" ampHoldTime="2400" pan="180" loopType="loop">
+      <keyRange low="87" high="96"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="423" loopStart="26956" loopEnd="33165"/>
+    </zone>
+    <zone attenuation="50" fineTune="31" ampHoldTime="2400" pan="240" loopType="loop">
+      <keyRange low="97" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="423" loopStart="26956" loopEnd="33165"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: tabs
+#
+#  id                 :integer          not null, primary key
+#  sid                :string(255)
+#  title              :string(255)
+#  sheet_updated_at   :datetime
+#  sheet_file_size    :integer
+#  sheet_content_type :string(255)
+#  sheet_file_name    :string(255)
+#  download_hash      :string(255)
+#  download_link      :string(255)
+#  pdf_download_link  :string(255)
+#  user_id            :integer
+#  status             :integer          default("1")
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  cached_views       :integer          default("0")
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+#  column: value

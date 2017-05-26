@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Techno Bass" id="295">
+  <samples>
+    <sample id="829" name="Techno Bass" originalPitch="6400"/>
+  </samples>
+  <zones>
+    <zone fineTune="39" ampReleaseTime="-74" coarseTune="12" freqVibLfo="-15600" freqModLfo="-725" loopType="infinite">
+      <keyRange low="0" high="75"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="829" loopStart="3232" loopEnd="3507"/>
+    </zone>
+  </zones>
+</instrument>

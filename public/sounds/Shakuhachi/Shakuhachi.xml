@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Shakuhachi" id="242">
+  <samples>
+    <sample id="642" name="Shakuhachi" originalPitch="7200"/>
+  </samples>
+  <zones>
+    <zone modFilterFc="2000" ampAttackTime="-8359" ampReleaseTime="-617" modReleaseTime="6712" freqModLfo="-728" modLfoToPitch="10" delayModLfo="-1200" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="642" loopStart="42539" loopEnd="64670"/>
+    </zone>
+  </zones>
+</instrument>

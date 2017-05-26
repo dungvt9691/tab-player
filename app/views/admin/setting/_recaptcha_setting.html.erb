@@ -1,0 +1,27 @@
+<h4><b><%= t('.title') %></b></h4>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:recaptcha_publickey) %>">
+      <%= f.label :recaptcha_publickey, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :recaptcha_publickey, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:recaptcha_publickey) %>
+          <%= @setting.errors[:recaptcha_publickey].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:recaptcha_privatekey) %>">
+      <%= f.label :recaptcha_privatekey, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :recaptcha_privatekey, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:recaptcha_privatekey) %>
+          <%= @setting.errors[:recaptcha_privatekey].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

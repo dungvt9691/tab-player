@@ -1,0 +1,51 @@
+en:
+  save: "Save"
+  manage: "Manage"
+  cancel: "Cancel"
+  edit: "Edit"
+  destroy: "Delete"
+  confirm: "Confirm"
+  blank: "Not update"
+  cannot_edit: "Cannot edit"
+  unknown: "Unknown"
+  comming_soon: "Comming Soon"
+
+  alert:
+    system_error: "System Error"
+
+  modal:
+    destroy:
+      are_you_sure: "Do you want to delete"
+      note: "You can't recovery data after deleted!"
+
+  time:
+    formats:
+      change_password: "%B %d at %H:%M"
+      long: "%A, %B %d at %I:%M %P"
+      only_date: "%d/%m/%Y"
+      datetime: "%m/%d/%Y %H:%M"
+    datetimepicker:
+      datetime: 'H:i m/d/Y'
+      date: 'm/d/Y'
+
+  date:
+    formats:
+      short: "%A, %B %d"
+      long: "%A, %B %d at %I:%M %P"
+      only_date: "%d/%m/%Y"
+      datetime: "%m/%d/%Y %H:%M"
+
+  datatable:
+    emptyTable: "No data available in table"
+    lengthMenu: "Display _MENU_ records per page"
+    search: "Type to search..."
+    info: "Showing page _PAGE_ of _PAGES_"
+    infoEmpty: "Showing 0 to 0 of 0 entries"
+    zero: "No records available"
+    loading: "<i class='fa fa-spin fa-circle-o-notch'></i>"
+    zeroRecords: "No matching records found"
+    infoFiltered: "(filtered from _MAX_ total entries)"
+    paginate_first: "First"
+    paginate_last: "Last"
+    paginate_previous: "Previous"
+    paginate_next: "Next"

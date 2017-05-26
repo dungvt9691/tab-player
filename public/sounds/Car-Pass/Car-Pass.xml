@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Car-Pass" id="188">
+  <samples>
+    <sample id="475" name="Car-Pass" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="14400" modPitch="-730" fineTune="-3" ampAttackTime="2090" ampHoldTime="-3238" ampDecayTime="3479" ampSustainTime="1000" ampReleaseTime="171" modAttackTime="726" modReleaseTime="6041" coarseTune="-6" scaleTuning="50" freqVibLfo="-1118" freqModLfo="-1118" pan="-500">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="475" loopStart="40505" loopEnd="42670"/>
+    </zone>
+    <zone filterFc="14400" modPitch="-730" fineTune="3" ampAttackTime="-5530" ampHoldTime="-3238" ampDecayTime="3479" ampSustainTime="1000" ampReleaseTime="171" modAttackTime="726" modReleaseTime="6041" coarseTune="-6" scaleTuning="50" freqVibLfo="-1118" freqModLfo="-1118" pan="500">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="475" loopStart="40505" loopEnd="42670"/>
+    </zone>
+  </zones>
+</instrument>

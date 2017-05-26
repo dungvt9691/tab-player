@@ -1,0 +1,14 @@
+en:
+  controllers:
+    admin:
+      categories:
+        create:
+          success: "Created category <b>%{name}</b> successfully"
+        update:
+          success: "Edited category <b>%{name}</b> successfully"
+        destroy:
+          success: "Deleted category <b>%{name}</b> successfully"
+          fail: "Error! Cannot delete category <b>%{name}</b>"
+        multi_destroy:
+          success: "Deleted category <b>%{name}</b> successfully"
+          fail: "Error! Cannot delete category <b>%{name}</b>"

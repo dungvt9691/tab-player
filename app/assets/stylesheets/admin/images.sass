@@ -1,0 +1,279 @@
+#table-images
+  thead
+    th:nth-child(1)
+      width: 4% !important
+    th:nth-child(2)
+      width: 5% !important
+    th:nth-child(3)
+      width: 35% !important
+    th:nth-child(7)
+      width: 25% !important
+    th:nth-child(5)
+      width: 10% !important
+    th:nth-child(6)
+      width: 16% !important
+    th:nth-child(7)
+      width: 8% !important
+
+#btn-delete-images
+  display: none
+
+.featured-image
+  display: block
+  cursor: pointer
+  img
+    width: 100%
+    vertical-align: top
+
+.featured-image.preview
+  display: block
+  margin-right: $margin-min
+  width: 200px
+  height: 200px
+  text-align: center
+  font-size: 80px
+  cursor: pointer
+  color: $white-hover-color
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  .fa-picture-o
+    border: 2px dashed $white-hover-color
+    width: 200px
+    height: 200px
+    line-height: 200px
+  img
+    border: 2px solid $white-hover-color
+    width: 100%
+    vertical-align: top
+
+.featured-image-actions
+  display: block
+  margin-top: $margin-min
+  .btn
+    margin-right: $margin-xmin
+
+#modal-upload-images
+  h3
+    margin-top: 0
+
+  #fileupload
+    border: 2px dashed $secondary-gray-color
+    padding: $margin-small
+
+  .or-box
+    color: $secondary-gray-color
+    font-size: $font-size-base
+    font-weight: bold
+    margin-bottom: $margin-min
+    text-align: center
+
+    .border
+      border-top: 1px solid #adb2bb
+      display: inline-block
+      margin: 0 8px
+      position: relative
+      top: -3px
+      width: 40px
+
+  .files
+    hr
+      border-top: 1px solid $white-hover-color
+      margin-top: 5px
+
+  img
+    width: 100%
+
+  .image-thumbnail
+    width: 100%
+    height: 100px
+    margin-bottom: $margin-min
+    background: $white-color
+    cursor: pointer
+    text-align: center
+    .fa-picture-o
+      font-size: 60px
+      color: $gray-color
+      margin-top: $margin-small
+    .progress
+      margin: $margin-small
+    img
+      width: 100%
+    .fa-check
+      display: none
+
+#modal-select-images
+  .modal-header
+    background-color: $white-color
+    border-bottom: 1px solid $white-hover-color
+    color: $secondary-color
+    .close 
+      color: $secondary-color
+      border-bottom: 1px solid $white-hover-color
+
+  .nav.tabs
+    .fa
+      margin-right: $margin-min
+
+  .alert-info
+    height: 120px
+    margin-left: 140px
+    font-size: $font-size-middle
+
+  .selected-image
+    width: 100%
+    position: relative
+    border: 1px solid #ccc
+    .mask
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      -webkit-transition: background-color 300ms
+      -moz-transition: background-color 300ms
+      -o-transition: background-color 300ms
+      transition: background-color 300ms
+    img
+      width: 100%
+    .fa-times
+      color: $gray-color
+      z-index: 100
+      right: 0
+      padding: $margin-xmin
+      font-size: $font-size-middle
+      top: 0
+      text-shadow: 0 5px 5px rgba(0,0,0,0.9)
+      position: absolute
+      cursor: pointer
+      opacity: 0
+      -webkit-transition: opacity 300ms
+      -moz-transition: opacity 300ms
+      -o-transition: opacity 300ms
+      transition: opacity 300ms
+
+  .selected-image:hover
+    .mask
+      background-color: rgba(0, 0, 0, 0.5)
+    .fa-times
+      opacity: 1
+
+  .modal-footer
+    margin-top: 0
+
+  .content
+    height: 400px
+
+  .nav-sidebar 
+    width: 20%
+    height: 100%
+    border-right: 1px solid $white-hover-color
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 100
+    a
+      color: $secondary-color
+      font-size: $font-size-middle
+      -webkit-transition: all 0.08s linear
+      -moz-transition: all 0.08s linear
+      -o-transition: all 0.08s linear
+      transition: all 0.08s linear
+      .fa
+        font-size: $font-size-xlarge
+        margin-right: $margin-min
+
+  .nav-sidebar
+    .active
+      a 
+        cursor: default
+        background-color: $secondary-color
+        color: $white-color 
+      a:before
+        width: 0
+        height: 42px
+        border-style: solid
+        border-width: 20px 40px 22px 20px
+        border-color: transparent transparent transparent $secondary-color
+        content: ""
+        position: absolute
+        right: -60px
+        margin-top: -10px
+      a:hover
+        background-color: $secondary-color  
+    .text-overflow a,
+    .text-overflow .media-body 
+      white-space: nowrap
+      overflow: hidden
+      -o-text-overflow: ellipsis
+      text-overflow: ellipsis 
+
+  .tab-content
+    left: 20%
+    position: absolute
+    height: 440px
+    max-height: 440px
+    background: #eee
+    width: 80%
+    top: 0
+    padding: 10px 30px
+    overflow-y: scroll
+    .fa-spinner
+      font-size: 80px
+    center
+      margin: 10% 0
+
+  .image-thumbnail
+    width: 140px
+    height: 140px
+    background: $white-color
+    cursor: pointer
+    text-align: center
+    .fa-picture-o
+      font-size: 60px
+      color: #999
+      margin-top: $margin-small
+    .progress
+      margin: $margin-small $margin-small
+    img
+      width: 100%
+    .fa-check
+      display: none
+
+  .image-thumbnail.selected
+    border: 4px solid $secondary-color
+    padding: 2px
+    .fa-check
+      position: absolute
+      color: $white-color
+      z-index: 100
+      background: $secondary-color
+      padding: 5px
+      font-size: $font-size-xmini
+      display: block
+
+  .or-box
+    color: #141823
+    font-size: $font-size-middle
+    font-weight: bold
+    margin-bottom: 12px
+    text-align: center
+
+    .border
+      border-top: 1px solid #adb2bb
+      display: inline-block
+      margin: 0 8px
+      position: relative
+      top: -3px
+      width: 40px
+
+  .files
+    hr
+      border-top: 1px solid $white-hover-color
+      margin-top: 5px
+
+#reselect-featured-image
+  margin-top: $margin-min

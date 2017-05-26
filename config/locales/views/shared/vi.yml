@@ -1,0 +1,44 @@
+vi:
+  shared:
+    tab_player_script:
+      loading_sounds: "Đang tải dữ liệu âm thanh"
+      play_pause_data_tooltip: "Bắt đầu / Tạm dừng [Space]"
+      up: "Tăng"
+      down: "Giảm"
+      original: "1.00"
+      solo: "Độc tấu"
+      mute: "Im lặng"
+      capo_on_fret: "Capo ngăn %fret%"
+      add_tutorial: "Đóng góp hướng dẫn"
+    modal_confirm_destroy:
+      are_you_sure: "Bạn muốn xoá"
+      note: "Bạn sẽ không thể khôi phục lại dữ liệu sau khi xoá!"
+    panel_sign_in:
+      title: "Đăng nhập"
+      via_facebook: "Đăng nhập bằng tài khoản Facebook"
+      via_google: "Đăng nhập bằng tài khoản Google+"
+      social_login: "Đăng nhập thông qua mạng xã hội"
+      term: "Điều khoản quy định"
+      privacy: "Chính sách bảo mật"
+    panel_profile:
+      title: "Thông tin cá nhân"
+      form:
+        email: "Địa chỉ email"
+        created_at: "Ngày tham gia"
+        fullname: "Họ và tên"
+      sign_out: "Đăng xuất"
+    panel_favorites:
+      title: "Ưa thích"
+      loading: "Đang tải dữ liệu"
+    panel_search:
+      title: "Tìm kiếm"
+      loading: "Đang tải dữ liệu"
+      form:
+        search_placeholder: "Nhập để tìm kiếm theo tên bài hát, ca sĩ, tác giả..."
+    panel_contact:
+      title: "Liên hệ"
+      form:
+        fullname_placeholder: "Họ và tên"
+        email_placeholder: "Địa chỉ email"
+        content_placeholder: "Chúng tôi có thể giúp gì cho bạn?"
+        submit: "Gửi liên hệ"

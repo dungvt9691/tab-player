@@ -1,0 +1,84 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<main class="b-tab-page js-tab-page show-tab">
+  <div class="b-player-app js-player-container">
+    <div class="tpp-b-overlay">
+      <article class="tpp-b-player tpp-b-player__en hxRootView force_show_fretboard">
+        <div type="component" class="hide hxInstrumentsColorView">
+        </div>
+        <div class="tpp-flex-main tpp-flex">
+          <%= render 'tabs/player/instruments' %>
+          <div class="tpp-aside-backdrop"></div>
+          <div class="tpp-b-main">
+            <section type="component" class="tpp-navbar-top hxTopControlPanelView">
+              <section class="pull-left">
+                <div class="control-txt control-txt__tuning pull-left">
+                  <span type="label" class="hxTuningLabel">
+                    <span data-i18n="player.Tuning"><%= t('.tunning') %></span>: <span class="_hxTuningNotes"></span>
+                  </span>
+                </div>
+                <div class="pull-left tpp-dropdown">
+                  <div type="component" class="control-btn control-btn__zoom has_tooltip hxZoomOption">
+                    <div class="control-icon control-icon__sm control-icon__zoom"></div>
+                    <span class="control-val _hxZoomLabel">110%</span>
+                  </div>
+                  <div type="component" class="tpp-dropdown--menu tpp-scrollarea tpp-scrollarea__light hxZoomDropDown ps-container">
+                    <ul>
+                      <li data-value="200">200%</li>
+                      <li data-value="190">190%</li>
+                      <li data-value="180">180%</li>
+                      <li data-value="170">170%</li>
+                      <li data-value="160">160%</li>
+                      <li data-value="150">150%</li>
+                      <li data-value="140">140%</li>
+                      <li data-value="130">130%</li>
+                      <li data-value="120">120%</li>
+                      <li data-value="110" class="active">110%</li>
+                      <li data-value="100">100%</li>
+                      <li data-value="90">90%</li>
+                      <li data-value="80">80%</li>
+                      <li data-value="70">70%</li>
+                      <li data-value="60">60%</li>
+                      <li data-value="50">50%</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+              <section class="tpp-navbar-top--center heading text-overflow">
+                <span type="label" class="hxTitleLabel"></span>
+              </section>
+            </section>
+            <section class="tpp-b-inner">
+              <%= render 'tabs/player/instrument_switcher' %>
+              <div class="tpp-b-content tpp-scrollarea hxTabRenderView ">
+                <div class="tpp-count-down hxCountDownView">
+                  <div type="label" class="hxCount"></div>
+                </div>
+                <div class="tpp-txt-progress hxLoadingPresetsView">
+                </div>
+                <div type="component" id="canvas" class="hxCanvas tpp-b-canvas">
+
+                </div>
+                <div type="scroll" class="hxScroller tpp-scrollbar">
+                  <div class="hxScrollBar scrollbar ui-draggable"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="tpp-b-fretboard hxFretBoardView tpp-b-fretboard__styled">
+          <figure type="component" id="fretboardcanvas" class="hxFretBoardCanvas">
+          </figure>
+        </div>
+        <%= render 'tabs/player/control_player' %>
+        <%= render 'tabs/player/timeline' %>
+        <%= render 'tabs/player/equalizer' %>
+        <%= render 'tabs/player/template' %>
+        <%= render 'tutorials/panel_tutorials' %>
+      </article>
+    </div>
+  </div>
+</main>
+<%= render 'shared/tab_player_script' %>

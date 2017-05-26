@@ -1,0 +1,49 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<%= form_for(resource, as: resource_name, url: admin_password_path, html: { method: :put }) do |f| %>
+<%= f.hidden_field :reset_password_token %>
+<div class="panel-body">
+  <h4 class="text-center">
+    <%= t('.title') %>
+  </h4>
+  <%= devise_error_messages! %>
+  <% flash.each do |key, value| %>
+  <% if value %>
+  <div class="alert alert-<%= render_key(key) %>">
+    <ul>
+      <li><%= value.html_safe %></li>
+    </ul>
+  </div>
+  <br>
+  <% end %>
+  <% end %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+          <%= f.password_field :password, autofocus: true, placeholder: t('.form.new_password'), class: "form-control" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+          <%= f.password_field :password_confirmation, autofocus: true, placeholder: t('.form.password_confirmation'), class: "form-control" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel-footer">
+  <%= link_to t('.form.signin'), new_admin_session_path, class: 'pull-left btn btn-link' %>
+  <div class="pull-right">
+    <%= f.submit t('.form.submit'), class: 'btn btn-secondary' %>
+  </div>
+</div>
+<% end %>

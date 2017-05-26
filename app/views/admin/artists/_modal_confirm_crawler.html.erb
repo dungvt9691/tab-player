@@ -1,0 +1,31 @@
+<div class="modal fade zoom modal-confirm" id="modal-confirm-crawler">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= form_tag admin_crawler_path, method: "post", remote: true do %>
+        <center>
+          <h1>
+            <i class="text-secondary fa fa-refresh"></i>
+          </h1>
+          <h2>
+            <%= t('.are_you_sure') %>?
+          </h2>
+          <%= button_tag '', id: 'btn-confirm', class: 'btn btn-secondary' do %>
+            <%= t('accept') %>
+          <% end %>
+          <button id="btn-cancel" type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">
+            <%= t('cancel') %>
+          </button>
+        </center>
+        <% end %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/javascript">
+$("#btn-confirm").click(function(){
+  $('body').css("cursor", 'progress')
+  $("#modal-confirm-crawler #btn-confirm").addClass("disabled")
+  $("#modal-confirm-crawler #btn-cancel").prop("disabled", true)
+})
+</script>

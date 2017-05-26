@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Xylophone" id="214">
+  <defaultSetts ampAttackTime="-8359" ampDecayTime="1495" ampReleaseTime="1495" modReleaseTime="-1074" freqVibLfo="-1132" freqModLfo="-536">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="534" name="Xylophone-E4" originalPitch="7600"/>
+    <sample id="533" name="Xylophone-G#4" originalPitch="8000"/>
+    <sample id="532" name="Xylophone-E5" originalPitch="8800"/>
+    <sample id="531" name="Xylophone-C7" originalPitch="10800"/>
+  </samples>
+  <zones>
+    <zone>
+      <keyRange low="21" high="79"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="534" loopStart="0" loopEnd="9795"/>
+    </zone>
+    <zone>
+      <keyRange low="80" high="84"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="533" loopStart="0" loopEnd="9867"/>
+    </zone>
+    <zone>
+      <keyRange low="85" high="103"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="532" loopStart="0" loopEnd="10097"/>
+    </zone>
+    <zone>
+      <keyRange low="104" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="531" loopStart="4" loopEnd="1329"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,38 @@
+<h4><b><%= t('.title') %></b></h4>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:adfly_uid) %>">
+      <%= f.label :adfly_uid, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :adfly_uid, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:adfly_uid) %>
+          <%= @setting.errors[:adfly_uid].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:adfly_key) %>">
+      <%= f.label :adfly_key, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :adfly_key, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:adfly_key) %>
+          <%= @setting.errors[:adfly_key].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<ul class="adfly-note">
+  <li>
+    <%= link_to t('.adfly_note_1'), 'https://login.adf.ly/login', target: '_blank', class: 'btn-link' %>
+  </li>
+  <li>
+    <%= link_to t('.adfly_note_2'), 'https://adf.ly/publisher/tools#tools-api', target: '_blank', class: 'btn-link' %>
+  </li>
+  <li>
+    <%= link_to t('.adfly_note_3'), 'https://adf.ly/publisher', target: '_blank', class: 'btn-link' %>
+  </li>
+</ul>

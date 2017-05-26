@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Scratch" id="147">
+  <samples>
+    <sample id="413" name="Scratch Pull" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone ampReleaseTime="6712" scaleTuning="50">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="413" loopStart="8" loopEnd="10149"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,118 @@
+#table-unpublish-tabs,
+#table-published-tabs
+  thead
+    th:nth-child(1)
+      width: 4% !important
+    th:nth-child(2)
+      width: 5% !important
+    th:nth-child(3)
+      width: 28% !important
+    th:nth-child(4)
+      width: 20% !important
+    th:nth-child(5)
+      width: 10% !important
+    th:nth-child(6)
+      width: 10% !important
+    th:nth-child(7)
+      width: 11% !important
+    th:nth-child(8)
+      width: 10% !important
+  tbody tr
+    td:nth-child(5)
+      text-align: center
+
+#btn-multi-destroy-tabs
+  display: none
+
+#page-heading
+  h1
+    .btn
+      margin-left: $margin-xmin
+
+.new-tab,
+.edit-tab
+  .tab-avatar
+    display: inline-block
+    .avatar-container
+      display: block
+      width: 200px
+      height: 200px
+      text-align: center
+      font-size: 80px
+      color: $white-hover-color
+      -webkit-touch-callout: none
+      -webkit-user-select: none
+      -khtml-user-select: none
+      -moz-user-select: none
+      -ms-user-select: none
+      user-select: none
+      .fa-picture-o
+        border: 2px dashed $white-hover-color
+        width: 200px
+        height: 200px
+        line-height: 200px
+      img
+        border: 2px solid $white-hover-color
+        width: 100%
+        vertical-align: top
+
+  .tab-status
+    label
+      margin-right: $margin-small
+      input
+        margin-right: $margin-xmin
+
+  .seo-preview
+    .seo-title
+      cursor: pointer
+      display: block
+      overflow: hidden
+      width: 600px
+      margin: 0
+      color: #1e0fbe
+      font-size: $font-size-large
+      font-weight: 400
+      line-height: 1.2
+      white-space: nowrap
+      text-decoration: none
+      text-overflow: ellipsis
+
+    .seo-title:hover
+      color: #1e0fbe
+
+    .seo-url
+      cursor: pointer
+      display: block
+      color: #006621
+      font-size: $font-size-base
+      font-style: normal
+      line-height: 16px
+
+    .seo-description
+      cursor: pointer
+      color: $secondary-gray-color
+
+  .tab-image
+    img
+      width: 100%
+
+  .select-sheet-input
+    position: relative
+    overflow: hidden
+    margin: 0px    
+    color: $black-color
+    background-color: $white-color
+    border-color: $white-hover-color
+    input[type=file]
+      position: absolute
+      top: 0
+      right: 0
+      margin: 0
+      padding: 0
+      font-size: $font-size-large
+      cursor: pointer
+      opacity: 0
+      filter: alpha(opacity=0)
+
+  .select-sheet-clear
+    display: none

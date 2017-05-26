@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Power Snare 1" id="61">
+  <defaultSetts ampSustainTime="1000" ampReleaseTime="5888">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-2400" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="212" name="Power Snare 1" originalPitch="3800"/>
+    <sample id="217" name="Room Snare" originalPitch="4000"/>
+  </samples>
+  <zones>
+    <zone filterFc="11921" ampAttackTime="-7271" ampDecayTime="1200" ampReleaseTime="1200">
+      <keyRange low="38" high="38"/>
+      <velRange low="0" high="61"/>
+      <sampleRecord sampleId="212" loopStart="8" loopEnd="38040"/>
+    </zone>
+    <zone filterFc="11921" ampAttackTime="-7973" ampDecayTime="1902" ampReleaseTime="1902">
+      <keyRange low="38" high="38"/>
+      <velRange low="62" high="85"/>
+      <sampleRecord sampleId="212" loopStart="8" loopEnd="38040"/>
+    </zone>
+    <zone filterFc="11921" ampAttackTime="-8359" ampDecayTime="2400" ampReleaseTime="2400">
+      <keyRange low="38" high="38"/>
+      <velRange low="86" high="107"/>
+      <sampleRecord sampleId="212" loopStart="8" loopEnd="38040"/>
+    </zone>
+    <zone ampDecayTime="3986" ampReleaseTime="3986">
+      <keyRange low="38" high="38"/>
+      <velRange low="108" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      </modulators>
+      <sampleRecord sampleId="212" loopStart="8" loopEnd="38040"/>
+    </zone>
+    <zone attenuation="194" filterFc="12297" fineTune="65" ampAttackTime="-8857" ampDecayTime="3102" ampSustainTime="1000" ampReleaseTime="3102" coarseTune="2" pan="-80">
+      <keyRange low="38" high="38"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      </modulators>
+      <sampleRecord sampleId="217" loopStart="9320" loopEnd="9378"/>
+    </zone>
+  </zones>
+</instrument>

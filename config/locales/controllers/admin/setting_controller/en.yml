@@ -1,0 +1,8 @@
+en:
+  controllers:
+    admin:
+      setting:
+        create:
+          success: "Setting website successfully"
+        update:
+          success: "Setting website successfully"

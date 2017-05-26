@@ -1,0 +1,48 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= t('.title') %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+    <small><strong>(<span class="object-count"><%= number_with_delimiter(@count) %></span>)</strong></small>
+  </h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped datatables table-bordered" id="table-pages">
+        <thead>
+          <tr>
+            <th><%= t('.table.title') %></th>
+            <th><%= t('.table.edit_content') %></th>
+            <th><%= t('.table.created_at') %></th>
+            <th><%= t('manage') %></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div> <!-- container -->
+<script type="text/javascript">
+pages_ajax = {
+  url :"<%= admin_pages_path %>?format=json",
+  type: "get"
+}
+
+window.pages_table = dataTableInitialize({
+  element: $("#table-pages"),
+  un_sorted_arr: [3],
+  ajax: pages_ajax,
+  sDom: "<'row'<'col-lg-6'l><'col-lg-6'f>r>t<'row'<'col-lg-12'p>>"
+})
+</script>

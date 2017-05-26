@@ -1,0 +1,116 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<%= form_for(Tab.new, url: multi_upload_admin_tabs_path, remote: true, html: { method: :post, multipart: true, id: "fileupload", method: "post" }) do |f| %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= link_to t('admin.tabs.index.title'), admin_tabs_path %>
+    </li>
+    <li>
+      <%= t('.title') %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+  </h1>
+</div>
+<div class="container multi-upload-tabs">
+  <div class="col-md-8">
+    <%= f.file_field :sheet, multiple: true, accept: ".gp3, .gp4, .gp5, .gp6, .gpx, .ptb", name: "tab[sheet]", id: "select-tab-file", class: 'hide' %>
+    <div class="form-group">
+      <%= f.select :category_ids, Category.all.collect { |x| [x.name, x.id] }, {}, class: "form-control", multiple: true %>
+    </div>
+    <div class="btn-actions">
+      <%= button_tag '', type: 'button', class: 'btn btn-primary', id: 'btn-select-tabs' do %>
+      <%= t('.form.select') %>
+      <% end %>
+      <%= button_tag '', type: 'reset', disabled: true, class: 'btn btn-danger', id: 'btn-remove-all' do %>
+      <%= t('destroy') %>
+      <% end %>
+      <%= button_tag '', type: 'button', disabled: true, class: 'btn btn-secondary pull-right', id: 'btn-upload' do %>
+      <%= t('.form.upload') %>
+      <% end %>
+    </div>
+    <br>
+    <div class="upload-files">
+      <%= t('.form.upload_files_count') %>:
+      <span>
+        <span id="uploaded-count">0</span> (<span id="total-count" class="text-primary">0</span>)
+      </span>
+    </div>
+  </div>
+</div> <!-- container -->
+<% end %>
+<script type="text/javascript">
+window.files = []
+
+$("#tab_category_ids").select2({
+  tags: true,
+  language: "<%= I18n.locale %>",
+  placeholder: "<%= t('.form.category_placeholder') %>",
+  createTag: function () {
+    return null;
+  }
+})
+
+$('#btn-upload').click(function () {
+  window.files.forEach(function(file){
+    file.submit()
+  })
+});
+
+$("#btn-remove-all").click(function(){
+  window.files = []
+  $("#uploaded-count").text("0")
+  $("#total-count").text("0")
+  disableButtonActions()
+})
+
+$(function () {
+  $("#btn-select-tabs").click(function() {
+    $("#select-tab-file").click()
+  })
+
+  $('#fileupload').fileupload({
+    dataType: 'json',
+    acceptFileTypes: /(\.|\/)(gp3|gp4|gp5|gp6|gpx|ptb)$/i,
+    disableImageResize: /Android(?!.*Chrome)|Opera/
+    .test(window.navigator && navigator.userAgent),
+    autoUpload: false,
+    fileInput: $("#select-tab-file"),
+  }).on('fileuploadadd', function (e, data) {
+    window.files.push(data)
+    $('#btn-upload').prop('disabled', false);
+    $('#btn-remove-all').prop('disabled', false);  
+    total_count = parseInt($("#total-count").text()) + data.files.length
+    $("#total-count").text(number_format(total_count))
+  }).on('fileuploaddone', function (e, data) {
+    file = data.result
+    $.each(data.files, function (index) {
+      if (file.errors) {
+        showMessage("<%= t('.form.upload_error') %>: " + file.title, "error")
+      }
+      else {
+        uploaded_count = parseInt($("#uploaded-count").text()) + 1
+        $("#uploaded-count").text(number_format(uploaded_count))
+      }
+    })
+    window.files = []
+    disableButtonActions()
+  }).on('fileuploadfail', function (e, data) {
+    showMessage("<%= t('alert.system_error') %>.", "error")
+  })
+})
+
+function disableButtonActions(){
+  if($('.tab-file:not(.upload-success)').length == 0){
+    $("#btn-upload").prop("disabled", true)
+    $("#btn-remove-all").prop("disabled", true)
+  }
+}
+</script>

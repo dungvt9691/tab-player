@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Halo Pad" id="220">
+  <defaultSetts filterFc="7873" modFilterFc="3600" ampAttackTime="-3986" ampHoldTime="-2084" ampDecayTime="3214" ampSustainTime="7" ampReleaseTime="1111" modAttackTime="-3986" modDecayTime="0" modSustainTime="380" modReleaseTime="0">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="581" name="Synth Voice Aahs-G3" originalPitch="5500"/>
+    <sample id="580" name="Synth Voice Aahs-A#3" originalPitch="5800"/>
+    <sample id="579" name="Synth Voice Aahs-C#4" originalPitch="6100"/>
+    <sample id="578" name="Synth Voice Aahs-G4" originalPitch="6700"/>
+    <sample id="577" name="Synth Voice Aahs-C#5" originalPitch="7300"/>
+    <sample id="576" name="Synth Voice Aahs-B5" originalPitch="8300"/>
+  </samples>
+  <zones>
+    <zone attenuation="70" loopType="loop">
+      <keyRange low="0" high="56"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="581" loopStart="4591" loopEnd="41143"/>
+    </zone>
+    <zone attenuation="50" loopType="loop">
+      <keyRange low="57" high="59"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="580" loopStart="7824" loopEnd="42254"/>
+    </zone>
+    <zone attenuation="50" loopType="loop">
+      <keyRange low="60" high="65"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="579" loopStart="14225" loopEnd="26527"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="66" high="71"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="578" loopStart="12523" loopEnd="30267"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="72" high="80"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="577" loopStart="13885" loopEnd="35976"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="81" high="115"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="576" loopStart="6673" loopEnd="21311"/>
+    </zone>
+  </zones>
+</instrument>

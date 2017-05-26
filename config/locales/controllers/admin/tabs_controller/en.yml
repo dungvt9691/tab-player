@@ -1,0 +1,16 @@
+en:
+  controllers:
+    admin:
+      tabs:
+        create:
+          success: "Uploaded Tab <b>%{title}</b> successfully!"
+        update:
+          success: "Edited Tab <b>%{title}</b> successfully!"
+        multi_upload:
+          success: "Uploaded Tab successfully!"
+        destroy:
+          success: "Deleted Tab <b>%{title}</b> successfully"
+          fail: "Error! Cannot delete Tab <b>%{title}</b>"
+        multi_destroy:
+          success: "Deleted Tab <b>%{title}</b> successfully"
+          fail: "Error! Cannot delete Tab <b>%{title}</b>"

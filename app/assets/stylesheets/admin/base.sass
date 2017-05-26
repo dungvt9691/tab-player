@@ -1,0 +1,62 @@
+body
+  color: $black-color
+  *
+    border-radius: 0 !important
+    font-family: 'Source Sans Pro','Segoe UI','Droid Sans',Tahoma,Arial,sans-serif
+
+a
+  color: $secondary-color
+  &:hover, &:focus, &:active
+    color: $secondary-hover-color
+
+.hide
+  display: none
+
+.table
+  .actions
+    .btn
+      margin-right: $margin-xmin
+    .btn:last-child
+      margin-right: 0
+
+
+.btn-link
+  color: $secondary-color
+  text-decoration: underline
+  padding-left: 0 !important
+  &:hover, &:focus, &:active
+    color: $secondary-hover-color
+
+#page-heading
+  h1
+    width: 100%
+
+  .breadcrumb
+    a
+      text-decoration: underline
+
+  .btn
+    margin-left: $margin-xmin
+    margin-top: -$margin-xmin
+
+  .btn-action
+    display: none
+
+.modal-confirm
+  i.fa
+    font-size: 130px
+  h2
+    margin: $margin-small 0 $margin-base
+    font-weight: normal
+    font-size: $font-size-large
+
+  h3
+    margin: $margin-small 0 $margin-base
+    font-size: $font-size-base
+    font-weight: normal
+    color: $secondary-gray-color
+
+  .btn
+    margin: 2px
+    margin-top: 10px
+    width: 150px

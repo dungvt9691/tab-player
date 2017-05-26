@@ -1,0 +1,7 @@
+vi:
+  search:
+    index:
+      title: "Tìm kiếm"
+    no_tabs:
+      title: "Không có bài hát nào được tìm thấy!"
+      guide: "Hãy chắc chắn bạn đã nhập đúng tên bài hát, ca sĩ, tác giả..."

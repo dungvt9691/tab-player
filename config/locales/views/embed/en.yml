@@ -1,0 +1,7 @@
+en:
+  embed:
+    show:
+      title: "Embed code"
+    modal_embed:
+      copy: "Copy to Clipboard"
+      copied: "Embed code copied to Clipboard"

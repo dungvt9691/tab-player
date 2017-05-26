@@ -1,0 +1,6 @@
+en:
+  controllers:
+    admin:
+      pages:
+        update:
+          success: "Edited page <b>%{title}</b> successfully"

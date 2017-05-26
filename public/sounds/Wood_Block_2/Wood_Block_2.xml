@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Wood Block_2" id="163">
+  <samples>
+    <sample id="612" name="Wood Block Hard" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone ampAttackTime="-8359" ampDecayTime="2484" ampSustainTime="960" ampReleaseTime="1200" coarseTune="-2" scaleTuning="50">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="612" loopStart="8" loopEnd="5335"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,7 @@
+vi:
+  admin:
+    test_smtp_mailer:
+      test:
+        hi: "Xin chào, %{email}"
+        subject: "Kiểm tra chức năng gửi email"
+        body: "Chức năng gửi email trên website vẫn hoạt động bình thường."

@@ -1,0 +1,8 @@
+vi:
+  controllers:
+    admin:
+      setting:
+        create:
+          success: "Cài đặt website thành công"
+        update:
+          success: "Tuỳ chỉnh cài đặt thành công"

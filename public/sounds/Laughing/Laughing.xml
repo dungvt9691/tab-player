@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Laughing" id="196">
+  <samples>
+    <sample id="482" name="Laughing" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="14400" ampReleaseTime="-125" modReleaseTime="74" coarseTune="-8" scaleTuning="50" freqVibLfo="-1118" freqModLfo="-1118">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="482" loopStart="3" loopEnd="24661"/>
+    </zone>
+  </zones>
+</instrument>

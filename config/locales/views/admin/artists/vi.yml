@@ -1,0 +1,57 @@
+vi:
+  admin:
+    artists:
+      index:
+        title: "Nghệ sĩ"
+        new: "Thêm nghệ sĩ"
+        table:
+          avatar: "Ảnh"
+          cover: "Ảnh bìa"
+          name: "Họ tên"
+          name_alias: "Nghệ danh"
+          birthname: "Tên khai sinh"
+          created_at: "Tạo lúc"
+        destroy: "Xoá nghệ sĩ"
+        destroy_selected: "Xoá các nghệ sĩ đã chọn"
+        multi_destroy: "Xoá nghệ sĩ đã chọn"
+        crawler:
+          title: "Đồng bộ với Mp3 Zing"
+          loading: "Đồng bộ nghệ sĩ từ Mp3 Zing"
+          done: "Đồng bộ thành công"
+          stop: "Dừng đồng bộ"
+          syncing: "Đang tìm kiếm dữ liệu..."
+          synced: "Đã đồng bộ nghệ sĩ"
+      new:
+        title: "Thêm nghệ sĩ"
+        form:
+          new: "Thêm nghệ sĩ"
+          informations: "Thông tin thêm"
+          name_placeholder: "Nhập họ và tên nghệ sĩ ở đây"
+          avatar: "Ảnh"
+          cover: "Ảnh bìa"
+          created_at: "Tạo lúc"
+          updated_at: "Chỉnh sửa lúc"
+          select_image_note: "Nhấn vào ảnh để chọn lại."
+          select_avatar_image: "Chọn ảnh đại diện"
+          select_cover_image: "Chọn ảnh bìa"
+          invalid_extension: "Chỉ chấp nhận định dạng"
+      edit:
+        title: "Sửa nghệ sĩ"
+        form:
+          edit: "Chỉnh sửa"
+          informations: "Thông tin thêm"
+          name_placeholder: "Nhập họ và tên nghệ sĩ ở đây"
+          avatar: "Ảnh"
+          cover: "Ảnh bìa"
+          created_at: "Tạo lúc"
+          updated_at: "Chỉnh sửa lúc"
+          select_image_note: "Nhấn vào ảnh để chọn lại."
+          select_avatar_image: "Chọn ảnh đại diện"
+          select_cover_image: "Chọn ảnh bìa"
+          invalid_extension: "Chỉ chấp nhận định dạng"
+      show:
+        title: "Thông tin nghệ sĩ"
+      modal_confirm_crawler:
+        are_you_sure: "Bạn muốn đồng bộ nghệ sĩ với Zing Mp3"
+      modal_confirm_stop_crawler:
+        are_you_sure: "Bạn muốn dừng đồng bộ nghệ sĩ"

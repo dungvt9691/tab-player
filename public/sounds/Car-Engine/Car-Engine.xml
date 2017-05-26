@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Car-Engine" id="197">
+  <defaultSetts coarseTune="-7" scaleTuning="40">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="483" name="Car-Start" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="75" filterFc="14400" ampReleaseTime="74" modReleaseTime="74" freqVibLfo="-1118" freqModLfo="-1118" vibLfoToPitch="50" delayVibLfo="-979" reverb="70" pan="-153" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="483" loopStart="31737" loopEnd="38592"/>
+    </zone>
+    <zone attenuation="75" filterFc="14400" ampReleaseTime="271" modReleaseTime="74" coarseTune="-9" freqVibLfo="-1118" freqModLfo="-1118" reverb="70" pan="169" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="483" loopStart="31737" loopEnd="38592"/>
+    </zone>
+  </zones>
+</instrument>

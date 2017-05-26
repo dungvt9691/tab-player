@@ -1,0 +1,44 @@
+<div class="modal fade zoom modal-confirm" id="modal-lock">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= form_for user, url: admin_user_path(id: user.id), method: 'put', remote: true, html: { onsubmit: 'return submitForm($(this));' } do |f| %>
+        <%= hidden_field_tag :type, 'lock' %>
+        <center>
+          <h1>
+            <i class="text-secondary fa fa-lock"></i>
+          </h1>
+          <div class="form-group">
+            <%= f.label t('.select_locked_at') %>
+            <%= f.text_field :locked_at, class: 'form-control' %>
+          </div>
+          <%= f.submit t('.lock'), class: "btn btn-secondary", id: "btn-confirm" %>
+          <button id="btn-cancel" type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">
+            <%= t('cancel') %>
+          </button>
+        </center>
+        <% end %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/javascript">
+$('#modal-lock').on('shown.bs.modal', function (e) {
+  $("#modal-lock #user_locked_at").focus()
+})
+
+$(function() {
+  $.datetimepicker.setLocale('<%= I18n.locale.to_s %>');
+  $( "#user_locked_at" ).datetimepicker({
+    timepicker: false,
+    format: "<%= t('time.datetimepicker.date') %>",
+    mask: true,
+    minDate: new Date("<%= DateTime.now + 1.days %>")
+  });
+});
+
+function submitForm(element){
+  element.find(".btn").prop("disabled", true)
+  $("body").css("cursor", "progress")
+}
+</script>

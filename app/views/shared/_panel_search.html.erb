@@ -1,0 +1,63 @@
+<div class="panel sidebar-panel" id="panel-search">
+  <div class="panel-header">
+    <div class="search">
+      <%= form_tag search_path(language: I18n.locale), method: "get", id: "search-form", name: "search-form", onsubmit: "return submitForm($(this));" do %>
+      <div class="form-group">
+        <%= text_field_tag :q, "", id: "search-query", class: "form-control", autocomplete: "off", placeholder: t('.form.search_placeholder') %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="tab-results scroll-content">
+      <div class="loading">
+        <i class="fa fa-spin fa-spinner"></i>
+        <%= t('.loading') %>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  window.currentSearchPage = 1
+  window.stopSearchLoading = false
+  $('.tab-results .tab').remove()
+  $.ajax({
+    method: "GET",
+    dataType: "script",
+    url: "<%= search_path(language: I18n.locale) %>"
+  });
+})
+
+$('#search-query').keyup(function(e) {
+  if($(this).val().length >= 1 || event.keyCode == 8 || event.keyCode == 46){
+    $("#panel-search .loading").fadeIn(100)
+    clearTimeout($.data(this, 'timer'));
+    $(this).data('timer', setTimeout(search, 500));
+  }
+})
+
+$('#panel-search .panel-body .tab-results').on('scroll', function() {
+  if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+    if(!stopSearchLoading && $("#search-query").val() != ""){
+      $("#panel-search .loading").fadeIn(100)
+      window.currentSearchPage += 1
+      search()
+    }
+    else{
+    }
+  }
+})
+
+function search() {
+  var query = $("#search-query").val();
+  if($("#search-query").val() == "")
+    window.currentSearchPage = 1
+  $.ajax({
+    method: "GET",
+    dataType: "script",
+    url: "<%= search_path(language: I18n.locale) %>?q=" + query + "&page=" + window.currentSearchPage
+  });
+}
+
+</script>

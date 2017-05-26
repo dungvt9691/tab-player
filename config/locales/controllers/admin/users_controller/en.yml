@@ -1,0 +1,14 @@
+en:
+  controllers:
+    admin:
+      users:
+        destroy:
+          success: "Deleted user <b>%{name}</b> successfully"
+          fail: "Error! Cannot delete user <b>%{name}</b>"
+        multi_destroy:
+          success: "Deleted user <b>%{name}</b> successfully"
+          fail: "Error! Cannot delete user <b>%{name}</b>"
+        update:
+          lock_success: "Locked user <b>%{name}</b> successfully"
+          unlock_success: "Unlocked user <b>%{name}</b> successfully"
+          fail: "Error! Cannot update user <b>%{name}</b> informations"

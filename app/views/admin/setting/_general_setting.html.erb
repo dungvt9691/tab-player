@@ -1,0 +1,82 @@
+<h4><b><%= t('.general') %></b></h4>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:app_name) %>">
+      <%= f.label :app_name, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :app_name, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:app_name) %>
+          <%= @setting.errors[:app_name].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:app_url) %>">
+      <%= f.label :app_url, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :app_url, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:app_url) %>
+          <%= @setting.errors[:app_url].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:app_email) %>">
+      <%= f.label :app_email, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :app_email, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:app_email) %>
+          <%= @setting.errors[:app_email].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:app_phone) %>">
+      <%= f.label :app_phone, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :app_phone, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:app_phone) %>
+          <%= @setting.errors[:app_phone].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:app_hotline) %>">
+      <%= f.label :app_hotline, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :app_hotline, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:app_hotline) %>
+          <%= @setting.errors[:app_hotline].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:app_fax) %>">
+      <%= f.label :app_fax, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :app_fax, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:app_fax) %>
+          <%= @setting.errors[:app_fax].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:app_address) %>">
+      <%= f.label :app_address, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_area :app_address, class: "form-control", rows: 5 %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:app_address) %>
+          <%= @setting.errors[:app_address].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

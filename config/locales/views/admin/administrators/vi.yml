@@ -1,0 +1,47 @@
+vi:
+  admin:
+    administrators:
+      index:
+        title: "Quản trị viên"
+        new: "Thêm quản trị viên"
+        table:
+          avatar: "Ảnh"
+          username: "Tài khoản"
+          fullname: "Họ tên"
+          email: "Địa chỉ email"
+          permissions: "Phân quyền"
+        destroy: "Xoá quản trị viên"
+        destroy_selected: "Xoá các quản trị viên đã chọn"
+        multi_destroy: "Xoá quản trị viên đã chọn"
+      new:
+        title: "Thêm quản trị viên"
+      edit:
+        title: "Sửa quản trị viên"
+        form:
+          username: "Tài khoản"
+          email: "Địa chỉ email"
+          created_at: "Tạo lúc"
+          uploaded_tabs: "Tab đã đăng"
+          notifications: "Thông báo"
+          fullname: "Họ và tên"
+          sign_in_count: "Số lần đăng nhập"
+          current_sign_in_at: "Đăng nhập lúc"
+          last_sign_in_at: "Lần đăng nhập trước đó"
+          current_sign_in_ip: "Địa chỉ IP"
+          last_sign_in_ip: "Địa chỉ IP trước đó"
+      show:
+        title: "Quản trị viên"
+        action_histories: "Lịch sử hoạt động"
+        permissions: "Quyền hạn"
+        form:
+          username: "Tài khoản"
+          email: "Địa chỉ email"
+          created_at: "Tạo lúc"
+          uploaded_tabs: "Tab đã đăng"
+          notifications: "Thông báo"
+          fullname: "Họ và tên"
+          sign_in_count: "Số lần đăng nhập"
+          current_sign_in_at: "Đăng nhập lúc"
+          last_sign_in_at: "Lần đăng nhập trước đó"
+          current_sign_in_ip: "Địa chỉ IP"
+          last_sign_in_ip: "Địa chỉ IP trước đó"

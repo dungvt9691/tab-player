@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Music Box" id="3">
+  <defaultSetts filterQ="170" ampSustainTime="1000" pan="-150">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="54" name="Celeste-D#4" originalPitch="6300"/>
+    <sample id="524" name="Celeste-A4" originalPitch="6900"/>
+    <sample id="55" name="Celeste-F#5" originalPitch="7800"/>
+    <sample id="523" name="Celeste-D#6" originalPitch="8700"/>
+    <sample id="522" name="Celeste-D#7" originalPitch="9900"/>
+    <sample id="57" name="Celeste-F#5-delay" originalPitch="7800"/>
+    <sample id="56" name="Celeste-D#7-delay" originalPitch="9900"/>
+  </samples>
+  <zones>
+    <zone ampDecayTime="3765" ampReleaseTime="2169" loopType="loop">
+      <keyRange low="0" high="72"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="54" loopStart="7899" loopEnd="8112"/>
+    </zone>
+    <zone fineTune="10" ampDecayTime="3578" ampReleaseTime="2041" loopType="loop">
+      <keyRange low="73" high="80"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="524" loopStart="7115" loopEnd="7341"/>
+    </zone>
+    <zone fineTune="13" ampDecayTime="3369" ampReleaseTime="1843" loopType="loop">
+      <keyRange low="81" high="90"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="55" loopStart="7486" loopEnd="7710"/>
+    </zone>
+    <zone fineTune="10" ampDecayTime="3102" ampReleaseTime="1621" loopType="loop">
+      <keyRange low="91" high="97"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="523" loopStart="6042" loopEnd="6255"/>
+    </zone>
+    <zone fineTune="10" ampDecayTime="2786" ampReleaseTime="1365" loopType="loop">
+      <keyRange low="98" high="125"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="522" loopStart="9185" loopEnd="9558"/>
+    </zone>
+    <zone fineTune="13" ampDecayTime="3369" ampReleaseTime="1843" coarseTune="12" pan="150" loopType="loop">
+      <keyRange low="0" high="80"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="57" loopStart="9136" loopEnd="9360"/>
+    </zone>
+    <zone fineTune="10" ampDecayTime="2786" ampReleaseTime="1365" coarseTune="12" pan="150" loopType="loop">
+      <keyRange low="81" high="113"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="56" loopStart="10835" loopEnd="11208"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,11 @@
+en:
+  admin:
+    sessions:
+      new:
+        title: "Sign in Administrator"
+        form:
+          account: "Insert account or email"
+          password: "Password"
+          remember_me: "Remember"
+          forgot_password: "Forgot password?"
+          submit: "Sign in"

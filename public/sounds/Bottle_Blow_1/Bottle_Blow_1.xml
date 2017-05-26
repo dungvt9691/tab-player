@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Bottle Blow_1" id="244">
+  <defaultSetts modFilterFc="3600" modReleaseTime="6712">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="649" name="Bottle Blow" originalPitch="5400"/>
+  </samples>
+  <zones>
+    <zone ampAttackTime="-6773" ampDecayTime="5888" ampSustainTime="90" ampReleaseTime="-1382" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="113" high="127"/>
+      <sampleRecord sampleId="649" loopStart="17782" loopEnd="31557"/>
+    </zone>
+    <zone modFilterFc="2000" ampAttackTime="-5573" ampDecayTime="5888" ampSustainTime="90" ampReleaseTime="-1382" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="97" high="112"/>
+      <sampleRecord sampleId="649" loopStart="17782" loopEnd="31557"/>
+    </zone>
+    <zone modFilterFc="2000" ampAttackTime="-4871" ampDecayTime="5888" ampSustainTime="90" ampReleaseTime="-1382" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="80" high="96"/>
+      <sampleRecord sampleId="649" loopStart="17782" loopEnd="31557"/>
+    </zone>
+    <zone modFilterFc="2000" ampAttackTime="-4373" ampDecayTime="5888" ampSustainTime="90" ampReleaseTime="-1382" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="79"/>
+      <sampleRecord sampleId="649" loopStart="17782" loopEnd="31557"/>
+    </zone>
+  </zones>
+</instrument>

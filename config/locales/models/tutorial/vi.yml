@@ -1,0 +1,24 @@
+vi:
+  tutorials:
+    not_found: "Không tìm thấy hướng dẫn tương ứng"
+    published: "Công khai"
+    unpublish: "Chưa công khai"
+
+  activerecord:
+    attributes:
+      tutorial:
+        link: "Đường dẫn"
+        tab_id: "Tab"
+        video_id: "Video"
+        created_at: "Đăng lúc"
+        updated_at: "Chỉnh sửa lúc"
+    errors:
+      models:
+        tutorial:
+          attributes:
+            tab_id:
+              blank: "không được để trống"
+            link:
+              blank: "không được để trống"
+              invalid: "không hợp lệ"
+              taken: "đã tồn tại"

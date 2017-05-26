@@ -1,0 +1,246 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<%= form_for @tab, url: admin_tab_path(@tab), method: 'put' do |f| %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= link_to t('admin.tabs.index.title'), admin_tabs_path %>
+    </li>
+    <li>
+      <%= link_to @tab.title, edit_admin_tab_path(@tab) %>
+    </li>
+    <li>
+      <%= "#{t('edit')}" %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+  </h1>
+</div>
+<div class="container new-tab">
+  <div class="col-md-9">
+    <div class="form-group <%= 'has-error' if @tab.errors.has_key?(:title) %>">
+      <%= f.text_field :title, class: 'form-control input-lg', placeholder: t('.form.title_placeholder') %>
+      <p class="help-block">
+        <% if @tab.errors.has_key?(:title) %>
+        <%= @tab.errors[:title].join('<br>').html_safe %>
+        <% end %>
+      </p>
+    </div>
+    <div class="form-group">
+      <%= f.label :artists, class: 'control-label' %>
+      <%= f.select :artist_ids, @tab.artists.collect { |x| [x.name, x.id] }, {}, class: "form-control select-artists", multiple: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :categories, class: 'control-label' %>
+      <%= f.select :category_ids, Category.all.collect { |x| [x.name, x.id] }, {}, class: "form-control", multiple: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :status, class: 'control-label' %>
+      <div class="tab-status">
+        <label>
+          <%= f.radio_button :status, true, checked: @tab.status == 'published' %>
+          <%= t('tabs.published') %>
+        </label>
+        <label>
+          <%= f.radio_button :status, false, checked: @tab.status == 'unpublish' %>
+          <%= t('tabs.unpublish') %>
+        </label>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#seo-setting" class="">
+        <div class="panel-heading">
+          <h4><%= t('.form.setting_seo') %></h4>
+        </div>
+      </a>
+      <div id="seo-setting" class="panel-collapse in">
+        <div class="panel-body form-horizontal">
+          <div class="row seo-preview">
+            <div class="col-md-12">
+              <span class="seo-title">
+                <span class="title-text"><%= @tab.seo_title.blank? ? @tab.title : @tab.seo_title %></span>
+                - <%= Setting.app_name %>
+              </span>
+              <span class="seo-url">
+                <%= "#{Setting.app_url.gsub('http://', '')}" %>/<%= I18n.locale %>/player?t=<span class="url-text"><%= "#{@tab.sid}" unless @tab.title.blank? %></span>
+              </span>
+              <span class="seo-description">
+                <%= @tab.seo_description.blank? ? t('.form.seo_description_note') : @tab.seo_description %>
+              </span>
+            </div>
+          </div>
+          <br><br>
+          <div class="form-group">
+            <%= f.label :seo_title, class: 'col-sm-2 control-label' %>
+            <div class="col-md-10">
+              <%= f.text_field :seo_title, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :seo_keywords, class: 'col-sm-2 control-label' %>
+            <div class="col-md-10">
+              <%= f.text_field :seo_keywords, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :seo_description, class: 'col-sm-2 control-label' %>
+            <div class="col-md-10">
+              <%= f.text_area :seo_description, class: "form-control", rows: 5 %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#update-tab" class="">
+        <div class="panel-heading">
+          <h4><%= t('.title') %></h4>
+        </div>
+      </a>
+      <div id="update-tab" class="panel-collapse in">
+        <div class="panel-body">
+          <div class="form">
+            <%= f.label :status, class: "control-label" %>:
+            <b><%= @tab.status_locale %></b>
+          </div>
+          <div class="form">
+            <%= f.label :created_at, class: "control-label" %>:
+            <%= l(@tab.created_at, format: :datetime) %>
+          </div>
+          <div class="form">
+            <%= f.label :updated_at, class: "control-label" %>:
+            <%= l(@tab.updated_at, format: :datetime) %>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-12">
+              <%= link_to t('cancel'), admin_tabs_path, class: 'btn btn-default pull-left' %>
+              <%= f.submit t('save'), class: 'btn btn-secondary pull-right' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#tab-image-panel" class="">
+        <div class="panel-heading">
+          <h4><%= t('.form.featured_image') %></h4>
+        </div>
+      </a>
+      <div id="tab-image-panel" class="panel-collapse in">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="tab-image">
+                <% unless @tab.avatar_url.blank? %>
+                <%= image_tag @tab.avatar_url, class: 'select-tab-image' %>
+                <br>
+                <br>
+                <% end %>
+              </div>
+              <small class="text-danger">* <%= t('.form.featured_image_note') %></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- container -->
+<% end %>
+<script type="text/javascript">
+$("#tab_seo_title").keyup(function(){
+  $(".seo-title .title-text").text($(this).val())
+})
+
+$("#tab_seo_description").keyup(function(){
+  if($(this).val() == "")
+    $(".seo-description").text("<%= t('.form.seo_description_note') %>")
+  else
+    $(".seo-description").text($(this).val())
+})
+
+data = []
+<% @tab.artists.each do |artist| %>
+data.push({
+  id: "<%= artist.id %>",
+  name: "<%= artist.name %>",
+  avatar_url: "<%= artist.avatar_url %>"
+})
+<% end %>
+
+$(".select-artists").select2({
+  tags: true,
+  data: data,
+  language: "<%= I18n.locale %>",
+  placeholder: "<%= t('.form.artist_placeholder') %>",
+  ajax: {
+    url: "<%= admin_artists_path(type: 'search') %>",
+    dataType: "json",
+    delay: 250,
+    data: function (params) {
+      return {
+        q: params.term,
+        page: params.page
+      };
+    },
+    processResults: function (data, params) {
+      return {
+        results: data
+      };
+    },
+    cache: true
+  },
+  escapeMarkup: function (markup) { return markup; },
+  minimumInputLength: 1,
+  templateResult: formatRepo,
+  templateSelection: formatRepoSelection
+}).on("select2:select", function(e) {
+  avatar_url = $(".select-artists").select2('data')[0].avatar_url
+  $(".select-tab-image").attr("src", avatar_url)
+}).on("select2:unselect", function(e) {
+  if($(".select-artists").select2('data').length == 0)
+    $(".select-tab-image").attr("src", '<%= "#{Setting.app_url}/missing/artists/avatar/s800/missing.png" %>')
+  else{
+    avatar_url = $(".select-artists").select2('data')[0].avatar_url
+    $(".select-tab-image").attr("src", avatar_url)
+  }
+});
+
+$("#tab_category_ids").select2({
+  tags: true,
+  language: "<%= I18n.locale %>",
+  placeholder: "<%= t('.form.category_placeholder') %>",
+  createTag: function () {
+    return null;
+  }
+})
+
+function formatRepo (repo) {
+  if (repo.loading) return repo.text;
+  if(typeof repo.avatar_url !== "undefined")
+  {
+    var markup = "<div class='select2-artist clearfix'>" +
+    "<div class='artist-avatar'><img src='" + repo.avatar_url + "' /></div>" +
+    "<div class='artist-meta'>" +
+    "<div class='artist-name'>" + repo.name + "</div></div>";
+  }
+  else {
+    markup = "<div class='artist-name'>" + repo.text + "</div>"
+  }
+
+  return markup;
+}
+
+function formatRepoSelection (repo) {
+  return repo.name || repo.text;
+}
+</script>

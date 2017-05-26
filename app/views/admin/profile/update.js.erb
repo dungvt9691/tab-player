@@ -1,0 +1,20 @@
+$('body').css("cursor", "auto")
+$("button.btn-accept").prop("disabled", false)
+$("button.btn-cancel").prop("disabled", false)
+<% if @errors.empty? %>
+$("#error-alert").remove()
+$(".edit-span").removeClass("hide")
+$(".edit-info").removeClass("hide")
+$(".edit-input").addClass("hide")
+$(".accept-edit").addClass("hide")
+<% if @update_type == 'password' %>
+$(".admin-password i").text("<%= @admin.updated_password ? t('admin.profile.edit.form.last_change_password', time: time_ago(@admin.last_update_password_at)) : "" %>")
+$(".admin-password").parents('form').find('.edit-input').val("")
+<% else %>
+$(".admin-<%= @update_type %>").text("<%=  @admin.send(@update_type) || t('blank') %>")
+<% end %>
+showMessage("<%= t_scope(@params, 'success') %>", "success")
+<% else %>
+showMessage("<%= @errors.join('<br>').html_safe if @errors.any? %>", "error")
+$(".admin-<%= @update_type %>").parents('form').prepend("<%=j render 'shared/error_messages', object: @admin %>")
+<% end %>

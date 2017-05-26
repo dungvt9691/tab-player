@@ -1,0 +1,20 @@
+en:
+  admin:
+    users:
+      index:
+        title: 'Users'
+        table:
+          avatar: "Avatar"
+          email: "Email"
+          fullname: "Full name"
+          created_at: "Created at"
+        multi_destroy: "Delete selected users"
+        destroy_selected: "Delete selected users"
+        not_found: "User not found"
+        lock: "Lock user"
+        unlock: "Unlock user"
+      modal_lock:
+        select_locked_at: "Set banned time:"
+        lock: "Lock user"
+      modal_unlock:
+        unlock: "Unlock user"

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Trumpet 2" id="131">
+  <defaultSetts filterFc="9908" modFilterFc="3600" ampAttackTime="-8359" ampReleaseTime="-2786" modAttackTime="-8590" modDecayTime="-1200" modSustainTime="1000" coarseTune="12" delayModLfo="0" delayVibLfo="0">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="545" name="Trumpet-F#6" originalPitch="9000"/>
+  </samples>
+  <zones>
+    <zone filterFc="9135" fineTune="1" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="545" loopStart="13180" loopEnd="13222"/>
+    </zone>
+  </zones>
+</instrument>

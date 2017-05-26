@@ -1,0 +1,19 @@
+vi:
+  images:
+    not_found: "Không tìm thấy hình ảnh tương ứng"
+    no_data: "Không có hình ảnh nào được tải lên gần đây"
+
+  activerecord:
+    attributes:
+      image:
+        attachment_file_size: "Dung lượng"
+        attachment_file_name: "Tệp tin"
+        attachment: "Tệp tin"
+    errors:
+      models:
+        image:
+          attributes:
+            attachment_file_name:
+              invalid: "không dúng định dạng."
+            attachment:
+              blank: "không được để trống."

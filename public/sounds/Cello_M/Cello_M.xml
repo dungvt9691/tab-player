@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Cello_M" id="30">
+  <defaultSetts modFilterFc="12000" ampAttackTime="-5186" modReleaseTime="5186" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-2400" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="139" name="Cello-C#1" originalPitch="3700"/>
+    <sample id="138" name="Cello-D#1" originalPitch="3900"/>
+    <sample id="137" name="Cello-F1" originalPitch="4100"/>
+    <sample id="136" name="Cello-G#1" originalPitch="4400"/>
+    <sample id="135" name="Cello-A#1" originalPitch="4700"/>
+    <sample id="134" name="Cello-D#2" originalPitch="5100"/>
+    <sample id="133" name="Cello-F#2" originalPitch="5400"/>
+    <sample id="132" name="Cello-B2" originalPitch="5900"/>
+    <sample id="131" name="Cello-E3" originalPitch="6400"/>
+    <sample id="130" name="Cello-F3" originalPitch="6500"/>
+    <sample id="129" name="Cello-A3" originalPitch="6900"/>
+    <sample id="128" name="Cello-B3" originalPitch="7100"/>
+    <sample id="127" name="Cello-D#4" originalPitch="7500"/>
+  </samples>
+  <zones>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="0" high="38"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="139" loopStart="33927" loopEnd="40451"/>
+    </zone>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="39" high="40"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="138" loopStart="34772" loopEnd="40922"/>
+    </zone>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="41" high="42"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="137" loopStart="27314" loopEnd="33461"/>
+    </zone>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="43" high="45"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="136" loopStart="30352" loopEnd="37035"/>
+    </zone>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="46" high="48"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="135" loopStart="27012" loopEnd="33342"/>
+    </zone>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="49" high="52"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="134" loopStart="27178" loopEnd="33150"/>
+    </zone>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="53" high="56"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="133" loopStart="27625" loopEnd="33588"/>
+    </zone>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="57" high="60"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="132" loopStart="30991" loopEnd="36700"/>
+    </zone>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="61" high="64"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="131" loopStart="21772" loopEnd="27375"/>
+    </zone>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="65" high="66"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="130" loopStart="17504" loopEnd="23548"/>
+    </zone>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="67" high="69"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="129" loopStart="23859" loopEnd="29664"/>
+    </zone>
+    <zone attenuation="50" ampReleaseTime="-884" loopType="loop">
+      <keyRange low="70" high="72"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="128" loopStart="24489" loopEnd="29852"/>
+    </zone>
+    <zone ampReleaseTime="-884" loopType="loop">
+      <keyRange low="73" high="127"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="127" loopStart="29323" loopEnd="35139"/>
+    </zone>
+  </zones>
+</instrument>

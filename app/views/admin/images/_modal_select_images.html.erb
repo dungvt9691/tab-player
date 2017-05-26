@@ -1,0 +1,287 @@
+<div class="modal fade zoom" id="modal-select-images">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">
+          <%= t('.select_image').mb_chars.upcase %>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class='content'>
+          <nav class="nav-sidebar">
+            <ul class="nav tabs">
+              <li class="active">
+                <a href="#upload-images" data-toggle="tab">
+                  <i class='fa fa-laptop pull-left'></i> <%= t(".computer") %>
+                </a>
+              </li>
+              <li class="">
+                <a href="#uploaded-images" data-toggle="tab">
+                  <i class='fa fa-picture-o pull-left'></i> <%= t(".uploaded_images") %>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="tab-content">
+            <div class="tab-pane active text-style" id="upload-images">
+              <%= form_for(Image.new, url: admin_images_path, remote: true,  authenticity_token: true, html: { method: :post, multipart: true, id: "fileupload" }) do |f| %>
+              <%= f.file_field :image, multiple: true, accept: ".jpg, .png, .jpeg", id: "choose-file-image", name: "image[attachment]", style: "display: none" %>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div id="files" class="files row"></div>
+                  <center>
+                    <h3>
+                      <%= t(".drop_images_here") %>
+                    </h3>
+                    <div class="or-box">
+                      <span class="border"></span>
+                      <%= t(".or") %>
+                      <span class="border"></span>
+                    </div>
+                    <div class="fileupload-buttonbar">
+                      <span id="select-file" class="fileinput-button btn btn-default btn-lg">
+                        <span><%= t(".select_file") %></span>
+                      </span>
+                    </div>
+                  </center>
+                </div>
+              </div>
+              <% end %>
+            </div>
+            <div class="tab-pane text-style" id="uploaded-images">
+              <div id="data-loading">
+                <center>
+                  <br><br><br>
+                  <i class="fa fa-spin fa-spinner"></i>
+                  <br><br>
+                  <h3><%= t(".loading") %></h3>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='modal-footer'>
+        <button type="button" class="pull-left has-text btn btn-default" data-dismiss="modal">
+          <i class='fa fa-times'></i>
+          <%= t("cancel") %>
+        </button>
+        <button class="btn btn-danger has-text pull-left" id="btn-delete-images">
+          <i class='fa fa-trash-o'></i> <%= t(".destroy") %> <span class='selected-image-count'></span>
+        </button>
+        <button disabled class="btn has-text btn-secondary" id="btn-choose-images">
+          <i class='fa fa-check'></i>
+          <%= t(".use") %> <span class='selected-image-count'></span>
+        </button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript">
+window.desc_images = []
+window.featured_image = []
+$('#modal-select-images').on('hidden.bs.modal', function (e){
+  type = $("#modal-select-images").attr('type')
+  if(type == "ckeditor"){
+    window.desc_images.forEach(function(image){
+      try {
+        CKEDITOR.instances['posts_content'].insertHtml("<br><img src='"+image.original+"'><br>")
+      }
+      catch(err) {
+      }
+      try {
+        CKEDITOR.instances['page_content'].insertHtml("<br><img src='"+image.original+"'><br>")
+      }
+      catch(err) {
+      }
+    })
+  }
+  else if(type == "featured-image"){
+    window.featured_image.forEach(function(image){
+      <% if @page == 'posts' %>
+      $(".featured-image").html("<img class='select-featured-image' src='"+image.s420+"'><br>")
+      $(".featured-image-field").val(image.s420)
+      <% else %>
+      $(".featured-image").html("<img class='select-featured-image' src='"+image.s500+"'><br>")
+      $(".featured-image-field").val(image.s500)
+      <% end %>
+    })
+    if(window.featured_image.length > 0)
+    {
+      $("a.select-featured-image").removeClass('show').addClass('hide')
+      $("#reselect-featured-image").removeClass('hide').addClass('show')
+    }
+  }
+  else if(type == "admin-avatar"){
+    if(typeof image != 'undefined'){
+      $("#admin-avatar img").attr("src", image.s500)
+      $(".admin-avatar").attr("src", image.s500)
+      $("#admin_avatar").val(image.s500)
+      $("#admin-avatar form").submit()
+    }
+  }
+})
+
+$("#select-file").click(function() {
+  $("#choose-file-image").click()
+})
+
+$(function () {
+  $('#fileupload').fileupload({
+    dataType: 'json',
+    acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+    disableImageResize: /Android(?!.*Chrome)|Opera/
+    .test(window.navigator && navigator.userAgent),
+    dropZone: $("#modal-select-images .tab-content")
+  }).on('fileuploadadd', function (e, data) {
+    a = data.files[0]
+    data.context = $('<div class="col-md-3 col-sm-4" />').appendTo('#files');
+    $.each(data.files, function (index, file) {
+      var node = $('<div class="image-thumbnail" /><br>')
+      node.append($('<i class="fa fa-picture-o" />'));
+      node.append($('<div class="progress progress-striped active" />').append('<div class="progress-bar progress-bar-secondary" style="width: 100%" />'))
+      node.appendTo(data.context);
+    });
+  }).on('fileuploaddone', function (e, data) {
+    file = data.result
+    type = $("#modal-select-images").attr('type')
+    $.each(data.files, function (index) {
+      if (file.s200) {
+        $(data.context.children()[index]).attr("image-id", file.id)
+        $("#btn-choose-images").prop("disabled", false)
+        if(type != "featured-image"){
+          $(data.context.children()[index]).addClass("selected")
+        }
+        $(data.context.children()[index]).html("<i class='fa fa-check'></i><img class='upload-image' src='"+ file.s200 +"' s500='"+ file.s500 +"' s420='"+ file.s420 +"' original='"+file.original+"' />")
+      } else if (file.errors) {
+        $(data.context).remove()
+        showMessage("<b>" + file.name + "</b><br> " + file.errors.join("<br>"), "error")
+      }
+    })
+
+    if(type != "featured-image"){
+      count = $("#modal-select-images .image-thumbnail.selected").length
+      $(".selected-image-count").text("("+number_format(count)+")")
+    }
+
+    $("#modal-select-images .image-thumbnail").removeClass("selected")
+    $(data.context.children()[0]).addClass("selected") 
+  }).on('fileuploadfail', function (e, data) {
+    $.each(data.files, function (index, file) {
+      $(data.context).remove()
+      showMessage("<%= t('controllers.admin.images.create.fail') %>.", "error")
+    });
+  })
+})
+
+$("#modal-select-images").on("click", ".image-thumbnail", function(){
+  type = $("#modal-select-images").attr('type')
+
+  $("#btn-choose-images").prop("disabled", false)
+
+  if(type == "featured-image"){
+    $("#modal-select-images .image-thumbnail").removeClass("selected")
+    $(this).addClass("selected")
+    if($("#modal-select-images .tab-pane.active").attr("id") == "uploaded-images")
+      $("#btn-delete-images").fadeIn(100)
+  }
+  else{
+    $(this).toggleClass("selected")
+    count = $("#modal-select-images .image-thumbnail.selected").length
+    if(count == 0){
+      $(".selected-image-count").text("")
+      $("#btn-delete-images").fadeOut(0)
+    }
+    else{
+      $(".selected-image-count").text("("+number_format(count)+")")
+      if($(".tab-pane.active").attr("id") == "uploaded-images")
+        $("#btn-delete-images").fadeIn(100)
+    }
+  }
+
+})
+
+$("#modal-select-images a[data-toggle=tab]").click(function(){
+  $("#modal-select-images .image-thumbnail.selected").each(function(){
+    $(this).removeClass("selected")
+  })
+  $(".selected-image-count").text("")
+})
+
+window.currentPage = 1
+window.stopLoading = false
+
+$('#modal-select-images a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  id = $("#modal-select-images .tab-pane.active").attr("id")
+
+  $("#btn-delete-images").fadeOut(0)
+
+  if(id == "uploaded-images"){
+    window.currentPage = 1
+    window.stopLoading = false;
+    $("#uploaded-images").html('<div id="data-loading"><center><br><br><br><i class="fa fa-spin fa-spinner" style="font-size: 80px"></i><br><br><h3><%= t(".loading") %></h3></center></div>')
+    $.ajax({
+      method: "GET",
+      dataType: "script",
+      url: "/admin/images?page=" + currentPage
+    });
+  }
+
+})
+
+$('#modal-select-images .tab-content').on('scroll', function() {
+  if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+    if(!stopLoading){
+      window.currentPage += 1
+      $.ajax({
+        method: "GET",
+        dataType: "script",
+        url: "/admin/images?page=" + window.currentPage
+      });
+    }
+  }
+})
+
+$("#btn-choose-images").click(function(){
+  $("#modal-select-images .image-thumbnail.selected").each(function(){
+    image = {
+      id: $(this).attr("image-id"),
+      s200: $(this).find("img").attr("src"),
+      s420: $(this).find("img").attr("s420"),
+      s500: $(this).find("img").attr("s500"),
+      original: $(this).find("img").attr("original")
+    }
+    try{
+      window.desc_images.push(image)
+      window.featured_image.push(image)
+      window.slider_images.push(image)
+    }
+    catch(err){
+      
+    }
+  })
+
+  window.slider_images = distinct(window.slider_images)
+
+  $("#modal-select-images").modal('hide')
+})
+
+$("#btn-delete-images").click(function(){
+  if(confirm("<%= t('confirm') %> "+$("#modal-select-images .image-thumbnail.selected").length+" <%= t('.selected_image') %>?"))
+  {
+    $("#modal-select-images .image-thumbnail.selected").each(function(){
+      image_id = $(this).attr("image-id")
+
+      $.ajax({
+        method: "DELETE",
+        url: "/admin/images/" + image_id
+      });
+
+      $("#modal-select-images").find("button.btn").prop("disabled", true)
+      $('body').css("cursor", 'progress')
+    })
+  }
+})
+</script>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Chimes" id="72">
+  <defaultSetts ampHoldTime="1586" ampDecayTime="5769" ampSustainTime="1000" ampReleaseTime="5769">
+    <modulators/>
+  </defaultSetts>
+  <samples>
+    <sample id="222" name="Chimes" originalPitch="8400"/>
+  </samples>
+  <zones>
+    <zone attenuation="70" ampAttackTime="1586" ampHoldTime="0" coarseTune="-3" pan="-50" loopType="loop">
+      <keyRange low="84" high="84"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="222" loopStart="82279" loopEnd="100504"/>
+    </zone>
+    <zone pan="300" loopType="loop">
+      <keyRange low="84" high="84"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="222" loopStart="82279" loopEnd="100504"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Koto" id="224">
+  <defaultSetts ampAttackTime="-8359" ampDecayTime="3986" ampSustainTime="960" ampReleaseTime="-498" modReleaseTime="0" freqModLfo="-817">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="583" name="Koto-A3" originalPitch="5700"/>
+    <sample id="582" name="Koto-E4" originalPitch="6400"/>
+  </samples>
+  <zones>
+    <zone ampHoldTime="-11959" loopType="loop">
+      <keyRange low="0" high="60"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="583" loopStart="32877" loopEnd="33160"/>
+    </zone>
+    <zone ampHoldTime="-11959" loopType="loop">
+      <keyRange low="61" high="93"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="582" loopStart="32274" loopEnd="32462"/>
+    </zone>
+  </zones>
+</instrument>

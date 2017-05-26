@@ -1,0 +1,33 @@
+<div class="panel sidebar-panel" id="panel-sign-in">
+  <div class="panel-header">
+    <h1>
+      <%= t('.title') %>
+      <small><%= t('.social_login') %></small>
+    </h1>
+  </div>
+  <div class="panel-body">
+    <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-block btn-lg btn-social btn-facebook" do %>
+    <i class="fa fa-facebook fa-fw"></i> <%= t('.via_facebook') %>
+    <% end %>
+    <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-lg btn-social btn-google-plus" do %>
+    <i class="fa fa-google"></i> <%= t('.via_google') %>
+    <% end %>
+    <br>
+    <center>
+      <a href="javascript:;" id="term-link"><%= t('.term') %></a>
+      <span class='separator'> • </span>
+      <a href="javascript:;" id="privacy-link"><%= t('.privacy') %></a>
+    </center>
+  </div>
+</div>
+<script type="text/javascript">
+$("#term-link").click(function(){
+  $("#sidebar-term").addClass("active")
+  activePanel($("#sidebar-term a").attr('href'))
+})
+
+$("#privacy-link").click(function(){
+  $("#sidebar-privacy").addClass("active")
+  activePanel($("#sidebar-privacy a").attr('href'))
+})
+</script>

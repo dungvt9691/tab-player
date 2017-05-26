@@ -1,0 +1,13 @@
+vi:
+  admin:
+    dashboard:
+      index:
+        title: "Trang điều khiển"
+        site_traffic: "Thông tin truy cập"
+        favourite: "Ưa thích"
+        top_browsers: "Trình duyệt truy cập"
+        top_cities: "Thành phố truy cập"
+        via_sessions_users: "Số phiên, người dùng - 30 ngày gần đây"
+        via_page_views: "Số lần xem trang - 30 ngày gần đây"
+        via_new_users: "Người dùng mới - 30 ngày gần đây"
+        via_sessions: "Qua số phiên"

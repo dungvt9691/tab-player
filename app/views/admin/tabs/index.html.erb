@@ -1,0 +1,205 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= t('.title') %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+    <small><strong>(<span class="object-count"><%= number_with_delimiter(@count) %></span>)</strong></small>
+    <%= link_to new_admin_tab_path, class: 'btn btn-secondary pull-right has-text' do %>
+    <i class="fa fa-upload"></i>
+    <%= t('.upload') %>
+    <% end %>
+    <%= link_to multi_upload_admin_tabs_path, class: 'btn btn-primary pull-right has-text' do %>
+    <i class="fa fa-upload"></i>
+    <%= t('.multi_upload_tab') %>
+    <% end %>
+  </h1>
+</div>
+<div class="container">
+  <div class="row unpublish-tabs">
+    <div class="col-md-12">
+      <h3 class="text-primary">
+        <b><%= t('.unpublish_tabs') %></b>
+        <small><strong>(<span class="unpublish-tabs-count"><%= number_with_delimiter(@unpublish_tabs_count) %></span>)</strong></small>
+        <%= button_tag '', class: 'btn has-text btn-danger btn-action pull-right', id: 'btn-multi-destroy-tabs' do %>
+        <i class="fa fa-trash-o"></i>
+        <%= t('.multi_destroy') %>
+        <% end %>
+      </h3>
+      <br>
+      <table class="table table-striped datatables table-bordered" id="table-unpublish-tabs">
+        <thead>
+          <tr>
+            <th class="text-center"><%= check_box_tag 'checkbox', '', false, id: 'check-all' %></th>
+            <th><%= t('.table.avatar') %></th>
+            <th><%= t('.table.title') %></th>
+            <th><%= t('.table.uploader') %></th>
+            <th><%= t('.table.views') %></th>
+            <th><%= t('.table.view_on_web') %></th>
+            <th><%= t('.table.created_at') %></th>
+            <th><%= t('manage') %></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <br>
+  <div class="row published-tabs">
+    <div class="col-md-12">
+      <h3 class="text-primary">
+        <b><%= t('.published_tabs') %></b>
+        <small><strong>(<span class="published-tabs-count"><%= number_with_delimiter(@published_tabs_count) %></span>)</strong></small>
+        <%= button_tag '', class: 'btn has-text btn-danger btn-action pull-right', id: 'btn-multi-destroy-tabs' do %>
+        <i class="fa fa-trash-o"></i>
+        <%= t('.multi_destroy') %>
+        <% end %>
+      </h3>
+      <br>
+      <table class="table table-striped datatables table-bordered" id="table-published-tabs">
+        <thead>
+          <tr>
+            <th class="text-center"><%= check_box_tag 'checkbox', '', false, id: 'check-all' %></th>
+            <th><%= t('.table.avatar') %></th>
+            <th><%= t('.table.title') %></th>
+            <th><%= t('.table.uploader') %></th>
+            <th><%= t('.table.views') %></th>
+            <th><%= t('.table.view_on_web') %></th>
+            <th><%= t('.table.created_at') %></th>
+            <th><%= t('manage') %></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div> <!-- container -->
+<script type="text/javascript">
+$(function(){
+  window.unpublish_selected_id = []
+  window.published_selected_id = []
+  $("#table-unpublish-tabs #check-all").click(function () {
+    $('#table-unpublish-tabs .check-one').prop('checked', this.checked);
+    showMultiBtnActions();
+  });
+
+  $("#table-unpublish-tabs").on("click", "#table-unpublish-tabs .check-one", function(){
+    if($("#table-unpublish-tabs .check-one").length == $("#table-unpublish-tabs .check-one:checked").length) {
+      $("#table-unpublish-tabs #check-all").prop("checked", true);
+    } else {
+      $("#table-unpublish-tabs #check-all").prop("checked", false);
+    }
+    showMultiBtnActions();
+  });
+
+  unpublish_tab_ajax = {
+    url :"<%= admin_tabs_path %>?format=json&published=false",
+    type: "get"
+  }
+
+  window.unpublish_tabs_table = dataTableInitialize({
+    element: $("#table-unpublish-tabs"),
+    un_sorted_arr: [0, 1, 3, 5, 7],
+    ajax: unpublish_tab_ajax,
+    sDom: "<'row'<'col-lg-6'l><'col-lg-6'f>r>t<'row'<'col-lg-12'p>>"
+  })
+
+  $(".unpublish-tabs #btn-multi-destroy-tabs").click(function(){
+    $("#launch-modal").html("<%=j render 'shared/modal_confirm_destroy' %>")
+    $("#modal-confirm-destroy").find("#btn-confirm").attr("href", "<%= multi_destroy_admin_tabs_path %>?tab_ids="+window.unpublish_selected_id.join(','))
+    $("#modal-confirm-destroy").find("h2").html("<%= t('.destroy_selected') %>?")
+    $("#modal-confirm-destroy").modal({
+      keyboard: false,
+      backdrop: 'static'
+    })
+  })
+
+  $("#table-unpublish-tabs").on("click", ".btn-destroy", function(){
+    $("#launch-modal").html("<%=j render 'shared/modal_confirm_destroy' %>")
+    $("#modal-confirm-destroy").find("#btn-confirm").attr("href", $(this).data("href"))
+    $("#modal-confirm-destroy").find("#confirm-text").html("<%= t('admin.tabs.index.title') %> " + $(this).data('tab-title'))
+    $("#modal-confirm-destroy").modal({
+      keyboard: false,
+      backdrop: 'static'
+    })
+  })
+
+  $("#table-published-tabs #check-all").click(function () {
+    $('#table-published-tabs .check-one').prop('checked', this.checked);
+    showMultiBtnActions();
+  });
+
+  $("#table-published-tabs").on("click", "#table-published-tabs .check-one", function(){
+    if($("#table-published-tabs .check-one").length == $("#table-published-tabs .check-one:checked").length) {
+      $("#table-published-tabs #check-all").prop("checked", true);
+    } else {
+      $("#table-published-tabs #check-all").prop("checked", false);
+    }
+    showMultiBtnActions();
+  });
+
+  published_tab_ajax = {
+    url :"<%= admin_tabs_path %>?format=json&published=true",
+    type: "get"
+  }
+
+  window.published_tabs_table = dataTableInitialize({
+    element: $("#table-published-tabs"),
+    un_sorted_arr: [0, 1, 3, 5, 7],
+    ajax: published_tab_ajax,
+    sDom: "<'row'<'col-lg-6'l><'col-lg-6'f>r>t<'row'<'col-lg-12'p>>"
+  })
+
+  $(".published-tabs #btn-multi-destroy-tabs").click(function(){
+    $("#launch-modal").html("<%=j render 'shared/modal_confirm_destroy' %>")
+    $("#modal-confirm-destroy").find("#btn-confirm").attr("href", "<%= multi_destroy_admin_tabs_path %>?tab_ids="+window.published_selected_id.join(','))
+    $("#modal-confirm-destroy").find("h2").html("<%= t('.destroy_selected') %>?")
+    $("#modal-confirm-destroy").modal({
+      keyboard: false,
+      backdrop: 'static'
+    })
+  })
+
+  $("#table-published-tabs").on("click", ".btn-destroy", function(){
+    $("#launch-modal").html("<%=j render 'shared/modal_confirm_destroy' %>")
+    $("#modal-confirm-destroy").find("#btn-confirm").attr("href", $(this).data("href"))
+    $("#modal-confirm-destroy").find("#confirm-text").html("<%= t('admin.tabs.index.title') %> " + $(this).data('tab-title'))
+    $("#modal-confirm-destroy").modal({
+      keyboard: false,
+      backdrop: 'static'
+    })
+  })
+});
+function showMultiBtnActions(){
+  if($("#table-unpublish-tabs .check-one:checked").length > 0){
+    $(".unpublish-tabs .btn-action").fadeIn(0)
+    $("#table-unpublish-tabs .check-one:checked").each(function(){
+      window.unpublish_selected_id.push($(this).val())
+    })
+  }
+  else{
+    $(".unpublish-tabs .btn-action").fadeOut(0)
+    $("#table-unpublish-tabs #check-all").prop("checked", false);
+  }
+
+  if($("#table-published-tabs .check-one:checked").length > 0){
+    $(".published-tabs .btn-action").fadeIn(0)
+    $("#table-published-tabs .check-one:checked").each(function(){
+      window.published_selected_id.push($(this).val())
+    })
+  }
+  else{
+    $(".published-tabs .btn-action").fadeOut(0)
+    $("#table-published-tabs #check-all").prop("checked", false);
+  }
+}
+</script>

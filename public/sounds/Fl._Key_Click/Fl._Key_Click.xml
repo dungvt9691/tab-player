@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Fl. Key Click" id="166">
+  <samples>
+    <sample id="412" name="Gtr Click" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone ampReleaseTime="6712" coarseTune="11" scaleTuning="50">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="412" loopStart="3" loopEnd="267"/>
+    </zone>
+  </zones>
+</instrument>

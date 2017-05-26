@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Concert Choir" id="206">
+  <defaultSetts ampAttackTime="-2786" ampDecayTime="-3986" ampReleaseTime="702" modReleaseTime="1247">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="506" name="Concert Choir-A2" originalPitch="4500"/>
+    <sample id="505" name="Concert Choir-C#3" originalPitch="4900"/>
+    <sample id="504" name="Concert Choir-D#3" originalPitch="5100"/>
+    <sample id="503" name="Concert Choir-G3" originalPitch="5500"/>
+    <sample id="502" name="Concert Choir-B3" originalPitch="5900"/>
+    <sample id="501" name="Concert Choir-C#4" originalPitch="6100"/>
+    <sample id="500" name="Concert Choir-F4" originalPitch="6500"/>
+    <sample id="499" name="Concert Choir-A4" originalPitch="6900"/>
+    <sample id="498" name="Concert Choir-B4" originalPitch="7100"/>
+    <sample id="497" name="Concert Choir-C#5" originalPitch="7300"/>
+    <sample id="496" name="Concert Choir-F5" originalPitch="7700"/>
+    <sample id="495" name="Concert Choir-G5" originalPitch="7900"/>
+  </samples>
+  <zones>
+    <zone pan="-300" loopType="loop">
+      <keyRange low="0" high="47"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="506" loopStart="16345" loopEnd="33492"/>
+    </zone>
+    <zone fineTune="-18" pan="-250" loopType="loop">
+      <keyRange low="48" high="50"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="505" loopStart="17427" loopEnd="31702"/>
+    </zone>
+    <zone fineTune="7" pan="-200" loopType="loop">
+      <keyRange low="51" high="53"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="504" loopStart="10119" loopEnd="27514"/>
+    </zone>
+    <zone fineTune="5" pan="-150" loopType="loop">
+      <keyRange low="54" high="57"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="503" loopStart="13604" loopEnd="31887"/>
+    </zone>
+    <zone fineTune="1" pan="-100" loopType="loop">
+      <keyRange low="58" high="60"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="502" loopStart="15141" loopEnd="31291"/>
+    </zone>
+    <zone fineTune="22" pan="-50" loopType="loop">
+      <keyRange low="61" high="63"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="501" loopStart="17134" loopEnd="33450"/>
+    </zone>
+    <zone fineTune="10" pan="50" loopType="loop">
+      <keyRange low="64" high="67"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="500" loopStart="11855" loopEnd="27808"/>
+    </zone>
+    <zone fineTune="8" pan="100" loopType="loop">
+      <keyRange low="68" high="71"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="499" loopStart="10921" loopEnd="28358"/>
+    </zone>
+    <zone fineTune="1" pan="150" loopType="loop">
+      <keyRange low="72" high="74"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="498" loopStart="17591" loopEnd="32178"/>
+    </zone>
+    <zone attenuation="50" fineTune="10" pan="200" loopType="loop">
+      <keyRange low="75" high="77"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="497" loopStart="16688" loopEnd="29540"/>
+    </zone>
+    <zone fineTune="32" pan="250" loopType="loop">
+      <keyRange low="78" high="80"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="496" loopStart="12231" loopEnd="30185"/>
+    </zone>
+    <zone fineTune="26" pan="300" loopType="loop">
+      <keyRange low="81" high="115"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="495" loopStart="9874" loopEnd="30358"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,38 @@
+<h4><b><%= t('.title') %></b></h4>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:facebook_fanpage) %>">
+      <%= f.label :facebook_fanpage, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :facebook_fanpage, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:facebook_fanpage) %>
+          <%= @setting.errors[:facebook_fanpage].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:facebook_app_id) %>">
+      <%= f.label :facebook_app_id, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :facebook_app_id, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:facebook_app_id) %>
+          <%= @setting.errors[:facebook_app_id].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:facebook_app_secret) %>">
+      <%= f.label :facebook_app_secret, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :facebook_app_secret, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:facebook_app_secret) %>
+          <%= @setting.errors[:facebook_app_secret].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

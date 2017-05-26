@@ -1,0 +1,13 @@
+en:
+  tutorials:
+    modal_add_tutorial:
+      title: "Add tutorials"
+      form:
+        link_placeholder: "Only allow youtube link..."
+        submit: "Add tutorial"
+    panel_tutorials:
+      title: "Tutorial for %{title}"
+      add_tutorial: "Add %{html} Tutorial"
+      no_data: "Tab %{title}'s tutorial not found."
+      version: "Version"
+      sign_in_required: "Please sign in again to continue"

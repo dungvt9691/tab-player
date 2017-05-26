@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Slap Bass 1" id="218">
+  <defaultSetts filterFc="7437" ampDecayTime="5186" ampSustainTime="1000" modDecayTime="-1200" modSustainTime="1000">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="554" name="Slap Bass 1-C2" originalPitch="3600"/>
+    <sample id="553" name="Slap Bass 1-G2" originalPitch="4300"/>
+    <sample id="552" name="Slap Bass 1-E3" originalPitch="5200"/>
+    <sample id="551" name="Slap Bass 1-C4" originalPitch="6000"/>
+    <sample id="550" name="Slap Bass 1-A4" originalPitch="6900"/>
+  </samples>
+  <zones>
+    <zone loopType="loop">
+      <keyRange low="0" high="27"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="554" loopStart="6404" loopEnd="7566"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="28" high="35"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="553" loopStart="6138" loopEnd="6914"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="36" high="44"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="552" loopStart="5616" loopEnd="6077"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="45" high="52"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="551" loopStart="8055" loopEnd="9507"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="53" high="61"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="550" loopStart="4180" loopEnd="5216"/>
+    </zone>
+    <zone modFilterFc="-700" loopType="loop">
+      <keyRange low="62" high="84"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="550" loopStart="4180" loopEnd="5216"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="DX7_1" id="90">
+  <defaultSetts attenuation="140" filterFc="5535" filterQ="60" ampHoldTime="-3986" ampDecayTime="0" ampReleaseTime="0" modHoldTime="-3986" modDecayTime="0" modReleaseTime="0" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-3986" delayVibLfo="-3986">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      <modulator dest="attenuation" src="velocity" srcCtrlType="concave" srcType="negative" amount="0" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="267" name="DX7 Wave" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="3837" pan="-150" loopType="loop">
+      <keyRange low="0" high="32"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="267" loopStart="2246" loopEnd="9322"/>
+    </zone>
+    <zone filterFc="4721" pan="-100" loopType="loop">
+      <keyRange low="33" high="44"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="267" loopStart="2246" loopEnd="9322"/>
+    </zone>
+    <zone filterFc="5535" pan="-50" loopType="loop">
+      <keyRange low="45" high="56"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="267" loopStart="2246" loopEnd="9322"/>
+    </zone>
+    <zone filterFc="5921" loopType="loop">
+      <keyRange low="57" high="68"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="267" loopStart="2246" loopEnd="9322"/>
+    </zone>
+    <zone attenuation="170" filterFc="6623" filterQ="50" pan="50" loopType="loop">
+      <keyRange low="69" high="80"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="267" loopStart="2246" loopEnd="9322"/>
+    </zone>
+    <zone attenuation="180" filterFc="7286" pan="100" loopType="loop">
+      <keyRange low="81" high="92"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="267" loopStart="2246" loopEnd="9322"/>
+    </zone>
+    <zone attenuation="200" filterFc="7765" filterQ="70" pan="150" loopType="loop">
+      <keyRange low="93" high="108"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="267" loopStart="2246" loopEnd="9322"/>
+    </zone>
+  </zones>
+</instrument>

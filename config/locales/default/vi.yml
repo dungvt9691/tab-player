@@ -1,0 +1,101 @@
+vi:
+  accept: "Đồng ý"  
+  crop: "Cắt ảnh"
+  save: "Lưu lại"
+  manage: "Quản lý"
+  cancel: "Huỷ bỏ"
+  close: "Đóng"
+  edit: "Sửa"
+  destroy: "Xoá"
+  confirm: "Đồng ý"
+  blank: "Chưa cập nhật"
+  cannot_edit: "Không thể chỉnh sửa"
+  unknown: "Không xác định"
+  comming_soon: "Đang phát triển"
+  untitled: "Chưa cập nhật"
+
+  alert:
+    system_error: "Lỗi hệ thống"
+
+  modal:
+    destroy:
+      are_you_sure: "Bạn muốn xoá"
+      note: "Bạn sẽ không thể khôi phục lại dữ liệu sau khi xoá!"
+
+  time:
+    month_names: [~,"tháng 1", "tháng 2", "tháng 3", "tháng 4", "tháng 5", "tháng 6", "tháng 7", "tháng 8", "tháng 9", "tháng 10", "tháng 11", "tháng 12"]
+    day_names: ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"]
+    formats:
+      change_password: "lúc %H:%M phút ngày %d %B"
+      long: "%A, ngày %d %B lúc %I:%M %P"
+      only_date: "%d/%m/%Y"
+      datetime: "%H:%M %d/%m/%Y"
+    datetimepicker:
+      datetime: 'H:i d/m/Y'
+      date: 'd/m/Y'
+    am: "sáng"
+    pm: "chiều"
+
+  date:
+    order:
+      - :day
+      - :month
+      - :year
+    month_names: [~,"tháng 1", "tháng 2", "tháng 3", "tháng 4", "tháng 5", "tháng 6", "tháng 7", "tháng 8", "tháng 9", "tháng 10", "tháng 11", "tháng 12"]
+    day_names: ["Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy"]
+    today: "Hôm nay"
+    yesterday: "Hôm qua"
+    formats:
+      short: "%A, ngày %d %B"
+      long: "%A, ngày %d %B lúc %I:%M %P"
+      only_date: "%d/%m/%Y"
+      datetime: "%H:%M %d/%m/%Y"
+
+  datetime:
+    distance_in_words:
+      less_than_x_minutes:
+        one: "khoảng 1 phút trước"
+        other: "khoảng %{count} phút trước"
+      x_minutes:
+        one: "khoảng 1 phút trước"
+        other: "khoảng %{count} phút trước"
+      about_x_hours:
+        one: "khoảng 1 giờ trước"
+        other: "khoảng %{count} giờ trước"
+
+  views:
+    pagination:
+      first: "Trang đầu"
+      last: "Trang cuối"
+      previous: "Trang trước"
+      next: "Trang sau"
+      truncate: "..."
+
+  helpers:
+    page_entries_info:
+      entry:
+        zero: "kết quả"
+        one: "kết quả"
+        other: "kết quả"
+      one_page:
+        display_entries:
+          zero: "Không tìm thấy kết quả nào"
+          one: "1 kết quả"
+          other: "%{count} kết quả"
+      more_pages:
+        display_entries: "%{first}&nbsp;-&nbsp;%{last}/%{total} kết quả"
+
+  datatable:
+    emptyTable: "Không có dữ liệu"
+    lengthMenu: "_MENU_ bản ghi/trang"
+    search: "Nhập vào để tìm kiếm..."
+    info: Hiển thị từ bản ghi _START_ đến bản ghi _END_ với _TOTAL_ bản ghi tìm thấy
+    infoEmpty: "Hiển thị từ bản ghi 0 đến bản ghi 0 với 0 bản ghi tìm thấy"
+    zero: "Không tìm thấy bản ghi tương ứng."
+    loading: "<i class='fa fa-spin fa-circle-o-notch'></i>"
+    zeroRecords: "Không tìm thấy bản ghi tương ứng"
+    infoFiltered: "(trên tổng số _MAX_ bản ghi)"
+    paginate_first: "Trang đầu"
+    paginate_last: "Trang cuối"
+    paginate_previous: "Trang trước"
+    paginate_next: "Trang sau"

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="TR-808/909_2" id="57">
+  <samples>
+    <sample id="208" name="TR-808 Kick" originalPitch="3500"/>
+    <sample id="207" name="TR-808 Snare" originalPitch="3800"/>
+    <sample id="206" name="TR-808 Clap" originalPitch="3900"/>
+    <sample id="205" name="TR-808 Hat 1" originalPitch="4200"/>
+    <sample id="204" name="TR-808 Hat 2" originalPitch="4400"/>
+    <sample id="203" name="TR-808 Hat 3" originalPitch="4600"/>
+    <sample id="202" name="TR-808 Cymbal" originalPitch="4900"/>
+  </samples>
+  <zones>
+    <zone ampDecayTime="1902" ampSustainTime="1000" ampReleaseTime="-1200" loopType="loop">
+      <keyRange low="35" high="35"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="208" loopStart="5344" loopEnd="7028"/>
+    </zone>
+    <zone ampDecayTime="1200" ampSustainTime="1000" ampReleaseTime="1200">
+      <keyRange low="38" high="38"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="207" loopStart="8" loopEnd="6988"/>
+    </zone>
+    <zone attenuation="40" ampDecayTime="1200" ampSustainTime="1000" ampReleaseTime="1200">
+      <keyRange low="39" high="39"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="206" loopStart="8" loopEnd="4665"/>
+    </zone>
+    <zone ampDecayTime="0" ampSustainTime="1000" ampReleaseTime="0" pan="200">
+      <keyRange low="42" high="42"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="205" loopStart="8" loopEnd="3126"/>
+    </zone>
+    <zone ampDecayTime="0" ampSustainTime="1000" ampReleaseTime="0" pan="200">
+      <keyRange low="44" high="44"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="204" loopStart="8" loopEnd="2916"/>
+    </zone>
+    <zone ampDecayTime="1902" ampSustainTime="1000" ampReleaseTime="1902" pan="200">
+      <keyRange low="46" high="46"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="203" loopStart="8" loopEnd="27784"/>
+    </zone>
+    <zone ampDecayTime="2786" ampSustainTime="1000" ampReleaseTime="2786" pan="-200">
+      <keyRange low="49" high="49"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="202" loopStart="8" loopEnd="42098"/>
+    </zone>
+    <zone fineTune="37" ampDecayTime="2786" ampSustainTime="1000" ampReleaseTime="2786" coarseTune="4" pan="160">
+      <keyRange low="51" high="51"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="202" loopStart="8" loopEnd="42098"/>
+    </zone>
+    <zone ampDecayTime="2786" ampSustainTime="1000" ampReleaseTime="2786" pan="300">
+      <keyRange low="57" high="57"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="202" loopStart="8" loopEnd="42098"/>
+    </zone>
+  </zones>
+</instrument>

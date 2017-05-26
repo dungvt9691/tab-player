@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Standard Snare 2" id="80">
+  <defaultSetts coarseTune="-2" pan="40">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="260" name="Standard Snare 3" originalPitch="3800"/>
+    <sample id="263" name="Standard Snare 1" originalPitch="4000"/>
+  </samples>
+  <zones>
+    <zone ampReleaseTime="6712">
+      <keyRange low="40" high="40"/>
+      <velRange low="107" high="127"/>
+      <sampleRecord sampleId="260" loopStart="0" loopEnd="6263"/>
+    </zone>
+    <zone filterFc="11466" ampDecayTime="3102" ampSustainTime="960" ampReleaseTime="3102">
+      <keyRange low="40" high="40"/>
+      <velRange low="85" high="106"/>
+      <sampleRecord sampleId="260" loopStart="0" loopEnd="6263"/>
+    </zone>
+    <zone filterFc="10721" filterQ="20" ampDecayTime="2400" ampSustainTime="960" ampReleaseTime="2400">
+      <keyRange low="40" high="40"/>
+      <velRange low="63" high="84"/>
+      <sampleRecord sampleId="260" loopStart="0" loopEnd="6263"/>
+    </zone>
+    <zone filterFc="10137" ampAttackTime="-8857" ampDecayTime="1586" ampSustainTime="960" ampReleaseTime="1586">
+      <keyRange low="40" high="40"/>
+      <velRange low="0" high="62"/>
+      <sampleRecord sampleId="260" loopStart="0" loopEnd="6263"/>
+    </zone>
+    <zone attenuation="310" filterFc="12308" ampAttackTime="-8359" ampDecayTime="3102" ampSustainTime="1000" ampReleaseTime="3102" coarseTune="4" pan="-80">
+      <keyRange low="40" high="40"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-2400" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      </modulators>
+      <sampleRecord sampleId="263" loopStart="0" loopEnd="11365"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,193 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<%= form_for @artist, url: admin_artists_path(@artist), method: 'post', html: { multipart: true } do |f| %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= link_to t('admin.artists.index.title'), admin_artists_path %>
+    </li>
+    <li>
+      <%= t('.title') %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+  </h1>
+</div>
+<div class="container new-artist">
+  <div class="col-md-9">
+    <div class="form-group <%= 'has-error' if @artist.errors.has_key?(:name) %>">
+      <%= f.text_field :name, class: "form-control input-lg", placeholder: t('.form.name_placeholder') %>
+      <p class="help-block">
+        <% if @artist.errors.has_key?(:name) %>
+        <%= @artist.errors[:name].join('<br>').html_safe %>
+        <% end %>
+      </p>
+    </div>
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#artist-informations" class="">
+        <div class="panel-heading">
+          <h4><%= t('.form.informations') %></h4>
+        </div>
+      </a>
+      <div id="artist-informations" class="panel-collapse in">
+        <div class="panel-body">
+          <div class="form-group <%= 'has-error' if @artist.errors.has_key?(:name_alias) %>">
+            <%= f.label :name_alias, class: 'control-label' %>
+            <%= f.text_field :name_alias, class: "form-control" %>
+            <p class="help-block">
+              <% if @artist.errors.has_key?(:name_alias) %>
+              <%= @artist.errors[:name_alias].join('<br>').html_safe %>
+              <% end %>
+            </p>
+          </div>
+          <div class="form-group <%= 'has-error' if @artist.errors.has_key?(:birthname) %>">
+            <%= f.label :birthname, class: 'control-label' %>
+            <%= f.text_field :birthname, class: "form-control" %>
+            <p class="help-block">
+              <% if @artist.errors.has_key?(:birthname) %>
+              <%= @artist.errors[:birthname].join('<br>').html_safe %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#new-artist" class="">
+        <div class="panel-heading">
+          <h4><%= t('.form.new') %></h4>
+        </div>
+      </a>
+      <div id="new-artist" class="panel-collapse in">
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-12">
+              <%= f.submit t('.form.new'), class: 'btn btn-secondary pull-right' %>
+              <%= link_to t('cancel'), admin_artists_path, class: 'btn btn-default pull-left' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#artist-avatar-panel" class="">
+        <div class="panel-heading">
+          <h4><%= f.label :avatar, class: 'control-label' %></h4>
+        </div>
+      </a>
+      <div id="artist-avatar-panel" class="panel-collapse in">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <a href="javascript:;" class="select-avatar-image <%= @artist.avatar.blank? ? 'show' : 'hide' %>">
+                <%= t('.form.select_avatar_image') %>
+              </a>
+              <%= f.hidden_field :avatar, value: nil %>
+              <div class="avatar-image">
+                <% unless @artist.avatar.blank? %>
+                <%= image_tag @artist.avatar.url(:medium), class: 'select-artist-image' %>
+                <% end %>
+              </div>
+              <div id="reselect-avatar-image" class="<%= @artist.avatar.blank? ? 'hide' : 'show' %>">
+                <i>
+                  <%= t('.form.select_image_note') %>
+                </i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#artist-cover-panel" class="">
+        <div class="panel-heading">
+          <h4><%= f.label :cover, class: 'control-label' %></h4>
+        </div>
+      </a>
+      <div id="artist-cover-panel" class="panel-collapse in">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <a href="javascript:;" class="select-cover-image <%= @artist.cover.blank? ? 'show' : 'hide' %>">
+                <%= t('.form.select_cover_image') %>
+              </a>
+              <%= f.hidden_field :cover, value: nil %>
+              <div class="cover-image">
+                <% unless @artist.cover.blank? %>
+                <%= image_tag @artist.cover.url(:medium), class: 'select-artist-image' %>
+                <% end %>
+              </div>
+              <div id="reselect-cover-image" class="<%= @artist.cover.blank? ? 'hide' : 'show' %>">
+                <i>
+                  <%= t('.form.select_image_note') %>
+                </i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- container -->
+<% end %>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#artist_avatar').awesomeCropper({
+    width: 500,
+    height: 500,
+    debug: true,
+    acceptExtensions: ".jpeg, .jpg, .JPEG, .JPG",
+    matchRegx: /\.(jpg|jpeg|JPG|JPEG)$/mi,
+    applyButton: "<%= t('crop') %>",
+    cancelButton: "<%= t('cancel') %>",
+    invalidExtensionsMessage: "<%= t('.form.invalid_extension') %>",
+    inputClass: "avatar-input",
+    element: $(".avatar-image"),
+    success: function(){
+      $(".select-avatar-image").addClass('hide').removeClass('show')
+      $("#reselect-avatar-image").addClass('show').removeClass('hide')
+    }
+  });
+
+  $(".avatar-image").click(function(){
+    $(".select-avatar-image").click()
+  })
+
+  $(".select-avatar-image").click(function(){
+    $(".avatar-input").click()
+  })
+
+  $('#artist_cover').awesomeCropper({
+    width: 1200,
+    height: 360,
+    debug: true,
+    acceptExtensions: ".jpeg, .jpg, .JPEG, .JPG",
+    matchRegx: /\.(jpg|jpeg|JPG|JPEG)$/mi,
+    inputClass: "cover-input",
+    applyButton: "<%= t('crop') %>",
+    cancelButton: "<%= t('cancel') %>",
+    invalidExtensionsMessage: "<%= t('.form.invalid_extension') %>",
+    element: $(".cover-image"),
+    success: function(){
+      $(".select-cover-image").addClass('hide').removeClass('show')
+      $("#reselect-cover-image").addClass('show').removeClass('hide')
+    }
+  });
+
+  $(".cover-image").click(function(){
+    $(".select-cover-image").click()
+  })
+
+  $(".select-cover-image").click(function(){
+    $(".cover-input").click()
+  })
+})
+</script>

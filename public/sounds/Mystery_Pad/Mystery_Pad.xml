@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Mystery Pad" id="292">
+  <samples>
+    <sample id="361" name="SawStackWaveMS" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="8614" filterQ="142" modFilterFc="450" fineTune="-1" ampDecayTime="3084" ampSustainTime="1000" ampReleaseTime="1911" modDecayTime="-4603" modSustainTime="1000" coarseTune="-27" freqVibLfo="-15600" freqModLfo="-725" reverb="109" chorus="548" loopType="loop">
+      <keyRange low="0" high="103"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="361" loopStart="289" loopEnd="13745"/>
+    </zone>
+  </zones>
+</instrument>

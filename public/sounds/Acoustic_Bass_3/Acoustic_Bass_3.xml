@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Acoustic Bass_3" id="155">
+  <samples>
+    <sample id="159" name="Acoustic Bass-C3" originalPitch="3600"/>
+  </samples>
+  <zones>
+    <zone filterFc="4366" modFilterFc="7087" ampAttackTime="-11959" ampDecayTime="712" ampSustainTime="1000" ampReleaseTime="712" modDecayTime="5168" modSustainTime="1000" modReleaseTime="-373" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="159" loopStart="13135" loopEnd="13812"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,45 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<%= form_for @category, url: admin_category_path(@category), method: 'put' do |f| %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= link_to t('admin.tabs.index.title'), admin_tabs_path %>
+    </li>
+    <li>
+      <%= link_to t('admin.categories.index.title'), admin_categories_path %>
+    </li>
+    <li>
+      <%= t('.title') %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+  </h1>
+</div>
+<div class="container new-category">
+  <div class="col-md-8">
+    <%= render 'shared/error_messages', object: @category %>
+    <div class="form-group <%= 'has-error' if @category.errors.has_key?(:name) %>">
+      <%= f.label :name, class: 'control-label' %>
+      <%= f.text_field :name, class: "form-control" %>
+      <p class="help-block">
+        <% if @category.errors.has_key?(:name) %>
+        <%= @category.errors[:name].join('<br>').html_safe %>
+        <% end %>
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.submit t('.title'), class: 'btn btn-secondary' %>
+        <%= link_to t('cancel'), admin_categories_path, class: 'btn btn-default' %>
+      </div>
+    </div>
+  </div>
+</div> <!-- container -->
+<% end %>

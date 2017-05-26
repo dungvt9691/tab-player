@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Pizzicato Strings" id="277">
+  <defaultSetts ampDecayTime="2400" ampSustainTime="960" ampReleaseTime="2400" coarseTune="12">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="774" name="Pizz. Strings-A#2" originalPitch="5800"/>
+    <sample id="773" name="Pizz. Strings-G#3" originalPitch="6800"/>
+    <sample id="772" name="Pizz. Strings-F#4" originalPitch="7800"/>
+    <sample id="771" name="Pizz. Strings-F5" originalPitch="8900"/>
+  </samples>
+  <zones>
+    <zone freqVibLfo="-850" freqModLfo="-850" pan="140">
+      <keyRange low="42" high="51"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="774" loopStart="20675" loopEnd="20707"/>
+    </zone>
+    <zone attenuation="30" freqVibLfo="-850" freqModLfo="-850" pan="50">
+      <keyRange low="52" high="61"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="773" loopStart="18758" loopEnd="18790"/>
+    </zone>
+    <zone attenuation="50" freqVibLfo="-850" freqModLfo="-850" pan="-50">
+      <keyRange low="62" high="74"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="772" loopStart="15608" loopEnd="15640"/>
+    </zone>
+    <zone attenuation="80" freqVibLfo="-850" freqModLfo="-850" pan="-140">
+      <keyRange low="75" high="84"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="771" loopStart="12088" loopEnd="12120"/>
+    </zone>
+    <zone freqVibLfo="-850" freqModLfo="-850" pan="220">
+      <keyRange low="0" high="41"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="774" loopStart="20675" loopEnd="20707"/>
+    </zone>
+    <zone attenuation="80" freqVibLfo="-850" freqModLfo="-850" pan="-220">
+      <keyRange low="85" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="771" loopStart="12088" loopEnd="12120"/>
+    </zone>
+  </zones>
+</instrument>

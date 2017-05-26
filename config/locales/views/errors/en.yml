@@ -1,0 +1,24 @@
+en:
+  errors:
+    not_found:
+      title: "We couldn't find the page"
+      description_1: "Sorry, but the page you are looking for was either not found or does not exist."
+      home_page: "Go to Home Page"
+      status: "404"
+    server_error:
+      title: "Oops"
+      description_1: "Something went terribly wrong."
+      description_2: "We are fixing it. Please try again later."
+      home_page: "Go to Home Page"
+      status: "500"
+    forbidden:
+      title: "Access Forbidden"
+      description_1: "Sorry, an error has occured."
+      description_2: "You don't have permission to access this resource."
+      home_page: "Go to Home Page"
+      status: "403"
+    unprocessable_entity:
+      title: "Unprocessable Entity"
+      description_1: "The page can not be displayed."
+      home_page: "Go to Home Page"
+      status: "422"

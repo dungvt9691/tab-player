@@ -1,0 +1,12 @@
+en:
+  controllers:
+    admin:
+      administrators:
+        create:
+          success: "Created administrator <b>%{name}</b> successfully"
+        destroy:
+          success: "Deleted administrator <b>%{name}</b> successfully"
+          fail: "Error! Cannot delete administrator <b>%{name}</b>"
+        multi_destroy:
+          success: "Deleted administrator <b>%{name}</b> successfully"
+          fail: "Error! Cannot delete administrator <b>%{name}</b>"

@@ -1,0 +1,11 @@
+en:
+  layouts:
+    sidebar:
+      profile: "Profile"
+      search: "Search"
+      favorite: "Favorites"
+      file_upload: "Upload"
+      question_answer: "Contact"
+      about: "About"
+      sign_in: "Sign in"
+      sign_out: "Sign out"

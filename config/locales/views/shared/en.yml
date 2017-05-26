@@ -1,0 +1,44 @@
+en:
+  shared:
+    tab_player_script:
+      loading_sounds: "Loading sounds"
+      play_pause_data_tooltip: "Start / Stop [Space]"
+      up: "Up"
+      down: "Down"
+      original: "1.00"
+      solo: "Solo"
+      mute: "Mute"
+      capo_on_fret: "Capo on %fret%"
+      add_tutorial: "Add tutorial"
+    modal_confirm_destroy:
+      are_you_sure: "Do you want to delete"
+      note: "You can't recovery data after deleted!"
+    panel_sign_in:
+      title: "Sign in"
+      via_facebook: "Sign in via Facebook"
+      via_google: "Sign in via Google+"
+      social_login: "Sign in via social networks"
+      term: "Terms of Service"
+      privacy: "Privacy"
+    panel_profile:
+      title: "Profile"
+      form:
+        email: "Email"
+        created_at: "Created at"
+        fullname: "Full name"
+      sign_out: "Sign out"
+    panel_favorites:
+      title: "Favorites"
+      loading: "Loading data"
+    panel_search:
+      title: "Search"
+      loading: "Loading data"
+      form:
+        search_placeholder: "Search by song title, artist, or author..."
+    panel_contact:
+      title: "Contact"
+      form:
+        fullname_placeholder: "Your name"
+        email_placeholder: "Your email address"
+        content_placeholder: "How can we help you?"
+        submit: "Send"

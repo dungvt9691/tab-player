@@ -1,0 +1,57 @@
+<header>
+  <h4>
+    <span class="tab-title">
+      <%= @tab.title %>
+    </span>
+    <% if @tab.unpublish? && @tab.uploader == current_user %>
+    <%= link_to 'javascript:;', id: 'btn-update-tab', data: { toggle: 'tooltip', placement: 'bottom' }, title: t('.update') do %>
+    <%= material_icon.border_color.md_18 %>
+    <% end %>
+    <% end %>
+  </h4>
+  <span class='tab-artists'>
+    <% if @tab.artists.empty? %>
+    <span><%= t('unknown') %></span>
+    <% else %>
+    <%= @tab.artists.map{|x| link_to x.name, search_path(q: x.name)}.join(', ').html_safe rescue t('unknown') %>
+    <% end %>
+  </span>
+  <div class="control-txt control-txt__favorite">
+    <%= link_to 'javascript:;', class: ('active' if user_signed_in? && current_user.favorite_tabs.find_by(id: @tab.id)), id: 'add-to-favorite', title: t('.favorite') do %>
+    <%=  user_signed_in? && current_user.favorite_tabs.find_by(id: @tab.id) ? material_icon.favorite : material_icon.favorite_border %>
+    <% end %>
+  </div>
+</header>
+<script type="text/javascript">
+function submitForm(element){
+  if($("#search-query").val() == "")
+  {
+    $("#search-query").parents(".form-group").addClass("has-error")
+    return false
+  }
+}
+
+$("#add-to-favorite").click(function(){
+  <% if current_user %>
+  $("body").css("cursor", "progress")
+  tab_id = "<%= @tab.sid %>"
+
+  url    = "/<%= I18n.locale.to_s %>/tabs/"+tab_id+"/favorites"
+
+  if($(this).hasClass("active")){
+    method = "DELETE"
+  }
+  else{
+    method = "POST"
+  }
+
+  $.ajax({
+    type: method,
+    url: url
+  })
+
+  <% else %>
+  showPanelSignIn()
+  <% end %>
+})
+</script>

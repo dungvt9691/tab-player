@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Power Kick 2" id="62">
+  <defaultSetts ampSustainTime="960">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="213" name="Power Kick" originalPitch="3500"/>
+  </samples>
+  <zones>
+    <zone ampDecayTime="6712" ampReleaseTime="6712">
+      <keyRange low="35" high="35"/>
+      <velRange low="108" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="213" loopStart="8" loopEnd="8323"/>
+    </zone>
+    <zone filterFc="11273" ampDecayTime="2786" ampReleaseTime="2786">
+      <keyRange low="35" high="35"/>
+      <velRange low="87" high="107"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="213" loopStart="8" loopEnd="8323"/>
+    </zone>
+    <zone filterFc="10826" ampDecayTime="2169" ampReleaseTime="2169">
+      <keyRange low="35" high="35"/>
+      <velRange low="65" high="86"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="213" loopStart="8" loopEnd="8323"/>
+    </zone>
+    <zone filterFc="10223" ampDecayTime="1200" ampReleaseTime="1200">
+      <keyRange low="35" high="35"/>
+      <velRange low="0" high="64"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="213" loopStart="8" loopEnd="8323"/>
+    </zone>
+  </zones>
+</instrument>

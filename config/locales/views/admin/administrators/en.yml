@@ -1,0 +1,47 @@
+en:
+  admin:
+    administrators:
+      index:
+        title: "Administrators"
+        new: "Add administrator"
+        table:
+          avatar: "Avatar"
+          username: "Account"
+          fullname: "Full Name"
+          email: "Email"
+          permissions: "Permissions"
+        destroy: "Delete administrator"
+        destroy_selected: "Delete selected administrators"
+        multi_destroy: "Delete selected administrators"
+      new:
+        title: "Add administrator"
+      edit:
+        title: "Edit administrator"
+        form:
+          username: "Account"
+          email: "Email"
+          uploaded_tabs: "Uploaded Tabs"
+          notifications: "Notifications"
+          fullname: "Full Name"
+          sign_in_count: "Sign in count"
+          current_sign_in_at: "Current sign in at"
+          last_sign_in_at: "Last sign in at"
+          current_sign_in_ip: "Current sign in IP"
+          last_sign_in_ip: "Last sign in IP"
+          created_at: "Created at"
+      show:
+        title: "Administrator"
+        action_histories: "Action histories"
+        permissions: "Permissions"
+        form:
+          username: "Account"
+          email: "Email"
+          uploaded_tabs: "Uploaded Tabs"
+          notifications: "Notifications"
+          fullname: "Full Name"
+          sign_in_count: "Sign in count"
+          current_sign_in_at: "Current sign in at"
+          last_sign_in_at: "Last sign in at"
+          current_sign_in_ip: "Current sign in IP"
+          last_sign_in_ip: "Last sign in IP"
+          created_at: "Created at"

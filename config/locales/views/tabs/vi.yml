@@ -1,0 +1,9 @@
+vi:
+  tabs:
+    index:
+      no_data: "Không có dữ liệu"
+    modal_update_tab:
+      title: "Cập nhật thông tin"
+      artists: "Nghệ sĩ"
+      artist_placeholder: "Chọn nghệ sĩ..."
+      category_placeholder: "Chọn thể loại nhạc..."

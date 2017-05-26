@@ -1,0 +1,7 @@
+vi:
+  favorites:
+    index:
+      title: "Ưa thích"
+    no_tabs:
+      title: "Không có bài hát ưa thích"
+      guide: "Để cài đặt ưa thích, chọn bài hát và nhấp vào hình trái tim"

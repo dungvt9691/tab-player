@@ -1,0 +1,41 @@
+<h4><b><%= t('.title') %></b></h4>
+<div class="row" id="test-smtp">
+  <div class="col-md-12">
+    <div class='form-group row'>
+      <%= label_tag 'email', t('.form.mail_to'), class: 'control-label col-md-2 col-sm-3' %>
+      <div class="col-md-6 col-sm-6">
+        <%= text_field_tag :test_email, nil, class: 'form-control' %>
+        <p class="help-block"></p>
+        <div class="alert" id="test-smtp-alert">
+          <div class="alert-icon">
+          </div>
+          <div class="alert-text">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-3">
+        <%= button_tag t('.form.submit'), type: 'button', id: 'btn-test-smtp', class: 'btn btn-secondary' %>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$('#test_email').on('keyup keypress', function(e) {
+  var keyCode = e.keyCode || e.which;
+  if (keyCode === 13) { 
+    e.preventDefault();
+    $("#btn-test-smtp").click()
+    return false;
+  }
+});
+
+$("#btn-test-smtp").click(function(){
+  $(".tab-content .btn").prop("disabled", true)
+  $("body").css("cursor", "progress")
+  $.ajax({
+    type: "GET",
+    url: "<%= new_admin_test_smtp_path %>",
+    data: { email: $("#test_email").val() }
+  })
+})
+</script>

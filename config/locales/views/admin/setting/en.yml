@@ -1,0 +1,66 @@
+en:
+  admin:
+    title: "Dashboard"
+    setting:
+      title: "Setting"
+      setting_tabs:
+        page_info: "Page info"
+        social_networks: "Social"
+        seo: "Setting Seo"
+        adfly: "Setting adFly"
+        smtp: "Setting SMTP"
+        recaptcha: "Setting reCAPTCHA"
+      page_info:
+        title: "Page info"
+      general_setting:
+        general: "General setting"
+      social_networks:
+        title: "Social Networks"
+      facebook_setting:
+        title: "Setting Facebook API"
+      google_setting:
+        title: "Setting Google API"
+      youtube_setting:
+        title: "Setting Youtube API"
+      adfly:
+        title: "Setting adFly"
+      adfly_setting:
+        title: "Setting adFly"
+        adfly_note_1: "Sign up, sign in account AdFly"
+        adfly_note_2: "Check adFly UID and Key"
+        adfly_note_3: "AdFly analytics"
+      seo:
+        title: "Setting SEO"
+      seo_setting:
+        title: "Setting SEO"
+        select_image: "Select image"
+        remove_image: "Delete image"
+      smtp:
+        title: "Setting SMTP"
+      smtp_setting:
+        title: "Setting SMTP"
+      test_smtp:
+        title: "Send test email"
+        loading: "Email is sending..."
+        success: "Sended email."
+        fail: "Error! Cannot send test email."
+        email_invalid: "Email invalid."
+        form:
+          mail_to: "Mail to"
+          submit: "Send"
+      contact_mailer:
+        subject: "Have a contact form %{name}"
+      recaptcha:
+        title: "Setting reCAPTCHA"
+      recaptcha_setting:
+        title: "Setting reCAPTCHA"
+      new:
+        title: "Setting Website"
+        form:
+          app_name: "App name"
+          app_url: "App url"
+          app_email: "Email"
+          admin_username: "Admin account"
+          admin_password: "Addmin password"
+          submit: "Save"
+          reset: "Reset"

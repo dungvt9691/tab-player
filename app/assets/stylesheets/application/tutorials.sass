@@ -1,0 +1,159 @@
+#panel-tutorials
+  background-color: $black-color
+  width: 400px
+  box-shadow: 0 5px 10px $secondary-color
+  position: fixed
+  right: -400px
+  height: 0
+  top: 113px
+  z-index: 1000
+  +animation-common
+  transition: all 0.2s
+
+  .tutorial-header
+    padding: $margin-min
+    padding-top: 9px
+    background-color: $secondary-color
+    height: 30px
+    line-height: 30px
+    cursor: move
+    position: relative
+
+    h4
+      color: $white-color
+      margin: 0
+      font-size: $font-size-base
+      display: block
+
+    #close-tutorial, #add-tutorial
+      position: absolute
+      right: 0
+      top: 0
+      height: 30px
+      width: 30px
+      text-align: center
+      background-color: #black-color
+      text-decoration: none !important
+      i
+        color: $white-color
+        font-size: $font-size-large
+
+    #add-tutorial
+      right: 30px
+      background-color: transparent
+      background-color: $primary-color
+      i
+        color: $white-color
+
+  .tutorial-body
+    height: 300px
+    background-color: #black-color
+    position: relative
+
+    #tutorials-carousel,
+    .carousel-inner,
+    .carousel-inner .item
+      height: 100%
+      cursor: pointer
+      img
+        width: 100%
+
+    #tutorials-no-data
+      height: 100%
+      h4
+        padding-top: 120px
+        color: $white-color
+        font-size: $font-size-base
+
+    .fa-youtube-play
+      color: rgba(255, 255, 255, 0.8)
+      font-size: 80px
+      text-align: center
+      height: 100px
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin: auto
+  .tutorial-footer
+    height: 30px
+    background-color: $secondary-color
+    padding: $margin-min
+    padding-top: 8px
+    .tutorial-control
+      display: inline-block
+      color: $white-color
+      margin-right: $margin-small
+      cursor: pointer
+      span
+        margin-top: 1px
+        font-size: $font-size-small
+        margin-left: 8px
+        color: $gray-color
+      .tutorial-version
+        margin-right: 8px
+
+    .tutorial-control.active
+      color: #18bc9c
+
+    .tutorial-control:last-child
+      margin-right: 0
+
+    #resize-tutorial
+      .caret
+        margin-left: 4px
+      .dropdown-menu
+        width: 110px
+        min-width: 110px
+        left: -30px
+        top: $margin-small
+        border-radius: 0
+        -webkit-box-shadow: none
+        box-shadow: none
+        -webkit-background-clip: none 
+        background-clip: none
+        li
+          text-align: right
+          a
+            padding: $margin-xmin 15px
+            padding-left: $margin-min
+            .fa
+              margin-right: $margin-xmin
+              font-size: $font-size-middle
+              color: $secondary-color
+          a:hover, a:active, a:focus
+            .fa
+              color: $white-color
+
+  &.active
+    right: 0
+    height: 360px
+
+  &.s480
+    width: 560px
+    box-shadow: 0 5px 10px $secondary-color
+    right: -560px
+    .tutorial-body
+      height: 420px
+      .fa-youtube-play
+        font-size: 80px
+        height: 100px
+
+  &.s480.active
+    right: 0
+    height: 480px
+
+  &.s720
+    width: 720px
+    box-shadow: 0 5px 10px $secondary-color
+    right: -720px
+    .tutorial-body
+      height: 540px
+      .fa-youtube-play
+        font-size: 80px
+        height: 100px
+
+  &.s720.active
+    right: 0
+    height: 600px

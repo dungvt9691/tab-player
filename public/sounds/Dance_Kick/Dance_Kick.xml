@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Dance Kick" id="15">
+  <samples>
+    <sample id="198" name="TR-909 Kick" originalPitch="4800"/>
+  </samples>
+  <zones>
+    <zone attenuation="200" filterFc="9149" filterQ="117" ampDecayTime="1200" ampSustainTime="960" ampReleaseTime="1200" coarseTune="26">
+      <keyRange low="36" high="36"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="198" loopStart="1" loopEnd="5744"/>
+    </zone>
+    <zone filterFc="8500" filterQ="52" ampDecayTime="1902" ampSustainTime="960" ampReleaseTime="1902" coarseTune="6">
+      <keyRange low="36" high="36"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="198" loopStart="1" loopEnd="5744"/>
+    </zone>
+  </zones>
+</instrument>

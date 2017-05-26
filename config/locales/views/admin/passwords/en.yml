@@ -1,0 +1,16 @@
+en:
+  admin:
+    passwords:
+      new:
+        title: "Forgot password"
+        form:
+          email: "Email address"
+          signin: "Sign in"
+          submit: "Forgot password"
+      edit:
+        title: "Change password"
+        form:
+          new_password: "New password"
+          password_confirmation: "Password confirmation"
+          signin: "Sign in"
+          submit: "Change password"

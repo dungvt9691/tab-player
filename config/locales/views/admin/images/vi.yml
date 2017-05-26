@@ -1,0 +1,30 @@
+vi:
+  admin:
+    images:
+      index:
+        title: "Hình ảnh"
+        new: "Tải lên"
+        table:
+          attachment: "Ảnh"
+          attachment_file_name: "Tên tệp tin"
+          attachment_file_size: "Dung lượng"
+          attachment_content_type: "Định dạng"
+          created_at: "Ngày tải lên"
+        destroy_selected: "Xoá các hình ảnh đã chọn"
+        multi_destroy: "Xoá hình ảnh đã chọn"
+      modal_select_images:
+        select_image: "Chọn ảnh"
+        computer: "Máy tính"
+        uploaded_images: "Ảnh đã tải lên"
+        drop_images_here: "Kéo ảnh vào đây"
+        or: "Hoặc"
+        select_file: "Chọn tệp"
+        selected_image: "ảnh đã chọn"
+        loading: "Đang tải dữ liệu"
+        destroy: "Xoá ảnh"
+        use: "Sử dụng ảnh"
+      modal_upload_images:
+        new: "Tải lên"
+        drop_images_here: "Kéo ảnh vào đây"
+        or: "Hoặc"
+        select_file: "Chọn tệp"

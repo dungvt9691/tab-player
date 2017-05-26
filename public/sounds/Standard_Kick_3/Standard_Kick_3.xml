@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Standard Kick 3" id="83">
+  <defaultSetts ampDecayTime="0" ampReleaseTime="0">
+    <modulators/>
+  </defaultSetts>
+  <samples>
+    <sample id="264" name="Standard Kick 3" originalPitch="3600"/>
+  </samples>
+  <zones>
+    <zone ampDecayTime="1200" ampReleaseTime="1200">
+      <keyRange low="36" high="36"/>
+      <velRange low="118" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="264" loopStart="0" loopEnd="4106"/>
+    </zone>
+    <zone filterFc="11273" ampDecayTime="1200" ampReleaseTime="1200">
+      <keyRange low="36" high="36"/>
+      <velRange low="108" high="117"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="264" loopStart="0" loopEnd="4106"/>
+    </zone>
+    <zone filterFc="10925">
+      <keyRange low="36" high="36"/>
+      <velRange low="99" high="107"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="264" loopStart="0" loopEnd="4106"/>
+    </zone>
+    <zone filterFc="10551">
+      <keyRange low="36" high="36"/>
+      <velRange low="91" high="98"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="264" loopStart="0" loopEnd="4106"/>
+    </zone>
+    <zone filterFc="10073">
+      <keyRange low="36" high="36"/>
+      <velRange low="84" high="90"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="264" loopStart="0" loopEnd="4106"/>
+    </zone>
+    <zone filterFc="9585">
+      <keyRange low="36" high="36"/>
+      <velRange low="76" high="83"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="264" loopStart="0" loopEnd="4106"/>
+    </zone>
+    <zone filterFc="9023">
+      <keyRange low="36" high="36"/>
+      <velRange low="67" high="75"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="264" loopStart="0" loopEnd="4106"/>
+    </zone>
+    <zone filterFc="8486">
+      <keyRange low="36" high="36"/>
+      <velRange low="57" high="66"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="264" loopStart="0" loopEnd="4106"/>
+    </zone>
+    <zone filterFc="9521" ampAttackTime="-8359">
+      <keyRange low="36" high="36"/>
+      <velRange low="0" high="56"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-2400" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="264" loopStart="0" loopEnd="4106"/>
+    </zone>
+  </zones>
+</instrument>

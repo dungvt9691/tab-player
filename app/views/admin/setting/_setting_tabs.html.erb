@@ -1,0 +1,20 @@
+<ul class="nav nav-tabs">
+  <li class="<%= 'active' if @current_tab == 'page_info' %>">
+    <%= link_to t('.page_info'), admin_setting_page_info_path %>
+  </li>
+  <li class="<%= 'active' if @current_tab == 'social_networks' %>">
+    <%= link_to t('.social_networks'), admin_setting_social_networks_path %>
+  </li>
+  <li class="<%= 'active' if @current_tab == 'adfly' %>">
+    <%= link_to t('.adfly'), admin_setting_adfly_path %>
+  </li>
+  <li class="<%= 'active' if @current_tab == 'seo' %>">
+    <%= link_to t('.seo'), admin_setting_seo_path %>
+  </li>
+  <li class="<%= 'active' if @current_tab == 'smtp' %>">
+    <%= link_to t('.smtp'), admin_setting_smtp_path %>
+  </li>
+  <li class="<%= 'active' if @current_tab == 'recaptcha' %>">
+    <%= link_to t('.recaptcha'), admin_setting_recaptcha_path %>
+  </li>
+</ul>

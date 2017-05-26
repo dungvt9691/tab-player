@@ -1,0 +1,11 @@
+en:
+  admin:
+    multi_upload_tabs:
+      new:
+        title: "Multi upload Tabs"
+        form:
+          category_placeholder: "Select categories..."
+          select: "Select file"
+          upload: "Upload"
+          upload_files_count: "Number of file upload"
+          upload_error: "Cannot upload file"

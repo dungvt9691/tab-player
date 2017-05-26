@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Hammond Organ" id="250">
+  <defaultSetts modFilterFc="1500" ampReleaseTime="-3284" modDecayTime="-5186" modSustainTime="1000" modReleaseTime="-5186">
+    <modulators>
+      <modulator dest="attenuation" src="velocity" srcCtrlType="concave" srcType="negative" amount="0" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="691" name="Hammond Organ-1" originalPitch="5700"/>
+    <sample id="690" name="Hammond Organ-2" originalPitch="5600"/>
+    <sample id="689" name="Hammond Organ-3" originalPitch="5400"/>
+    <sample id="688" name="Hammond Organ-4" originalPitch="5300"/>
+    <sample id="687" name="Hammond Organ-5" originalPitch="5300"/>
+    <sample id="686" name="Hammond Organ-6" originalPitch="5100"/>
+    <sample id="685" name="Hammond Organ-7" originalPitch="6300"/>
+    <sample id="684" name="Hammond Organ-8" originalPitch="6100"/>
+    <sample id="683" name="Hammond Organ-9" originalPitch="6100"/>
+    <sample id="682" name="Hammond Organ-10" originalPitch="5700"/>
+    <sample id="681" name="Hammond Organ-11" originalPitch="5700"/>
+  </samples>
+  <zones>
+    <zone filterFc="8080" fineTune="-61" loopType="loop">
+      <keyRange low="0" high="41"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="691" loopStart="1153" loopEnd="1346"/>
+    </zone>
+    <zone filterFc="8569" fineTune="15" loopType="loop">
+      <keyRange low="42" high="47"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="690" loopStart="1065" loopEnd="1279"/>
+    </zone>
+    <zone attenuation="15" filterFc="8769" fineTune="-37" loopType="loop">
+      <keyRange low="48" high="52"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="689" loopStart="1364" loopEnd="1597"/>
+    </zone>
+    <zone attenuation="7" filterFc="9397" fineTune="-15" loopType="loop">
+      <keyRange low="53" high="59"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="688" loopStart="1248" loopEnd="1498"/>
+    </zone>
+    <zone attenuation="15" filterFc="9858" fineTune="12" loopType="loop">
+      <keyRange low="60" high="65"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="687" loopStart="1274" loopEnd="1528"/>
+    </zone>
+    <zone attenuation="15" filterFc="10835" fineTune="48" loopType="loop">
+      <keyRange low="66" high="71"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="686" loopStart="1741" loopEnd="2032"/>
+    </zone>
+    <zone filterFc="10377" fineTune="55" loopType="loop">
+      <keyRange low="72" high="78"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="685" loopStart="2046" loopEnd="2192"/>
+    </zone>
+    <zone attenuation="15" filterFc="11331" fineTune="13" loopType="loop">
+      <keyRange low="79" high="87"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="684" loopStart="2222" loopEnd="2382"/>
+    </zone>
+    <zone attenuation="23" filterFc="11456" fineTune="66" loopType="loop">
+      <keyRange low="88" high="91"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="683" loopStart="2307" loopEnd="2472"/>
+    </zone>
+    <zone attenuation="45" filterFc="11816" fineTune="-36" loopType="loop">
+      <keyRange low="92" high="104"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="682" loopStart="1367" loopEnd="1465"/>
+    </zone>
+    <zone attenuation="45" filterFc="11681" fineTune="-14" loopType="loop">
+      <keyRange low="105" high="115"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="681" loopStart="745" loopEnd="799"/>
+    </zone>
+  </zones>
+</instrument>

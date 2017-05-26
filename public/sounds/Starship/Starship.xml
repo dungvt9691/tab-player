@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Starship" id="181">
+  <samples>
+    <sample id="467" name="Starship Noise" originalPitch="6000"/>
+    <sample id="466" name="Harpsichord-C6" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="60" filterFc="10626" filterQ="128" ampAttackTime="-2688" ampDecayTime="2864" ampReleaseTime="2778" coarseTune="1" scaleTuning="50" reverb="226" chorus="645" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="467" loopStart="2625" loopEnd="9220"/>
+    </zone>
+    <zone attenuation="200" filterFc="8745" modPitch="1200" modFilterFc="697" ampAttackTime="-312" ampReleaseTime="2585" modDelayTime="-2246" modAttackTime="4800" modHoldTime="4800" modDecayTime="7200" modReleaseTime="4800" coarseTune="-19" scaleTuning="50" freqVibLfo="-1118" freqModLfo="504" modLfoToPitch="581" reverb="70" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="466" loopStart="639" loopEnd="651"/>
+    </zone>
+  </zones>
+</instrument>

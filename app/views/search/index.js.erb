@@ -1,0 +1,18 @@
+<% if @page <= 1 %>
+$("#panel-search .tab-results .tab").remove()
+<% end %>
+<% if @count > 0 %>
+<% if @tabs.blank? %>
+window.stopSearchLoading = true
+<% else %>
+$("#alert-no-tabs").remove()
+<% @tabs.each_with_index do |tab, index| %>
+$("#panel-search .tab-results .loading").before("<%=j render 'tab', tab: tab, index: @page * 50 + (index + 1) - 50 %>")
+<% end %>
+<% end %>
+<% else %>
+$("#panel-search .tab-results .tab").remove()
+$("#alert-no-tabs").remove()
+$("#panel-search .tab-results").append("<%=j render 'no_tabs' %>")
+<% end %>
+$("#panel-search .loading").fadeOut(0)

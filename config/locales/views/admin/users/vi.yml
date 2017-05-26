@@ -1,0 +1,20 @@
+vi:
+  admin:
+    users:
+      index:
+        title: 'Thành viên'
+        table:
+          avatar: "Ảnh"
+          email: "Địa chỉ email"
+          fullname: "Họ tên"
+          created_at: "Tham gia lúc"
+        multi_destroy: "Xoá tài khoản đã chọn"
+        destroy_selected: "Xoá các tài khoản đã chọn"
+        not_found: "Không tìm thấy thành viên tương ứng"
+        lock: "Khoá tài khoản"
+        unlock: "Bỏ khoá tài khoản"
+      modal_lock:
+        select_locked_at: "Đặt thời gian khoá tài khoản:"
+        lock: "Khoá tài khoản"
+      modal_unlock:
+        unlock: "Bỏ khoá tài khoản"

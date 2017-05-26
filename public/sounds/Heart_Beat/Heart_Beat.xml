@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Heart Beat" id="187">
+  <samples>
+    <sample id="473" name="Heartbeat" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone ampReleaseTime="546" scaleTuning="20">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="473" loopStart="8" loopEnd="21048"/>
+    </zone>
+  </zones>
+</instrument>

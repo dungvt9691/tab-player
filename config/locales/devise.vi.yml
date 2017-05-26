@@ -1,0 +1,71 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+vi:
+  devise:
+    confirmations:
+      confirmed: "Tài khoản của bạn đã được xác nhận thành công"
+      send_instructions: "Bạn sẽ nhận được một email với hướng dẫn về cách xác nhận tài khoản của bạn trong một vài phút"
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được một email với hướng dẫn về cách xác nhận tài khoản của bạn trong một vài phút"
+      user:
+        confirm: "Xác Nhận Tài Khoản"
+        email: "Địa chỉ email"
+    failure:
+      already_authenticated: "Bạn đã đăng nhập"
+      inactive: "Tài khoản của bạn chưa được kích hoạt"
+      invalid: "Địa chỉ email hoặc mật khẩu không hợp lệ"
+      locked: "Tài khoản của bạn đã bị khóa"
+      last_attempt: "Bạn có một nỗ lực nhiều hơn nữa trước khi tài khoản của bạn sẽ bị khóa"
+      not_found_in_database: "Không tìm thấy tài khoản"
+      timeout: "Phiên của bạn hết hạn. Vui lòng đăng nhập lại để tiếp tục"
+      unauthenticated: "Bạn cần đăng nhập trước khi tiếp tục"
+      unconfirmed: "Bạn phải xác nhận tài khoản của bạn trước khi tiếp tục"
+    mailer:
+      confirmation_instructions:
+        subject: "Vui lòng xác minh địa chỉ email liên hệ cho Hợp Âm Hay ID của bạn"
+      reset_password_instructions:
+        subject: "Hướng dẫn thiết lập lại mật khẩu"
+      unlock_instructions:
+        subject: "Hướng dẫn mở khóa"
+    omniauth_callbacks:
+      failure: "Không thể xác thực bạn từ %{kind} vì \"%{reason}\""
+      success: "Xác thực thành công từ %{kind} account"
+    passwords:
+      no_token: "Bạn không thể truy cập vào trang này mà không cần đến từ một email thiết lập lại mật khẩu. Nếu bạn đến từ một email đặt lại mật khẩu, hãy chắc chắn rằng bạn sử dụng đường dẫn đầy đủ cung cấp"
+      send_instructions: "Bạn sẽ nhận được một email với hướng dẫn cách thiết lập lại mật khẩu của bạn trong một vài phút."
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được một liên kết khôi phục mật khẩu tại địa chỉ email của bạn trong vài phút"
+      updated: "Mật khẩu của bạn đã được thay đổi thành công"
+      updated_not_active: "Mật khẩu của bạn đã được thay đổi thành công"
+      user:
+        email: "Địa chỉ email"
+        password: "Mật khẩu"
+        confirm_password: "Nhập lại mật khẩu"
+        forgot: "Lấy lại mật khẩu"
+        sign_in: "Quay lại %{sign_in_link}"
+        sign_in_link: "Đăng nhập"
+        change_password: "Đổi Mật Khẩu"
+    registrations:
+      destroyed: "Tạm biệt! Tài khoản của bạn đã bị hủy bỏ thành công. Chúng tôi hy vọng sẽ gặp lại sớm"
+      signed_up: "Hoan nghênh! Bạn đã đăng ký thành công"
+      signed_up_but_inactive: "Bạn đã đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập bạn trong bởi vì tài khoản của bạn chưa được kích hoạt"
+      signed_up_but_locked: "Bạn đã đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập bạn trong bởi vì tài khoản của bạn đã bị khóa"
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account"
+      update_needs_confirmation: "Một thông điệp có liên kết xác nhận đã được gửi đến địa chỉ email của bạn. Hãy mở link để kích hoạt tài khoản của bạn"
+      updated: "Bạn cập nhật tài khoản của bạn thành công"
+    sessions:
+      signed_in: "Chào mừng bạn đến với Hợp Âm Hay.Chúc bạn có những phút thư giãn, giải trí tuyệt vời nhất"
+      signed_out: "Bạn đã đăng xuất thành công. Xin cám ơn và hẹn gặp lại"
+      already_signed_out: "Đăng xuất thành công"
+    unlocks:
+      send_instructions: "Bạn sẽ nhận được một email với hướng dẫn về cách mở khóa tài khoản của bạn trong một vài phút"
+      send_paranoid_instructions: "Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được một email với hướng dẫn về cách để mở khóa nó trong một vài phút"
+      unlocked: "Tài khoản của bạn đã được mở khóa thành công. Vui lòng đăng nhập để tiếp tục"
+  errors:
+    messages:
+      already_confirmed: "đã được xác nhận, hãy thử đăng nhập"
+      confirmation_period_expired: "cần phải được khẳng định trong %{period} thời gian, hãy gửi yêu cầu mới"
+      expired: "đã hết hạn, hãy gửi yêu cầu mới"
+      not_found: "không tìm thấy."
+      not_locked: "không bị khóa"
+      not_saved:
+        one: "1 lỗi xuất hiện khi cập nhật:"
+        other: "%{count} lỗi xuất hiện khi cập nhật:"

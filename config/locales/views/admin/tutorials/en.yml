@@ -1,0 +1,23 @@
+en:
+  admin:
+    tutorials:
+      index:
+        title: "Tutorials"
+        table:
+          link: "Link"
+          avatar: "Avatar"
+          status: "Status"
+          tab_id: "Tab"
+          created_at: "Created at"
+        multi_destroy: "Delete selected tutorials"
+        destroy_selected: "Delete selected tutorials"
+      modal_publish:
+        are_you_sure: "Do you want to publish tutorial"
+        note: "User can view tab tutorials after published!"
+        publish: "Publish"
+      modal_unpublish:
+        are_you_sure: "Do you want unpublish this tutorial"
+        note: "Tab tutorials will be hidden after unpublish!"
+        unpublish: "Unpublish"
+      modal_update:
+        title: "Update tutorial"

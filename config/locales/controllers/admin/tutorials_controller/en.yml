@@ -1,0 +1,17 @@
+en:
+  controllers:
+    admin:
+      tutorials:
+        create:
+          success: "Add tutorial successfully"
+        update:
+          success: "Edited tutorial for Tab <b>%{title}</b> successfully"
+          fail: "Error! Cannot edit tutorial for Tab <b>%{title}</b>"
+          publish_success: "Published tutorial for Tab <b>%{title}</b> successfully"
+          unpublish_success: "Unpublish tutorial for Tab <b>%{title}</b> successfully"
+        destroy:
+          success: "Deleted tutorial for Tab <b>%{title}</b> successfully"
+          fail: "Error! Cannot delete tutorial for Tab <b>%{title}</b>"
+        multi_destroy:
+          success: "Deleted tutorial for Tab <b>%{title}</b> successfully"
+          fail: "Error! Cannot delete tutorial for Tab <b>%{title}</b>"

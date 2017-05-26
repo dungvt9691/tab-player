@@ -1,0 +1,16 @@
+<% provide(:og_title, t('.status')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<div class="error-page">
+  <%= material_icon.mood_bad %>
+  <h3 class="font-bold"><%= t('.title') %></h3>
+  <div class="error-desc">
+    <%= t('.description') %>
+    <div>
+      <%= link_to root_path, class: 'btn-link' do %>
+        <%= t('.home_page') %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="English Horn" id="246">
+  <defaultSetts ampReleaseTime="-2786" coarseTune="-12">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="41" name="English Horn-A#2" originalPitch="4600"/>
+    <sample id="39" name="English Horn-C#3" originalPitch="4900"/>
+    <sample id="37" name="English Horn-F#3" originalPitch="5400"/>
+    <sample id="40" name="English Horn-A#3" originalPitch="5800"/>
+    <sample id="38" name="English Horn-C#4" originalPitch="6100"/>
+    <sample id="36" name="English Horn-F#4" originalPitch="6600"/>
+    <sample id="42" name="English Horn-G#4" originalPitch="6800"/>
+  </samples>
+  <zones>
+    <zone attenuation="120" fineTune="27" freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="0" high="59"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="41" loopStart="5645" loopEnd="11435"/>
+    </zone>
+    <zone attenuation="50" fineTune="21" freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="60" high="63"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="39" loopStart="14747" loopEnd="20588"/>
+    </zone>
+    <zone fineTune="27" freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="64" high="68"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="37" loopStart="19150" loopEnd="25472"/>
+    </zone>
+    <zone fineTune="14" freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="69" high="72"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="40" loopStart="14758" loopEnd="20983"/>
+    </zone>
+    <zone attenuation="30" fineTune="14" freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="73" high="75"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="38" loopStart="22364" loopEnd="27888"/>
+    </zone>
+    <zone attenuation="50" fineTune="-1" freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="76" high="77"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="36" loopStart="14943" loopEnd="21126"/>
+    </zone>
+    <zone attenuation="80" fineTune="32" freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="78" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="42" loopStart="15083" loopEnd="21738"/>
+    </zone>
+  </zones>
+</instrument>

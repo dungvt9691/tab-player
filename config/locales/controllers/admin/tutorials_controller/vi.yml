@@ -1,0 +1,17 @@
+vi:
+  controllers:
+    admin:
+      tutorials:
+        create:
+          success: "Đóng góp hướng dẫn thành công"
+        update:
+          success: "Chỉnh sửa hướng dẫn Tab <b>%{title}</b> thành công"
+          fail: "Lỗi! không thể chỉnh sửa hướng dẫn Tab <b>%{title}</b>"
+          publish_success: "Công khai hướng dẫn Tab <b>%{title}</b> thành công"
+          unpublish_success: "Ngưng công khai hướng dẫn Tab <b>%{title}</b> thành công"
+        destroy:
+          success: "Xoá hướng dẫn Tab <b>%{title}</b> thành công"
+          fail: "Lỗi! Không thể xoá hướng dẫn Tab <b>%{title}</b>"
+        multi_destroy:
+          success: "Xoá hướng dẫn Tab <b>%{title}</b> thành công"
+          fail: "Lỗi! Không thể xoá hướng dẫn Tab <b>%{title}</b>"

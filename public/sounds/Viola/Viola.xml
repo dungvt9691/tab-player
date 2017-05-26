@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Viola" id="248">
+  <defaultSetts filterFc="8321" modFilterFc="3600" ampAttackTime="-3986" ampReleaseTime="-1382" modReleaseTime="6712">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="676" name="Viola-C#3" originalPitch="4900"/>
+    <sample id="675" name="Viola-D#3" originalPitch="5100"/>
+    <sample id="674" name="Viola-F#3" originalPitch="5400"/>
+    <sample id="673" name="Viola-A3" originalPitch="5700"/>
+    <sample id="672" name="Viola-C4" originalPitch="6000"/>
+    <sample id="671" name="Viola-E4" originalPitch="6400"/>
+    <sample id="670" name="Viola-G#4" originalPitch="6800"/>
+    <sample id="669" name="Viola-C5" originalPitch="7200"/>
+    <sample id="668" name="Viola-D5" originalPitch="7400"/>
+    <sample id="667" name="Viola-F5" originalPitch="7700"/>
+    <sample id="666" name="Viola-A#5" originalPitch="8200"/>
+    <sample id="665" name="Viola-B5" originalPitch="8300"/>
+    <sample id="664" name="Viola-D6" originalPitch="8600"/>
+  </samples>
+  <zones>
+    <zone loopType="loop">
+      <keyRange low="0" high="49"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="676" loopStart="17635" loopEnd="21776"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="50" high="52"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="675" loopStart="16147" loopEnd="19992"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="53" high="55"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="674" loopStart="18255" loopEnd="21828"/>
+    </zone>
+    <zone attenuation="82" loopType="loop">
+      <keyRange low="56" high="59"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="673" loopStart="17581" loopEnd="21258"/>
+    </zone>
+    <zone attenuation="34" loopType="loop">
+      <keyRange low="60" high="62"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="672" loopStart="17698" loopEnd="21568"/>
+    </zone>
+    <zone attenuation="41" loopType="loop">
+      <keyRange low="63" high="65"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="671" loopStart="17464" loopEnd="21489"/>
+    </zone>
+    <zone attenuation="27" loopType="loop">
+      <keyRange low="66" high="70"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="670" loopStart="17852" loopEnd="21781"/>
+    </zone>
+    <zone attenuation="68" loopType="loop">
+      <keyRange low="71" high="72"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="669" loopStart="18737" loopEnd="22018"/>
+    </zone>
+    <zone attenuation="14" loopType="loop">
+      <keyRange low="73" high="75"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="668" loopStart="18495" loopEnd="21873"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="76" high="79"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="667" loopStart="16847" loopEnd="21391"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="80" high="82"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="666" loopStart="18566" loopEnd="22081"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="83" high="84"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="665" loopStart="18030" loopEnd="22080"/>
+    </zone>
+    <zone attenuation="41" loopType="loop">
+      <keyRange low="85" high="127"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="664" loopStart="19185" loopEnd="23477"/>
+    </zone>
+  </zones>
+</instrument>

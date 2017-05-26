@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Melodic Tom" id="162">
+  <defaultSetts ampDecayTime="6712" ampSustainTime="960" ampReleaseTime="6712" modDecayTime="0" modReleaseTime="0" scaleTuning="50">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="607" name="Standard Tom 1" originalPitch="6000"/>
+    <sample id="606" name="Standard Tom 2" originalPitch="6000"/>
+    <sample id="605" name="Standard Tom 5" originalPitch="6000"/>
+    <sample id="604" name="Standard Tom 3" originalPitch="6000"/>
+    <sample id="603" name="Standard Tom 4" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone ampDecayTime="4688" ampReleaseTime="4688" coarseTune="-6" loopType="loop">
+      <keyRange low="70" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="607" loopStart="22621" loopEnd="23218"/>
+    </zone>
+    <zone ampDecayTime="5186" ampReleaseTime="5186" coarseTune="-3" loopType="loop">
+      <keyRange low="61" high="69"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="606" loopStart="27788" loopEnd="28946"/>
+    </zone>
+    <zone ampDecayTime="6155" ampReleaseTime="6155" coarseTune="11" freqVibLfo="-851" freqModLfo="-851" loopType="loop">
+      <keyRange low="0" high="42"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="605" loopStart="73378" loopEnd="74366"/>
+    </zone>
+    <zone ampDecayTime="5573" ampReleaseTime="5573" coarseTune="2" loopType="loop">
+      <keyRange low="53" high="60"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="604" loopStart="59042" loopEnd="59652"/>
+    </zone>
+    <zone ampDecayTime="5888" ampReleaseTime="5888" coarseTune="6" loopType="loop">
+      <keyRange low="43" high="52"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="603" loopStart="78759" loopEnd="79568"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,66 @@
+vi:
+  admin:
+    title: "Trang quản trị"
+    setting:
+      title: "Cài đặt"
+      setting_tabs:
+        page_info: "Thông tin trang"
+        social_networks: "Mạng xã hội"
+        seo: "Cài đặt SEO"
+        adfly: "Cài đặt adFly"
+        smtp: "Cấu hình SMTP"
+        recaptcha: "Cài đặt reCAPTCHA"
+      page_info:
+        title: "Thông tin trang"
+      general_setting:
+        general: "Cài đặt chung"
+      social_networks:
+        title: "Mạng xã hội"
+      facebook_setting:
+        title: "Cài đặt Facebook API"
+      google_setting:
+        title: "Cài đặt Google API"
+      youtube_setting:
+        title: "Cài đặt Youtube API"
+      adfly:
+        title: "Cài đặt adFly"
+      adfly_setting:
+        title: "Cài đặt adFly"
+        adfly_note_1: "Đăng ký, đăng nhập tài khoản AdFly"
+        adfly_note_2: "Kiểm tra AdFly UID và Key"
+        adfly_note_3: "Thống kê thu nhập từ AdFly"
+      seo:
+        title: "Cài đặt SEO"
+      seo_setting:
+        title: "Cài đặt SEO"
+        select_image: "Chọn ảnh"
+        remove_image: "Xoá ảnh"
+      smtp:
+        title: "Cấu hình SMTP"
+      smtp_setting:
+        title: "Cấu hình SMTP"
+      test_smtp:
+        title: "Gửi email kiểm tra"
+        loading: "Đang gửi mail..."
+        success: "Gửi email test thành công."
+        fail: "Lỗi! không thể gửi email test."
+        email_invalid: "Địa chỉ email không hợp lệ."
+        form:
+          mail_to: "Gửi đến"
+          submit: "Gửi"
+      contact_mailer:
+        subject: "Có 1 liên hệ mới từ %{name}"
+      recaptcha:
+        title: "Cài đặt reCAPTCHA"
+      recaptcha_setting:
+        title: "Cài đặt reCAPTCHA"
+      new:
+        title: "Cài đặt Website"
+        form:
+          app_name: "Tên website"
+          app_url: "Địa chỉ trang web"
+          app_email: "Địa chỉ email"
+          admin_username: "Tài khoản admin"
+          admin_password: "Mật khẩu admin"
+          submit: "Lưu lại"
+          reset: "Đặt lại"

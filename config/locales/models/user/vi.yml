@@ -1,0 +1,27 @@
+vi:
+  users:
+    not_found: "Không tìm thấy thành viên tương ứng"
+    lock: "Khoá tài khoản"
+    unlock: "Bỏ khoá tài khoản"
+    locked: "Tài khoản của bạn đã bị khoá đến ngày <b>%{locked_at}</b> do vi phạm <b>Điều Khoản & Quy định</b> của %{app_name}"
+
+  activerecord:
+    attributes:
+      user:
+        email: "Địa chỉ email"
+        fullname: "Họ và tên"
+        avatar: "Ảnh đại diện"
+        password: "Mật khẩu"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "không được để trống."
+              taken: "đã tồn tại."
+            fullname:
+              blank: "không được để trống."
+            avatar:
+              blank: "không được để trống."
+            password:
+              blank: "không được để trống."

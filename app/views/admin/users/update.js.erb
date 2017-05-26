@@ -1,0 +1,18 @@
+$('body').css("cursor", 'auto')
+$("#<%= @modal %> .btn").prop("disabled", false)
+<% if @errors.empty? %>
+showMessage("<%= @success_message.html_safe %>.", "success")
+$('.modal#<%= @modal %>').modal('hide');
+<% case @type %>
+<% when 'lock' %>
+$(".btn-lock[data-user-id=<%= @user.id %>]").prop("disabled", true)
+$(".btn-unlock[data-user-id=<%= @user.id %>]").prop("disabled", false)
+<% when 'unlock' %>
+$(".btn-lock[data-user-id=<%= @user.id %>]").prop("disabled", false)
+$(".btn-unlock[data-user-id=<%= @user.id %>]").prop("disabled", true)
+<% when 'add_coin' %>
+$(".btn-add-coin[data-user-id=<%= @user.id %>]").parents('tr').find('td:nth-child(5)').html("<%= number_with_delimiter(@user.coin) %>")
+<% end %>
+<% else %>
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>

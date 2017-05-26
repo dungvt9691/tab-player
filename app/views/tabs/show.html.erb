@@ -1,0 +1,12 @@
+<% provide(:og_title, @tab.seo_title.blank? ? @tab.title : @tab.seo_title) %>
+<% provide(:og_description, "#{@tab.title}, #{@tab.artists_text}, #{@tab.seo_description.blank? ? Setting.seo_description : @tab.seo_description}") %>
+<% provide(:keywords, "#{@tab.title}, #{@tab.artists_text}, #{@tab.seo_keywords.blank? ? Setting.seo_keywords : @tab.seo_keywords}") %>
+<% if @tab.artists.empty? %>
+<% provide(:meta_image, "#{Setting.app_url}#{asset_path('pages/logo-square.png')}") %>
+<% else %>
+<% if @tab.artists.first.avatar? %>
+<% provide(:meta_image, "#{Setting.app_url}#{@tab.artists.first.avatar.url(:thumb)}") %>
+<% else %>
+<% provide(:meta_image, "#{Setting.app_url}#{asset_path('pages/logo-square.png')}") %>
+<% end %>
+<% end %>

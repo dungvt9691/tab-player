@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Thunder" id="194">
+  <samples>
+    <sample id="480" name="Thunder" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="6042" modFilterFc="3600" ampAttackTime="-1494" ampReleaseTime="3600" modDecayTime="553" modSustainTime="1000" modReleaseTime="553" coarseTune="-21" scaleTuning="50" reverb="200" pan="300">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="480" loopStart="7" loopEnd="39055"/>
+    </zone>
+    <zone filterFc="9426" modFilterFc="1000" ampAttackTime="-8359" ampReleaseTime="3600" modDecayTime="55" modSustainTime="1000" modReleaseTime="55" coarseTune="-24" scaleTuning="50" reverb="200" pan="-300">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="480" loopStart="7" loopEnd="39055"/>
+    </zone>
+  </zones>
+</instrument>

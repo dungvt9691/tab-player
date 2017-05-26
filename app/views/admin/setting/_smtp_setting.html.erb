@@ -1,0 +1,82 @@
+<h4><b><%= t('.title') %></b></h4>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:smtp_sender) %>">
+      <%= f.label :smtp_sender, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :smtp_sender, class: "form-control", autocomplete: 'off' %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:smtp_sender) %>
+          <%= @setting.errors[:smtp_sender].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:smtp_address) %>">
+      <%= f.label :smtp_address, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :smtp_address, class: "form-control", autocomplete: 'off' %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:smtp_address) %>
+          <%= @setting.errors[:smtp_address].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:smtp_port) %>">
+      <%= f.label :smtp_port, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :smtp_port, class: "form-control", autocomplete: 'off' %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:smtp_port) %>
+          <%= @setting.errors[:smtp_port].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:smtp_username) %>">
+      <%= f.label :smtp_username, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :smtp_username, class: "form-control", autocomplete: 'off' %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:smtp_username) %>
+          <%= @setting.errors[:smtp_username].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:smtp_password) %>">
+      <%= f.label :smtp_password, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :smtp_password, class: "form-control", autocomplete: 'off' %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:smtp_password) %>
+          <%= @setting.errors[:smtp_password].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:smtp_authentication) %>">
+      <%= f.label :smtp_authentication, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :smtp_authentication, class: "form-control", autocomplete: 'off' %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:smtp_authentication) %>
+          <%= @setting.errors[:smtp_authentication].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:smtp_enable_starttls_auto) %>">
+      <%= f.label :smtp_enable_starttls_auto, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.check_box :smtp_enable_starttls_auto, class: "form-control", autocomplete: 'off' %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:smtp_enable_starttls_auto) %>
+          <%= @setting.errors[:smtp_enable_starttls_auto].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

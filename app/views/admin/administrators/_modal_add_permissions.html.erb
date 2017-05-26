@@ -1,0 +1,68 @@
+<div class="modal fade zoom" id="modal-add-permissions">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <%= t('administrators.set_permissions') %>
+        </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <%= label_tag t('administrators.select_permission') %>:
+        <%= render 'admin/permissions/permission', id: DateTime.now.to_i %>
+        <div class="row add-more">
+          <div class='col-sm-12'>
+            <%= button_tag '', type: 'button', class: 'btn btn-sm btn-secondary', id: 'btn-add-more-permission' do %>
+            <%= t('permissions.add_more') %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= submit_tag t('administrators.set_permissions'), class: "btn btn-secondary", id: 'btn-set-permissions' %>
+        <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">
+          <%= t('cancel') %>
+        </button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/javascript">
+$('#modal-add-permissions').on('show.bs.modal', function (e) {
+  $(".permission").find('.btn-remove-permission').remove()
+})
+
+$("#btn-add-more-permission").click(function(){
+  if($(".permission").length >= parseInt("<%= Permission.all.count %>")){
+    showMessage("<%= t('permissions.max_selected', count: Permission.all.count) %>", "error")
+    return
+  }
+  $(this).parents('.add-more').before("<%=j render 'admin/permissions/permission', id: DateTime.now.to_i %>")
+})
+
+$("#modal-add-permissions").on("click", ".btn-remove-permission", function(){
+  $(this).parents('.permission').remove()
+})
+
+$("#btn-set-permissions").click(function(){
+  $("#modal-add-permissions").find(".btn").prop("disabled", true)
+  $("body").css("cursor", "progress")
+
+  permissions = {}
+
+  $(".permission").each(function(){
+    permissions[$(this).find('select').val()] = {
+      read: $(this).find('input[name=read]').is(':checked'),
+      create: $(this).find('input[name=create]').is(':checked'),
+      update: $(this).find('input[name=update]').is(':checked'),
+      destroy: $(this).find('input[name=destroy]').is(':checked')
+    }
+  })
+
+  $.ajax({
+    type: "POST",
+    url: "<%= admin_administrator_permissions_path(administrator_id: @administrator.id) %>",
+    data: { permissions: permissions }
+  })
+})
+</script>

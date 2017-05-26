@@ -1,0 +1,31 @@
+<div class="modal fade zoom" id="modal-embed">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= text_field_tag :embed, "<iframe src='#{embed_url(sid: tab.sid)}' width='950px' height='500px' frameBorder='0'></iframe>", class: 'form-control', id: 'input-embed' %>
+        <br>
+        <center>
+          <button data-clipboard-action="copy" data-clipboard-target="#input-embed" id="btn-copy-clipboard" type="button" class="btn btn-secondary">
+            <%= t('.copy') %>
+          </button>
+          <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">
+            <%= t('close') %>
+          </button>
+        </center>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/javascript">
+$(document).ready(function(){  
+  var clipboard = new Clipboard('#btn-copy-clipboard');
+});
+
+$('#modal-embed').on('shown.bs.modal', function (e) {
+  $("#input-embed").select()
+})
+
+$("#btn-copy-clipboard").click(function(){
+  showMessage("<%= t('.copied') %>", "success")
+})
+</script>

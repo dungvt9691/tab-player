@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Telephone 1" id="268">
+  <defaultSetts attenuation="127" ampAttackTime="-8800" ampSustainTime="1000" modAttackTime="-8800" modSustainTime="1000" freqVibLfo="-15600" freqModLfo="-725" reverb="31" chorus="31">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="344" name="LeFone" originalPitch="6000"/>
+    <sample id="347" name="ColdGlass7Wave" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="105" ampReleaseTime="-884" coarseTune="-15" scaleTuning="50" loopType="loop">
+      <keyRange low="0" high="96"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="344" loopStart="1" loopEnd="1585"/>
+    </zone>
+    <zone filterFc="7611" fineTune="7" ampReleaseTime="3986" coarseTune="-10" scaleTuning="50" loopType="loop">
+      <keyRange low="0" high="96"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="347" loopStart="17" loopEnd="65"/>
+    </zone>
+    <zone filterFc="7611" fineTune="7" ampReleaseTime="3986" coarseTune="-14" scaleTuning="50" loopType="loop">
+      <keyRange low="0" high="96"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="347" loopStart="17" loopEnd="65"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,30 @@
+$('body').css("cursor", 'auto')
+$("#<%= @modal %> .btn").prop("disabled", false)
+<% if @errors.empty? %>
+showMessage("<%= @success_message.html_safe %>.", "success")
+$('.modal#<%= @modal %>').modal('hide');
+<% case @type %>
+<% when 'publish' %>
+$(".btn-publish[data-tutorial-id=<%= @tutorial.id %>]").prop("disabled", true)
+$(".btn-unpublish[data-tutorial-id=<%= @tutorial.id %>]").prop("disabled", false)
+$(".btn-publish[data-tutorial-id=<%= @tutorial.id %>]").parents('tr').find('td:nth-child(5)').html("<%= @tutorial.status_locale %>")
+<% when 'unpublish' %>
+$(".btn-publish[data-tutorial-id=<%= @tutorial.id %>]").prop("disabled", false)
+$(".btn-unpublish[data-tutorial-id=<%= @tutorial.id %>]").prop("disabled", true)
+$(".btn-publish[data-tutorial-id=<%= @tutorial.id %>]").parents('tr').find('td:nth-child(5)').html("<%= @tutorial.status_locale %>")
+<% when 'update' %>
+$(".btn-update[data-tutorial-id=<%= @tutorial.id %>]").parents('tr').find('td:nth-child(2)').html("<%=j image_tag @tutorial.thumbnail_url, class: 'img-responsive' %>")
+$(".btn-update[data-tutorial-id=<%= @tutorial.id %>]").parents('tr').find('td:nth-child(3)').html("<%=j link_to @tutorial.link, @tutorial.link %>")
+<% end %>
+<% else %>
+<% if @type == 'update' %>
+<% if @errors.class.to_s == "Hash" %>
+<% @errors.each do |key, value| %>
+$("#help-block-<%= key %>").text("<%= value.join(', ') %>.")
+$("#tutorial_<%= key %>").parents(".form-group").addClass("has-error")
+<% end %>
+<% end %>
+<% else %>
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>
+<% end %>

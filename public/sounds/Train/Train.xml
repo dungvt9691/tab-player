@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Train" id="183">
+  <defaultSetts coarseTune="-6" scaleTuning="50">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="469" name="Train" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="14400" modPitch="150" ampDelayTime="423" ampAttackTime="2745" ampReleaseTime="4615" modHoldTime="-2084" modSustainTime="1000" modReleaseTime="74" freqVibLfo="-1118" freqModLfo="-1118" pan="500" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="469" loopStart="13" loopEnd="28739"/>
+    </zone>
+    <zone filterFc="14400" ampAttackTime="2745" ampReleaseTime="3050" modReleaseTime="74" freqVibLfo="-1118" freqModLfo="-1118" pan="-500" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="469" loopStart="13" loopEnd="28739"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,78 @@
+header.navbar
+  background-color: $secondary-color
+  .navbar-brand
+    background: image-url('logo/admin.png') no-repeat center center
+    background-size: 100%
+    margin-left: $margin-min
+
+  .navbar-nav>.open
+    &>a, &>a:hover, &>a:focus, &>a:active
+      background-color: #384e65
+
+  .app-language
+    img
+      width: 20px
+    a
+      opacity: 0.5
+      padding-top: 9px !important
+      padding-right: 5px !important
+      padding-left: 5px !important
+
+    a.active
+      opacity: 1
+
+    &:last-child
+      a
+        padding-left: 15px !important
+
+  #leftmenu-trigger
+    border-right: 1px solid #384e65
+    text-align: center
+    line-height: $margin-middle
+    color: $white-color
+
+  .dropdown-menu.userinfo
+    padding-top: 0
+
+  #btn-sign-out
+    background-color: $danger-color
+    color: $white-color
+    font-size: $font-size-base
+    padding: 0px $margin-min
+    margin: $margin-min
+
+#page-container
+  background: $secondary-color
+
+  #sidebar
+    li a, i
+      color: #fff !important
+
+    &>li>a
+      padding: 15px $margin-min
+      font-size: $font-size-middle
+
+    &>li.active>a
+      background-color: $primary-color
+
+    ul
+      padding: 0
+      padding-bottom: $margin-base
+      background: $secondary-hover-color
+      font-size: $font-size-base
+      li.active:not(.open)>a
+        color: $primary-color !important
+      li
+        a
+          background: $secondary-hover-color
+          font-size: $font-size-base
+          padding: $margin-min
+          padding-left: $margin-base
+
+    a:hover
+      background-color: rgba(255, 255, 255, 0.1)
+
+body.collapse-leftbar 
+  &>li:hover,
+  &>li.keep-open
+    background-color: #2c3e50

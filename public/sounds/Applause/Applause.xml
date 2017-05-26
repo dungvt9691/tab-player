@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Applause" id="267">
+  <samples>
+    <sample id="726" name="Applause" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="10231" ampAttackTime="-8857" ampReleaseTime="3369" modReleaseTime="4033" scaleTuning="50" freqModLfo="-1130" reverb="70" chorus="70" loopType="loop">
+      <keyRange low="0" high="108"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="726" loopStart="55490" loopEnd="89498"/>
+    </zone>
+  </zones>
+</instrument>

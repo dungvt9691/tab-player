@@ -1,0 +1,20 @@
+vi:
+  categories:
+    not_found: "Không tìm thấy danh mục tương ứng"
+
+  activerecord:
+    attributes:
+      category:
+        name: "Tên danh mục"
+        system: ""
+        created_at: "Tạo lúc"
+        updated_at: "Chỉnh sửa lúc"
+    errors:
+      models:
+        category:
+          attributes:
+            name:
+              blank: "không được để trống."
+              taken: "đã tồn tại."
+            system:
+              error: "Lỗi hệ thống."

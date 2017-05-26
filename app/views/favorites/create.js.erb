@@ -1,0 +1,10 @@
+$("body").css("cursor", "auto")
+<% if @errors.empty? %>
+showMessage("<%= t_scope(@params, 'success') %>", "success")
+$("#add-to-favorite").addClass("active")
+$("#add-to-favorite").html("<i class='material-icons'>favorite</i>")
+$("#panel-favorites").find("#alert-no-tabs").remove()
+$("#panel-favorites .favorite-tabs .loading").before("<%=j render 'tab', tab: @tab %>")
+<% else %>
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>

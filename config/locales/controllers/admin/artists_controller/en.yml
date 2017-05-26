@@ -1,0 +1,14 @@
+en:
+  controllers:
+    admin:
+      artists:
+        create:
+          success: "Created artist <b>%{name}</b> successfully"
+        update:
+          success: "Edited artist <b>%{name}</b> successfully"
+        destroy:
+          success: "Deleted aritst <b>%{name}</b> successfully"
+          fail: "Error! Cannot delete aritst <b>%{name}</b>"
+        multi_destroy:
+          success: "Deleted aritst <b>%{name}</b> successfully"
+          fail: "Error! Cannot delete aritst <b>%{name}</b>"

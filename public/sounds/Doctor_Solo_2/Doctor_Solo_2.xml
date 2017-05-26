@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Doctor Solo_2" id="126">
+  <defaultSetts attenuation="127" ampAttackTime="-8800" ampSustainTime="1000" modAttackTime="-8800" modSustainTime="1000" freqVibLfo="-15600" freqModLfo="-725" chorus="31">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="360" name="SquareWave" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="240" filterFc="9853" fineTune="-42" ampDecayTime="2934" ampReleaseTime="-1599" coarseTune="-19" chorus="297" loopType="loop">
+      <keyRange low="0" high="100"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="360" loopStart="2368" loopEnd="2423"/>
+    </zone>
+  </zones>
+</instrument>

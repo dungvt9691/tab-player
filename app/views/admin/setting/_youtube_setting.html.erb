@@ -1,0 +1,38 @@
+<h4><b><%= t('.title') %></b></h4>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:youtube_endpoint) %>">
+      <%= f.label :youtube_endpoint, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :youtube_endpoint, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:youtube_endpoint) %>
+          <%= @setting.errors[:youtube_endpoint].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:youtube_api_key) %>">
+      <%= f.label :youtube_api_key, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :youtube_api_key, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:youtube_api_key) %>
+          <%= @setting.errors[:youtube_api_key].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:youtube_thumbnail) %>">
+      <%= f.label :youtube_thumbnail, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :youtube_thumbnail, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:youtube_thumbnail) %>
+          <%= @setting.errors[:youtube_thumbnail].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

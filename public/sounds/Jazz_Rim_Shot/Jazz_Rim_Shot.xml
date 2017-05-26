@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Jazz Rim Shot" id="81">
+  <defaultSetts filterFc="9320" modFilterFc="3600" fineTune="20" modDecayTime="-3986" modSustainTime="1000" modReleaseTime="-3986" coarseTune="1">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="261" name="Jazz Rim Shot" originalPitch="3700"/>
+  </samples>
+  <zones>
+    <zone ampReleaseTime="7973">
+      <keyRange low="37" high="37"/>
+      <velRange low="112" high="127"/>
+      <sampleRecord sampleId="261" loopStart="8" loopEnd="5754"/>
+    </zone>
+    <zone ampDecayTime="0" ampSustainTime="1000" ampReleaseTime="0">
+      <keyRange low="37" high="37"/>
+      <velRange low="87" high="111"/>
+      <sampleRecord sampleId="261" loopStart="8" loopEnd="5754"/>
+    </zone>
+    <zone ampDecayTime="-884" ampSustainTime="1000" ampReleaseTime="-884">
+      <keyRange low="37" high="37"/>
+      <velRange low="56" high="86"/>
+      <sampleRecord sampleId="261" loopStart="8" loopEnd="5754"/>
+    </zone>
+    <zone ampDecayTime="-2084" ampSustainTime="1000" ampReleaseTime="-2084">
+      <keyRange low="37" high="37"/>
+      <velRange low="0" high="55"/>
+      <sampleRecord sampleId="261" loopStart="8" loopEnd="5754"/>
+    </zone>
+  </zones>
+</instrument>

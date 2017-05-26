@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Whistlin'" id="294">
+  <samples>
+    <sample id="365" name="OcarinaFx2" originalPitch="6000"/>
+    <sample id="363" name="WhiteNoiseWave" originalPitch="6000"/>
+    <sample id="366" name="KPianoB5" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="75" filterFc="10266" modPitch="-93" fineTune="-76" ampAttackTime="-4603" ampSustainTime="13" ampReleaseTime="-3729" modAttackTime="-8800" modDecayTime="-4603" modSustainTime="1000" coarseTune="-25" freqVibLfo="-15600" freqModLfo="-255" modLfoToPitch="28" modLfoToVolume="5" delayModLfo="-2078" reverb="109" loopType="loop">
+      <keyRange low="0" high="107"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-1600" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      </modulators>
+      <sampleRecord sampleId="365" loopStart="1144" loopEnd="1182"/>
+    </zone>
+    <zone attenuation="307" filterFc="9263" filterQ="190" ampAttackTime="-8800" modAttackTime="-8800" coarseTune="22" freqVibLfo="-15600" freqModLfo="-725" reverb="109" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="363" loopStart="7" loopEnd="8289"/>
+    </zone>
+    <zone filterFc="10266" modPitch="-93" fineTune="-48" ampAttackTime="-4603" ampSustainTime="13" ampReleaseTime="-3729" modAttackTime="-8800" modDecayTime="-4603" modSustainTime="1000" coarseTune="-51" freqVibLfo="-15600" freqModLfo="-255" modLfoToPitch="28" modLfoToVolume="5" delayModLfo="-2078" reverb="109" loopType="loop">
+      <keyRange low="108" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-1600" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="366" loopStart="2963" loopEnd="5394"/>
+    </zone>
+  </zones>
+</instrument>

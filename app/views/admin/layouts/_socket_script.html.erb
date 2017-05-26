@@ -1,0 +1,54 @@
+<script type="text/javascript">
+$(document).ready(function(){
+  function notifiesSocketInitialize(){
+    try {
+      var socket = new WebSocket("ws://<%= Setting.app_url.gsub('http://', '') %>/socket"+"/<%= current_admin.id %>?type=crawler");
+      var id = "<%= current_admin.id %>";
+      socket.onopen = function(e) {
+        console.log("Notifies Socket Opened ", id);
+      }
+      socket.onclose = function(e) {
+        console.log("Notifies Socket Closed ", id);
+      }
+      socket.onmessage = function(e) {
+        data = $.parseJSON(e.data);
+        if($(".crawler-content").hasClass('hide')){
+          $(".crawler-content").addClass('show')
+          $(".crawler-content").removeClass('hide')
+        }
+        if(data.done){
+          $(".crawler-content h3").html("<i class='fa fa-check'></i> <%= t('.done') %> <b>" + number_format(data.count) + " <%= t('admin.artists.index.title').mb_chars.downcase %></b>.")
+          $(".crawler-content h3").css({
+            'margin-bottom': 0,
+            'font-weight': 'normal'
+          })
+          showMessage("<%= t('.done') %> " + number_format(data.count) + " <%= t('admin.artists.index.title').mb_chars.downcase %>.", 'success')
+          $(".crawler-content p").remove()
+          $(".crawler-content .alert").removeClass('alert-warning')
+          $(".crawler-content .alert").addClass('alert-primary')
+        }
+        else{
+          if(typeof data.artist != 'undefined')
+          {
+            $(".sync-text").html("<i class='fa fa-spin fa-refresh'></i><%= t('.synced') %>")
+            $(".artist-name").text(data.artist.name)
+          }
+          else{
+            $(".sync-text").html("<i class='fa fa-spin fa-refresh'></i><%= t('.syncing') %>")
+            $(".artist-name").text('')
+          }
+        }
+      }
+      socket.onerror = function(e) {
+        notifiesSocketInitialize();
+      }
+    } catch (ex) {
+      console.log("Socket exception " + id + ": ", ex);
+    }
+  }
+
+  $(window).load(function(){
+    notifiesSocketInitialize()
+  });
+})
+</script>

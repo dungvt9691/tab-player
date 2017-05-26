@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Tinkling Bells" id="127">
+  <defaultSetts attenuation="60" ampAttackTime="-8800" ampSustainTime="1000" ampReleaseTime="1911" modAttackTime="-8800" modSustainTime="1000" freqVibLfo="-15600" freqModLfo="-725" reverb="31" chorus="31">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="347" name="ColdGlass7Wave" originalPitch="6000"/>
+    <sample id="353" name="ColdGlass12Wave" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone fineTune="-71" ampDecayTime="1911" coarseTune="-40" loopType="loop">
+      <keyRange low="0" high="93"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="347" loopStart="17" loopEnd="65"/>
+    </zone>
+    <zone fineTune="-93" ampDecayTime="1911" coarseTune="-45" loopType="loop">
+      <keyRange low="94" high="114"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="353" loopStart="15" loopEnd="86"/>
+    </zone>
+  </zones>
+</instrument>

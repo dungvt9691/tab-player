@@ -1,0 +1,13 @@
+vi:
+  controllers:
+    admin:
+      permissions:
+        create:
+          success: "Cài đặt quyền hạn cho thành viên <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể cài đặt quyền hạn cho tài khoản này"
+        update:
+          success: "Chỉnh sửa quyền hạn cho thành viên <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể chỉnh sửa quyền hạn cho tài khoản này"
+        destroy:
+          success: "Xoá bỏ quyền hạn cho thành viên <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể xoá bỏ quyền hạn cho tài khoản này"

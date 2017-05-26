@@ -1,0 +1,39 @@
+// Place all the styles related to the admin/administrators controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#table-administrators
+  thead
+    th:nth-child(1)
+      width: 4% !important
+    th:nth-child(2)
+      width: 5% !important
+    th:nth-child(3)
+      width: 25% !important
+    th:nth-child(4)
+      width: 20% !important
+    th:nth-child(5)
+      width: 17% !important
+    th:nth-child(6)
+      width: 15% !important
+    th:nth-child(7)
+      width: 17% !important
+
+#administrator-show,
+#administrator-edit
+  #administrator-avatar
+    margin: 0 $margin-small $margin-small 0
+    height: 260px
+
+#administrator-edit
+  .table
+    thead
+      strong
+        color: $secondary-gray-hover-color
+  .label
+    cursor: pointer
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none

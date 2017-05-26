@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Ride Bell" id="85">
+  <defaultSetts attenuation="300" ampReleaseTime="6719" pan="124">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="266" name="Ride Bell" originalPitch="5300"/>
+  </samples>
+  <zones>
+    <zone>
+      <keyRange low="53" high="53"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="266" loopStart="8" loopEnd="80004"/>
+    </zone>
+  </zones>
+</instrument>

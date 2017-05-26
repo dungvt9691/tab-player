@@ -1,0 +1,8 @@
+en:
+  controllers:
+    tabs:
+      create:
+        success: "Uploaded Tab successfully"
+      update:
+        permission_denied: "Permission denied"
+        success: "Updated successfully"

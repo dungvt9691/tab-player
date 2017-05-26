@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Violin_1" id="33">
+  <defaultSetts ampAttackTime="-7973" ampReleaseTime="-1586">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="52" name="Violin-A3" originalPitch="5600"/>
+    <sample id="50" name="Violin-B3" originalPitch="5900"/>
+    <sample id="47" name="Violin-D#4" originalPitch="6300"/>
+    <sample id="44" name="Violin-F#4" originalPitch="6600"/>
+    <sample id="51" name="Violin-A#4" originalPitch="7000"/>
+    <sample id="48" name="Violin-C#5" originalPitch="7300"/>
+    <sample id="45" name="Violin-F5" originalPitch="7700"/>
+    <sample id="43" name="Violin-F#5" originalPitch="7800"/>
+    <sample id="49" name="Violin-B5" originalPitch="8300"/>
+    <sample id="46" name="Violin-D#6" originalPitch="8700"/>
+    <sample id="53" name="Violin-F#6" originalPitch="9000"/>
+  </samples>
+  <zones>
+    <zone attenuation="60" fineTune="57" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="0" high="57"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="52" loopStart="22941" loopEnd="36596"/>
+    </zone>
+    <zone attenuation="30" fineTune="64" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="58" high="60"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="50" loopStart="23922" loopEnd="39542"/>
+    </zone>
+    <zone fineTune="44" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="61" high="64"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="47" loopStart="21418" loopEnd="36345"/>
+    </zone>
+    <zone fineTune="28" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="65" high="67"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="44" loopStart="20288" loopEnd="35267"/>
+    </zone>
+    <zone fineTune="39" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="68" high="71"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="51" loopStart="23535" loopEnd="38123"/>
+    </zone>
+    <zone fineTune="42" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="72" high="75"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="48" loopStart="14809" loopEnd="29808"/>
+    </zone>
+    <zone attenuation="40" fineTune="57" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="76" high="77"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="45" loopStart="22608" loopEnd="35558"/>
+    </zone>
+    <zone fineTune="-36" coarseTune="1" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="78" high="80"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="43" loopStart="22892" loopEnd="37260"/>
+    </zone>
+    <zone attenuation="30" fineTune="52" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="81" high="84"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="49" loopStart="23848" loopEnd="37532"/>
+    </zone>
+    <zone fineTune="66" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="85" high="89"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="46" loopStart="20578" loopEnd="34039"/>
+    </zone>
+    <zone attenuation="30" fineTune="-39" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="90" high="96"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="53" loopStart="28628" loopEnd="40669"/>
+    </zone>
+    <zone attenuation="80" filterFc="11196" fineTune="-39" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973" loopType="loop">
+      <keyRange low="97" high="112"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="53" loopStart="28628" loopEnd="40669"/>
+    </zone>
+  </zones>
+</instrument>

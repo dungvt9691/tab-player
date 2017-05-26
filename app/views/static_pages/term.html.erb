@@ -1,0 +1,10 @@
+<% provide(:og_title, @page_object.seo_title) %>
+<% provide(:og_description, @page_object.seo_description.blank? ? Setting.seo_description : @page_object.seo_description) %>
+<% provide(:keywords, @page_object.seo_keywords.blank? ? Setting.seo_keywords : @page_object.seo_keywords) %>
+<% provide(:meta_image, @page_object.featured_image.blank? ? Setting.featured_image : @page_object.featured_image) %>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#sidebar-term").addClass("active")
+  activePanel($("#sidebar-term a").attr('href'))
+})
+</script>

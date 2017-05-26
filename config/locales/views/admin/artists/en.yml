@@ -1,0 +1,57 @@
+en:
+  admin:
+    artists:
+      index:
+        title: "Artists"
+        new: "Add artist"
+        table:
+          avatar: "Avatar"
+          cover: "Cover"
+          name: "Full name"
+          name_alias: "Name alias"
+          birthname: "Birth name"
+          created_at: "Created at"
+        destroy: "Delete artist"
+        destroy_selected: "Delete selected artists"
+        multi_destroy: "Delete selected artists"
+        crawler:
+          title: "Sync with Mp3 Zing"
+          loading: "Sync artists from Mp3 Zing"
+          done: "Synced artists successfully"
+          stop: "Stop sync"
+          syncing: "Loading data..."
+          synced: "Synced artist"
+      new:
+        title: "Add artist"
+        form:
+          new: "Add artist"
+          informations: "Informations"
+          name_placeholder: "Insert artist full name"
+          avatar: "Avatar"
+          cover: "Cover"
+          created_at: "Created at"
+          updated_at: "Updated at"
+          select_image_note: "Click on the image to replace."
+          select_avatar_image: "Select avatar"
+          select_cover_image: "Select cover"
+          invalid_extension: "Only accept extension"
+      edit:
+        title: "Edit artist"
+        form:
+          edit: "Edit"
+          informations: "Informations"
+          name_placeholder: "Insert artist full name"
+          avatar: "Avatar"
+          cover: "Cover"
+          created_at: "Created at"
+          updated_at: "Updated at"
+          select_image_note: "Click in image to replace."
+          select_avatar_image: "Select avatar"
+          select_cover_image: "Select cover"
+          invalid_extension: "Only accept extension"
+      show:
+        title: "Artist informations"
+      modal_confirm_crawler:
+        are_you_sure: "Do you want to sync artists from Zing Mp3"
+      modal_confirm_stop_crawler:
+        are_you_sure: "Do you want stop sync artists"

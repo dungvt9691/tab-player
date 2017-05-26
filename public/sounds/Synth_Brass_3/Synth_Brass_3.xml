@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Brass 3" id="121">
+  <defaultSetts attenuation="240" ampAttackTime="-8800" ampSustainTime="1000" modAttackTime="-8800" modSustainTime="1000" freqVibLfo="-15600" freqModLfo="-725" reverb="31" chorus="31">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="346" name="BSawtoothWaveA3" originalPitch="6000"/>
+    <sample id="351" name="SynthBassLoop" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone modPitch="-524" fineTune="4" ampReleaseTime="-1817" modDecayTime="-4603" modReleaseTime="-4603" coarseTune="-21" loopType="loop">
+      <keyRange low="12" high="43"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="346" loopStart="15" loopEnd="65"/>
+    </zone>
+    <zone filterFc="10325" modPitch="375" modFilterFc="1125" fineTune="5" ampReleaseTime="-1817" coarseTune="16" loopType="loop">
+      <keyRange low="12" high="43"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="351" loopStart="9" loopEnd="436"/>
+    </zone>
+    <zone modPitch="-262" fineTune="3" ampReleaseTime="-1817" modDecayTime="-4603" modReleaseTime="-4603" coarseTune="-21" loopType="loop">
+      <keyRange low="44" high="61"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="346" loopStart="15" loopEnd="65"/>
+    </zone>
+    <zone filterFc="10030" modPitch="281" modFilterFc="562" fineTune="7" ampReleaseTime="-1817" coarseTune="16" loopType="loop">
+      <keyRange low="44" high="61"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="351" loopStart="9" loopEnd="436"/>
+    </zone>
+    <zone modPitch="-130" fineTune="2" ampReleaseTime="-1817" modDecayTime="-4603" modReleaseTime="-4603" coarseTune="-21" loopType="loop">
+      <keyRange low="62" high="80"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="346" loopStart="15" loopEnd="65"/>
+    </zone>
+    <zone modPitch="94" modFilterFc="1125" fineTune="-2" ampReleaseTime="-1817" coarseTune="-21" loopType="loop">
+      <keyRange low="62" high="80"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="346" loopStart="15" loopEnd="65"/>
+    </zone>
+    <zone filterFc="11033" modPitch="-65" fineTune="1" ampReleaseTime="-1817" modDecayTime="-4603" modReleaseTime="-4603" coarseTune="-21" loopType="loop">
+      <keyRange low="81" high="107"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="346" loopStart="15" loopEnd="65"/>
+    </zone>
+    <zone filterFc="11033" modPitch="47" modFilterFc="225" fineTune="-1" ampReleaseTime="-1817" coarseTune="-21" loopType="loop">
+      <keyRange low="81" high="107"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="346" loopStart="15" loopEnd="65"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,7 @@
+<% flash.each do |key, value| %>
+<script type="text/javascript">
+$(document).ready(function(){
+  showMessage("<%= render_value(value).html_safe %>", "<%= render_key(key) %>")
+})
+</script>
+<% end %>

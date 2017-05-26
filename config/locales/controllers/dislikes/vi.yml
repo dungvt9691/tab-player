@@ -1,0 +1,7 @@
+vi:
+  controllers:
+    dislikes:
+      create:
+        fail: "Lỗi"
+      destroy:
+        fail: "Lỗi"

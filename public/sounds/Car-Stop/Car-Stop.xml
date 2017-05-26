@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Car-Stop" id="191">
+  <samples>
+    <sample id="477" name="Car-Skid" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="14400" ampReleaseTime="-314" modReleaseTime="74" coarseTune="-8" scaleTuning="50" freqVibLfo="-1118" freqModLfo="-1118">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="477" loopStart="3" loopEnd="20784"/>
+    </zone>
+  </zones>
+</instrument>

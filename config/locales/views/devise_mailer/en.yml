@@ -1,0 +1,8 @@
+en:
+  devise_mailer:
+    reset_password_instructions:
+      text_1: "Hi %{fullname}!"
+      text_2: "Someone has requested a link to change your password. You can do this through the link below."
+      text_3: "Change my password"
+      text_4: "If you didn't request this, please ignore this email."
+      text_5: "Your password won't change until you access the link above and create a new one."

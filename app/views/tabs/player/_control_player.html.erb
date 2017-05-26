@@ -1,0 +1,118 @@
+<section class="tpp-b-controls hxControlPanelView tpp-b-controls__Smekhov_0701">
+  <section type="component" class="tpp-b-pitch-notification hxPitchNotification" style="display: none;">
+  </section>
+  <section class="pull-right">
+    <div type="checkbox" class="control-btn control-btn__beginner_mode">
+      <i class="fa fa-music"></i>
+      <%= t('.beginner_mode') %>
+    </div>
+    <div class="control-btn control-btn__loop has_tooltip hxLoopOption" type="checkbox" data-i18n="[data-tooltip]player.Loop_data_tooltip" data-tooltip="Loop playback [L]">
+      <div class="control-icon"></div>
+      <span data-i18n="player.loop"><%= t('.loop') %></span>
+    </div>
+    <div type="checkbox" class="control-btn control-btn__metronome has_tooltip hxMetronomeOption" data-i18n="[data-tooltip]player.Metronome_data_tooltip" data-tooltip="Metronome [M]">
+      <div class="control-icon"></div>
+      <span data-i18n="player.metronome"><%= t('.metronome') %></span>
+    </div>
+    <div type="checkbox" class="control-btn control-btn__fretboard has_tooltip hxFretBoardOption active" data-i18n="[data-tooltip]player.Fretboard_data_tooltip" data-tooltip="Fretboard [F]" checked="checked">
+      <div class="control-icon"></div>
+      <span data-i18n="player.fretboard"><%= t('.fretboard') %></span>
+    </div>
+    <section class="tpp-dropup pull-right">
+      <div type="component" class="control-btn control-btn__settings has_tooltip hxSettingsHandler" data-i18n="[data-tooltip]player.Settings_data_tooltip" data-tooltip="Settings">
+        <div class="control-icon"></div>
+        <span data-i18n="player.settings"><%= t('.settings') %></span>
+      </div>
+      <div class="tpp-dropdown--panel tpp-dropdown--panel__settings text-center _hxSettingsDropDown">
+        <div class="clearfix">
+          <div class="pull-left control-label" data-i18n="player.Pitch"><%= t('.pitch') %></div>
+          <div class="pull-right hxPitchOption" type="numberpicker">
+            <div class="pull-left tpp-txt-btn decrease"></div>
+            <div class="pull-right tpp-txt-btn tpp-txt-btn__plus increase"></div>
+            <span class="value label">0</span>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div class="pull-left control-label" data-i18n="player.Transpose"><%= t('.transpose') %></div>
+          <div class="pull-right hxTransposeOption" type="numberpicker">
+            <div class="pull-left tpp-txt-btn decrease"></div>
+            <div class="pull-right tpp-txt-btn tpp-txt-btn__plus increase"></div>
+            <span class="value label">0</span>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div class="pull-left control-label" data-i18n="player.Autoscroll"><%= t('.autoscroll') %></div>
+          <div class="pull-right tpp-txt-checkbox hxAutoScrollOption active" type="checkbox" checked="checked">
+            <div class="on" data-i18n="player.ON"><%= t('.on').mb_chars.upcase %></div>
+            <div class="off" data-i18n="player.OFF"><%= t('.off').mb_chars.upcase %></div>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div class="pull-left control-label" data-i18n="player.Countdown">Countdown</div>
+          <div class="pull-right tpp-txt-checkbox hxCountDownOption" type="checkbox">
+            <div class="on" data-i18n="player.ON"><%= t('.on').mb_chars.upcase %></div>
+            <div class="off" data-i18n="player.OFF"><%= t('.off').mb_chars.upcase %></div>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div class="pull-left control-label" data-i18n="player.Note_durations">Note durations</div>
+          <div class="pull-right tpp-txt-checkbox hxDrawDurationsOption" type="checkbox">
+            <div class="on" data-i18n="player.ON"><%= t('.on').mb_chars.upcase %></div>
+            <div class="off" data-i18n="player.OFF"><%= t('.off').mb_chars.upcase %></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section class="pull-left">
+    <div class="pull-left">
+      <div class="block-ico pull-left">
+        <div type="component" class="control-btn control-btn__volume hxVolumeOptionIco" data-volume="">
+          <div class="control-icon control-icon__sm"></div>
+        </div>
+      </div>
+      <div class="block-slider pull-left">
+        <section type="slider" class="tpp-slider tpp-slider__default hxVolumeOption" data-tooltip="75%">
+          <div class="ui-slider-container">
+            <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+              <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 75%;"></a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="tpp-b-rewind control-btn control-btn__rewind pull-left has_tooltip hxRewindOption" type="component" data-i18n="[data-tooltip]player.Rewind_data_tooltip" data-tooltip="<%= t('.rewind_data_tooltip') %>">
+      <div class="control-icon"></div>
+    </div>
+    <div class="control-btn control-btn__play has_tooltip pull-left hxPlayOption active-play" type="component" data-tooltip="<%= t('.play_pause_data_tooltip') %>">
+      <div>
+        <svg width="40" height="40" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+          <circle class="track disabled" r="17" cx="24" cy="24" fill="transparent" stroke-dasharray="106.8" stroke-dashoffset="0" transform="rotate(-90 24 24)" style="display: none;"></circle>
+          <circle class="bar enabled" r="17" cx="24" cy="24" fill="transparent" stroke-dasharray="0,106.8" stroke-dashoffset="0" transform="rotate(-90 24 24)" style="stroke-dasharray: 107px, 107px; display: block;"></circle>
+          <path class="enabled" fill="#3B4851" d="M19,15 L33,24 L19,33 V11 z"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="control-btn control-btn__pause pull-left hxStopOption" type="component" data-i18n="[data-tooltip]pause" data-tooltip="pause" style="display: none;">
+      <div class="control-icon"></div>
+    </div>
+    <div class="tpp-b-tempo pull-left">
+      <div class="control-label pull-left" data-i18n="player.speed"><%= t('.speed') %></div>
+      <div class="block-slider pull-left">
+        <section type="slider" class="tpp-slider tpp-slider__default has_tooltip hxTempOption" data-i18n="[data-tooltip]player.Temp_data_tooltip" data-tooltip="<%= t('.temp_data_tooltip') %>">
+          <div class="ui-slider-container">
+            <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+              <a class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div type="label" class="control-value pull-left hxTempValue" data-i18n="player.original" style="cursor: pointer;">1.00</div>
+    </div>
+  </section>
+</section>
+<script type="text/javascript">
+$(".control-btn__beginner_mode").click(function(){
+  TabProPlayer.setBeginnerMode(!$(this).hasClass("active"))
+})
+</script>

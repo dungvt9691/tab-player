@@ -1,0 +1,10 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#sidebar-search").addClass("active")
+  activePanel($("#sidebar-search a").attr('href'))
+})
+</script>

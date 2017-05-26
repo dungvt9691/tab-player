@@ -1,0 +1,20 @@
+vi:
+  admin:
+    profile:
+      edit:
+        title: "Thông tin cá nhân"
+        form:
+          fullname: "Họ và tên"
+          username: "Tài khoản"
+          password: "Mật khẩu"
+          change_password: "Đổi mật khẩu"
+          new_password: "Mật khẩu mới"
+          password_confirmation: "Nhập lại mật khẩu mới"
+          last_change_password: "Thay đổi lần cuối %{time}"
+          email: "Địa chỉ email"
+          phone: "Số điện thoại"
+          sign_in_count: "Số lần đăng nhập"
+          current_sign_in_at: "Đăng nhập lúc"
+          last_sign_in_at: "Lần đăng nhập trước đó"
+          current_sign_in_ip: "Địa chỉ IP"
+          last_sign_in_ip: "Địa chỉ IP trước đó"

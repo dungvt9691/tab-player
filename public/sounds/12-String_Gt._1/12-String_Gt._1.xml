@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="12-String Gt._1" id="262">
+  <defaultSetts attenuation="127" ampSustainTime="1000" modSustainTime="1000" freqVibLfo="-15600" freqModLfo="-725">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="349" name="AcGtrB3" originalPitch="7600"/>
+  </samples>
+  <zones>
+    <zone filterFc="4366" modFilterFc="7087" fineTune="28" ampHoldTime="-1259" ampDecayTime="3084" ampReleaseTime="-1231" modDecayTime="3084" modReleaseTime="3084" freqVibLfo="-837" freqModLfo="-837" delayModLfo="-2365" delayVibLfo="-1827" loopType="loop">
+      <keyRange low="51" high="97"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="349" loopStart="6168" loopEnd="6236"/>
+    </zone>
+    <zone filterFc="4366" modFilterFc="7087" fineTune="30" ampHoldTime="-1259" ampDecayTime="3084" ampReleaseTime="-1231" modDecayTime="2608" modReleaseTime="2608" freqVibLfo="-837" freqModLfo="-837" delayModLfo="-2365" delayVibLfo="-1827" loopType="loop">
+      <keyRange low="98" high="99"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="349" loopStart="6168" loopEnd="6236"/>
+    </zone>
+  </zones>
+</instrument>

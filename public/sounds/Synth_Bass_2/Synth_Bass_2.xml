@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Bass 2" id="25">
+  <defaultSetts fineTune="18" ampHoldTime="-2621" ampDecayTime="1902" ampSustainTime="1000" ampReleaseTime="-2786" modDecayTime="1902" modSustainTime="1000" modReleaseTime="-2084" freqVibLfo="-721" freqModLfo="-721">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="117" name="Synth Bass 2-F1" originalPitch="3900"/>
+    <sample id="116" name="Synth Bass 2-B1" originalPitch="4500"/>
+    <sample id="115" name="Synth Bass 2-F2" originalPitch="5100"/>
+  </samples>
+  <zones>
+    <zone loopType="loop">
+      <keyRange low="0" high="31"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="117" loopStart="20380" loopEnd="22672"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="32" high="37"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="116" loopStart="22500" loopEnd="24120"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="38" high="74"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="115" loopStart="12466" loopEnd="13323"/>
+    </zone>
+  </zones>
+</instrument>

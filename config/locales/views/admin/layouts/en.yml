@@ -1,0 +1,43 @@
+en:
+  admin:
+    layouts:
+      sidebar:
+        dashboard:
+          title: "Dashboard"
+        administrators:
+          title: "Administrators"
+        users:
+          title: "Users"
+        pages:
+          title: "Pages"
+        artists:
+          title: "Artists"
+        categories:
+          title: "Categories"
+        tabs:
+          title: "Guitar Tabs"
+          index: "All tabs"
+          new: "Upload Tab"
+          multi_upload: "Multi upload"
+        tutorials:
+          title: "Tutorials"
+        images:
+          title: "Images"
+        setting:
+          title: "Setting"
+          profile: "Profile"
+          page_info: "Page info"
+          social_networks: "Social"
+          seo: "SEO"
+          smtp: "SMTP"
+          recaptcha: "reCAPTCHA"
+      header:
+        signout: "Sign Out"
+      socket_script:
+        syncing: "Loading data..."
+        synced: "Synced artists"
+        done: "Synced artists successfully"
+      crawler_alert:
+        loading: "Sync artists from Mp3 Zing"
+        done: "Synced artists successfully"
+        stop: "Stop sync"

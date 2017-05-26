@@ -1,0 +1,7 @@
+<% if @errors.blank? %>
+window.location.href = "<%= edit_admin_administrator_path(@administrator) %>"
+<% else %>
+$("#modal-add-permissions").find(".btn").prop("disabled", false)
+$("body").css("cursor", "auto")
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>

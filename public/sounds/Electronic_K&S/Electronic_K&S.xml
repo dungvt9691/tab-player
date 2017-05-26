@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Electronic K&amp;S" id="59">
+  <samples>
+    <sample id="211" name="Electronic Kick" originalPitch="3600"/>
+    <sample id="210" name="Electric Snare" originalPitch="3800"/>
+  </samples>
+  <zones>
+    <zone ampReleaseTime="5186">
+      <keyRange low="36" high="36"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="211" loopStart="8" loopEnd="13222"/>
+    </zone>
+    <zone ampDecayTime="5186" ampSustainTime="1000" ampReleaseTime="5186">
+      <keyRange low="38" high="38"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="210" loopStart="8" loopEnd="13095"/>
+    </zone>
+  </zones>
+</instrument>

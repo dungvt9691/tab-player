@@ -1,0 +1,37 @@
+<div class="modal fade zoom" id="modal-add-tutorial">
+  <div class="modal-dialog">
+    <%= form_for Tutorial.new, url: tutorials_path(t: @tab.id), method: "post", remote: true, html: { onsubmit: "return submitForm($(this));" } do |f| %>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <%= t('.title') %>
+        </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <div id="add-tutorial-alert" class="alert alert-danger hide"></div>
+        <div class="form-group">
+          <%= f.label :link, class: "control-label" %>
+          <%= f.text_field :link, class: "form-control", placeholder: t('.form.link_placeholder') %>
+          <span id="help-block-link" class="help-block"></span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit t('.form.submit'), class: "btn btn-secondary" %>
+        <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">
+          <%= t('cancel') %>
+        </button>
+      </div>
+    </div><!-- /.modal-content -->
+    <% end %>
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/javascript">
+function submitForm(element){
+  $(".form-group").removeClass("has-error")
+  $("#add-tutorial-alert").addClass("hide")
+  $("#add-tutorial-alert").html("")
+  element.find(".btn").prop("disabled", true)
+  $("body").css("cursor", "progress")
+}
+</script>

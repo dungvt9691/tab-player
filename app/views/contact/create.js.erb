@@ -1,0 +1,17 @@
+$("#panel-contact form .btn").prop("disabled", false)
+$("body").css("cursor", "auto")
+<% if @errors.any? %>
+<% @errors.each do |key, value| %>
+<% if key.to_s == 'system' %>
+$("#contact-alert").html("<ul></ul>")
+$("#contact-alert ul").append("<li><%= value.join(', ') %></li>")
+$("#contact-alert").removeClass("hide")
+<% else %>
+$("#help-block-<%= key %>").text("<%= value.join(', ') %>.")
+$("#contact_<%= key %>").parents(".form-group").addClass("has-error")
+<% end %>
+<% end %>
+<% else %>
+$("#panel-contact form .form-control").val("")
+showMessage("<%= t_scope(@params, 'success') %>", "success")
+<% end %>

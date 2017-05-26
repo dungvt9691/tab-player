@@ -1,0 +1,414 @@
+// BUTTON
+.btn
+  +animation-common
+  -webkit-box-shadow: none
+  box-shadow: none
+  padding: $margin-xmin $margin-min
+  outline: none !important
+  outline-offset: 0 !important
+
+.btn-primary,.btn-success
+  background-color: $primary-color
+  border: 1px solid $primary-color
+  &:hover, &:active, &:focus
+    background-color: $primary-hover-color
+    border-color: $primary-hover-color
+
+.btn-secondary
+  background-color: $secondary-color
+  border: 1px solid $secondary-color
+  color: $white-color
+  &:hover, &:active, &:focus
+    color: $white-color
+    background-color: $secondary-hover-color
+    border-color: $secondary-hover-color
+
+.btn-default
+  background-color: $white-color
+  border: 1px solid $white-hover-color
+  &:hover, &:active, &:focus
+    background-color: $white-hover-color
+    border-color: $white-hover-color
+
+.btn-warning
+  background-color: $warning-color
+  border: 1px solid $warning-hover-color
+  &:hover, &:active, &:focus
+    background-color: $warning-hover-color
+    border-color: $warning-hover-color
+
+.btn-danger
+  background-color: $danger-color
+  border: 1px solid $danger-hover-color
+  &:hover, &:active, &:focus
+    background-color: $danger-hover-color
+    border-color: $danger-hover-color
+
+.btn-info
+  background-color: $info-color
+  border: 1px solid $info-hover-color
+  &:hover, &:active, &:focus
+    background-color: $info-hover-color
+    border-color: $info-hover-color
+
+.btn
+  &.has-text
+    .fa, .material-icons
+      margin-right: $margin-xmin
+
+// SELECT
+select:not([multiple])
+  -webkit-appearance: none
+  -moz-appearance: none
+  background-position: right 50%
+  background-repeat: no-repeat
+  background-image: image-url("icon/caret.png")
+  border-radius: 0
+
+select.form-control
+  padding: 6px 9px 7px 7px
+
+.select2-container
+  .select2-selection--multiple
+    min-height: 34px
+    .select2-selection__choice
+      background-color: $secondary-color
+      color: $white-color
+      border: 1px solid $secondary-color
+    .select2-selection__choice__remove
+      color: $white-color
+
+.select2-container--default
+  .select2-selection--multiple
+    border: 1px solid #d2d3d6
+    .select2-selection__rendered
+      padding: 2px 9px
+  .select2-results__option--highlighted[aria-selected]
+    background-color: $secondary-color
+
+.select2-results__option.loading-results
+  display: none !important
+
+// SIDEBAR
+#page-container
+  #sidebar
+    ul
+      padding-bottom: 0
+
+// PANEL
+.panel-primary
+  .panel-body
+    border-color: $primary-color
+
+.panel-warning
+  .panel-body
+    border-color: $warning-color
+
+.panel-danger
+  .panel-body
+    border-color: $danger-color
+
+.panel-info
+  .panel-body
+    border-color: $info-color
+
+.panel-black
+  border-color: $black-color
+
+.panel-default
+  border: 1px solid $white-hover-color
+  .panel-heading
+    padding: 0px 15px !important
+    h4
+      font-weight: bold
+      font-size: $font-size-middle
+  .panel-body
+    padding: 15px !important
+    border-left: none !important
+    border-right: none !important
+    border-bottom: none !important
+
+  .panel-footer
+    padding: 10px 15px !important
+    border-top: 1px solid $white-hover-color !important
+    border-left: none !important
+    border-right: none !important
+    border-bottom: none !important
+
+  h4
+    color: $black-color !important
+
+// TAB PANEL
+.tab-primary.tab-container
+  &> .nav-tabs
+    &> li.active 
+      &> a
+        border-top-color: $primary-color
+
+.tab-inverse.tab-container
+  &> .nav-tabs
+    &> li.active 
+      &> a
+        border-top-color: $secondary-color
+
+.tab-warning.tab-container
+  &> .nav-tabs
+    &> li.active 
+      &> a
+        border-top-color: $warning-color
+
+.tab-danger.tab-container
+  &> .nav-tabs
+    &> li.active 
+      &> a
+        border-top-color: $danger-color
+
+// FORM
+.form-group:last-child
+  margin-bottom: 0
+
+.has-error
+  .form-control
+    &:focus
+      border-color: $danger-color
+
+// TEXT AREA
+textarea
+  resize: none
+
+// TAB CONTAINER
+.tab-container
+  &.tab-left,
+  &.tab-right
+    .tab-content
+      min-height: 300px
+
+  &> .nav-tabs > li > a
+    color: $black-hover-color
+
+  &> .nav-tabs > li.active > a
+    background-color: $secondary-color
+    color: $white-color
+    border-left: none !important
+
+// ALERTIFY
+.alertify-notifier
+  color: $white-color
+  bottom: 50px
+
+  .ajs-message
+    word-break: break-word
+    position: relative
+    width: 300px
+    &.ajs-success 
+      background: rgba(24, 188, 156, 0.90)
+    &.ajs-error 
+      background: rgba(231, 76, 60, 0.90)
+    ul
+      margin: 0
+      padding: 0
+      li
+        list-style: none
+        margin-bottom: 5px
+      li:last-child
+        margin-bottom: 0
+
+// ALERT
+.alert
+  .alert-icon, .alert-text
+    display: inline-block
+  .alert-text
+    margin-left: $margin-xmin
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+.alert-primary,
+.alert-success
+  background-color: #d1fff6
+  border-color: $primary-color
+  color: $primary-color
+
+// DATATABLE
+.table.datatables
+  width: 100% !important
+  font-size: $font-size-base
+  border-top: 3px solid $secondary-color
+  td
+    vertical-align: middle
+  th
+    padding-right: $margin-min
+    font-size: $font-size-base
+
+  .sorting:after,
+  .sorting_asc:after,
+  .sorting_desc:after 
+    margin-top: 3px
+    font: normal normal normal 14px/1 FontAwesome
+    float: right
+
+  .sorting:after
+    content: "\f0dc"
+
+  .sorting_asc:after
+    content: "\f0dd"
+
+  .sorting_desc:after
+    content: "\f0de"
+
+.dataTables_wrapper
+  min-height: 200px
+
+.dataTables_filter
+  text-align: right
+  label
+    width: 30%
+    input
+      width: 100%
+      margin-left: 0
+  
+div.dataTables_processing
+  margin-top: 90px
+  position: absolute
+  border: none
+  -webkit-box-shadow: none
+  box-shadow: none
+  right: 0
+  left: 0
+  top: 0
+  bottom: 0
+  padding: 30px
+  padding-top: 85px
+  font-size: $font-size-large
+  background: rgba(255, 255, 255, 0.7)
+  text-align: center
+  font-size: 50px
+  color: $secondary-gray-color
+
+.dataTables_length .form-control
+  width: 50px
+  margin-right: $margin-xmin
+  line-height: 10px
+  height: 34px
+
+.table
+  .table-title
+    font-weight: bold
+
+  a:not(.btn)
+    color: $secondary-color !important
+    text-decoration: underline
+
+// MODAL
+.modal-open #launch-modal
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin: auto
+
+.modal-backdrop.in
+  opacity: 0.8
+
+.modal
+  padding-top: 5%
+  .modal-dialog
+    .modal-content
+      -webkit-background-clip: inherit
+      background-clip: inherit
+      border: none
+
+    .modal-body 
+      position: relative
+      padding: $margin-small
+
+      h3.title
+        margin-bottom: $margin-xmin
+        font-size: 40px
+        text-transform: uppercase
+        color: $primary-color
+
+      .text-muted
+        color: $secondary-gray-hover-color
+        font-size: $font-size-middle
+
+      .control-label
+        display: block
+
+      .select2-container,
+      .select2-container li,
+      .select2-container input,
+        width: 100% !important
+
+    .modal-footer
+      border-top: none
+      background-color: $secondary-white-color
+      text-align: left
+      margin-top: 0
+
+    .modal-header
+      background-color: $secondary-color
+      color: $white-color
+      height: 58px
+      border-bottom: none
+      .close
+        position: absolute
+        right: 0
+        width: 58px
+        height: 58px
+        text-align: center
+        top: 2px
+        background: $white-color
+        color: $secondary-color
+        font-size: 40px
+        opacity: 1
+        outline: none !important
+        outline-offset: 0 !important
+      h4
+        font-size: $font-size-xlarge
+        text-transform: uppercase
+
+// PROGRESS BAR
+.progress-bar-primary
+  background-color: $primary-color
+
+.progress-bar-secondary
+  background-color: $secondary-color
+
+.progress-bar-danger
+  background-color: $danger-color
+
+.progress-bar-warning
+  background-color: $warning-color
+
+// TEXT
+.text-primary, .text-success
+  color: $primary-color !important
+
+.text-secondary
+  color: $secondary-color !important
+
+.text-warning
+  color: $warning-color !important
+
+.text-danger
+  color: $danger-color !important
+
+.text-info
+  color: $info-color !important
+
+
+// PAGINATE
+.pagination
+  &>.active
+    &>a,
+    &>span,
+    &>a:hover,
+    &>span:hover,
+    &>a:focus,
+    &>span:focus
+      background-color: $secondary-color
+      border-color: $secondary-color
+      color: $white-color !important

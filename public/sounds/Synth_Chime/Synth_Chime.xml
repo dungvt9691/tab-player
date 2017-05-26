@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Chime" id="114">
+  <samples>
+    <sample id="352" name="VibesE2" originalPitch="6000"/>
+    <sample id="353" name="ColdGlass12Wave" originalPitch="6000"/>
+    <sample id="354" name="GlockLoopC4" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterQ="190" fineTune="25" ampDecayTime="3084" ampSustainTime="1000" ampReleaseTime="1487" coarseTune="-13" freqVibLfo="-15600" freqModLfo="-725" reverb="109" pan="-74" loopType="loop">
+      <keyRange low="0" high="96"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="352" loopStart="696" loopEnd="777"/>
+    </zone>
+    <zone filterQ="190" fineTune="-5" ampAttackTime="-8800" ampDecayTime="3084" ampSustainTime="1000" ampReleaseTime="1487" modAttackTime="-8800" coarseTune="-46" freqVibLfo="-15600" freqModLfo="-725" reverb="109" pan="-74" loopType="loop">
+      <keyRange low="97" high="102"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="353" loopStart="15" loopEnd="86"/>
+    </zone>
+    <zone filterFc="8378" fineTune="-68" ampDecayTime="3084" ampSustainTime="1000" ampReleaseTime="1487" coarseTune="-27" freqVibLfo="-15600" freqModLfo="-725" reverb="109" pan="83" loopType="loop">
+      <keyRange low="0" high="102"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="354" loopStart="7" loopEnd="211"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Ice Rain_2" id="19">
+  <samples>
+    <sample id="471" name="Windchimes" originalPitch="9500"/>
+  </samples>
+  <zones>
+    <zone filterFc="9024" modFilterFc="3600" ampAttackTime="-8359" ampDecayTime="2945" ampSustainTime="361" ampReleaseTime="0" modDecayTime="1255" modSustainTime="1000" modReleaseTime="1255" freqVibLfo="-1070" vibLfoToPitch="50" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="471" loopStart="10" loopEnd="23118"/>
+    </zone>
+  </zones>
+</instrument>

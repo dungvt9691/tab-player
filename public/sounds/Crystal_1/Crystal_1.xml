@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Crystal_1" id="150">
+  <defaultSetts ampDecayTime="4302" ampSustainTime="960" ampReleaseTime="2786">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="414" name="Crystal-C5" originalPitch="9100"/>
+  </samples>
+  <zones>
+    <zone fineTune="-14" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="414" loopStart="4273" loopEnd="4440"/>
+    </zone>
+  </zones>
+</instrument>

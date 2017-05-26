@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="French Horn" id="24">
+  <defaultSetts filterFc="11423" ampAttackTime="-8359" ampReleaseTime="-593" modDecayTime="1200" modReleaseTime="-593" delayModLfo="-3986">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="113" name="French Horn-A#2" originalPitch="5800"/>
+    <sample id="112" name="French Horn-E#3" originalPitch="6300"/>
+    <sample id="111" name="French Horn-A#3" originalPitch="7000"/>
+    <sample id="110" name="French Horn-E#4" originalPitch="7500"/>
+  </samples>
+  <zones>
+    <zone fineTune="-8" loopType="loop">
+      <keyRange low="0" high="58"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="113" loopStart="39738" loopEnd="62565"/>
+    </zone>
+    <zone fineTune="12" loopType="loop">
+      <keyRange low="59" high="63"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="112" loopStart="18557" loopEnd="39571"/>
+    </zone>
+    <zone filterFc="11175" loopType="loop">
+      <keyRange low="64" high="67"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="111" loopStart="18151" loopEnd="29721"/>
+    </zone>
+    <zone filterFc="10925" loopType="loop">
+      <keyRange low="68" high="71"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="111" loopStart="18151" loopEnd="29721"/>
+    </zone>
+    <zone filterFc="10632" loopType="loop">
+      <keyRange low="72" high="74"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="110" loopStart="21997" loopEnd="31910"/>
+    </zone>
+    <zone filterFc="10223" loopType="loop">
+      <keyRange low="75" high="98"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="110" loopStart="21997" loopEnd="31910"/>
+    </zone>
+  </zones>
+</instrument>

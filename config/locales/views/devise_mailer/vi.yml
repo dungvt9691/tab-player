@@ -1,0 +1,8 @@
+vi:
+  devise_mailer:
+    reset_password_instructions:
+      text_1: "Xin chào %{fullname}!"
+      text_2: "Bạn hoặc ai đó đã yêu cầu lấy lại mật khẩu cho tài khoản <b>%{username}</b>. Ngay bây giờ bạn có thể cập nhật lại mật khẩu mới thông qua liên kết dưới đây."
+      text_3: "Thay đổi mật khẩu của tôi"
+      text_4: "Nếu không phải bạn thực hiện yêu cầu này, xin vui lòng bỏ qua email này."
+      text_5: "Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn truy cập vào liên kết ở trên và cập nhật mật khẩu mới."

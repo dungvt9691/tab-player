@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Ocarina_2" id="172">
+  <samples>
+    <sample id="449" name="Ocarina-F#6" originalPitch="10900"/>
+  </samples>
+  <zones>
+    <zone attenuation="37" filterFc="10620" fineTune="13" ampAttackTime="-3161" ampHoldTime="-3428" ampDecayTime="5784" ampSustainTime="23" ampReleaseTime="-1252" modAttackTime="-3986" modDecayTime="-3986" modSustainTime="1000" modReleaseTime="-3986" freqModLfo="-851" modLfoToPitch="9" modLfoToVolume="17" delayModLfo="-1817" loopType="loop">
+      <keyRange low="102" high="126"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="449" loopStart="331" loopEnd="341"/>
+    </zone>
+  </zones>
+</instrument>

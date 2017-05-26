@@ -1,0 +1,40 @@
+$('body').css("cursor", 'auto')
+if($("#modal-select-images").length > 0){
+  $("button.btn").removeProp("disabled")
+  <% if @errors.empty? %>
+  showMessage("<%= t_scope(@params, 'success', name: @filename).html_safe %>.", "success")
+  $(".image-thumbnail[image-id=<%= @image.id %>]").parents('.col-md-3').remove()
+
+  length = $(".image-thumbnail").length
+
+  if(length == 0)
+  {
+    $("#uploaded-images").html('')
+    $("#uploaded-images").append("<div class='alert alert-warning' id='alert-no-images'><%= t('images.no_data') %>.</div>")
+  }
+
+  <% else %>
+  showMessage("<%= render_value(@errors) %>", "error")
+  <% end %>
+
+  $(".image-thumbnail.selected").each(function(){
+    $(this).removeClass("selected")
+  })
+
+  $(".selected-image-count").text("")
+  $("#btn-delete-images").fadeOut(0)
+}
+else{
+  $("#modal-confirm-destroy #btn-confirm").removeClass("disabled")
+  $("#modal-confirm-destroy #btn-cancel").prop("disabled", false)
+  <% if @errors.empty? %>
+  showMessage("<%= t_scope(@params, 'success', name: @filename).html_safe %>.", "success")
+  $('.modal#modal-confirm-destroy').modal('hide');
+  var row = $(".btn-destroy[data-image-id=<%= @image.id %>]").parents('tr')
+  window.images_table.fnDeleteRow(row[0])
+  object_count = parseInt($('.object-count').text()) - 1
+  $('.object-count').text(object_count)
+  <% else %>
+  showMessage("<%= render_value(@errors) %>", "error")
+  <% end %>
+}

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Orchestral Ride" id="45">
+  <defaultSetts attenuation="325" ampReleaseTime="6719" pan="201">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="615" name="Ride Cymbal" originalPitch="3000"/>
+  </samples>
+  <zones>
+    <zone pan="124">
+      <keyRange low="30" high="30"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="615" loopStart="8" loopEnd="121292"/>
+    </zone>
+  </zones>
+</instrument>

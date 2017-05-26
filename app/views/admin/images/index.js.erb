@@ -1,0 +1,26 @@
+$("#data-loading").remove()
+<% if @count > 0 %>
+<% unless @images.blank? %>
+$("#alert-no-images").remove()
+<% @images.each do |date, images| %>
+$ele = $(".files[date=<%= date.to_datetime.to_i %>]")
+if($ele.length > 0){
+  <% images.each do |image| %>
+    $ele.append("<div class='col-md-3 col-sm-4'><div class='image-thumbnail' image-id='<%= image.id %>'><i class='fa fa-check'></i><img class='upload-image' original='<%= image.attachment_url(:original) %>' s420='<%= image.attachment_url(:s420) %>' s500='<%= image.attachment_url(:s500) %>' src='<%= image.attachment_url(:s200) %>'></div><br></div>")
+  <% end %>
+}
+else{
+  $("#uploaded-images").append("<div class='row files' date='<%= date.to_datetime.to_i %>'><div class='col-lg-12'><h3><%= date %></h3><hr></div></div><br>")
+  $ele = $(".files[date=<%= date.to_datetime.to_i %>]")
+  <% images.each do |image| %>
+    $ele.append("<div class='col-md-3 col-sm-4'><div class='image-thumbnail' image-id='<%= image.id %>'><i class='fa fa-check'></i><img class='upload-image' original='<%= image.attachment_url(:original) %>' s420='<%= image.attachment_url(:s420) %>' s500='<%= image.attachment_url(:s500) %>' src='<%= image.attachment_url(:s200) %>'></div><br></div>")
+  <% end %>
+}
+<% end %>
+<% else %>
+window.stopLoading = true
+<% end %>
+<% else %>
+$("#alert-no-images").remove()
+$("#uploaded-images").append("<div class='alert alert-warning' id='alert-no-images'><%= t('images.no_data') %>.</div>")
+<% end %>

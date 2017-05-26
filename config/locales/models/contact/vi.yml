@@ -1,0 +1,24 @@
+vi:
+  contact:
+    mailer:
+      subject: "Câu hỏi liên hệ"
+
+  activemodel:
+    attributes:
+      contact:
+        fullname: "Họ và tên"
+        email: "Địa chỉ email"
+        content: "Nội dung"
+        system: ""
+    errors:
+      models:
+        contact:
+          attributes:
+            fullname:
+              blank: "không được để trống."
+            email:
+              invalid: "không đúng định dạng."
+            content:
+              blank: "không được để trống."
+            system:
+              error: "Lỗi hệ thống."

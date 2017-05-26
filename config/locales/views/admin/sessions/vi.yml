@@ -1,0 +1,11 @@
+vi:
+  admin:
+    sessions:
+      new:
+        title: "Đăng Nhập Trang Quản Trị"
+        form:
+          account: "Nhập vào tài khoản hoặc email"
+          password: "Mật khẩu"
+          remember_me: "Ghi nhớ đăng nhập"
+          forgot_password: "Quên mật khẩu?"
+          submit: "Đăng nhập"

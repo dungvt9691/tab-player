@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Strings 5" id="115">
+  <samples>
+    <sample id="362" name="SynthStringsC4" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="75" fineTune="-96" ampAttackTime="1105" ampReleaseTime="2065" modAttackTime="-8800" modSustainTime="1000" coarseTune="-33" freqVibLfo="-15600" freqModLfo="-725" reverb="109" chorus="172" loopType="loop">
+      <keyRange low="0" high="107"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="362" loopStart="1272" loopEnd="9962"/>
+    </zone>
+  </zones>
+</instrument>

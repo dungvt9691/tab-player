@@ -1,0 +1,7 @@
+en:
+  search:
+    index:
+      title: "Search"
+    no_tabs:
+      title: "No tabs found!"
+      guide: "Make sure you have entered the correct song title, singer, or author..."

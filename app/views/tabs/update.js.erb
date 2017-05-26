@@ -1,0 +1,19 @@
+$("form.edit_tab .btn").prop("disabled", false)
+$("body").css("cursor", "auto")
+<% if @errors.any? %>
+<% if @errors.class.to_s == "Hash" %>
+<% @errors.each do |key, value| %>
+$("#help-block-<%= key %>").text("<%= value.join(', ') %>.")
+$("#tab_<%= key %>").parents(".form-group").addClass("has-error")
+<% end %>
+<% else %>
+$("#update-tab-alert").html("<ul></ul>")
+<% @errors.each do |error| %>
+$("#update-tab-alert ul").append("<li><%= error %></li>")
+<% end %>
+$("#update-tab-alert").removeClass("hide")
+<% end %>
+<% else %>
+$(".modal").modal('hide')
+window.location.reload()
+<% end %>

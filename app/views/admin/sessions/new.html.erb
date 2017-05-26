@@ -1,0 +1,55 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<%= form_for(resource, as: resource_name, url: admin_session_path) do |f| %>
+<div class="panel-body">
+  <h3 class="panel-title text-center">
+    <%= t('.title') %>
+  </h3>
+  <% flash.each do |key, value| %>
+  <% if value %>
+  <div class="alert alert-<%= render_key(key) %>">
+    <ul>
+      <li><%= value.html_safe %></li>
+    </ul>
+  </div>
+  <br>
+  <% end %>
+  <% end %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+          <%= f.text_field :account, autofocus: true, placeholder: t('.form.account'), class: "form-control" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <%= f.password_field :password, autofocus: true, placeholder: t('.form.password'), class: "form-control" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix">
+    <div class="pull-right">
+      <label>
+        <%= f.check_box :remember_me, checked: true %>
+        <%= t('.form.remember_me') %>
+      </label>
+    </div>
+  </div>
+</div>
+<div class="panel-footer">
+  <%= link_to t('.form.forgot_password'), new_admin_password_path, class: 'pull-left btn btn-link' %>
+  <div class="pull-right">
+    <%= f.submit t('.form.submit'), class: 'btn btn-secondary' %>
+  </div>
+</div>
+<% end %>

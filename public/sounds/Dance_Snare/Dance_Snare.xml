@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Dance Snare" id="14">
+  <samples>
+    <sample id="86" name="Dance Snare" originalPitch="3800"/>
+  </samples>
+  <zones>
+    <zone ampDecayTime="6712" ampSustainTime="960" ampReleaseTime="6712">
+      <keyRange low="38" high="38"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="86" loopStart="8" loopEnd="12659"/>
+    </zone>
+  </zones>
+</instrument>

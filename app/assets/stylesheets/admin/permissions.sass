@@ -1,0 +1,52 @@
+// Place all the styles related to the admin/permissions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.table.permissions td,
+.table.permissions th
+  vertical-align: middle
+  padding-left: 0
+  padding-right: 0
+.permissions
+  .label
+    margin-right: 5px
+    padding: 5px
+    margin-bottom: 0
+
+  .label:last-child
+    margin-right: 0
+
+  .label-block
+    display: block
+
+  .label:not(.label-block)
+    display: inline-block
+    width: 70px
+
+  .label
+    background-color: $white-hover-color
+
+  .label-success
+    background-color: $secondary-color
+
+#modal-set-admin,
+#modal-add-permissions
+  .select2
+    width: 100% !important
+    font-weight: normal
+    font-size: 15px
+    span
+      font-weight: normal
+      border-radius: 0
+      text-transform: capitalize
+  .permission
+    margin-bottom: 10px
+    .action-permissions
+      display: block
+      padding-top: 3px
+      label
+        margin-right: 8px
+        input
+          margin-right: 5px
+
+      .label:last-child
+        margin-right: 0

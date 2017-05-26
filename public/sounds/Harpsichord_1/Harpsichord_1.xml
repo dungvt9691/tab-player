@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Harpsichord_1" id="8">
+  <defaultSetts modFilterFc="-3600" ampAttackTime="-3986" ampSustainTime="1000" ampReleaseTime="0">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      <modulator dest="attenuation" src="velocity" srcCtrlType="concave" srcType="negative" amount="0" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="388" name="Harpsichord-C#2" originalPitch="3700"/>
+    <sample id="389" name="Harpsichord-A2" originalPitch="4500"/>
+    <sample id="387" name="Harpsichord-F3" originalPitch="5300"/>
+    <sample id="386" name="Harpsichord-F4" originalPitch="6500"/>
+    <sample id="385" name="Harpsichord-F5" originalPitch="7700"/>
+    <sample id="384" name="Harpsichord-F6" originalPitch="7700"/>
+  </samples>
+  <zones>
+    <zone fineTune="-17" ampHoldTime="-3284" ampDecayTime="4800" modAttackTime="4283" pan="-250" loopType="loop">
+      <keyRange low="0" high="40"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="388" loopStart="19772" loopEnd="20403"/>
+    </zone>
+    <zone fineTune="-12" ampHoldTime="-3284" ampDecayTime="4800" modAttackTime="4283" pan="-150" loopType="loop">
+      <keyRange low="41" high="49"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="389" loopStart="19387" loopEnd="20185"/>
+    </zone>
+    <zone modFilterFc="-3000" fineTune="-14" ampHoldTime="-2084" ampDecayTime="4569" modAttackTime="3083" pan="-50" loopType="loop">
+      <keyRange low="50" high="58"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="387" loopStart="25826" loopEnd="26077"/>
+    </zone>
+    <zone modFilterFc="-2500" fineTune="-11" ampHoldTime="-386" ampDecayTime="3369" modAttackTime="3369" pan="50" loopType="loop">
+      <keyRange low="59" high="73"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="386" loopStart="27385" loopEnd="27636"/>
+    </zone>
+    <zone modFilterFc="-1800" fineTune="-11" ampHoldTime="-884" ampDecayTime="2786" modAttackTime="2786" pan="150" loopType="loop">
+      <keyRange low="74" high="98"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="385" loopStart="12190" loopEnd="12441"/>
+    </zone>
+    <zone modFilterFc="-1800" fineTune="-7" ampHoldTime="-884" ampDecayTime="2786" modAttackTime="2786" pan="250" loopType="loop">
+      <keyRange low="99" high="108"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="384" loopStart="6157" loopEnd="6220"/>
+    </zone>
+  </zones>
+</instrument>

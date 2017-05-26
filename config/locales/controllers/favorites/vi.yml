@@ -1,0 +1,9 @@
+vi:
+  controllers:
+    favorites:
+      create:
+        fail: "Lỗi"
+        success: "Thêm vào danh mục ưa thích thành công."
+      destroy:
+        fail: "Lỗi"
+        success: "Xoá khỏi danh mục ưa thích thành công."

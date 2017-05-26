@@ -1,0 +1,199 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= link_to t('admin.setting.title'), admin_setting_page_info_path %>
+    </li>
+    <li>
+      <%= t('.title') %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+  </h1>
+</div>
+<div class="container" id="admin-profile">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-8 col-sm-9">
+          <div id="admin-avatar">
+          <%= form_for @admin, url: admin_setting_profile_path, method: "put", remote: true, :html=>{:onsubmit=>"return submitForm($(this));"} do |f| %>
+          <%= hidden_field_tag :update_type, 'avatar' %>
+          <%= f.hidden_field :avatar, class: "form-control" %>
+            <%= image_tag @admin.avatar, class: 'img-responsive select-image' %>
+            <div id="avatar-mask">
+              <i class="fa fa-camera"></i>
+            </div>
+          <% end %>
+          </div>
+          <div class="table-responsive">
+            <table id="table-profile" class="table table-condensed">
+              <tbody>
+                <tr>
+                  <td><%= t('.form.fullname') %></td>
+                  <td>
+                    <%= form_for @admin, url: admin_setting_profile_path, method: "put", remote: true, :html=>{:onsubmit=>"return submitForm($(this));"} do |f| %>
+                    <%= hidden_field_tag :update_type, 'fullname' %>
+                    <span class='edit-span admin-fullname'>
+                      <%= @admin.fullname || t('blank') %>
+                    </span>
+                    <%= f.text_field :fullname, class: 'form-control edit-input hide', required: true %>
+                    <div class="edit-info pull-right">
+                      <%= link_to 'javascript:;', class: 'btn-edit' do %>
+                      <i class='fa fa-pencil'></i>
+                      <% end %>
+                    </div>
+                    <div class="accept-edit hide">
+                      <%= f.submit t('save'), class: 'btn-accept btn btn-sm btn-secondary' %>
+                      <%= button_tag t('cancel'), type: 'button', class: 'btn-cancel btn btn-sm btn-default' %>
+                    </div>
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><%= t('.form.username') %></td>
+                  <td>
+                    <%= @admin.username %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><%= t('.form.email') %></td>
+                  <td>
+                    <%= @admin.email %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><%= t('.form.password') %></td>
+                  <td>
+                    <%= form_for @admin, url: admin_setting_profile_path, method: "put", remote: true, :html=>{:onsubmit=>"return submitForm($(this));"} do |f| %>
+                    <%= hidden_field_tag :update_type, 'password' %>
+                    <%= f.password_field :password, class: 'form-control input-sm edit-password edit-input hide', placeholder: t('.form.new_password'), required: true %>
+                    <%= f.password_field :password_confirmation, class: 'form-control input-sm edit-password edit-input hide', placeholder: t('.form.password_confirmation'), required: true %>
+                    <div class="edit-info">
+                      <%= link_to t('.form.change_password'), 'javascript:;', class: 'btn-edit' %>
+                      <span class='edit-span admin-password'>
+                        <i>
+                          <%= @admin.updated_password ? t('.form.last_change_password', time: time_ago(@admin.last_update_password_at)) : "" %>
+                        </i>
+                      </span>
+                    </div>
+                    <div class="accept-edit hide">
+                      <%= f.submit t('.form.change_password'), class: 'btn-accept btn btn-sm btn-secondary' %>
+                      <%= button_tag t('cancel'), type: 'button', class: 'btn-cancel btn btn-sm btn-default' %>
+                    </div>
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><%= t('.form.phone') %></td>
+                  <td>
+                    <%= form_for @admin, url: admin_setting_profile_path, method: "put", remote: true, :html=>{:onsubmit=>"return submitForm($(this));"} do |f| %>
+                    <%= hidden_field_tag :update_type, 'phone' %>
+                    <span class='edit-span admin-phone'>
+                      <%= @admin.phone || t('blank') %>
+                    </span>
+                    <%= f.text_field :phone, class: 'form-control edit-input hide', required: true %>
+                    <div class="edit-info pull-right">
+                      <%= link_to 'javascript:;', class: 'btn-edit' do %>
+                      <i class='fa fa-pencil'></i>
+                      <% end %>
+                    </div>
+                    <div class="accept-edit hide">
+                      <%= f.submit t('save'), class: 'btn-accept btn btn-sm btn-secondary' %>
+                      <%= button_tag t('cancel'), type: 'button', class: 'btn-cancel btn btn-sm btn-default' %>
+                    </div>
+                    <% end %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= t('.form.sign_in_count') %>
+                  </td>
+                  <td>
+                    <%= number_with_delimiter(@admin.sign_in_count) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= t('.form.current_sign_in_at') %>
+                  </td>
+                  <td>
+                    <%= l(@admin.current_sign_in_at, format: :long) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= t('.form.last_sign_in_at') %>
+                  </td>
+                  <td>
+                    <%= l(@admin.last_sign_in_at, format: :long) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= t('.form.current_sign_in_ip') %>
+                  </td>
+                  <td>
+                    <%= @admin.current_sign_in_ip %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= t('.form.last_sign_in_ip') %>
+                  </td>
+                  <td>
+                    <%= @admin.last_sign_in_ip %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- container -->
+<script type="text/javascript">
+$(".btn-edit").click(function(){
+  $(".edit-info").removeClass('hide')
+  $(".edit-span").removeClass('hide')
+  $(".edit-input").addClass('hide')
+  $(".accept-edit").addClass('hide')
+  $(this).parents('.edit-info').addClass('hide')
+  $(this).parents('.edit-info').siblings('.accept-edit').removeClass('hide')
+  $(this).parents('.edit-info').siblings('.edit-input').removeClass('hide')
+  $(this).parents('.edit-info').siblings('.edit-span').addClass('hide')
+  $($(this).parents('.edit-info').siblings('.edit-input')[0]).select()
+})
+
+$(".btn-cancel").click(function(){
+  $("#error_explanation").remove()
+  $(this).parents('.accept-edit').addClass('hide')
+  $(this).parents('.accept-edit').siblings('.edit-info').removeClass('hide')
+  $(this).parents('.accept-edit').siblings('.edit-input').addClass('hide')
+  $(this).parents('.accept-edit').siblings('.edit-span').removeClass('hide')
+})
+
+$("#admin-avatar").click(function(){
+  $("#launch-modal").html("<%=j render 'admin/images/modal_select_images' %>")
+  $("#modal-select-images").attr("type", "admin-avatar")
+  $("#modal-select-images").modal({
+    backdrop: 'static',
+    keyboard: false
+  })
+})
+
+function submitForm(element){
+  $("#error-alert").remove()
+  element.find("button.btn-accept").prop("disabled", true)
+  element.find("button.btn-cancel").prop("disabled", true)
+  $('body').css("cursor", 'progress')
+}
+</script>

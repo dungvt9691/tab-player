@@ -1,0 +1,85 @@
+.awesome-cropper {
+  font-weight: 400 !important;
+  font-size: 20px;
+  height: 0;
+  .modal-dialog{
+    height: 100%;
+    width: 100%;
+  }
+  .modal-content {
+    position: relative;
+    background-color: transparent;
+    border: none !important;
+    border-radius: 0;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    background-clip: padding-box;
+    outline: 0;
+    padding: 0 15px;
+  }
+
+  .modal-footer{
+    padding: 15px 15px;
+    background-color: #000 !important;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center !important;
+
+    .separator{
+      color: #ddd;
+    }
+
+    a{
+      color: #ddd;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    a:hover, a:focus, a:active{
+      color: #fff;
+    }
+
+    a.yes{
+      color: #18bc9c !important;
+    }
+  }
+}
+
+.awesome-cropper-drop-area {
+  width: 90%;
+  height: 90%;
+}
+
+.awesome-cropper input[type='file'],
+.awesome-cropper canvas{
+  display: none;
+}
+
+.awesome-cropper .modal-body{
+  text-align: center;
+  padding: 0px;
+}
+
+.awesome-cropper .modal-content{
+  border-radius: 0px;
+}
+
+.awesome-cropper .modal-footer{
+  margin-top: 0;
+}
+
+.awesome-cropper img{
+  max-width: 100% !important;
+  max-height: 500px !important;
+}
+
+#fileupload .awesome-cropper img{
+  width: 100% !important;
+  height: auto !important;
+}
+
+.imgareaselect-border1, .imgareaselect-border2, .imgareaselect-border3, .imgareaselect-border4{
+  opacity: 1 !important
+}

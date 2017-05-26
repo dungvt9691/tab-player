@@ -1,0 +1,9 @@
+<% if @errors.blank? %>
+$("#launch-modal").html("<%=j render @modal.gsub('-', '_'), user: @user %>")
+$("#<%= @modal %>").modal({
+  keyboard: false,
+  backdrop: 'static'
+})
+<% else %>
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>

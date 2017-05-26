@@ -1,0 +1,22 @@
+vi:
+  errors:
+    not_found:
+      title: "Không tìm thấy trang"
+      description: "Xin lỗi, trang bạn đang xem hiện không tồn tại trên hệ thống."
+      home_page: "Quay lại trang chủ"
+      status: "404"
+    server_error:
+      title: "Lỗi hệ thống"
+      description: "Hiện tại chúng tôi đang khắc phục vấn đề này. Xin thử lại sau."
+      home_page: "Quay lại trang chủ"
+      status: "500"
+    forbidden:
+      title: "Không có quyền truy cập"
+      description: "Bạn không có quyền truy cập vào trang này."
+      home_page: "Quay lại trang chủ"
+      status: "403"
+    unprocessable_entity:
+      title: "Unprocessable Entity"
+      description: "Không thể hiển thị trang."
+      home_page: "Quay lại trang chủ"
+      status: "422"

@@ -1,0 +1,299 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<%= form_for @tab, url: admin_tabs_path(@tab), method: 'tab' do |f| %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= link_to t('admin.tabs.index.title'), admin_tabs_path %>
+    </li>
+    <li>
+      <%= t('.title') %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+  </h1>
+</div>
+<div class="container new-tab">
+  <div class="col-md-9">
+    <div class="form-group <%= 'has-error' if @tab.errors.has_key?(:title) %>">
+      <%= f.text_field :title, class: 'form-control input-lg', placeholder: t('.form.title_placeholder') %>
+      <p class="help-block">
+        <% if @tab.errors.has_key?(:title) %>
+        <%= @tab.errors[:title].join('<br>').html_safe %>
+        <% end %>
+      </p>
+    </div>
+    <div class="form-group <%= 'has-error' if @tab.errors.has_key?(:sheet) %>">
+      <label class="control-label"><%= t('.form.select_file') %></label>
+      <div class="input-group select-sheet">
+        <input type="text" class="form-control select-sheet-filename" placeholder="<%= t('.form.select_new_file_note') %>" disabled="disabled">
+        <span class="input-group-btn">
+          <button type="button" class="btn has-text btn-default select-sheet-clear">
+            <span class="fa fa-remove"></span> <%= t("clear") %>
+          </button>
+          <div class="btn btn-default has-text select-sheet-input">
+            <span class="fa fa-folder-open"></span>
+            <span class="select-sheet-input-title"><%= t('.form.select') %></span>
+            <%= f.file_field :sheet, accept: ".gp3, .gp4, .gp5, .gp6, .gpx, .ptb", id: 'sheet-upload' %>
+          </div>
+        </span>
+      </div>
+      <p class="help-block">
+        <% if @tab.errors.has_key?(:sheet) %>
+        <%= @tab.errors[:sheet].join('<br>').html_safe %>
+        <% end %>
+      </p>
+    </div>
+    <div class="form-group">
+      <%= f.label :artists, class: 'control-label' %>
+      <%= f.select :artist_ids, @tab.artists.collect { |x| [x.name,  x.id] }, {}, class: "form-control select-artists", multiple: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :categories, class: 'control-label' %>
+      <%= f.select :category_ids, Category.all.collect { |x| [x.name, x.id] }, {}, class: "form-control", multiple: true %>
+    </div>
+    <div class="form-group">
+      <%= f.label :status, class: 'control-label' %>
+      <div class="tab-status">
+        <label>
+          <%= f.radio_button :status, true, checked: true %>
+          <%= t('.form.published') %>
+        </label>
+        <label>
+          <%= f.radio_button :status, false %>
+          <%= t('.form.unpublish') %>
+        </label>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#tab-to-fanpage" class="">
+        <div class="panel-heading">
+          <h4><%= t('.form.fanpage.title') %></h4>
+        </div>
+      </a>
+      <div id="tab-to-fanpage" class="panel-collapse in">
+        <div class="panel-body">
+          <div class="form tab-to-fanpage">
+            <label class='control-label'>
+              <%= check_box_tag :accept_tab, nil, false, id: 'accept-tab' %>
+              <%= t('.form.fanpage.title') %>
+            </label>
+          </div>
+          <div class="form-group tab-to-fanpage">
+            <label class='control-label'>
+              <%= check_box_tag :auto_content, nil, true, id: 'auto-content' %>
+              <%= t('.form.fanpage.auto_content') %>
+            </label>
+          </div>
+          <div class="form-group">
+            <%= text_area_tag :tab_to_fanpage, nil, class: "form-control", rows: 5, disabled: true, placeholder: t('.form.fanpage.content_placeholder') %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :schedule_at, t('.form.fanpage.schedule_at'), class: "control-label" %>
+            <%= text_field_tag :schedule_at, nil, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#seo-tab" class="">
+        <div class="panel-heading">
+          <h4><%= t('.form.setting_seo') %></h4>
+        </div>
+      </a>
+      <div id="seo-tab" class="panel-collapse in">
+        <div class="panel-body form-horizontal">
+          <div class="row seo-preview">
+            <div class="col-md-12">
+              <span class="seo-title">
+                <span class="title-text"></span>
+                - <%= Setting.app_name %>
+              </span>
+              <span class="seo-url">
+                <%= "#{Setting.app_url.gsub('http://', '')}" %>/<%= I18n.locale %>
+              </span>
+              <span class="seo-description">
+                <%= t('.form.seo_description_note') %>
+              </span>
+            </div>
+          </div>
+          <br><br>
+          <div class="form-group">
+            <%= f.label :seo_title, class: 'col-sm-2 control-label' %>
+            <div class="col-md-10">
+              <%= f.text_field :seo_title, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :seo_keywords, class: 'col-sm-2 control-label' %>
+            <div class="col-md-10">
+              <%= f.text_field :seo_keywords, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :seo_description, class: 'col-sm-2 control-label' %>
+            <div class="col-md-10">
+              <%= f.text_area :seo_description, class: "form-control", rows: 5 %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#update-tab" class="">
+        <div class="panel-heading">
+          <h4><%= t('.form.upload') %></h4>
+        </div>
+      </a>
+      <div id="update-tab" class="panel-collapse in">
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-12">
+              <%= f.submit t('.form.upload_and_next'), class: 'btn btn-default pull-left' %>
+              <%= f.submit t('.form.upload'), class: 'btn btn-secondary pull-right' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#tab-image-panel" class="">
+        <div class="panel-heading">
+          <h4><%= t('.form.featured_image') %></h4>
+        </div>
+      </a>
+      <div id="tab-image-panel" class="panel-collapse in">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="tab-image">
+                <% unless @tab.avatar_url.blank? %>
+                <%= image_tag @tab.avatar_url, class: 'select-tab-image' %>
+                <br>
+                <br>
+                <% end %>
+              </div>
+              <small class="text-danger">* <%= t('.form.featured_image_note') %></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- container -->
+<% end %>
+<script type="text/javascript">
+$(function() {
+  $.datetimepicker.setLocale('<%= I18n.locale.to_s %>');
+  $( "#schedule_at" ).datetimepicker({
+    timepicker: true,
+    format: "<%= t('time.datetimepicker.datetime') %>",
+    mask: true,
+    startDate: new Date("<%= DateTime.now %>"),
+    minDate: new Date("<%= DateTime.now %>")
+  });
+});
+
+$('.select-sheet-clear').click(function(){
+  $('.select-gpx').attr("data-content","").popover('hide');
+  $('.select-sheet-filename').val("");
+  $('.select-sheet-clear').hide();
+  $('.select-sheet-input input:file').val("");
+  $(".select-sheet-input-title").text("<%= t('.form.select') %>");
+}); 
+
+$(".select-sheet-input input[type=file]").change(function (){
+  var file = this.files[0];
+  if(typeof file == "undefined")
+    return
+  var reader = new FileReader();
+
+  reader.onload = function (e) {
+    $(".select-sheet-input-title").text("<%= t('.form.reselect') %>");
+    $(".select-sheet-clear").show();
+    $(".select-sheet-filename").val(file.name);
+  }
+  reader.readAsDataURL(file);
+});
+
+$("#tab_seo_title").keyup(function(){
+  $(".seo-title .title-text").text($(this).val())
+})
+
+$("#tab_seo_description").keyup(function(){
+  if($(this).val() == "")
+    $(".seo-description").text("<%= t('.form.seo_description_note') %>")
+  else
+    $(".seo-description").text($(this).val())
+})
+
+$(".select-artists").select2({
+  tags: true,
+  language: "<%= I18n.locale %>",
+  placeholder: "<%= t('.form.artist_placeholder') %>",
+  ajax: {
+    url: "<%= admin_artists_path(type: 'search') %>",
+    dataType: "json",
+    delay: 250,
+    data: function (params) {
+      return {
+        q: params.term,
+        page: params.page
+      };
+    },
+    processResults: function (data, params) {
+      return {
+        results: data
+      };
+    },
+    cache: true
+  },
+  escapeMarkup: function (markup) { return markup; },
+  minimumInputLength: 1,
+  templateResult: formatRepo,
+  templateSelection: formatRepoSelection
+}).on("select2:select", function(e) {
+  avatar_url = $(".select-artists").select2('data')[0].avatar_url
+  $(".select-tab-image").attr("src", avatar_url)
+}).on("select2:unselect", function(e) {
+  if($(".select-artists").select2('data').length == 0)
+    $(".select-tab-image").attr("src", '<%= "#{Setting.app_url}/missing/artists/avatar/s300/missing.png" %>')
+});
+
+$("#tab_category_ids").select2({
+  tags: true,
+  language: "<%= I18n.locale %>",
+  placeholder: "<%= t('.form.category_placeholder') %>",
+  createTag: function () {
+    return null;
+  }
+})
+
+function formatRepo (repo) {
+  if (repo.loading) return repo.text;
+  if(typeof repo.avatar_url !== "undefined")
+  {
+    var markup = "<div class='select2-artist clearfix'>" +
+    "<div class='artist-avatar'><img src='" + repo.avatar_url + "' /></div>" +
+    "<div class='artist-meta'>" +
+    "<div class='artist-name'>" + repo.name + "</div></div>";
+  }
+  else {
+    markup = "<div class='artist-name'>" + repo.text + "</div>"
+  }
+
+  return markup;
+}
+
+function formatRepoSelection (repo) {
+  return repo.name || repo.text;
+}
+</script>

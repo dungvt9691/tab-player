@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Violin_2" id="32">
+  <defaultSetts ampHoldTime="0" ampDecayTime="0" ampReleaseTime="-1586" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-7973" delayVibLfo="-7973">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-3600" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="147" name="VlnStrike-A3" originalPitch="5700"/>
+    <sample id="146" name="VlnStrike-D4" originalPitch="6200"/>
+    <sample id="145" name="VlnStrike-A4" originalPitch="6900"/>
+    <sample id="144" name="VlnStrike-E5" originalPitch="7600"/>
+    <sample id="143" name="VlnStrike-A5" originalPitch="8100"/>
+    <sample id="142" name="VlnStrike-C6" originalPitch="8400"/>
+    <sample id="141" name="VlnStrike-E6" originalPitch="8800"/>
+    <sample id="140" name="VlnStrike-G6" originalPitch="9100"/>
+  </samples>
+  <zones>
+    <zone fineTune="-4">
+      <keyRange low="0" high="57"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="147" loopStart="8" loopEnd="7036"/>
+    </zone>
+    <zone fineTune="-5">
+      <keyRange low="58" high="60"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="146" loopStart="8" loopEnd="9006"/>
+    </zone>
+    <zone fineTune="-11">
+      <keyRange low="61" high="64"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="146" loopStart="8" loopEnd="9006"/>
+    </zone>
+    <zone fineTune="20">
+      <keyRange low="65" high="67"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="145" loopStart="8" loopEnd="9749"/>
+    </zone>
+    <zone fineTune="11">
+      <keyRange low="68" high="71"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="145" loopStart="8" loopEnd="9749"/>
+    </zone>
+    <zone fineTune="11">
+      <keyRange low="72" high="73"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="145" loopStart="8" loopEnd="9749"/>
+    </zone>
+    <zone fineTune="12">
+      <keyRange low="74" high="75"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="144" loopStart="8" loopEnd="7050"/>
+    </zone>
+    <zone fineTune="-8">
+      <keyRange low="76" high="77"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="144" loopStart="8" loopEnd="7050"/>
+    </zone>
+    <zone fineTune="20">
+      <keyRange low="78" high="80"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="143" loopStart="8" loopEnd="6402"/>
+    </zone>
+    <zone attenuation="50" fineTune="-1">
+      <keyRange low="81" high="82"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="143" loopStart="8" loopEnd="6402"/>
+    </zone>
+    <zone attenuation="50" fineTune="11">
+      <keyRange low="83" high="84"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="142" loopStart="8" loopEnd="7012"/>
+    </zone>
+    <zone fineTune="-8">
+      <keyRange low="85" high="86"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="142" loopStart="8" loopEnd="7012"/>
+    </zone>
+    <zone>
+      <keyRange low="87" high="89"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="141" loopStart="8" loopEnd="6449"/>
+    </zone>
+    <zone fineTune="20">
+      <keyRange low="90" high="113"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="140" loopStart="8" loopEnd="6722"/>
+    </zone>
+  </zones>
+</instrument>

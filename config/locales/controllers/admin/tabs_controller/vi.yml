@@ -1,0 +1,16 @@
+vi:
+  controllers:
+    admin:
+      tabs:
+        create:
+          success: "Đăng tải Tab <b>%{title}</b> thành công!"
+        update:
+          success: "Chỉnh sửa Tab <b>%{title}</b> thành công!"
+        multi_upload:
+          success: "Đăng tải Tab thành công!"
+        destroy:
+          success: "Xoá Tab <b>%{title}</b> thành công"
+          fail: "Lỗi! Không thể xoá Tab <b>%{title}</b>"
+        multi_destroy:
+          success: "Xoá Tab <b>%{title}</b> thành công"
+          fail: "Lỗi! Không thể xoá Tab <b>%{title}</b>"

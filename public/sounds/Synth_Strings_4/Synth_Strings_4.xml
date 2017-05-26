@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Strings 4" id="116">
+  <samples>
+    <sample id="362" name="SynthStringsC4" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="127" modPitch="-1190" ampAttackTime="-3140" ampReleaseTime="1911" modAttackTime="-8800" modSustainTime="1000" coarseTune="-34" freqVibLfo="-15600" freqModLfo="-725" reverb="109" pan="-500" loopType="loop">
+      <keyRange low="0" high="107"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="362" loopStart="1272" loopEnd="9962"/>
+    </zone>
+    <zone attenuation="127" modPitch="1191" ampAttackTime="-1817" ampReleaseTime="1911" modAttackTime="-8800" modDecayTime="-4604" modSustainTime="1000" coarseTune="-34" freqVibLfo="-15600" freqModLfo="-725" reverb="109" pan="500" loopType="loop">
+      <keyRange low="0" high="107"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="362" loopStart="1272" loopEnd="9962"/>
+    </zone>
+  </zones>
+</instrument>

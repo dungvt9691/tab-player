@@ -1,0 +1,43 @@
+vi:
+  admin:
+    layouts:
+      sidebar:
+        dashboard:
+          title: "Bảng điều khiển"
+        administrators:
+          title: "Quản trị viên"
+        users:
+          title: "Thành viên"
+        pages:
+          title: "Trang"
+        artists:
+          title: "Nghệ sĩ"
+        categories:
+          title: "Danh mục"
+        tabs:
+          title: "Guitar Tab"
+          index: "Tất cả"
+          new: "Đăng Tab"
+          multi_upload: "Đăng nhiều Tab"
+        tutorials:
+          title: "Hướng dẫn"
+        images:
+          title: "Hình ảnh"
+        setting:
+          title: "Cài đặt"
+          profile: "Thông tin cá nhân"
+          page_info: "Thông tin trang"
+          social_networks: "Mạng xã hội"
+          seo: "SEO"
+          smtp: "SMTP"
+          recaptcha: "reCAPTCHA"
+      header:
+        signout: "Đăng xuất"
+      socket_script:
+        syncing: "Đang tìm kiếm dữ liệu..."
+        synced: "Đã đồng bộ nghệ sĩ"
+        done: "Hoàn thành đồng bộ"
+      crawler_alert:
+        loading: "Đồng bộ nghệ sĩ từ Mp3 Zing"
+        done: "Đồng bộ thành công"
+        stop: "Dừng đồng bộ"

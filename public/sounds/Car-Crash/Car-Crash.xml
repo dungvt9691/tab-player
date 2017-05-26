@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Car-Crash" id="137">
+  <samples>
+    <sample id="391" name="Car-Crash" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone ampDecayTime="2786" ampSustainTime="960" ampReleaseTime="1200" scaleTuning="50">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="391" loopStart="8" loopEnd="44981"/>
+    </zone>
+  </zones>
+</instrument>

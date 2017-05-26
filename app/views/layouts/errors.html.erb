@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    <%= yield(:og_title) %> - <%= Setting.app_name %>
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="icon" type="image/png" href="<%= asset_path('logo/favicon.png') %>" />
+  <%= render 'shared/meta_tags' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= render 'shared/google_analytics' %>
+</head>
+<body>
+  <%= yield %>
+  <%= render 'shared/alert_script' %>
+  <%= render 'shared/facebook_script' %>
+  <%= render 'layouts/sidebar' %>
+  <%= render 'shared/panel_sign_in' unless user_signed_in? %>
+  <%= render 'shared/panel_profile' if user_signed_in? %>
+  <%= render 'shared/panel_favorites' if user_signed_in? %>
+  <%= render 'shared/panel_search' %>
+  <%= render 'shared/panel_contact' %>
+  <%= render 'shared/panel_introduce' %>
+  <%= render 'shared/panel_term' %>
+  <%= render 'shared/panel_privacy' %>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Kalimba" id="299">
+  <samples>
+    <sample id="849" name="Kalimba-C3" originalPitch="6800"/>
+    <sample id="850" name="Kalimba-C5" originalPitch="9200"/>
+    <sample id="851" name="Kalimba-C6" originalPitch="10400"/>
+  </samples>
+  <zones>
+    <zone attenuation="30" filterFc="10620" modFilterFc="2587" fineTune="16" ampDecayTime="2181" ampSustainTime="1000" ampReleaseTime="885" modDecayTime="885" modSustainTime="1000" modReleaseTime="885" freqVibLfo="-725" freqModLfo="-725" loopType="loop">
+      <keyRange low="0" high="60"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="849" loopStart="9275" loopEnd="9382"/>
+    </zone>
+    <zone attenuation="30" filterFc="10620" modFilterFc="2587" fineTune="16" ampDecayTime="1941" ampSustainTime="1000" ampReleaseTime="256" modDecayTime="885" modSustainTime="1000" modReleaseTime="885" freqVibLfo="-725" freqModLfo="-725" loopType="loop">
+      <keyRange low="61" high="76"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="849" loopStart="9275" loopEnd="9382"/>
+    </zone>
+    <zone attenuation="30" filterFc="10620" modFilterFc="2587" fineTune="16" ampDecayTime="1731" ampSustainTime="1000" ampReleaseTime="256" modDecayTime="885" modSustainTime="1000" modReleaseTime="885" freqVibLfo="-725" freqModLfo="-725" loopType="loop">
+      <keyRange low="77" high="83"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="849" loopStart="9275" loopEnd="9382"/>
+    </zone>
+    <zone attenuation="30" filterFc="10620" modFilterFc="2587" fineTune="-32" ampHoldTime="-5958" ampDecayTime="1545" ampSustainTime="1000" ampReleaseTime="74" modDecayTime="866" modSustainTime="1000" modReleaseTime="866" freqVibLfo="-725" freqModLfo="-725" loopType="loop">
+      <keyRange low="84" high="96"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="850" loopStart="2249" loopEnd="2275"/>
+    </zone>
+    <zone attenuation="30" filterFc="10620" modFilterFc="2587" fineTune="-32" ampDecayTime="1078" ampSustainTime="1000" ampReleaseTime="-52" modDecayTime="885" modSustainTime="1000" modReleaseTime="885" freqVibLfo="-725" freqModLfo="-725" loopType="loop">
+      <keyRange low="97" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="851" loopStart="406" loopEnd="419"/>
+    </zone>
+  </zones>
+</instrument>

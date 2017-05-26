@@ -1,0 +1,55 @@
+#admin-profile
+  #table-profile
+    tr:first-child
+      td
+        border-top: none
+    tr
+      td:first-child
+        font-weight: 600
+        width: 40%
+
+    .edit-span.admin-password
+      display: block
+      color: $secondary-gray-hover-color
+
+    .edit-input
+      margin-bottom: $margin-xmin
+
+  #error-alert
+    margin-bottom: $margin-xmin
+
+  .select-image
+    cursor: pointer
+    position: absolute
+
+  #admin-avatar
+    width: 190px
+    height: 190px
+    cursor: pointer
+    position: relative
+    float: left
+    margin-right: $margin-small
+    img
+      width: 100%
+    #avatar-mask
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      line-height: 190px
+      text-align: center
+      font-size: 80px
+      background-color: rgba(0, 0, 0, 0.5)
+      opacity: 0
+      -webkit-transition: all 0.2s
+      -moz-transition: all 0.2s
+      -o-transition: all 0.2s
+      -ms-transition: all 0.2s
+      transition: all 0.2s
+      .fa
+        color: rgba(255 ,255 ,255, 0.8)
+
+  #admin-avatar:hover
+    #avatar-mask
+      opacity: 1

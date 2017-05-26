@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Tuba" id="275">
+  <defaultSetts ampAttackTime="-4520" ampReleaseTime="-2267" modReleaseTime="-1074" freqVibLfo="-1178" freqModLfo="-536" loopType="loop">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="766" name="Tuba-F#0" originalPitch="3000"/>
+    <sample id="765" name="Tuba-D1" originalPitch="3800"/>
+    <sample id="764" name="Tuba-F#1" originalPitch="4200"/>
+    <sample id="763" name="Tuba-A#1" originalPitch="4600"/>
+  </samples>
+  <zones>
+    <zone filterFc="11881" ampHoldTime="-11183" ampDecayTime="7897" ampSustainTime="64" modAttackTime="4757" modDecayTime="5458" modSustainTime="1000">
+      <keyRange low="0" high="34"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="766" loopStart="4626" loopEnd="5058"/>
+    </zone>
+    <zone filterFc="11881" ampHoldTime="-11183" ampDecayTime="7897" ampSustainTime="64" modAttackTime="4757" modDecayTime="5458" modSustainTime="1000">
+      <keyRange low="35" high="40"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="765" loopStart="5418" loopEnd="5691"/>
+    </zone>
+    <zone filterFc="11881" ampHoldTime="-11183" ampDecayTime="7897" ampSustainTime="64" modAttackTime="4757" modDecayTime="5458" modSustainTime="1000">
+      <keyRange low="41" high="44"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="764" loopStart="4510" loopEnd="4726"/>
+    </zone>
+    <zone filterFc="11881" ampHoldTime="-11183" ampDecayTime="7897" ampSustainTime="64" modAttackTime="4757" modDecayTime="5458" modSustainTime="1000">
+      <keyRange low="45" high="83"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="763" loopStart="5687" loopEnd="5859"/>
+    </zone>
+  </zones>
+</instrument>

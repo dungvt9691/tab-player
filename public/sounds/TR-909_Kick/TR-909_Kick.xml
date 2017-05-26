@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="TR-909 Kick" id="55">
+  <samples>
+    <sample id="198" name="TR-909 Kick" originalPitch="4800"/>
+  </samples>
+  <zones>
+    <zone filterFc="8769" modFilterFc="3830" ampHoldTime="-11959" ampDecayTime="2400" ampSustainTime="1000" ampReleaseTime="2400" modDecayTime="-3986" modSustainTime="1000" modReleaseTime="-3986" freqVibLfo="-15597" freqModLfo="-725" pan="4">
+      <keyRange low="36" high="36"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="198" loopStart="1" loopEnd="5744"/>
+    </zone>
+  </zones>
+</instrument>

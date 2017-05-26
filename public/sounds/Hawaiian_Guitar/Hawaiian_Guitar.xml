@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Hawaiian Guitar" id="261">
+  <defaultSetts ampAttackTime="-8800" ampSustainTime="1000" modAttackTime="-8800" modSustainTime="1000" freqVibLfo="-15600" freqModLfo="-725">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="350" name="JazzGuitLoop" originalPitch="8700"/>
+  </samples>
+  <zones>
+    <zone modFilterFc="337" fineTune="-18" ampHoldTime="-1132" ampDecayTime="3582" ampReleaseTime="-2050" freqModLfo="-1085" modLfoToPitch="-8" modLfoToVolume="13" delayModLfo="-1867" loopType="loop">
+      <keyRange low="0" high="109"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="350" loopStart="9" loopEnd="114"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="FilterFX 2" id="12">
+  <defaultSetts attenuation="127" ampSustainTime="1000" modSustainTime="1000" freqVibLfo="-15600" freqModLfo="-725" reverb="109">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="85" name="FilterSnap" originalPitch="2300"/>
+    <sample id="363" name="WhiteNoiseWave" originalPitch="2300"/>
+  </samples>
+  <zones>
+    <zone attenuation="202" coarseTune="-27">
+      <keyRange low="23" high="23"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="85" loopStart="7" loopEnd="416"/>
+    </zone>
+    <zone ampDecayTime="-1599" ampReleaseTime="-1599">
+      <keyRange low="23" high="23"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="363" loopStart="7" loopEnd="8289"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    <%= yield(:og_title) %> - <%= Setting.app_name %>
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="icon" type="image/png" href="<%= asset_path('logo/favicon.png') %>" />
+  <%= render 'shared/meta_tags' %>
+  <%= stylesheet_link_tag    'admin', media: 'all' %>
+  <%= javascript_include_tag 'admin' %>
+  <%= csrf_meta_tags %>
+  <%= render 'admin/layouts/google_analytics' %>
+  <%= render 'admin/layouts/datatable_script' %>
+  <%= render 'admin/layouts/socket_script' %>
+</head>
+<body>
+  <%= render 'shared/alert_script' %>
+  <%= render 'admin/layouts/header' %>
+  <div id="page-container">
+    <%= render 'admin/layouts/sidebar' %>
+    <div id="page-content">
+      <div id='wrap'>
+        <%= render 'admin/layouts/crawler_alert' %>
+        <%= yield %>
+      </div> <!--wrap -->
+    </div> <!-- page-content -->
+  </div>
+  <div id="launch-modal"></div>
+</body>
+</html>
+<script type="text/javascript">
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip({
+    html: true
+  })
+})
+</script>

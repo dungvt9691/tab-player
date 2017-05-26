@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Castanets" id="146">
+  <samples>
+    <sample id="611" name="Castanets" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone ampReleaseTime="7973" scaleTuning="40">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="611" loopStart="8" loopEnd="1635"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,15 @@
+en:
+  admin:
+    categories:
+      index:
+        title: "Categories"
+        new: "Add category"
+        table:
+          name: "Name"
+          created_at: "Created at"
+        multi_destroy: "Delete selected artists"
+        destroy_selected: "Delete selected artists"
+      new:
+        title: "Add category"
+      edit:
+        title: "Edit category"

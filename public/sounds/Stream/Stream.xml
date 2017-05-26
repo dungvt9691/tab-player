@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Stream" id="153">
+  <samples>
+    <sample id="418" name="Stream" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone modFilterFc="3600" ampAttackTime="406" ampReleaseTime="2786" modReleaseTime="6712" scaleTuning="50" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="418" loopStart="8" loopEnd="70775"/>
+    </zone>
+  </zones>
+</instrument>

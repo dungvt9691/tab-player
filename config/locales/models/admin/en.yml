@@ -1,0 +1,13 @@
+en:
+  administrators:
+    set_permissions: "Setting permissions"
+    add_permissions: "Add permission"
+    set_permissions_note: "Click to on/off"
+    select_permission: "Select permission for account"
+    destroy_permission: "Delete permission"
+    not_found: "Administrator not found"
+
+  activerecord:
+    attributes:
+      admin:
+        username: "Account"

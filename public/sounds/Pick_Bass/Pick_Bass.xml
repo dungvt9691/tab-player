@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Pick Bass" id="280">
+  <defaultSetts ampDecayTime="5186" modDecayTime="2774" coarseTune="12" freqVibLfo="-851" freqModLfo="-851" delayModLfo="-3986" delayVibLfo="-3986">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="790" name="Pick Bass-E0" originalPitch="5400"/>
+    <sample id="789" name="Pick Bass-A0" originalPitch="6000"/>
+    <sample id="788" name="Pick Bass-D1" originalPitch="6400"/>
+    <sample id="787" name="Pick Bass-G1" originalPitch="6900"/>
+    <sample id="837" name="Pick Bass-C6" originalPitch="10700"/>
+  </samples>
+  <zones>
+    <zone filterFc="6785" fineTune="33" ampSustainTime="1000" ampReleaseTime="-1249" modSustainTime="1000" modReleaseTime="74" loopType="loop">
+      <keyRange low="0" high="30"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="790" loopStart="20040" loopEnd="20525"/>
+    </zone>
+    <zone filterFc="6785" fineTune="33" ampSustainTime="1000" ampReleaseTime="-1249" modSustainTime="1000" modReleaseTime="74" loopType="loop">
+      <keyRange low="31" high="35"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="789" loopStart="15151" loopEnd="15494"/>
+    </zone>
+    <zone filterFc="6785" fineTune="38" ampSustainTime="1000" ampReleaseTime="-1249" modSustainTime="1000" modReleaseTime="74" loopType="loop">
+      <keyRange low="36" high="40"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="788" loopStart="18222" loopEnd="18495"/>
+    </zone>
+    <zone filterFc="6785" fineTune="33" ampSustainTime="1000" ampReleaseTime="-1249" modSustainTime="1000" modReleaseTime="74" loopType="loop">
+      <keyRange low="41" high="47"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="787" loopStart="17747" loopEnd="17951"/>
+    </zone>
+    <zone filterFc="6785" modFilterFc="-1800" fineTune="33" ampSustainTime="1000" ampReleaseTime="-1249" modSustainTime="1000" modReleaseTime="74" loopType="loop">
+      <keyRange low="48" high="80"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="787" loopStart="17747" loopEnd="17951"/>
+    </zone>
+    <zone attenuation="120" filterFc="6785" filterQ="105" fineTune="-15" ampSustainTime="1000" ampReleaseTime="-1249" modSustainTime="390" modReleaseTime="74" loopType="loop">
+      <keyRange low="81" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="837" loopStart="120" loopEnd="131"/>
+    </zone>
+  </zones>
+</instrument>

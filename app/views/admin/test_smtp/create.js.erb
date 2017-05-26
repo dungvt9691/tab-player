@@ -1,0 +1,15 @@
+$('body').css("cursor", 'auto')
+$(".tab-content .btn").prop("disabled", false)
+<% if @errors.empty? %>
+$("#test-smtp-alert .alert-icon").html("<i class='fa fa-check'></i>")
+$("#test-smtp-alert").addClass("alert-success")
+$("#test-smtp-alert").removeClass("alert-danger alert-warning")
+$("#test-smtp-alert .alert-text").html("<%= t('.success') %>")
+$("#test-smtp-alert").fadeIn(100)
+<% else %>
+$("#test-smtp-alert .alert-icon").html("<i class='fa fa-warning'></i>")
+$("#test-smtp-alert").addClass("alert-danger")
+$("#test-smtp-alert").removeClass("alert-warning alert-success")
+$("#test-smtp-alert .alert-text").html("<%= @errors.first(10).join('<br>').html_safe %>")
+$("#test-smtp-alert").fadeIn(100)
+<% end %>

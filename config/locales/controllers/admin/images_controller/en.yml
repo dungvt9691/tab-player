@@ -1,0 +1,12 @@
+en:
+  controllers:
+    admin:
+      images:
+        create:
+          fail: "Cannot upload image successfully"
+        destroy:
+          success: "Deleted image <b>%{name}</b> successfully"
+          fail: "Error! Cannot delete image <b>%{name}</b>"
+        multi_destroy:
+          success: "Deleted image <b>%{name}</b> successfully"
+          fail: "Error! Cannot delete image <b>%{name}</b>"

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Organ Percussion" id="235">
+  <defaultSetts fineTune="-1" ampDecayTime="1545" ampSustainTime="960" ampReleaseTime="-4288" modDecayTime="6719" modSustainTime="1000" modReleaseTime="-417" freqVibLfo="-725" freqModLfo="-405">
+    <modulators>
+      <modulator dest="attenuation" src="velocity" srcCtrlType="concave" srcType="negative" amount="0" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="631" name="Organ Perc.-A1" originalPitch="11500"/>
+    <sample id="630" name="Organ Perc.-F#2" originalPitch="11200"/>
+    <sample id="629" name="Organ Perc.-D#3" originalPitch="10900"/>
+    <sample id="628" name="Organ Perc.-C4" originalPitch="11300"/>
+    <sample id="627" name="Organ Perc.-A4" originalPitch="11500"/>
+    <sample id="626" name="Organ Perc.-F#5" originalPitch="11200"/>
+  </samples>
+  <zones>
+    <zone filterFc="14400" coarseTune="60">
+      <keyRange low="0" high="49"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="631" loopStart="7" loopEnd="13219"/>
+    </zone>
+    <zone filterFc="14400" coarseTune="48">
+      <keyRange low="50" high="58"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="630" loopStart="7" loopEnd="12540"/>
+    </zone>
+    <zone filterFc="14400" coarseTune="36">
+      <keyRange low="59" high="67"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="629" loopStart="7" loopEnd="12279"/>
+    </zone>
+    <zone filterFc="14400" coarseTune="31">
+      <keyRange low="68" high="76"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="628" loopStart="7" loopEnd="12651"/>
+    </zone>
+    <zone filterFc="14400" coarseTune="24">
+      <keyRange low="77" high="85"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="627" loopStart="7" loopEnd="12765"/>
+    </zone>
+    <zone filterFc="14400" fineTune="10" coarseTune="12">
+      <keyRange low="86" high="124"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="626" loopStart="7" loopEnd="11566"/>
+    </zone>
+  </zones>
+</instrument>

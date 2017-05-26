@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Bass 101" id="145">
+  <defaultSetts filterFc="4335" fineTune="-20" ampDecayTime="1200" ampReleaseTime="1200" modDecayTime="1200" modReleaseTime="1200">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="407" name="Saw Decline-93.75Hz" originalPitch="4200"/>
+    <sample id="410" name="Saw Decline-187.5Hz" originalPitch="5400"/>
+    <sample id="409" name="Saw Decline-375Hz" originalPitch="6600"/>
+    <sample id="408" name="Saw Decline-750Hz" originalPitch="7800"/>
+    <sample id="411" name="Saw Decline-1500Hz" originalPitch="9000"/>
+    <sample id="376" name="Saw Decline-3000Hz" originalPitch="10200"/>
+    <sample id="375" name="Saw Decline-6000Hz" originalPitch="11400"/>
+    <sample id="374" name="Saw Decline-12000Hz" originalPitch="12600"/>
+  </samples>
+  <zones>
+    <zone loopType="loop">
+      <keyRange low="0" high="43"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="407" loopStart="256" loopEnd="768"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="44" high="55"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="410" loopStart="128" loopEnd="384"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="56" high="67"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="409" loopStart="64" loopEnd="192"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="68" high="79"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="408" loopStart="32" loopEnd="96"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="80" high="91"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="411" loopStart="16" loopEnd="48"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="92" high="103"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="376" loopStart="8" loopEnd="56"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="104" high="115"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="375" loopStart="12" loopEnd="52"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="116" high="127"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="374" loopStart="6" loopEnd="42"/>
+    </zone>
+  </zones>
+</instrument>

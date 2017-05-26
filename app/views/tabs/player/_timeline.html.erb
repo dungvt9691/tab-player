@@ -1,0 +1,25 @@
+<section class="tpp-b-footer">
+  <section class="tpp-timeline hxTimelineView">
+    <div class="tpp-timeline--tracklist-title hxTrackTitle" type="label" style="display: none;"></div>
+    <b class="tpp-timeline--popular text-center" data-i18n="player.POPULAR_PARTS"><%= t('.timing') %></b>
+    <article class="tpp-timeline--overlay">
+      <div class="tpp-timeline--time text-center hxCurrentTime" type="label"></div>
+      <section class="tpp-timeline--container _hxTimelineContainer" style="cursor: pointer;">
+        <figure class="tpp-timeline--control hide _hxPointer" type="component"></figure>
+        <section class="tpp-slider tpp-slider__timeline hide hxTimelineSlider" type="slider">
+          <div class="ui-slider-container">
+            <div class="slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+              <div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 0%;"></div>
+              <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a>
+            </div>
+          </div>
+        </section>
+        <figure class="_hxHitMapCanvas">
+        </figure>
+        <div class="_hxTimelineItems timeline-parts timeable">
+        </div>
+      </section>
+      <div class="tpp-timeline--time text-center hxTotalTime" type="label"></div>
+    </article>
+  </section>
+</section>

@@ -1,0 +1,35 @@
+<div class="panel sidebar-panel" id="panel-profile">
+  <div class="panel-header">
+    <h1><%= t('.title') %></h1>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <td class="col-sm-3">
+          <b><%= t('.form.fullname') %>:</b>
+        </td>
+        <td class="col-sm-9">
+          <%= current_user.fullname %>
+        </td>
+      </tr>
+      <tr>
+        <td class="col-sm-3">
+          <b><%= t('.form.email') %>:</b>
+        </td>
+        <td class="col-sm-9">
+          <%= current_user.email %>
+        </td>
+      </tr>
+      <tr>
+        <td class="col-sm-3">
+          <b><%= t('.form.created_at') %>:</b>
+        </td>
+        <td class="col-sm-9">
+          <%= l(current_user.created_at, format: :long) %>
+        </td>
+      </tr>
+    </table>
+    <hr>
+    <%= link_to t(".sign_out"), destroy_user_session_path, method: "delete", id: "btn-sign-out", class: "btn btn-danger btn-lg btn-block"  %>
+  </div>
+</div>

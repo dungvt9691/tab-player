@@ -1,0 +1,13 @@
+en:
+  admin:
+    dashboard:
+      index:
+        title: "Dashboard"
+        site_traffic: "Site Traffic"
+        favourite: "Favorite"
+        top_browsers: "Top Browsers"
+        top_cities: "Top Cities"
+        via_sessions_users: "Sessions, Users - Last 30 days"
+        via_page_views: "Page Views - Last 30 days"
+        via_new_users: "New Users - Last 30 days"
+        via_sessions: "Sessions"

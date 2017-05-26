@@ -1,0 +1,23 @@
+vi:
+  admin:
+    pages:
+      index:
+        title: "Quản lý trang"
+        language: "Ngôn ngữ"
+        new: "Tạo Trang"
+        edit: "Chỉnh sửa trang"
+        table:
+          title: "Tiêu đề"
+          edit_content: "Tuỳ chỉnh giao diện"
+          created_at: "Ngày tạo"
+      edit:
+        title: "Chỉnh sửa trang"
+        form:
+          edit: "Chỉnh sửa"
+          insert_image: "Chèn ảnh"
+          title_placeholder: "Nhập tiêu đề tại đây"
+          select_featured_image: "Chọn ảnh tiêu biểu"
+          select_featured_image_note: "Nhấn vào ảnh để chọn lại ảnh tiêu biểu."
+          setting_seo: "Cài đặt SEO"
+          seo_description_note: "Vui lòng cung cấp nội dung SEO bằng cách chỉnh sửa nội dung bên dưới."
+          featured_image: "Ảnh tiêu biểu"

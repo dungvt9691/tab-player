@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Ocarina_1" id="173">
+  <defaultSetts ampReleaseTime="2786" modAttackTime="285" freqModLfo="-851" modLfoToPitch="9" modLfoToVolume="17" delayModLfo="-1817">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="454" name="Ocarina-C5" originalPitch="7200"/>
+    <sample id="453" name="Ocarina-E5" originalPitch="7600"/>
+    <sample id="452" name="Ocarina-G5" originalPitch="7900"/>
+    <sample id="451" name="Ocarina-B5" originalPitch="8300"/>
+  </samples>
+  <zones>
+    <zone fineTune="-21" coarseTune="1" loopType="infinite">
+      <keyRange low="69" high="74"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="454" loopStart="1928" loopEnd="1972"/>
+    </zone>
+    <zone fineTune="-20" loopType="infinite">
+      <keyRange low="75" high="77"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="453" loopStart="1914" loopEnd="1947"/>
+    </zone>
+    <zone fineTune="-4" loopType="infinite">
+      <keyRange low="78" high="81"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="452" loopStart="1645" loopEnd="1673"/>
+    </zone>
+    <zone fineTune="43" loopType="infinite">
+      <keyRange low="82" high="105"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="451" loopStart="2381" loopEnd="2410"/>
+    </zone>
+    <zone fineTune="-21" ampReleaseTime="-617" coarseTune="1" loopType="infinite">
+      <keyRange low="0" high="68"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="454" loopStart="1928" loopEnd="1972"/>
+    </zone>
+  </zones>
+</instrument>

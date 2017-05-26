@@ -1,0 +1,7 @@
+en:
+  controllers:
+    likes:
+      create:
+        fail: "Fail"
+      destroy:
+        fail: "Fail"

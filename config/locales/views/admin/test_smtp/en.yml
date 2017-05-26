@@ -1,0 +1,7 @@
+en:
+  admin:
+    test_smtp:
+      new:
+        loading: "Email is sending"
+      create:
+        success: "Sent email successfully"

@@ -1,0 +1,6 @@
+vi:
+  controllers:
+    admin:
+      profile:
+        update:
+          success: "Cập nhật thông tin cá nhân thành công."

@@ -1,0 +1,12 @@
+$("body").css("cursor", "auto")
+<% if @errors.empty? %>
+showMessage("<%= t_scope(@params, 'success') %>", "success")
+$("#add-to-favorite").removeClass("active")
+$("#add-to-favorite").html("<i class='material-icons'>favorite_border</i>")
+$("#panel-favorites").find('.tab[id=favorite-tab-<%= @tab.sid %>]').remove()
+if($("#panel-favorites .tab").length == 0){
+  $("#panel-favorites .favorite-tabs").append("<%=j render 'no_tabs' %>")
+}
+<% else %>
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>

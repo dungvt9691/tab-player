@@ -1,0 +1,6 @@
+vi:
+  users:
+    shared:
+      panel_profile:
+        joined_at: "Tham gia ngày"
+        uploaded_tabs: "Tab đã đăng"

@@ -1,0 +1,6 @@
+en:
+  controllers:
+    admin:
+      profile:
+        update:
+          success: "Edited profile successfully."

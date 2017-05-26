@@ -1,0 +1,15 @@
+vi:
+  admin:
+    categories:
+      index:
+        title: "Danh mục"
+        new: "Thêm danh mục"
+        table:
+          name: "Tên"
+          created_at: "Ngày tạo"
+        multi_destroy: "Xoá danh mục đã chọn"
+        destroy_selected: "Xoá các danh mục đã chọn"
+      new:
+        title: "Thêm danh mục"
+      edit:
+        title: "Chỉnh sửa danh mục"

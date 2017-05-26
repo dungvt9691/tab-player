@@ -1,0 +1,14 @@
+vi:
+  controllers:
+    admin:
+      users:
+        destroy:
+          success: "Xoá thành viên <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể xoá thành viên <b>%{name}</b>"
+        multi_destroy:
+          success: "Xoá thành viên <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể xoá thành viên <b>%{name}</b>"
+        update:
+          lock_success: "Khoá tài khoản thành viên <b>%{name}</b> thành công"
+          unlock_success: "Mở khoá tài khoản thành viên <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể cập nhật thông tin thành viên  <b>%{name}</b>"

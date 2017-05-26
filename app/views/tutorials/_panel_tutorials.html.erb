@@ -1,0 +1,218 @@
+<div id="panel-tutorials" data-width="400" data-height="300" data-video-id="<%= @tab.tutorials.first.video_id rescue '' %>">
+  <div class="tutorial-header">
+    <div class="tutorial-draggable">
+      <h4>
+        <%= t('.title', title: @tab.title.truncate_words(8)) %>
+      </h4>
+    </div>
+    <a href="javascript:;" id="add-tutorial" data-toggle="tooltip" data-original-title="<%= t('.add_tutorial', html: '<br>').html_safe %>">
+      <i class="material-icons">add_to_queue</i>
+    </a>
+    <a href="javascript:;" id="close-tutorial">
+      <i class="material-icons">close</i>
+    </a>
+  </div>
+  <div class="tutorial-body">
+    <div id="tutorial-player" class="hide"></div>
+    <% if @tab.tutorials.any? %>
+    <div id="tutorials-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner" role="listbox">
+        <% @tab.tutorials.each_with_index do |tutorial, index| %>
+        <div data-liked="<%= current_user.voted_up_on? tutorial rescue false %>" data-disliked="<%= current_user.voted_down_on? tutorial rescue false %>" data-tutorial-id="<%= tutorial.id %>" data-likes="<%= tutorial.get_likes.size %>" data-dislikes="<%= tutorial.get_dislikes.size %>" data-version="<%= index + 1 %>" data-video-id="<%= tutorial.video_id %>" class="item play-tutorial-video <%= 'active' if index == 0 %>">
+          <%= image_tag tutorial.thumbnail_url, class: "img-responsive" %>
+          <i class="fa fa-youtube-play"></i>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <% else %>
+    <div id="tutorials-no-data">
+      <center>
+        <h4>
+          <%= t('.no_data', title: @tab.title) %>
+          <br><br>
+          <button class="btn btn-success btn-xs" id="btn-add-tutorial">
+            <%= t('.add_tutorial', html: ' ') %>
+          </button>
+        </h4>
+      </center>
+    </div>
+    <% end %>
+  </div>
+  <% if @tab.tutorials.any? %>
+  <div class="tutorial-footer">
+    <div class="tutorial-control votable-control" data-action="likes">
+      <i class="fa fa-thumbs-up"></i>
+      <span id="likes-count"></span>
+    </div>
+    <div class="tutorial-control votable-control" data-action="dislikes">
+      <i class="fa fa-thumbs-down"></i>
+      <span id="dislikes-count"></span>
+    </div>
+    <div class="dropdown tutorial-control" id="resize-tutorial">
+      <a href="javascript:;" data-toggle="dropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+        <span class="size">360x240</span> <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <a href="javascript:;" class="resize-tutorial" data-size="s360">
+            <i class="fa fa-check"></i>
+            360x240
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="resize-tutorial" data-size="s480">
+            480x360
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;" class="resize-tutorial" data-size="s720">720x540</a>
+        </li>
+      </ul>
+    </div>
+    <div class="tutorial-control pull-right">
+      <a href="#tutorials-carousel" role="button" data-slide="prev">
+        <i class="fa fa-chevron-left"></i>
+      </a>
+      <span class="tutorial-version"><b><%= t('.version') %></b> <b id="version-text">1</b></span>
+      <a href="#tutorials-carousel" role="button" data-slide="next">
+        <i class="fa fa-chevron-right"></i>
+      </a>
+    </div>
+  </div>
+  <% end %>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  setTutorialControlData()
+})
+
+$("#panel-tutorials").draggable({ handle: ".tutorial-draggable" })
+
+$("#close-tutorial").click(function(){
+  $("#panel-tutorials").removeClass("active")
+  $("#panel-tutorials").css("left", "auto")
+  $("#panel-tutorials").css("top", "113px")
+  $("#tutorials-carousel").removeClass("hide")
+  $("#tutorial-player").html("")
+  $("#tutorial-player").addClass("hide")
+})
+
+$(".play-tutorial-video").click(function(){
+  $("#panel-tutorials").attr("data-video-id", $(this).data("video-id"))
+  $("#panel-tutorials").data("video-id", $(this).data("video-id"))
+  playTutorialVideo()
+})
+
+$('#tutorials-carousel').on('slid.bs.carousel', function (e) {
+  setTutorialControlData()
+})
+
+$('#tutorials-carousel').on('slide.bs.carousel', function (e) {
+  $("#tutorials-carousel").removeClass("hide")
+  $("#tutorial-player").html("")
+  $("#tutorial-player").addClass("hide")
+})
+
+$("#add-tutorial").click(function(){
+  showAddTutorialModal()
+})
+
+$("#btn-add-tutorial").click(function(){
+  showAddTutorialModal()
+})
+
+$(".votable-control").click(function(){
+  <% if current_user %>
+  action = $(this).data("action")
+  tutorial_id = $(".play-tutorial-video.active").data("tutorial-id")
+
+  url    = "/<%= I18n.locale.to_s %>/tutorials/"+tutorial_id+"/"+ action
+
+  if($(this).hasClass("active")){
+    method = "DELETE"
+  }
+  else{
+    method = "POST"
+  }
+
+  $.ajax({
+    type: method,
+    url: url
+  })
+
+  <% else %>
+  showPanelSignIn()
+  <% end %>
+})
+
+$(".resize-tutorial").click(function(){
+  $(".resize-tutorial").find(".fa").remove()
+  $(this).prepend("<i class='fa fa-check'></i>")
+  size = $(this).data("size")
+  $("#panel-tutorials").removeClass("s360 s480 s720")
+  $("#panel-tutorials").addClass(size)
+  if(size == "s360"){
+    $("#resize-tutorial").find(".size").text("360x240")
+    setTutorialPanelData(400, 300)
+  }
+  else if(size == "s480"){
+    $("#resize-tutorial").find(".size").text("480x360")
+    setTutorialPanelData(560, 420)
+  }
+  else{
+    $("#resize-tutorial").find(".size").text("720x540")
+    setTutorialPanelData(720, 540)
+  }
+  playTutorialVideo()
+})
+
+function playTutorialVideo(){
+  $("#tutorials-carousel").addClass("hide")
+  $("#tutorial-player").html("")
+  video_id = $("#panel-tutorials").data("video-id")
+  width = $("#panel-tutorials").data("width")
+  height = $("#panel-tutorials").data("height")
+
+  embed_code = '<iframe width="'+width+'" height="'+height+'" id="ifr-youtube" src="http://www.youtube.com/embed/' + video_id + '?showinfo=0&modestbranding=1&nologo=1&rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>'
+  $("#tutorial-player").append(embed_code)
+  $("#tutorial-player").removeClass("hide")
+}
+
+function setTutorialPanelData(width, height){
+  $("#panel-tutorials").attr("data-width", width)
+  $("#panel-tutorials").attr("data-height", height)
+  $("#panel-tutorials").data("width", width)
+  $("#panel-tutorials").data("height", height)
+}
+
+function showAddTutorialModal(){
+  $("#launch-modal").html("<%=j render 'tutorials/modal_add_tutorial' %>")
+  $("#modal-add-tutorial").modal({
+    keyboard: false,
+    backdrop: "static"
+  })
+}
+
+function setTutorialControlData(){
+  version = $(".play-tutorial-video.active").data("version")
+  likes = $(".play-tutorial-video.active").data("likes")
+  dislikes = $(".play-tutorial-video.active").data("dislikes")
+  liked = $(".play-tutorial-video.active").data("liked")
+  disliked = $(".play-tutorial-video.active").data("disliked")
+  $("#version-text").html(version)
+  $("#likes-count").html(number_format(parseInt(likes)))
+  $("#dislikes-count").html(number_format(parseInt(dislikes)))
+  $(".votable-control").removeClass("active")
+  if(liked)
+    $(".votable-control[data-action=likes]").addClass("active")
+  if(disliked)
+    $(".votable-control[data-action=dislikes]").addClass("active")
+}
+
+function showPanelSignIn(){
+  showMessage("<%= t('.sign_in_required') %>", "error")
+  $("#sidebar-sign-in").addClass("active")
+    activePanel($("#sidebar-sign-in").find("a").attr('href'))
+}
+</script>

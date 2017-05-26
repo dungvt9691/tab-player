@@ -1,0 +1,17 @@
+<%= link_to tab_show_path(language: I18n.locale, t: tab.sid), id: "favorite-tab-#{tab.sid}", class: 'tab' do %>
+  <div class="icon">
+    <%= material_icon.favorite %>
+  </div>
+  <div class="informations">
+    <h3 class="title">
+      <%= tab.title %>
+    </h3>
+    <h4 class="artists">
+      <% if tab.artists.empty? %>
+      <span><%= t('untitled') %></span>
+      <% else %>
+      <%= tab.artists.map{|x| x.name}.join(', ').html_safe rescue t('untitled') %>
+      <% end %>
+    </h4>
+  </div>
+<% end %>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Muted Trumpet" id="276">
+  <defaultSetts ampReleaseTime="-2084" coarseTune="12" delayVibLfo="0">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="770" name="Muted Trumpet-D4" originalPitch="7400"/>
+    <sample id="114" name="Muted Trumpet-F#4" originalPitch="7800"/>
+    <sample id="769" name="Muted Trumpet-A#4" originalPitch="8200"/>
+    <sample id="768" name="Muted Trumpet-D5" originalPitch="8600"/>
+    <sample id="767" name="Muted Trumpet-F#5" originalPitch="9000"/>
+  </samples>
+  <zones>
+    <zone freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="0" high="64"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="770" loopStart="11621" loopEnd="14221"/>
+    </zone>
+    <zone freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="65" high="67"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="114" loopStart="11352" loopEnd="13593"/>
+    </zone>
+    <zone freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="68" high="71"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="769" loopStart="17947" loopEnd="20482"/>
+    </zone>
+    <zone freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="72" high="75"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="768" loopStart="11498" loopEnd="14046"/>
+    </zone>
+    <zone freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="76" high="108"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="767" loopStart="11291" loopEnd="13811"/>
+    </zone>
+  </zones>
+</instrument>

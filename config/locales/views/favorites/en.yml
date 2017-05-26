@@ -1,0 +1,7 @@
+en:
+  favorites:
+    index:
+      title: "Favorites"
+    no_tabs:
+      title: "You have no favorites"
+      guide: "To create a favorite, open a song and click on the heart"

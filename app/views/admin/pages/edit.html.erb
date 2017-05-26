@@ -1,0 +1,178 @@
+<% provide(:og_title, t('.title')) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<%= form_for @page_object, url: admin_page_path(@page_object), method: 'put' do |f| %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= link_to t('.title'), admin_pages_path %>
+    </li>
+    <li>
+      <%= link_to @page_object.title, edit_admin_page_path(@page_object) %>
+    </li>
+    <li>
+      <%= "#{t('edit')}" %>
+    </li>
+  </ol>
+  <h1>
+    <%= t('.title') %>
+  </h1>
+</div>
+<div class="container edit-page">
+  <div class="col-lg-12">
+    <%= render 'shared/error_messages', object: @page_object %>
+  </div>
+  <div class="col-md-9">
+    <div class="form-group">
+      <%= f.text_field :title, class: 'form-control input-lg', placeholder: t('.form.title_placeholder'), disabled: true %>
+    </div>
+    <% if @page_object.edit_content %>
+    <div class="form-group">
+      <div class="insert-image">
+        <button type="button" class='btn has-text btn-sm btn-default btn-select-image'>
+          <i class='fa fa-camera-retro'></i> <%= t('.form.insert_image') %>
+        </button>
+      </div>
+      <%= f.cktext_area :content, class: 'form-control' %>
+    </div>
+    <% end %>
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#seo-setting" class="">
+        <div class="panel-heading">
+          <h4><%= t('.form.setting_seo') %></h4>
+        </div>
+      </a>
+      <div id="seo-setting" class="panel-collapse in" style="height: auto;">
+        <div class="panel-body form-horizontal">
+          <div class="row seo-preview">
+            <div class="col-md-12">
+              <span class="seo-title">
+                <span class="title-text"></span>
+                <%= @page_object.seo_title %> - <%= Setting.app_name %>
+              </span>
+              <span class="seo-url">
+                <%= "#{Setting.app_url.gsub('http://', '')}" %>/<%= I18n.locale %><span class="url-text"><%= @page_object.slug %></span>
+              </span>
+              <span class="seo-description">
+                <%= @page_object.seo_description.blank? ? t('.form.seo_description_note') : @page_object.seo_description %>
+              </span>
+            </div>
+          </div>
+          <br><br>
+          <div class="form-group">
+            <%= f.label :seo_title, class: 'col-sm-2 control-label' %>
+            <div class="col-md-10">
+              <%= f.text_field :seo_title, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :seo_keywords, class: 'col-sm-2 control-label' %>
+            <div class="col-md-10">
+              <%= f.text_field :seo_keywords, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :seo_description, class: 'col-sm-2 control-label' %>
+            <div class="col-md-10">
+              <%= f.text_area :seo_description, class: "form-control", rows: 5 %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#update-page" class="">
+        <div class="panel-heading">
+          <h4><%= t('.form.edit') %></h4>
+        </div>
+      </a>
+      <div id="update-page" class="panel-collapse in" style="height: auto;">
+        <div class="panel-body">
+          <div class="form">
+            <%= f.label :created_at, class: "control-label" %>:
+            <%= l(@page_object.created_at, format: :datetime) %>
+          </div>
+          <div class="form">
+            <%= f.label :updated_at, class: "control-label" %>:
+            <%= l(@page_object.updated_at, format: :datetime) %>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-12">
+              <%= f.button t('save'), class: 'btn btn-secondary pull-right' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <a data-toggle="collapse" href="#featured-image-panel" class="">
+        <div class="panel-heading">
+          <h4><%= t('.form.featured_image') %></h4>
+        </div>
+      </a>
+      <div id="featured-image-panel" class="panel-collapse in" style="height: auto;">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <%= f.hidden_field :featured_image, class: "form-control featured-image-field" %>
+              <a href="javascript:;" class="select-featured-image <%= @page_object.featured_image.blank? ? 'show' : 'hide' %>">
+                <%= t('.form.select_featured_image') %>
+              </a>
+              <div class="featured-image">
+                <% unless @page_object.featured_image.blank? %>
+                <%= image_tag @page_object.featured_image, class: 'select-featured-image' %>
+                <br>
+                <% end %>
+              </div>
+              <input type="hidden" name="product[image]" id="product-image">
+              <div id="reselect-featured-image" class="<%= @page_object.featured_image.blank? ? 'hide' : 'show' %>">
+                <i>
+                  <%= t('.form.select_featured_image_note') %>
+                </i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- container -->
+<% end %>
+<script type="text/javascript">
+$(".btn-select-image").click(function(){
+  $("#launch-modal").html("<%=j render 'admin/images/modal_select_images' %>")
+  $("#modal-select-images").attr('type', 'ckeditor')
+  $("#modal-select-images").modal({
+    backdrop: 'static',
+    keyboard: false
+  })
+})
+
+$(".panel-body").on("click", ".select-featured-image", function(){
+  $('#launch-modal').html("<%=j render partial: 'admin/images/modal_select_images' %>")
+  $("#modal-select-images").attr('type', "featured-image")
+  $("#modal-select-images").modal({
+    backdrop: 'static',
+    keyboard: false
+  })
+})
+
+$("#page_seo_title").keyup(function(){
+  $(".seo-title .title-text").text($(this).val())
+})
+
+$("#page_seo_description").keyup(function(){
+  if($(this).val() == "")
+    $(".seo-description").text("<%= t('.form.seo_description_note') %>")
+  else
+    $(".seo-description").text($(this).val())
+})
+</script>

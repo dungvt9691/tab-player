@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Fretless Bass" id="249">
+  <defaultSetts ampDecayTime="2887" ampSustainTime="960" ampReleaseTime="-2400" modDecayTime="-3986" modReleaseTime="-3986" coarseTune="12">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="680" name="Fretless Bass-G#2" originalPitch="4400"/>
+    <sample id="679" name="Fretless Bass-D3" originalPitch="6200"/>
+    <sample id="678" name="Fretless Bass-G#3" originalPitch="5600"/>
+    <sample id="677" name="Fretless Bass-G#4" originalPitch="6800"/>
+  </samples>
+  <zones>
+    <zone fineTune="4" ampHoldTime="-2702" freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="0" high="35"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="680" loopStart="14455" loopEnd="14880"/>
+    </zone>
+    <zone fineTune="2" ampHoldTime="-1909" freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="36" high="42"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="679" loopStart="14186" loopEnd="14336"/>
+    </zone>
+    <zone fineTune="8" ampHoldTime="-1817" freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="43" high="53"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="678" loopStart="15111" loopEnd="15324"/>
+    </zone>
+    <zone fineTune="1" ampAttackTime="-8857" ampHoldTime="-1586" freqVibLfo="-850" freqModLfo="-850" loopType="loop">
+      <keyRange low="54" high="92"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="677" loopStart="11465" loopEnd="11571"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,25 @@
+$('body').css("cursor", 'auto')
+$("#modal-confirm-destroy #btn-confirm").removeClass("disabled")
+$("#modal-confirm-destroy #btn-cancel").prop("disabled", false)
+<% if @errors.empty? %>
+showMessage("<%= t_scope(@params, 'success', title: @tab.title).html_safe %>.", "success")
+$('.modal#modal-confirm-destroy').modal('hide');
+var row = $(".btn-destroy[data-tab-id=<%= @tab.id %>]").parents('tr')
+if(typeof window.published_tabs_table.fnDeleteRow(row[0]) != 'undefined'){
+  published_tabs_count = parseInt($('.published-tabs-count').text()) - 1
+  $('.published-tabs-count').text(published_tabs_count)
+}
+else{
+  published_tabs_count = parseInt($('.published-tabs-count').text())
+}
+if(typeof window.unpublish_tabs_table.fnDeleteRow(row[0]) != 'undefined'){
+  unpublish_tabs_count = parseInt($('.unpublish-tabs-count').text()) - 1
+  $('.unpublish-tabs-count').text(unpublish_tabs_count)
+}
+else{
+  unpublish_tabs_count = parseInt($('.unpublish-tabs-count').text())
+}
+$('.object-count').text(published_tabs_count + unpublish_tabs_count)
+<% else %>
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>

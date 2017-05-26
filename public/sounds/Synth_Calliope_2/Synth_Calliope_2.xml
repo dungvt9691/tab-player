@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Calliope_2" id="203">
+  <defaultSetts filterFc="9320" modFilterFc="3089" fineTune="-20" ampAttackTime="-5186" ampDecayTime="0" ampReleaseTime="-1852" modDecayTime="-5186" modSustainTime="1000">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="392" name="Triangle-93.75Hz" originalPitch="4200"/>
+    <sample id="395" name="Triangle-187.5Hz" originalPitch="5400"/>
+    <sample id="394" name="Triangle-375Hz" originalPitch="6600"/>
+    <sample id="393" name="Triangle-750Hz" originalPitch="7800"/>
+    <sample id="396" name="Triangle-1500Hz" originalPitch="9000"/>
+    <sample id="324" name="Triangle-3000Hz" originalPitch="10200"/>
+    <sample id="323" name="Triangle-6000Hz" originalPitch="11400"/>
+    <sample id="322" name="Sine-Triangle-12000H" originalPitch="12600"/>
+  </samples>
+  <zones>
+    <zone loopType="loop">
+      <keyRange low="0" high="43"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="392" loopStart="256" loopEnd="768"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="44" high="55"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="395" loopStart="128" loopEnd="384"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="56" high="67"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="394" loopStart="64" loopEnd="192"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="68" high="79"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="393" loopStart="32" loopEnd="96"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="80" high="91"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="396" loopStart="16" loopEnd="48"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="92" high="103"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="324" loopStart="8" loopEnd="56"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="104" high="115"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="323" loopStart="12" loopEnd="52"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="116" high="127"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="322" loopStart="6" loopEnd="42"/>
+    </zone>
+  </zones>
+</instrument>

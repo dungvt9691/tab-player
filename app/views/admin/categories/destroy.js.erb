@@ -1,0 +1,13 @@
+$('body').css("cursor", 'auto')
+$("#modal-confirm-destroy #btn-confirm").removeClass("disabled")
+$("#modal-confirm-destroy #btn-cancel").prop("disabled", false)
+<% if @errors.empty? %>
+showMessage("<%= t_scope(@params, 'success', name: @category.name).html_safe %>.", "success")
+$('.modal#modal-confirm-destroy').modal('hide');
+var row = $(".btn-destroy[data-category-id=<%= @category.id %>]").parents('tr')
+window.categories_table.fnDeleteRow(row[0])
+object_count = parseInt($('.object-count').text()) - 1
+$('.object-count').text(object_count)
+<% else %>
+showMessage("<%= render_value(@errors) %>", "error")
+<% end %>

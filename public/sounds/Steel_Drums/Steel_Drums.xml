@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Steel Drums" id="165">
+  <defaultSetts ampHoldTime="-386" ampDecayTime="1902" ampSustainTime="960" ampReleaseTime="546">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="446" name="Steel Drums-C4" originalPitch="6000"/>
+    <sample id="859" name="Steel Drums-D5" originalPitch="10100"/>
+  </samples>
+  <zones>
+    <zone ampReleaseTime="2400" loopType="loop">
+      <keyRange low="0" high="71"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="446" loopStart="25734" loopEnd="25848"/>
+    </zone>
+    <zone filterFc="11418" ampReleaseTime="1586" loopType="loop">
+      <keyRange low="72" high="80"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="446" loopStart="25734" loopEnd="25848"/>
+    </zone>
+    <zone filterFc="11212" ampReleaseTime="1200" loopType="loop">
+      <keyRange low="81" high="88"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="446" loopStart="25734" loopEnd="25848"/>
+    </zone>
+    <zone attenuation="50" filterFc="11482" fineTune="46" ampAttackTime="-8857" ampHoldTime="-11959" ampDecayTime="0" ampReleaseTime="0" loopType="loop">
+      <keyRange low="89" high="120"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="859" loopStart="1824" loopEnd="2049"/>
+    </zone>
+  </zones>
+</instrument>

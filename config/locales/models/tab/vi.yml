@@ -1,0 +1,36 @@
+vi:
+  tabs:
+    not_found: "Không tìm thấy thông tin Tab"
+    untitled: "Chưa cập nhật"
+    view_on_web: "Xem trên web"
+    published: "Công khai"
+    unpublish: "Không công khai"
+
+  activerecord:
+    attributes:
+      tab:
+        title: "Tiêu đề bài hát"
+        user_id: "Tài khoản"
+        sheet: "Tab"
+        artists: "Nghệ sĩ"
+        categories: "Thể loại"
+        status: "Trạng thái"
+        seo_title: "Tiêu đề SEO"
+        seo_keywords: "Từ khoá SEO"
+        seo_description: "Nội dung SEO"
+        sheet_file_name: "Tab"
+        created_at: "Tạo lúc"
+        updated_at: "Chỉnh sửa lúc"
+    errors:
+      models:
+        tab:
+          attributes:
+            title:
+              blank: "không được để trống"
+            user_id:
+              blank: "không được để trống"
+            sheet:
+              blank: "chưa được chọn để upload"
+              invalid: "không hợp lệ"
+            sheet_file_name:
+              invalid: "không hợp lệ"

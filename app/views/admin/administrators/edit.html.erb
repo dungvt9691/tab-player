@@ -1,0 +1,170 @@
+<% provide(:og_title, @administrator.username) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= link_to t('.title'), admin_administrators_path %>
+    </li>
+    <li>
+      <%= link_to @administrator.username, admin_administrator_path(@administrator) %>
+    </li>
+    <li>
+      <%= "#{t('edit')}" %>
+    </li>
+  </ol>
+  <h1><%= "#{t('edit')} \"#{@administrator.username}\"" %></h1>
+</div>
+<div class="container" id="administrator-edit">
+  <div class="row">
+    <div class="col-md-8">
+      <%= image_tag @administrator.avatar, class: 'pull-left', id: 'administrator-avatar' %>
+      <div class="table-responsive">
+        <table class="table table-condensed">
+          <h3><strong><%= @administrator.fullname || t('untitled') %></strong></h3>
+          <tbody>
+            <tr>
+              <td><%= t('.form.username') %></td>
+              <td>
+                <%= @administrator.username %>
+              </td>
+            </tr>
+            <tr>
+              <td><%= t('.form.email') %></td>
+              <td>
+                <%= link_to @administrator.email, "mailto:#{@administrator.email}" %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.created_at') %>
+              </td>
+              <td>
+                <%= l(@administrator.created_at, format: :long) %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.sign_in_count') %>
+              </td>
+              <td>
+                <%= number_with_delimiter(@administrator.sign_in_count) %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.current_sign_in_at') %>
+              </td>
+              <td>
+                <%= l(@administrator.current_sign_in_at, format: :long) rescue t('unknown') %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.last_sign_in_at') %>
+              </td>
+              <td>
+                <%= l(@administrator.last_sign_in_at, format: :long) rescue t('unknown') %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.current_sign_in_ip') %>
+              </td>
+              <td>
+                <%= @administrator.current_sign_in_ip || t('unknown') %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.last_sign_in_ip') %>
+              </td>
+              <td>
+                <%= @administrator.last_sign_in_ip || t('unknown') %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-8">
+      <% if @administrator.admin_permissions.blank? %>
+      <div class="alert alert-warning"><%= t('permissions.no_data') %></div>
+      <br>
+      <% else %>
+      <table class="table permissions">
+        <thead>
+          <tr>
+            <th colspan="3">
+              <%= t('administrators.set_permissions') %> <strong>(<%= t('administrators.set_permissions_note') %>)</strong>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @administrator.admin_permissions.each do |acp| %>
+          <tr>
+            <td class="col-sm-3">
+              <%= t("permissions.#{acp.permission.name}") %>
+            </td>
+            <td>
+              <%= label_tag 'permission', t('permissions.read'), data: { permission_id: acp.permission.id, action_name: 'read', can_action: acp.permission.read?(@administrator.id) }, class: "label-permission label #{'label-success' if acp.permission.read?(@administrator.id)}" %>
+              <%= label_tag 'permission', t('permissions.create'), data: { permission_id: acp.permission.id, action_name: 'create', can_action: acp.permission.create?(@administrator.id) }, class: "label-permission label #{'label-success' if acp.permission.create?(@administrator.id)}" %>
+              <%= label_tag 'permission', t('permissions.update'), data: { permission_id: acp.permission.id, action_name: 'update', can_action: acp.permission.update?(@administrator.id) }, class: "label-permission label #{'label-success' if acp.permission.update?(@administrator.id)}" %>
+              <%= label_tag 'permission', t('permissions.destroy'), data: { permission_id: acp.permission.id, action_name: 'destroy', can_action: acp.permission.destroy?(@administrator.id) }, class: "label-permission label #{'label-success' if acp.permission.destroy?(@administrator.id)}" %>
+            </td>
+            <td>
+              <%= button_tag '', data: { permission_name: t("permissions.#{acp.permission.name}"), toggle: 'tooltip', href: admin_administrator_permission_path(administrator_id: @administrator.id, id: acp.permission.id) }, title: t('destroy'), class: 'btn btn-danger btn-destroy-permission btn-sm pull-right' do %>
+              <i class="fa fa-minus"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <% end %>
+      <%= button_tag t('administrators.add_permissions'), class: 'btn btn-sm btn-secondary pull-left', id: 'btn-add-permissions' %>
+    </div>
+  </div>
+</div> <!-- container -->
+<script type="text/javascript">
+$(".btn-destroy-permission").click(function(){
+  $("#launch-modal").html("<%=j render 'shared/modal_confirm_destroy' %>")
+  $("#modal-confirm-destroy").find("#btn-confirm").attr("href", $(this).data("href"))
+  $("#modal-confirm-destroy").find("#confirm-text").html("<%= t('permissions.title').mb_chars.downcase %> " + $(this).data("permission-name"))
+  $("#modal-confirm-destroy").modal({
+    keyboard: false,
+    backdrop: 'static'
+  })
+})
+
+$(".label-permission").click(function(){
+  $("body").css("cursor", "progress")
+  $(".table.permissions .btn").prop("disabled", true)
+
+  permission_id    = $(this).data("permission-id")
+  administrator_id = "<%= @administrator.id %>"
+  action_name      = $(this).data("action-name")
+  can_action       = !$(this).data("can-action")
+
+  $.ajax({
+    type: "PUT",
+    url: "/admin/administrators/"+administrator_id+"/permissions/"+permission_id,
+    data: {action_name: action_name, can_action: can_action}
+  })
+})
+
+$("#btn-add-permissions").click(function(){
+  $("#launch-modal").html("<%=j render 'modal_add_permissions', administrator: @administrator %>")
+  $("#modal-add-permissions").modal({
+    keyboard: false,
+    backdrop: 'static'
+  })
+})
+</script>

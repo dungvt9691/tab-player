@@ -1,0 +1,45 @@
+vi:
+  tabs:
+    player:
+      header:
+        update: "Sửa"
+        favorite: "Thêm vào ưa thích"
+        search_placeholder: "Nhập để tìm kiếm theo tên bài hát, ca sĩ, tác giả..."
+        select_file_sm: "Chọn file"
+        sign_in: "Đăng nhập"
+        sign_out: "Đăng xuất"
+      control_player:
+        beginner_mode: "Chế độ dễ"
+        loop: "Lặp lại"
+        on: "Bật"
+        off: "Tắt"
+        setting: "Cài đặt"
+        transpose: "Đổi tông"
+        rewind_data_tooltip: "Chơi lại [Backspace]"
+        play_pause_data_tooltip: "Bắt đầu / Tạm dừng [Space]"
+        temp_data_tooltip: "Tốc độ"
+        loop_data_tooltip: "Lặp lại [L]"
+      instrument_switcher:
+        set_default_instrument: "Cài đặt lại"
+        change_instrument: "Đổi nhạc cụ"
+      instruments:
+        instruments: "Nhạc cụ"
+      timeline:
+        timing: "THỜI GIAN"
+      top_control:
+        embed_code: "Mã nhúng"
+        download_as_gp: "Tải về"
+        print: "In"
+        tutorials: "Hướng dẫn"
+        zoom_data_tooltip: "Thu/Phóng"
+        uploaded_by: "Đăng bởi"
+        admin: "Admin"
+        tunning: "Lên dây"
+        difficulty:
+          title: "Đánh giá độ khó"
+          default: "Độ khó"
+          super_easy: "Rất dễ"
+          easy: "Dễ"
+          normal: "Bình thường"
+          difficult: "Khó"
+          hard: "Rất khó"

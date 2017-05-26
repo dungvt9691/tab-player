@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Organ Slow Cycle" id="237">
+  <defaultSetts attenuation="90" fineTune="35" ampReleaseTime="-4288" modReleaseTime="75" freqVibLfo="-851" freqModLfo="-851">
+    <modulators>
+      <modulator dest="attenuation" src="velocity" srcCtrlType="concave" srcType="negative" amount="0" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="634" name="Organ Slow-F#2" originalPitch="8000"/>
+    <sample id="633" name="Organ Slow-D#3" originalPitch="8900"/>
+    <sample id="632" name="Organ Slow-C4" originalPitch="9800"/>
+    <sample id="459" name="Organ Slow-A4" originalPitch="10700"/>
+  </samples>
+  <zones>
+    <zone loopType="loop">
+      <keyRange low="0" high="58"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="634" loopStart="259" loopEnd="4969"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="59" high="67"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="633" loopStart="249" loopEnd="5369"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="68" high="76"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="632" loopStart="240" loopEnd="5593"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="77" high="124"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="459" loopStart="263" loopEnd="5209"/>
+    </zone>
+  </zones>
+</instrument>

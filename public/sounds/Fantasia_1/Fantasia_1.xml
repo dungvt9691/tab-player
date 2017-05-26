@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Fantasia_1" id="106">
+  <defaultSetts ampAttackTime="-3986" ampDecayTime="2786" ampSustainTime="960" ampReleaseTime="2786">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="693" name="Synth Bell-1" originalPitch="7600"/>
+    <sample id="694" name="Synth Bell-2" originalPitch="7600"/>
+    <sample id="692" name="Synth Bell-3" originalPitch="7600"/>
+  </samples>
+  <zones>
+    <zone coarseTune="12" loopType="loop">
+      <keyRange low="0" high="69"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="693" loopStart="131" loopEnd="24860"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="70" high="84"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="694" loopStart="65" loopEnd="24789"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="85" high="111"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="692" loopStart="165" loopEnd="12364"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Jet Plane" id="182">
+  <samples>
+    <sample id="468" name="Jet" originalPitch="8300"/>
+  </samples>
+  <zones>
+    <zone filterFc="14400" modPitch="-1200" modFilterFc="3712" ampAttackTime="-1296" ampReleaseTime="3577" modDecayTime="3484" modSustainTime="1000" modReleaseTime="3484" coarseTune="2" freqVibLfo="-1118" freqModLfo="-1118" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-3600" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="468" loopStart="74" loopEnd="23558"/>
+    </zone>
+  </zones>
+</instrument>

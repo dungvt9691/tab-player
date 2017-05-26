@@ -1,0 +1,6 @@
+en:
+  users:
+    shared:
+      panel_profile:
+        joined_at: "Joined at"
+        uploaded_tabs: "Uploaded Tabs"

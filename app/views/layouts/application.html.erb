@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    <%= yield(:og_title) %> - <%= Setting.app_name %>
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="icon" type="image/png" href="<%= asset_path('logo/favicon.png') %>" />
+  <%= render 'shared/meta_tags' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= render 'shared/google_analytics' %>
+</head>
+<body>
+  <%= yield %>
+  <% if @tab %>
+  <main class="b-tab-page js-tab-page show-tab">
+    <div class="b-player-app js-player-container">
+      <div class="tpp-b-overlay">
+        <article class="tpp-b-player tpp-b-player__en hxRootView force_show_fretboard">
+          <div type="component" class="hide hxInstrumentsColorView">
+          </div>
+          <div class="tpp-flex-main tpp-flex">
+            <%= render 'tabs/player/instruments' %>
+            <div class="tpp-aside-backdrop"></div>
+            <div class="tpp-b-main">
+              <%= render 'tabs/player/header' %>
+              <%= render 'tabs/player/top_control' %>
+              <section class="tpp-b-inner">
+                <%= render 'tabs/player/instrument_switcher' %>
+                <div class="tpp-b-content tpp-scrollarea hxTabRenderView ">
+                  <div class="tpp-count-down hxCountDownView">
+                    <div type="label" class="hxCount"></div>
+                  </div>
+                  <div class="tpp-txt-progress hxLoadingPresetsView">
+                  </div>
+                  <div type="component" id="canvas" class="hxCanvas tpp-b-canvas">
+
+                  </div>
+                  <div type="scroll" class="hxScroller tpp-scrollbar">
+                    <div class="hxScrollBar scrollbar ui-draggable"></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="tpp-b-fretboard hxFretBoardView tpp-b-fretboard__styled">
+            <figure type="component" id="fretboardcanvas" class="hxFretBoardCanvas">
+            </figure>
+          </div>
+          <%= render 'tabs/player/control_player' %>
+          <%= render 'tabs/player/timeline' %>
+          <%= render 'tabs/player/equalizer' %>
+          <%= render 'tabs/player/template' %>
+          <%= render 'tutorials/panel_tutorials' %>
+        </article>
+      </div>
+    </div>
+  </main>
+  <%= render 'shared/tab_player_script' %>
+  <% end %>
+  <%= render 'shared/alert_script' %>
+  <%= render 'shared/facebook_script' %>
+  <%= render 'layouts/sidebar' %>
+  <%= render 'shared/panel_sign_in' unless user_signed_in? %>
+  <%= render 'shared/panel_profile' if user_signed_in? %>
+  <%= render 'shared/panel_favorites' if user_signed_in? %>
+  <%= render 'shared/panel_search' %>
+  <%= render 'shared/panel_contact' %>
+  <%= render 'shared/panel_introduce' %>
+  <%= render 'shared/panel_term' %>
+  <%= render 'shared/panel_privacy' %>
+  <div id="launch-modal"></div>
+</body>
+</html>
+<script type="text/javascript">
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip({
+    html: true
+  })
+})
+</script>

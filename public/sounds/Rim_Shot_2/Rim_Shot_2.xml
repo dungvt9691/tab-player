@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Rim Shot_2" id="71">
+  <samples>
+    <sample id="221" name="Rim Shot" originalPitch="4800"/>
+  </samples>
+  <zones>
+    <zone filterFc="9381" modFilterFc="3375" ampHoldTime="-6861" ampDecayTime="666" ampSustainTime="1000" ampReleaseTime="1254" modReleaseTime="2900" coarseTune="11" freqVibLfo="-808" freqModLfo="-808" pan="10">
+      <keyRange low="37" high="37"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="221" loopStart="8" loopEnd="5610"/>
+    </zone>
+  </zones>
+</instrument>

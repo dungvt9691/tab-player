@@ -1,0 +1,14 @@
+vi:
+  activerecord:
+    attributes:
+      tab_favorite:
+        tab_id: "Tab"
+        user_id: "Tài khoản"
+        created_at: "Tạo lúc"
+        updated_at: "Chỉnh sửa lúc"
+    errors:
+      models:
+        tab_favorite:
+          attributes:
+            tab_id:
+              taken: "này đã được lưu trong danh mục ưa thích"

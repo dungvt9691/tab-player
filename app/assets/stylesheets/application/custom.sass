@@ -1,0 +1,494 @@
+// HEADER
+header
+  border-bottom: 1px solid rgba(220, 220, 220, 0.7)
+  background-color: $white-color
+  text-align: center
+  margin-bottom: 0
+  height: 73px
+  padding: $margin-xmin 15px
+  position: relative
+  h4
+    font-size: 30px
+    margin: 0
+    margin-bottom: 3px
+    text-transform: uppercase
+    a
+      text-decoration: none !important
+      .material-icons
+        margin-top: -4px
+        font-size: 18px !important
+  .tab-artists
+    font-size: $font-size-middle
+    a, span
+      color: $secondary-gray-color
+      +animation-common
+      transition: all 0.2s
+    a:hover, a:focus, a:active
+      color: $primary-color
+
+  .control-txt__favorite
+    a
+      display: block
+      text-decoration: none
+      color: $pink-color
+      .material-icons
+        font-size: $font-size-xlarge !important
+
+// SIDEBAR
+.sidebar
+  width: 100px
+  height: 100%
+  position: fixed
+  left: 0
+  bottom: 0
+  z-index: 101
+  background-color: $secondary-color
+  .sidebar-nav
+    .sidebar-logo
+      width: 100px
+      height: 100px
+      display: block
+      background: image-url('logo/original.png') center center no-repeat
+      background-size: 90px
+      padding: $margin-xmin
+    .sidebar-items
+      margin: 0
+      margin-top: $margin-min
+      padding: 0
+      list-style: none
+      .sidebar-item
+        padding: $margin-xmin
+        +animation-common
+        display: table
+        width: 100%
+        height: 80px
+
+        a
+          text-align: center
+          text-decoration: none
+          color: $white-color
+          display: table-cell
+          vertical-align: middle
+          width: 100%
+          height: 100%
+          font-size: $font-size-small
+          .material-icons
+            display: block
+            width: 100%
+            font-size: 35px
+            margin-bottom: $margin-xmin
+        &:hover, &.active
+          background-color: rgba(255, 255, 255, 0.1)
+
+        .user-avatar
+          display: block
+          padding: 0 $margin-small
+          img
+            margin-bottom: $margin-min
+            border-radius: 50% !important
+            width: 100%
+
+// PANEL
+.panel
+  width: 35%
+  height: 100%
+  position: fixed
+  top: 0
+  left: -35%
+  margin-bottom: 0
+  background-color: $white-color
+  z-index: 100
+  +animation-common-05
+  border: none
+  .panel-header
+    text-align: center
+    color: $secondary-color
+    padding: 15px
+    h1
+      text-transform: uppercase
+      padding-bottom: $margin-small
+      margin-top: $margin-xmin
+      border-bottom: 1px solid #ecf0f1
+      font-size: 30px
+      small
+        margin-top: $margin-min
+        display: block
+        font-size: $font-size-middle
+        color: $secondary-gray-hover-color
+        text-transform: initial
+
+  .panel-body
+    position: absolute
+    padding-top: 90px
+    bottom: 0
+    height: 100%
+    width: 100%
+    a:not(.btn)
+      color: $secondary-color
+      &:hover, &:focus, &:active
+        color: $secondary-hover-color
+    z-index: -1
+
+.panel.active
+  left: 100px
+
+// MODAL
+.modal-open #launch-modal
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  margin: auto
+
+.modal-backdrop.in
+  opacity: 0.8
+
+.modal
+  padding-top: 5%
+  .modal-dialog
+    .modal-content
+      -webkit-background-clip: inherit
+      background-clip: inherit
+      border: none
+
+    .modal-body 
+      position: relative
+      padding: $margin-small
+
+      h3.title
+        margin-bottom: $margin-xmin
+        font-size: 40px
+        text-transform: uppercase
+        color: $primary-color
+
+      .text-muted
+        color: $secondary-gray-hover-color
+        font-size: $font-size-middle
+
+      .control-label
+        display: block
+
+      .select2-container
+        width: 100% !important
+      .select2-container .select2-search,
+      .select2-container input,
+        width: initial !important
+
+    .modal-footer
+      border-top: none
+      background-color: $secondary-white-color
+      text-align: left
+      margin-top: 0
+
+    .modal-header
+      background-color: $secondary-color
+      color: $white-color
+      height: 58px
+      border-bottom: none
+      .close
+        position: absolute
+        right: 0
+        width: 58px
+        height: 58px
+        text-align: center
+        top: 2px
+        background: $white-color
+        color: $secondary-color
+        font-size: 40px
+        opacity: 1
+        outline: none !important
+        outline-offset: 0 !important
+      h4
+        font-size: $font-size-xlarge
+        text-transform: uppercase
+
+// BUTTON
+.btn
+  +animation-common
+  -webkit-box-shadow: none
+  box-shadow: none
+  outline: none !important
+  outline-offset: 0 !important
+
+.btn-primary,.btn-success
+  background-color: $primary-color
+  border: 1px solid $primary-color
+  &:hover, &:active, &:focus
+    background-color: $primary-hover-color !important
+    border-color: $primary-hover-color !important
+
+.btn-secondary
+  background-color: $secondary-color
+  border: 1px solid $secondary-color
+  color: $white-color
+  &:hover, &:active, &:focus
+    color: $white-color !important
+    background-color: $secondary-hover-color !important
+    border-color: $secondary-hover-color !important
+
+.btn-default
+  background-color: $white-color
+  border: 1px solid $white-hover-color
+  color: $black-color !important
+  &:hover, &:active, &:focus
+    background-color: $white-hover-color !important
+    border-color: $white-hover-color !important
+
+.btn-warning
+  background-color: $warning-color
+  border: 1px solid $warning-hover-color
+  &:hover, &:active, &:focus
+    color: $white-color !important
+    background-color: $warning-hover-color !important
+    border-color: $warning-hover-color !important
+
+.btn-danger
+  background-color: $danger-color
+  border: 1px solid $danger-hover-color
+  &:hover, &:active, &:focus
+    color: $white-color !important
+    background-color: $danger-hover-color !important
+    border-color: $danger-hover-color !important
+
+.btn-info
+  background-color: $info-color
+  border: 1px solid $info-hover-color
+  &:hover, &:active, &:focus
+    color: $white-color !important
+    background-color: $info-hover-color !important
+    border-color: $info-hover-color !important
+
+.btn-pink
+  background-color: $pink-color
+  border: 1px solid $pink-hover-color
+  color: $white-color
+  &:hover, &:active, &:focus
+    background-color: $pink-hover-color !important
+    border-color: $pink-hover-color !important  
+
+.btn
+  &.has-text
+    .fa, .material-icons
+      margin-right: $margin-xmin
+
+// SELECT
+select:not([multiple])
+  -webkit-appearance: none
+  -moz-appearance: none
+  background-position: right 50%
+  background-repeat: no-repeat
+  background-image: image-url("icon/caret.png")
+  border-radius: 0
+
+select.form-control
+  padding: 6px 9px 7px 7px
+
+.select2-container
+  .select2-selection--multiple
+    min-height: 34px
+    .select2-selection__choice
+      background-color: $secondary-color
+      color: $white-color
+      border: 1px solid $secondary-color
+    .select2-selection__choice__remove
+      color: $white-color
+
+.select2-container--default
+  .select2-selection--multiple
+    border: 1px solid #d2d3d6
+    .select2-selection__rendered
+      padding: 2px 9px
+  .select2-results__option--highlighted[aria-selected]
+    background-color: $secondary-color
+
+.select2-results__option.loading-results
+  display: none !important
+
+// MATERIAL ICON
+.material-icons, .mi
+  display: inline-flex
+  vertical-align: middle
+
+// ALERTIFY
+.alertify-notifier
+  color: $white-color
+  bottom: 50px
+
+  .ajs-message
+    word-break: break-word
+    position: relative
+    width: 300px
+    &.ajs-success 
+      background: rgba(24, 188, 156, 0.90)
+    &.ajs-error 
+      background: rgba(231, 76, 60, 0.90)
+    ul
+      margin: 0
+      padding: 0
+      li
+        list-style: none
+        margin-bottom: 5px
+      li:last-child
+        margin-bottom: 0
+
+// ALERT
+.alert
+  .alert-icon, .alert-text
+    display: inline-block
+  .alert-text
+    margin-left: $margin-xmin
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+.alert-primary,
+.alert-success
+  background-color: #d1fff6
+  border-color: $primary-color
+  color: $primary-color
+
+// TEXT
+.text-primary, .text-success
+  color: $primary-color !important
+
+.text-secondary
+  color: $secondary-color !important
+
+.text-warning
+  color: $warning-color !important
+
+.text-danger
+  color: $danger-color !important
+
+.text-info
+  color: $info-color !important
+
+
+// PAGINATE
+.pagination
+  &>.active
+    &>a,
+    &>span,
+    &>a:hover,
+    &>span:hover,
+    &>a:focus,
+    &>span:focus
+      background-color: $secondary-color
+      border-color: $secondary-color
+      color: $white-color !important
+
+/* TOOLTIPS */
+.tooltip
+  position: absolute
+  z-index: 1070
+  display: block
+  font-size: 12px
+  font-style: normal
+  font-weight: 400
+  line-height: 1.42857143
+  text-align: left
+  text-align: start
+  text-decoration: none
+  text-shadow: none
+  text-transform: none
+  letter-spacing: normal
+  word-break: normal
+  word-spacing: normal
+  word-wrap: normal
+  white-space: normal
+  filter: alpha(opacity=0)
+  opacity: 0
+  line-break: auto
+
+.tooltip.in
+  filter: alpha(opacity=90)
+  opacity: .9
+
+.tooltip.top
+  padding: 5px 0
+  margin-top: -3px
+
+.tooltip.right
+  padding: 0 5px
+  margin-left: 3px
+
+.tooltip.bottom
+  padding: 5px 0
+  margin-top: 3px
+
+.tooltip.left
+  padding: 0 5px
+  margin-left: -3px
+
+.tooltip-inner
+  max-width: 200px
+  padding: 3px 8px
+  color: #fff
+  text-align: center
+  background-color: $black-color
+  border-radius: 4px
+
+.tooltip-arrow
+  position: absolute
+  width: 0
+  height: 0
+  border-color: transparent
+  border-style: solid
+
+.tooltip.top .tooltip-arrow
+  bottom: 0
+  left: 50%
+  margin-left: -5px
+  border-width: 5px 5px 0
+  border-top-color: $black-color
+
+.tooltip.top-left .tooltip-arrow
+  right: 5px
+  bottom: 0
+  margin-bottom: -5px
+  border-width: 5px 5px 0
+  border-top-color: $black-color
+
+.tooltip.top-right .tooltip-arrow
+  bottom: 0
+  left: 5px
+  margin-bottom: -5px
+  border-width: 5px 5px 0
+  border-top-color: $black-color
+
+.tooltip.right .tooltip-arrow
+  top: 50%
+  left: 0
+  margin-top: -5px
+  border-width: 5px 5px 5px 0
+  border-right-color: $black-color
+
+.tooltip.left .tooltip-arrow
+  top: 50%
+  right: 0
+  margin-top: -5px
+  border-width: 5px 0 5px 5px
+  border-left-color: $black-color
+
+.tooltip.bottom .tooltip-arrow
+  top: 0
+  left: 50%
+  margin-left: -5px
+  border-width: 0 5px 5px
+  border-bottom-color: $black-color
+
+.tooltip.bottom-left .tooltip-arrow
+  top: 0
+  right: 5px
+  margin-top: -5px
+  border-width: 0 5px 5px
+  border-bottom-color: $black-color
+
+.tooltip.bottom-right .tooltip-arrow
+  top: 0
+  left: 5px
+  margin-top: -5px
+  border-width: 0 5px 5px
+  border-bottom-color: $black-color

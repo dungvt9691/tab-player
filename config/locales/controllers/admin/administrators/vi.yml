@@ -1,0 +1,12 @@
+vi:
+  controllers:
+    admin:
+      administrators:
+        create:
+          success: "Thêm quản trị viên <b>%{name}</b> thành công"
+        destroy:
+          success: "Xoá quản trị viên <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể cách chức quản trị viên <b>%{name}</b>"
+        multi_destroy:
+          success: "Xoá quản trị viên <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể cách chức quản trị viên <b>%{name}</b>"

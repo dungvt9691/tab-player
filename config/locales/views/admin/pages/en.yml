@@ -1,0 +1,22 @@
+en:
+  admin:
+    pages:
+      index:
+        title: "Pages"
+        new: "Add page"
+        edit: "Add page"
+        table:
+          title: "Title"
+          edit_content: "Can edit"
+          created_at: "Created at"
+      edit:
+        title: "Edit page"
+        form:
+          edit: "Edit"
+          insert_image: "Insert image"
+          title_placeholder: "Insert tab title"
+          select_featured_image: "Select featured image"
+          select_featured_image_note: "Click on the image to replace."
+          setting_seo: "Setting Seo"
+          seo_description_note: "Please provide SEO content by editing the below content."
+          featured_image: "Featured image"

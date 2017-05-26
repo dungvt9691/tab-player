@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Pan Flute" id="245">
+  <defaultSetts ampReleaseTime="-2084">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="651" name="Pan Flute_2" originalPitch="8100"/>
+    <sample id="650" name="Pan Flute_1" originalPitch="8100"/>
+  </samples>
+  <zones>
+    <zone modFilterFc="1500" fineTune="10" ampAttackTime="-8359" modReleaseTime="6712" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-7990" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      </modulators>
+      <sampleRecord sampleId="651" loopStart="18710" loopEnd="32333"/>
+    </zone>
+    <zone fineTune="10" ampDecayTime="702" ampSustainTime="960">
+      <keyRange low="0" high="127"/>
+      <velRange low="113" high="127"/>
+      <sampleRecord sampleId="650" loopStart="8" loopEnd="4413"/>
+    </zone>
+    <zone attenuation="80" fineTune="10" ampDecayTime="702" ampSustainTime="960">
+      <keyRange low="0" high="127"/>
+      <velRange low="97" high="112"/>
+      <sampleRecord sampleId="650" loopStart="8" loopEnd="4413"/>
+    </zone>
+    <zone attenuation="160" fineTune="10" ampDecayTime="702" ampSustainTime="960">
+      <keyRange low="0" high="127"/>
+      <velRange low="81" high="96"/>
+      <sampleRecord sampleId="650" loopStart="8" loopEnd="4413"/>
+    </zone>
+  </zones>
+</instrument>

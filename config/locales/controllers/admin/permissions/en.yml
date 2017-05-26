@@ -1,0 +1,13 @@
+en:
+  controllers:
+    admin:
+      permissions:
+        create:
+          success: "Setting permissions for administrator <b>%{name}</b> successfully"
+          fail: "Error! Cannot setting permissions for this administrator"
+        update:
+          success: "Edited permissions for administrator <b>%{name}</b> successfully"
+          fail: "Error! Cannot setting permissions for this administrator"
+        destroy:
+          success: "Edited permissions for administrator <b>%{name}</b> successfully"
+          fail: "Error! Cannot setting permissions for this administrator"

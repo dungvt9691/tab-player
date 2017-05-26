@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Brass 4" id="120">
+  <defaultSetts attenuation="225" filterFc="7080" filterQ="13" modFilterFc="7087" ampAttackTime="-8856" ampHoldTime="-6772" ampDecayTime="-6772" ampReleaseTime="-667" modAttackTime="1901" modHoldTime="-5572" modDecayTime="918" modSustainTime="1000" modReleaseTime="2715" freqVibLfo="-15600" freqModLfo="-725" chorus="278" loopType="loop">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="361" name="SawStackWaveMS" originalPitch="8700"/>
+  </samples>
+  <zones>
+    <zone fineTune="-6">
+      <keyRange low="0" high="103"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="361" loopStart="289" loopEnd="13745"/>
+    </zone>
+    <zone fineTune="20">
+      <keyRange low="0" high="103"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="361" loopStart="289" loopEnd="13745"/>
+    </zone>
+  </zones>
+</instrument>

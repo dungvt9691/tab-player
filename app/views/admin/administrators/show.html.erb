@@ -1,0 +1,148 @@
+<% provide(:og_title, @administrator.username) %>
+<% provide(:og_description, Setting.seo_description) %>
+<% provide(:keywords, Setting.seo_keywords) %>
+<% provide(:meta_image, Setting.featured_image) %>
+<div id="page-heading">
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to t('admin.title'), admin_path %>
+    </li>
+    <li>
+      <%= link_to t('.title'), admin_administrators_path %>
+    </li>
+    <li>
+      <%= @administrator.username %>
+    </li>
+  </ol>
+  <h1>
+    <%= @administrator.username %>
+    <% unless Setting.app_email.eql? @administrator.email %>
+    <%= link_to t('edit'), edit_admin_administrator_path(@administrator), class: "btn btn-default pull-right" %>
+    <% end %>
+  </h1>
+</div>
+<div class="container" id="administrator-show">
+  <div class="row">
+    <div class="col-md-8">
+      <%= image_tag @administrator.avatar, class: 'pull-left', id: 'administrator-avatar' %>
+      <div class="table-responsive">
+        <table class="table table-condensed">
+          <h3><strong><%= @administrator.fullname || t('untitled') %></strong></h3>
+          <tbody>
+            <tr>
+              <td><%= t('.form.username') %></td>
+              <td>
+                <%= @administrator.username %>
+              </td>
+            </tr>
+            <tr>
+              <td><%= t('.form.email') %></td>
+              <td>
+                <%= link_to @administrator.email, "mailto:#{@administrator.email}" %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.joined_at') %>
+              </td>
+              <td>
+                <%= l(@administrator.created_at, format: :long) %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.sign_in_count') %>
+              </td>
+              <td>
+                <%= number_with_delimiter(@administrator.sign_in_count) %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.current_sign_in_at') %>
+              </td>
+              <td>
+                <%= l(@administrator.current_sign_in_at, format: :long) rescue t('unknown') %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.last_sign_in_at') %>
+              </td>
+              <td>
+                <%= l(@administrator.last_sign_in_at, format: :long) rescue t('unknown') %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.current_sign_in_ip') %>
+              </td>
+              <td>
+                <%= @administrator.current_sign_in_ip %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= t('.form.last_sign_in_ip') %>
+              </td>
+              <td>
+                <%= @administrator.last_sign_in_ip %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tab-container tab-inverse">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#admin-permissions" data-toggle="tab"><%= t('.permissions') %></a></li>
+          <li class=""><a href="#action-histories" data-toggle="tab"><%= t('.action_histories') %></a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="admin-permissions">
+            <div class="row">
+              <div class="col-md-8">
+                <% if @administrator.admin_permissions.blank? %>
+                <div class="alert alert-warning"><%= t('permissions.no_data') %></div>
+                <% else %>
+                <table class="table permissions">
+                  <thead>
+                    <tr>
+                      <th colspan="2"><%= t('permissions.title') %></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @administrator.admin_permissions.each do |acp| %>
+                    <tr>
+                      <td class="col-sm-3">
+                        <%= t("permissions.#{acp.permission.name}") %>
+                      </td>
+                      <td>
+                        <%= label_tag 'permision', t('permissions.read'), class: "label #{'label-success' if acp.permission.read?(@administrator.id)}" %>
+                        <%= label_tag 'permission', t('permissions.create'), class: "label #{'label-success' if acp.permission.create?(@administrator.id)}" %>
+                        <%= label_tag 'permission', t('permissions.update'), class: "label #{'label-success' if acp.permission.update?(@administrator.id)}" %>
+                        <%= label_tag 'permission', t('permissions.destroy'), class: "label #{'label-success' if acp.permission.destroy?(@administrator.id)}" %>
+                      </td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="action-histories">
+            <div class="alert alert-warning">
+              <%= t('comming_soon') %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- container -->

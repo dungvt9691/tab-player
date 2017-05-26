@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Banjo" id="225">
+  <defaultSetts ampAttackTime="-8359" ampDecayTime="2484" ampSustainTime="960" ampReleaseTime="-498" modReleaseTime="0">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="586" name="Banjo-F3" originalPitch="5400"/>
+    <sample id="585" name="Banjo-F4" originalPitch="6600"/>
+    <sample id="584" name="Banjo-F5" originalPitch="7800"/>
+  </samples>
+  <zones>
+    <zone fineTune="4" loopType="loop">
+      <keyRange low="0" high="56"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="586" loopStart="7249" loopEnd="7487"/>
+    </zone>
+    <zone fineTune="2" loopType="loop">
+      <keyRange low="57" high="65"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="585" loopStart="6009" loopEnd="6128"/>
+    </zone>
+    <zone attenuation="50" fineTune="6" loopType="loop">
+      <keyRange low="66" high="127"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="584" loopStart="6628" loopEnd="6688"/>
+    </zone>
+  </zones>
+</instrument>

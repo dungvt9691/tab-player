@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="5th Saw Wave" id="251">
+  <defaultSetts ampReleaseTime="-3986">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="696" name="Stacked Sawtooth-C4" originalPitch="6000"/>
+    <sample id="695" name="Stacked Sawtooth-C6" originalPitch="8400"/>
+  </samples>
+  <zones>
+    <zone loopType="loop">
+      <keyRange low="0" high="79"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="696" loopStart="5064" loopEnd="53109"/>
+    </zone>
+    <zone loopType="loop">
+      <keyRange low="80" high="127"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="695" loopStart="1488" loopEnd="32943"/>
+    </zone>
+  </zones>
+</instrument>

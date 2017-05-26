@@ -1,0 +1,5 @@
+vi:
+  controllers:
+    tutorials:
+      create:
+          success: "Đóng góp hướng dẫn thành công"

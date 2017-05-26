@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Birds" id="152">
+  <samples>
+    <sample id="417" name="Birds" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone modFilterFc="3600" ampAttackTime="-2373" ampReleaseTime="2786" modReleaseTime="6712" scaleTuning="30" loopType="loop">
+      <keyRange low="0" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="417" loopStart="10" loopEnd="65414"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,63 @@
+<h4><b><%= t('.title') %></b></h4>
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:keywords) %>">
+      <%= f.label :keywords, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :keywords, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:keywords) %>
+          <%= @setting.errors[:keywords].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:description) %>">
+      <%= f.label :description, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_area :description, rows: 5, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:description) %>
+          <%= @setting.errors[:description].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :featured_image, class: 'control-label col-md-2 col-sm-4'  %>
+      <%= f.hidden_field :featured_image, class: "form-control featured-image-field" %>
+      <div class="col-md-6 col-sm-8">
+        <div class="featured-image preview select-image">
+          <% if @setting.seo.featured_image %>
+          <%= image_tag @setting.featured_image %>
+          <% else %>
+          <i class="fa fa-picture-o"></i>
+          <% end %>
+        </div>
+        <div class="featured-image-actions">
+          <%= button_tag t('.select_image'), type: 'button', class: 'btn btn-default btn-select-image' %>
+          <%= button_tag t('.remove_image'), type: 'button', id: 'btn-remove-image', class: 'btn btn-default' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$(".select-image").click(function(){
+  $(".btn-select-image").click()
+})
+
+$(".btn-select-image").click(function(){
+  $("#launch-modal").html("<%=j render 'admin/images/modal_select_images' %>")
+  $("#modal-select-images").attr("type", "featured-image")
+  $("#modal-select-images").modal({
+    backdrop: 'static',
+    keyboard: false
+  })
+})
+
+$("#btn-remove-image").click(function(){
+  $(".featured-image").html("<i class='fa fa-picture-o'></i>")
+  $("#setting_featured_image").val("")
+})
+</script>

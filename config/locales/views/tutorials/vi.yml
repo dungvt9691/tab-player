@@ -1,0 +1,13 @@
+vi:
+  tutorials:
+    modal_add_tutorial:
+      title: "Đóng góp hướng dẫn"
+      form:
+        link_placeholder: "Chỉ chấp nhận link youtube..."
+        submit: "Đóng góp hướng dẫn"
+    panel_tutorials:
+      title: "Hướng dẫn chơi %{title}"
+      add_tutorial: "Đóng góp%{html}hướng dẫn"
+      no_data: "Không tìm thấy hướng dẫn chơi Tab %{title}."
+      version: "Phiên bản"
+      sign_in_required: "Bạn cần đăng nhập trước khi thực hiện thao tác này"

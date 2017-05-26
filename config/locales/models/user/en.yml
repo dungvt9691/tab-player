@@ -1,0 +1,6 @@
+en:
+  users:
+    not_found: "User not found"
+    lock: "Lock user"
+    unlock: "Unlock user"
+    locked: "Your account has been banned until <b>%{locked_at}</b> because violated %{app_name}'s <b>Terms of Service</b>"

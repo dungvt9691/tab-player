@@ -1,0 +1,6 @@
+en:
+  controllers:
+    admin:
+      test_smtp:
+        new:
+          email_invalid: "Email invalid"

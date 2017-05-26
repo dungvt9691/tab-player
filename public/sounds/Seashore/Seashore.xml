@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Seashore" id="269">
+  <samples>
+    <sample id="862" name="Seashore" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="37" filterFc="9499" filterQ="45" modFilterFc="787" fineTune="23" ampAttackTime="606" ampDecayTime="5235" ampSustainTime="1000" ampReleaseTime="3707" modAttackTime="-4842" modDecayTime="4551" modSustainTime="1000" modReleaseTime="4551" coarseTune="-2" scaleTuning="50" freqVibLfo="-15600" freqModLfo="-7925" modLfoToFilterFc="168" modLfoToPitch="9" modLfoToVolume="15" reverb="86" pan="-74" loopType="loop">
+      <keyRange low="0" high="108"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="862" loopStart="3" loopEnd="20845"/>
+    </zone>
+    <zone attenuation="37" filterFc="9027" filterQ="33" modFilterFc="1462" fineTune="23" ampAttackTime="1308" ampDecayTime="4757" ampSustainTime="1000" ampReleaseTime="3707" modAttackTime="-8856" modDecayTime="2985" modSustainTime="1000" modReleaseTime="4551" coarseTune="-8" scaleTuning="50" freqVibLfo="-5525" freqModLfo="-15600" modLfoToFilterFc="168" modLfoToPitch="19" modLfoToVolume="11" reverb="78" pan="83" loopType="loop">
+      <keyRange low="0" high="108"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="862" loopStart="3" loopEnd="20845"/>
+    </zone>
+  </zones>
+</instrument>

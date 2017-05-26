@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Strings Pan" id="38">
+  <defaultSetts modFilterFc="3600" ampAttackTime="-386" ampHoldTime="3698" ampDecayTime="5449" ampSustainTime="16" ampReleaseTime="801" modReleaseTime="-1200">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-2400" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="187" name="StrLoop - C1" originalPitch="3600"/>
+    <sample id="186" name="StrLoop - D#1" originalPitch="3900"/>
+    <sample id="185" name="StrLoop - F#1" originalPitch="4200"/>
+    <sample id="184" name="StrLoop - A1" originalPitch="4500"/>
+    <sample id="183" name="StrLoop - C2" originalPitch="4800"/>
+    <sample id="182" name="StrLoop - D#2" originalPitch="5100"/>
+    <sample id="181" name="StrLoop - F#2" originalPitch="5400"/>
+    <sample id="180" name="StrLoop - A2" originalPitch="5700"/>
+    <sample id="179" name="StrLoop - C3" originalPitch="6000"/>
+    <sample id="178" name="StrLoop - D#3" originalPitch="6300"/>
+    <sample id="177" name="StrLoop - F#3" originalPitch="6600"/>
+    <sample id="176" name="StrLoop - A3" originalPitch="6900"/>
+    <sample id="175" name="StrLoop - C4" originalPitch="7200"/>
+    <sample id="174" name="StrLoop - D#4" originalPitch="7500"/>
+    <sample id="173" name="StrLoop - F#4" originalPitch="7800"/>
+    <sample id="172" name="StrLoop - A4" originalPitch="8100"/>
+    <sample id="171" name="StrLoop - C5" originalPitch="8400"/>
+    <sample id="170" name="StrLoop - D#5" originalPitch="8700"/>
+    <sample id="169" name="StrLoop - F#5" originalPitch="9000"/>
+    <sample id="168" name="StrLoop - A5" originalPitch="9300"/>
+    <sample id="167" name="StrLoop - C6" originalPitch="9600"/>
+  </samples>
+  <zones>
+    <zone delayModLfo="-5186" pan="240" loopType="loop">
+      <keyRange low="0" high="28"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="187" loopStart="19776" loopEnd="68613"/>
+    </zone>
+    <zone delayModLfo="-5573" pan="220" loopType="loop">
+      <keyRange low="29" high="32"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="187" loopStart="19776" loopEnd="68613"/>
+    </zone>
+    <zone delayModLfo="-4871" pan="200" loopType="loop">
+      <keyRange low="33" high="35"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="187" loopStart="19776" loopEnd="68613"/>
+    </zone>
+    <zone delayModLfo="-5021" pan="180" loopType="loop">
+      <keyRange low="36" high="38"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="187" loopStart="19776" loopEnd="68613"/>
+    </zone>
+    <zone delayModLfo="-5408" pan="160" loopType="loop">
+      <keyRange low="39" high="41"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="186" loopStart="20669" loopEnd="73219"/>
+    </zone>
+    <zone delayModLfo="-4706" pan="140" loopType="loop">
+      <keyRange low="42" high="44"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="185" loopStart="19328" loopEnd="76167"/>
+    </zone>
+    <zone delayModLfo="-5186" pan="120" loopType="loop">
+      <keyRange low="45" high="47"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="184" loopStart="20369" loopEnd="57324"/>
+    </zone>
+    <zone delayModLfo="-5573" pan="100" loopType="loop">
+      <keyRange low="48" high="50"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="183" loopStart="18143" loopEnd="89460"/>
+    </zone>
+    <zone delayModLfo="-4871" pan="80" loopType="loop">
+      <keyRange low="51" high="53"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="182" loopStart="15283" loopEnd="64243"/>
+    </zone>
+    <zone delayModLfo="-5021" pan="60" loopType="loop">
+      <keyRange low="54" high="56"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="181" loopStart="10012" loopEnd="44779"/>
+    </zone>
+    <zone delayModLfo="-5408" pan="40" loopType="loop">
+      <keyRange low="57" high="59"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="180" loopStart="17292" loopEnd="72830"/>
+    </zone>
+    <zone delayModLfo="-4706" pan="20" loopType="loop">
+      <keyRange low="60" high="61"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="179" loopStart="18901" loopEnd="56661"/>
+    </zone>
+    <zone delayModLfo="-5186" loopType="loop">
+      <keyRange low="62" high="65"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="178" loopStart="19008" loopEnd="56203"/>
+    </zone>
+    <zone delayModLfo="-5573" pan="-20" loopType="loop">
+      <keyRange low="66" high="68"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="177" loopStart="15626" loopEnd="52676"/>
+    </zone>
+    <zone delayModLfo="-4871" pan="-50" loopType="loop">
+      <keyRange low="69" high="71"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="176" loopStart="16363" loopEnd="44173"/>
+    </zone>
+    <zone delayModLfo="-5021" pan="-70" loopType="loop">
+      <keyRange low="72" high="74"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="175" loopStart="16094" loopEnd="52601"/>
+    </zone>
+    <zone delayModLfo="-5408" pan="-90" loopType="loop">
+      <keyRange low="75" high="77"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="174" loopStart="15826" loopEnd="47980"/>
+    </zone>
+    <zone delayModLfo="-4706" pan="-120" loopType="loop">
+      <keyRange low="78" high="80"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="173" loopStart="15631" loopEnd="46088"/>
+    </zone>
+    <zone delayModLfo="-5186" pan="-140" loopType="loop">
+      <keyRange low="81" high="83"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="172" loopStart="16694" loopEnd="55574"/>
+    </zone>
+    <zone delayModLfo="-5573" pan="-160" loopType="loop">
+      <keyRange low="84" high="86"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="171" loopStart="17403" loopEnd="55533"/>
+    </zone>
+    <zone delayModLfo="-4871" pan="-180" loopType="loop">
+      <keyRange low="87" high="89"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="170" loopStart="13416" loopEnd="47770"/>
+    </zone>
+    <zone delayModLfo="-5021" pan="-200" loopType="loop">
+      <keyRange low="90" high="92"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="169" loopStart="14460" loopEnd="51632"/>
+    </zone>
+    <zone delayModLfo="-5408" pan="-220" loopType="loop">
+      <keyRange low="93" high="95"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="168" loopStart="15016" loopEnd="47744"/>
+    </zone>
+    <zone delayModLfo="-4706" pan="-240" loopType="loop">
+      <keyRange low="96" high="110"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="167" loopStart="15285" loopEnd="62013"/>
+    </zone>
+  </zones>
+</instrument>

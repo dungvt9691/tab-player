@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Ukulele" id="296">
+  <samples>
+    <sample id="367" name="NGuitrF2" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone fineTune="-54" ampAttackTime="-11959" ampHoldTime="-6772" ampDecayTime="2521" ampSustainTime="1000" ampReleaseTime="213" modAttackTime="-8800" modSustainTime="1000" coarseTune="-9" freqVibLfo="-15600" freqModLfo="-725" reverb="70" loopType="loop">
+      <keyRange low="0" high="93"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="367" loopStart="3727" loopEnd="3824"/>
+    </zone>
+  </zones>
+</instrument>

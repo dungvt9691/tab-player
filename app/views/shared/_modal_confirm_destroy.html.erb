@@ -1,0 +1,32 @@
+<div class="modal fade zoom modal-confirm" id="modal-confirm-destroy">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <center>
+          <h1>
+            <i class="text-danger fa fa-warning"></i>
+          </h1>
+          <h2>
+            <%= t('.are_you_sure') %> <span id="confirm-text"></span>?
+          </h2>
+          <h3>
+            <%= t('.note') %>
+          </h3>
+          <a data-remote="true" data-method="DELETE" href="#" id="btn-confirm" class="btn btn-danger">
+            <%= t('confirm') %>
+          </a>
+          <button id="btn-cancel" type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">
+            <%= t('cancel') %>
+          </button>
+        </center>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/javascript">
+$("#btn-confirm").click(function(){
+  $('body').css("cursor", 'progress')
+  $("#modal-confirm-destroy #btn-confirm").addClass("disabled")
+  $("#modal-confirm-destroy #btn-cancel").prop("disabled", true)
+})
+</script>

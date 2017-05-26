@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Agogo" id="171">
+  <samples>
+    <sample id="613" name="Agogo" originalPitch="7200"/>
+  </samples>
+  <zones>
+    <zone ampAttackTime="-8359" ampDecayTime="702" ampSustainTime="960" ampReleaseTime="-1200">
+      <keyRange low="65" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="613" loopStart="8" loopEnd="6333"/>
+    </zone>
+    <zone ampAttackTime="-8359" ampDecayTime="702" ampSustainTime="960" ampReleaseTime="702">
+      <keyRange low="0" high="64"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="613" loopStart="8" loopEnd="6333"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,14 @@
+vi:
+  controllers:
+    admin:
+      artists:
+        create:
+          success: "Thêm nghệ sĩ <b>%{name}</b> thành công"
+        update:
+          success: "Chỉnh sửa nghệ sĩ <b>%{name}</b> thành công"
+        destroy:
+          success: "Xoá nghệ sĩ <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể xoá nghệ sĩ <b>%{name}</b>"
+        multi_destroy:
+          success: "Xoá nghệ sĩ <b>%{name}</b> thành công"
+          fail: "Lỗi! Không thể xoá nghệ sĩ <b>%{name}</b>"

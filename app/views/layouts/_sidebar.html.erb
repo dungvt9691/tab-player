@@ -1,0 +1,124 @@
+<aside class="sidebar">
+  <nav class="sidebar-nav">
+    <%= link_to '', root_path, class: 'sidebar-logo' %>
+    <ul class="sidebar-items">
+      <% if user_signed_in? %>
+      <li class="sidebar-item" id="sidebar-profile">
+        <%= link_to '#panel-profile', class: 'user-avatar' do %>
+        <span>
+          <%= image_tag current_user.avatar.url(:s300) %>
+          <%= t('.profile') %>
+        </span>
+        <% end %>
+      </li>
+      <% else %>
+      <li class="sidebar-item" id="sidebar-sign-in">
+        <%= link_to '#panel-sign-in' do %>
+        <span>
+          <%= material_icon.person %>
+          <%= t('.sign_in') %>
+        </span>
+        <% end %>
+      </li>
+      <% end %>
+      <li class="sidebar-item" id="sidebar-search">
+        <%= link_to '#panel-search' do %>
+        <span>
+          <%= material_icon.search %>
+          <%= t('.search') %>
+        </span>
+        <% end %>
+      </li>
+      <% if user_signed_in? %>
+      <li class="sidebar-item" id="sidebar-favorites">
+        <%= link_to '#panel-favorites' do %>
+        <span>
+          <%= material_icon.favorite_border %>
+          <%= t('.favorite') %>
+        </span>
+        <% end %>
+      </li>
+      <% else %>
+      <li class="sidebar-item" id="sidebar-sign-in">
+        <%= link_to '#panel-sign-in' do %>
+        <span>
+          <%= material_icon.favorite_border %>
+          <%= t('.favorite') %>
+        </span>
+        <% end %>
+      </li>
+      <% end %>
+      <% if user_signed_in? %>
+      <li class="sidebar-item" id="sidebar-upload">
+        <%= form_for Tab.new, url: tabs_path(language: I18n.locale) do |f| %>
+        <%= f.file_field :sheet, accept: ".gp3, .gp4, .gp5, .gp6, .gpx, .ptb", class: "hide" %>
+        <% end %>
+        <%= link_to '#panel-upload' do %>
+        <span>
+          <%= material_icon.file_upload %>
+          <%= t('.file_upload') %>
+        </span>
+        <% end %>
+      </li>
+      <% else %>
+      <li class="sidebar-item" id="sidebar-sign-in">
+        <%= link_to '#panel-sign-in' do %>
+        <span>
+          <%= material_icon.file_upload %>
+          <%= t('.file_upload') %>
+        </span>
+        <% end %>
+      </li>
+      <% end %>
+      <li class="sidebar-item" id="sidebar-contact">
+        <%= link_to '#panel-contact' do %>
+        <span>
+          <%= material_icon.question_answer %>
+          <%= t('.question_answer') %>
+        </span>
+        <% end %>
+      </li>
+      <li class="sidebar-item" id="sidebar-introduce">
+        <%= link_to '#panel-introduce' do %>
+        <span>
+          <%= material_icon.info_outline %>
+          <%= t('.about') %>
+        </span>
+        <% end %>
+      </li>
+      <li class="hide sidebar-item" id="sidebar-term">
+        <%= link_to '#panel-term' do %>
+        <span>
+          <%= material_icon.info_outline %>
+          <%= t('.about') %>
+        </span>
+        <% end %>
+      </li>
+      <li class="hide sidebar-item" id="sidebar-privacy">
+        <%= link_to '#panel-privacy' do %>
+        <span>
+          <%= material_icon.info_outline %>
+          <%= t('.about') %>
+        </span>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</aside>
+<script type="text/javascript">
+$(".sidebar-item a").click(function(e){
+  e.preventDefault()
+  $(".sidebar-item").removeClass("active")
+  if($(this).attr('href') == "#panel-upload"){
+    $("#tab_sheet").click()
+  }
+  else{
+    $(this).parents(".sidebar-item").addClass("active")
+    activePanel($(this).attr('href'))
+  }
+})
+
+$("#tab_sheet").change(function (){
+  $("#new_tab").submit()
+});
+</script>

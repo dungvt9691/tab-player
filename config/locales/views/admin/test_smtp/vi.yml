@@ -1,0 +1,7 @@
+vi:
+  admin:
+    test_smtp:
+      new:
+        loading: "Đang gửi mail"
+      create:
+        success: "Gửi mail thành công"

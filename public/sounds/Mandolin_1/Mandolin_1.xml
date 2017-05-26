@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Mandolin_1" id="168">
+  <defaultSetts filterFc="10499" filterQ="50" ampDelayTime="-3986" ampDecayTime="4569" ampSustainTime="960" ampReleaseTime="-884" modDecayTime="0" modReleaseTime="0" delayVibLfo="0">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="721" name="Nylon Guitar-G3" originalPitch="6700"/>
+    <sample id="720" name="Nylon Guitar-G#3" originalPitch="6800"/>
+    <sample id="718" name="Nylon Guitar-C4" originalPitch="7200"/>
+    <sample id="164" name="Nylon Guitar-A4" originalPitch="8100"/>
+  </samples>
+  <zones>
+    <zone fineTune="-4" ampHoldTime="-35" loopType="loop">
+      <keyRange low="0" high="55"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="721" loopStart="14679" loopEnd="14791"/>
+    </zone>
+    <zone fineTune="-8" ampHoldTime="-545" loopType="loop">
+      <keyRange low="56" high="59"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="720" loopStart="12516" loopEnd="12727"/>
+    </zone>
+    <zone fineTune="2" ampHoldTime="-940" loopType="loop">
+      <keyRange low="60" high="93"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="718" loopStart="16608" loopEnd="16776"/>
+    </zone>
+    <zone ampHoldTime="-1207" loopType="loop">
+      <keyRange low="94" high="105"/>
+      <velRange low="0" high="127"/>
+      <sampleRecord sampleId="164" loopStart="11499" loopEnd="11599"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Room Snare 2" id="64">
+  <defaultSetts ampReleaseTime="5888">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="-2400" amountSrc="noController" amountCtrlType="linear" amountSrcType=""/>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="215" name="Power Snare 2" originalPitch="4000"/>
+  </samples>
+  <zones>
+    <zone filterFc="11921" ampAttackTime="-8359" coarseTune="-4">
+      <keyRange low="40" high="40"/>
+      <velRange low="0" high="107"/>
+      <sampleRecord sampleId="215" loopStart="12415" loopEnd="12415"/>
+    </zone>
+    <zone ampAttackTime="-8359" coarseTune="-4">
+      <keyRange low="40" high="40"/>
+      <velRange low="108" high="127"/>
+      <sampleRecord sampleId="215" loopStart="12415" loopEnd="12415"/>
+    </zone>
+  </zones>
+</instrument>

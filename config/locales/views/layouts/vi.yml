@@ -1,0 +1,11 @@
+vi:
+  layouts:
+    sidebar:
+      profile: "Hồ sơ"
+      search: "Tìm kiếm"
+      favorite: "Ưa thích"
+      file_upload: "Tải lên"
+      question_answer: "Liên hệ"
+      about: "Giới thiệu"
+      sign_in: "Đăng nhập"
+      sign_out: "Đăng xuất"

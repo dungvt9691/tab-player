@@ -1,0 +1,29 @@
+vi:
+  artists:
+    not_found: "Không tìm thấy nghệ sĩ tương ứng"
+
+  activerecord:
+    attributes:
+      artist:
+        name: "Họ tên"
+        name_alias: "Nghệ danh"
+        birthname: "Tên khai sinh"
+        created_at: "Tạo lúc"
+        updated_at: "Chỉnh sửa lúc"
+        avatar: "Ảnh đại diện"
+        cover: "Ảnh bìa"
+        avatar_file_name: "Ảnh đại diện"
+        cover_file_name: "Ảnh bìa"
+        system: ""
+    errors:
+      models:
+        artist:
+          attributes:
+            name:
+              blank: "không được để trống."
+            avatar_file_name:
+              invalid: "không đúng định dạng."
+            cover_file_name:
+              invalid: "không đúng định dạng."
+            system:
+              error: "Lỗi hệ thống."

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Ride Cymbal 2" id="86">
+  <samples>
+    <sample id="615" name="Ride Cymbal" originalPitch="5100"/>
+  </samples>
+  <zones>
+    <zone attenuation="280" ampReleaseTime="6719" coarseTune="-9" pan="124">
+      <keyRange low="59" high="59"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="615" loopStart="8" loopEnd="121292"/>
+    </zone>
+  </zones>
+</instrument>

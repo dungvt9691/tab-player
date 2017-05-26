@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Wood Block_1" id="302">
+  <defaultSetts fineTune="12" coarseTune="-27" scaleTuning="50">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="860" name="Wood Block Med" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone filterFc="8614" modFilterFc="5962" ampDecayTime="342" ampSustainTime="1000" ampReleaseTime="341" modReleaseTime="95" freqVibLfo="-808" freqModLfo="-808">
+      <keyRange low="0" high="72"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="860" loopStart="3" loopEnd="1791"/>
+    </zone>
+    <zone filterFc="8614" modFilterFc="5962" ampDecayTime="342" ampSustainTime="1000" ampReleaseTime="341" modReleaseTime="95" freqVibLfo="-808" freqModLfo="-808">
+      <keyRange low="73" high="84"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="860" loopStart="3" loopEnd="1791"/>
+    </zone>
+    <zone filterFc="8614" modFilterFc="5962" ampDecayTime="342" ampSustainTime="1000" ampReleaseTime="341" modReleaseTime="95" freqVibLfo="-808" freqModLfo="-808">
+      <keyRange low="85" high="97"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="860" loopStart="3" loopEnd="1791"/>
+    </zone>
+    <zone filterFc="8614" modFilterFc="5962" ampDecayTime="342" ampSustainTime="1000" ampReleaseTime="341" modReleaseTime="95" freqVibLfo="-808" freqModLfo="-808">
+      <keyRange low="98" high="108"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="860" loopStart="3" loopEnd="1791"/>
+    </zone>
+  </zones>
+</instrument>

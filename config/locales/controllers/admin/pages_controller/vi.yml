@@ -1,0 +1,6 @@
+vi:
+  controllers:
+    admin:
+      pages:
+        update:
+          success: "Chỉnh sửa trang <b>%{title}</b> thành công"

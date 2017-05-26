@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Gtr SFX" id="41">
+  <samples>
+    <sample id="486" name="Gtr Cut Up" originalPitch="5500"/>
+    <sample id="188" name="Gtr Cut Down" originalPitch="5600"/>
+    <sample id="481" name="Gtr Slap" originalPitch="5700"/>
+    <sample id="412" name="Gtr Click" originalPitch="5800"/>
+  </samples>
+  <zones>
+    <zone attenuation="112" filterFc="14400" ampReleaseTime="-125" modReleaseTime="74" freqVibLfo="-1118" freqModLfo="-1118">
+      <keyRange low="48" high="48"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="486" loopStart="3" loopEnd="2868"/>
+    </zone>
+    <zone filterFc="14400" ampReleaseTime="-125" modReleaseTime="74" freqVibLfo="-1118" freqModLfo="-1118">
+      <keyRange low="49" high="49"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="188" loopStart="3" loopEnd="3905"/>
+    </zone>
+    <zone filterFc="14400" ampReleaseTime="-125" modReleaseTime="74" freqVibLfo="-1118" freqModLfo="-1118">
+      <keyRange low="50" high="50"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="481" loopStart="3" loopEnd="3132"/>
+    </zone>
+    <zone filterFc="14400" ampReleaseTime="-125" modReleaseTime="74" freqVibLfo="-1118" freqModLfo="-1118">
+      <keyRange low="51" high="51"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="412" loopStart="3" loopEnd="267"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,34 @@
+<div class="panel sidebar-panel" id="panel-contact">
+  <div class="panel-header">
+    <h1><%= t('.title') %></h1>
+  </div>
+  <div class="panel-body">
+    <div id="contact-alert" class="alert alert-danger hide"></div>
+    <%= form_for Contact.new, html: { remote: true, onsubmit: 'return submitFormContact($(this));' } do |f| %>
+    <div class="form-group">
+      <%= f.text_field :fullname, class: 'form-control', placeholder: t('.form.fullname_placeholder') %>
+      <span id="help-block-fullname" class="help-block"></span>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :email, class: 'form-control', placeholder: t('.form.email_placeholder') %>
+      <span id="help-block-email" class="help-block"></span>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :content, class: 'form-control', rows: 10, placeholder: t('.form.content_placeholder') %>
+      <span id="help-block-content" class="help-block"></span>
+    </div>
+    <hr>
+    <%= submit_tag t('.form.submit'), class: 'btn btn-primary btn-block btn-lg' %>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+function submitFormContact(element){
+  $(".form-group").removeClass("has-error")
+  $(".help-block").html("")
+  $("#contact-alert").addClass("hide")
+  $("#contact-alert").html("")
+  element.find(".btn").prop("disabled", true)
+  $("body").css("cursor", "progress")
+}
+</script>

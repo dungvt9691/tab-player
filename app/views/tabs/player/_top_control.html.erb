@@ -1,0 +1,159 @@
+<section type="component" class="tpp-navbar-top hxTopControlPanelView">
+  <section class="pull-left">
+    <div class="control-txt control-txt__uploader pull-left">
+      <span><%= t('.uploaded_by') %></span>:
+      <span class="text-primary"><%= @tab.uploader.nil? ? t('.admin') : @tab.uploader.fullname %></span>
+    </div>
+    <div class="control-txt control-txt__tuning pull-left">
+      <span type="label" class="hxTuningLabel">
+        <span data-i18n="player.Tuning"><%= t('.tunning') %></span>: <span class="_hxTuningNotes"></span>
+      </span>
+    </div>
+    <div class="pull-left tpp-dropdown">
+      <div type="component" class="control-btn control-btn__zoom has_tooltip hxZoomOption">
+        <div class="control-icon control-icon__sm control-icon__zoom"></div>
+        <span class="control-val _hxZoomLabel">110%</span>
+      </div>
+      <div type="component" class="tpp-dropdown--menu tpp-scrollarea tpp-scrollarea__light hxZoomDropDown ps-container">
+        <ul>
+          <li data-value="200">200%</li>
+          <li data-value="190">190%</li>
+          <li data-value="180">180%</li>
+          <li data-value="170">170%</li>
+          <li data-value="160">160%</li>
+          <li data-value="150">150%</li>
+          <li data-value="140">140%</li>
+          <li data-value="130">130%</li>
+          <li data-value="120">120%</li>
+          <li data-value="110" class="active">110%</li>
+          <li data-value="100">100%</li>
+          <li data-value="90">90%</li>
+          <li data-value="80">80%</li>
+          <li data-value="70">70%</li>
+          <li data-value="60">60%</li>
+          <li data-value="50">50%</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="pull-right">
+    <div class="control-txt control-txt__fb-like pull-left">
+      <div class="fb-like" data-href="<%= request.url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+      <div class="fb-send" data-href="<%= request.url %>"></div>
+    </div>
+    <div class="control-txt control-txt__download pull-left">
+      <button id="btn-embed" class="btn has-text btn-default btn-xs">
+        <i class="material-icons">code</i>
+        <%= t('.embed_code') %>
+      </button>
+    </div>
+    <div class="control-txt control-txt__download pull-left">
+      <a target="_blank" href="<%= @tab.download_link %>" id="btn-download" class="btn has-text btn-primary btn-xs">
+        <i class="material-icons">file_download</i>
+        <%= t('.download_as_gp') %>
+      </a>
+    </div>
+    <div class="control-txt control-txt__print pull-left">
+      <button id="btn-print" class="btn has-text btn-secondary btn-xs">
+        <i class="material-icons">print</i>
+        <%= t('.print') %>
+      </button>
+    </div>
+    <div class="control-txt control-txt__tutorials pull-left">
+      <button id="btn-tutorials" class="btn has-text btn-danger btn-xs">
+        <i class="fa fa-youtube-play"></i>
+        <%= t('.tutorials') %>
+      </button>
+    </div>
+  </section>
+  <section class="tpp-navbar-top--center heading text-overflow">
+    <span type="label" class="hxTitleLabel"></span>
+  </section>
+</section>
+<script type="text/javascript">
+$("#btn-tutorials").click(function(){
+  $("#panel-tutorials").addClass("active")
+  $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+})
+
+$("#btn-print").click(function(){
+  $("body").css("cursor", "progress")
+  $("#btn-print").css("cursor", "progress")
+  $("#btn-print").prop("disabled", "true")
+  TabProPlayer.print()
+})
+
+$("#btn-update-tab").click(function(){
+  $("#launch-modal").html("<%=j render 'tabs/modal_update_tab' %>")
+  $("#modal-update-tab").modal({
+    keyboard: false,
+    backdrop: "static"
+  })
+})
+
+$("#btn-embed").click(function(){
+  $("#launch-modal").html("<%=j render 'embed/modal_embed', tab: @tab %>")
+  $("#modal-embed").modal({
+    keyboard: false,
+    backdrop: "static"
+  })
+})
+
+$(function(){
+  $(".star").each(function() {
+    var $readonly = ($(this).attr('data-readonly') == 'true');
+    var $half     = ($(this).attr('data-enable-half') == 'true');
+    var $halfShow = ($(this).attr('data-half-show') == 'true');
+    var $single   = ($(this).attr('data-single') == 'true');
+    $(this).raty({
+      score: function() {
+        return $(this).attr('data-rating')
+      },
+      number: function() {
+        return $(this).attr('data-star-count')
+      },
+      half:        $half,
+      starType:    'i',
+      halfShow:    $halfShow,
+      single:      $single,
+      path:        $(this).attr('data-star-path'),
+      starOn:      $(this).attr('data-star-on'),
+      starOff:     $(this).attr('data-star-off'),
+      starHalf:    $(this).attr('data-star-half'),
+      cancel:      $(this).attr('data-cancel'),
+      cancelPlace: $(this).attr('data-cancel-place'),
+      cancelHint:  $(this).attr('data-cancel-hint'),
+      cancelOn:    $(this).attr('data-cancel-on'),
+      cancelOff:   $(this).attr('data-cancel-off'),
+      noRatedMsg:  $(this).attr('data-no-rated-message'),
+      round:       $(this).attr('data-round'),
+      space:       $(this).attr('data-space'),
+      target:      $(this).attr('data-target'),
+      targetText:  $(this).attr('data-target-text'),
+      targetType:  $(this).attr('data-target-type'),
+      targetFormat: $(this).attr('data-target-format'),
+      targetScoret: $(this).attr('data-target-score'),
+      hints: ["<%= t('.difficulty.super_easy') %>", "<%= t('.difficulty.easy') %>", "<%= t('.difficulty.normal') %>", "<%= t('.difficulty.difficult') %>", "<%= t('.difficulty.hard') %>"],
+      readOnly: $readonly,
+      click: function(score, evt) {
+        var _this = this;
+        if (score == null) { score = 0; }
+        $.post('<%= rate_path %>',
+        {
+          score: score,
+          dimension: $(this).attr('data-dimension'),
+          id: $(this).attr('data-id'),
+          klass: $(this).attr('data-classname')
+        },
+        function(data) {
+          if(data) {
+            if ($(_this).attr('data-disable-after-rate') == 'true') {
+              $(_this).raty('set', { readOnly: true, score: score });
+            }
+          }
+        });
+      }
+    });
+});
+});
+</script>

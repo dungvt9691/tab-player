@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Interference" id="125">
+  <defaultSetts attenuation="127" ampAttackTime="-8800" ampSustainTime="1000" modAttackTime="-8800" modSustainTime="1000" freqVibLfo="-15600" freqModLfo="-725" reverb="31" chorus="31">
+    <modulators>
+      <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+    </modulators>
+  </defaultSetts>
+  <samples>
+    <sample id="358" name="Vibraloop" originalPitch="6000"/>
+    <sample id="359" name="XyloE4Looped" originalPitch="6000"/>
+  </samples>
+  <zones>
+    <zone attenuation="90" filterFc="9971" modPitch="1191" modDecayTime="3084" scaleTuning="50" freqModLfo="-6725" modLfoToPitch="1191" delayModLfo="3072" loopType="loop">
+      <keyRange low="61" high="84"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="358" loopStart="9" loopEnd="783"/>
+    </zone>
+    <zone attenuation="90" filterFc="9971" modPitch="1191" modDecayTime="3084" coarseTune="-12" scaleTuning="50" freqModLfo="-6725" modLfoToPitch="1191" delayModLfo="3072" loopType="loop">
+      <keyRange low="85" high="127"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="358" loopStart="9" loopEnd="783"/>
+    </zone>
+    <zone attenuation="90" filterFc="9971" modPitch="1191" modDecayTime="3084" coarseTune="13" scaleTuning="50" freqModLfo="-6725" modLfoToPitch="1191" delayModLfo="3072" loopType="loop">
+      <keyRange low="0" high="60"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="359" loopStart="7" loopEnd="976"/>
+    </zone>
+  </zones>
+</instrument>

@@ -1,0 +1,26 @@
+vi:
+  pages:
+    can_edit_content: "Có thể sửa"
+    not_edit_content: "Không thể sửa"
+    not_found: "Không tìm thấy trang tương ứng"
+
+  activerecord:
+    attributes:
+      page:
+        title: "Tiêu đề"
+        language: "Ngôn ngữ"
+        seo_title: "Tiêu đề SEO"
+        seo_keywords: "Từ khoá SEO"
+        seo_description: "Nội dung SEO"
+        featured_image: "Ảnh tiêu biểu"
+        system: ""
+        created_at: "Tạo lúc"
+        updated_at: "Chỉnh sửa lúc"
+    errors:
+      models:
+        page:
+          attributes:
+            title:
+              blank: "không được để trống."
+            system:
+              error: "Lỗi hệ thống."

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?> <instrument name="Synth Mallet" id="140">
+  <samples>
+    <sample id="350" name="JazzGuitLoop" originalPitch="8700"/>
+  </samples>
+  <zones>
+    <zone filterFc="7935" modFilterFc="2000" fineTune="-18" ampDecayTime="2786" ampSustainTime="960" ampReleaseTime="1200" modDecayTime="-1586" modSustainTime="1000" modReleaseTime="-1586" delayVibLfo="-3986" loopType="loop">
+      <keyRange low="0" high="109"/>
+      <velRange low="0" high="127"/>
+      <modulators>
+        <modulator dest="filterFc" src="velocity" srcCtrlType="linear" srcType="negative" amount="0" amountSrc="velocity" amountCtrlType="switch" amountSrcType="negative"/>
+      </modulators>
+      <sampleRecord sampleId="350" loopStart="9" loopEnd="114"/>
+    </zone>
+  </zones>
+</instrument>

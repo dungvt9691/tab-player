@@ -1,0 +1,44 @@
+en:
+  tabs:
+    player:
+      header:
+        update: "Update"
+        favorite: "Add to favorites"
+        search_placeholder: "Search by song title, artist, or author..."
+        sign_in: "Sign in"
+        sign_out: "Sign out"
+      control_player:
+        beginner_mode: "Beginer mode"
+        loop: "Loop"
+        on: "On"
+        off: "Off"
+        setting: "Setting"
+        transpose: "Transpose"
+        rewind_data_tooltip: "Rewind [Backspace]"
+        play_pause_data_tooltip: "Start / Stop [Space]"
+        temp_data_tooltip: "Temp"
+        loop_data_tooltip: "Loop [L]"
+      instrument_switcher:
+        set_default_instrument: "Set default"
+        change_instrument: "Change intrument"
+      instruments:
+        instruments: "Instruments"
+      timeline:
+        timing: "TIMING"
+      top_control:
+        embed_code: "Embed"
+        download_as_gp: "Download"
+        print: "Print"
+        tutorials: "Tutorials"
+        zoom_data_tooltip: "Zoom"
+        uploaded_by: "Uploaded by"
+        admin: "Admin"
+        tunning: "Tunning"
+        difficulty:
+          title: "Difficulty"
+          default: "Difficulty"
+          super_easy: "Super easy"
+          easy: "Easy"
+          normal: "Normal"
+          difficult: "Difficulty"
+          hard: "Hard"

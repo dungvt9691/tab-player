@@ -1,0 +1,33 @@
+<div class="modal fade zoom modal-confirm" id="modal-unpublish">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= form_for tutorial, url: admin_tutorial_path(id: tutorial.id), method: 'put', remote: true, html: { onsubmit: 'return submitForm($(this));' } do |f| %>
+        <%= hidden_field_tag :type, 'unpublish' %>
+        <%= f.hidden_field :status, value: 1 %>
+        <center>
+          <h1>
+            <i class="text-warning fa fa-warning"></i>
+          </h1>
+          <h2>
+            <%= t('.are_you_sure') %>?
+          </h2>
+          <h3>
+            <%= t('.note') %>
+          </h3>
+          <%= f.submit t('.unpublish'), class: "btn btn-warning", id: "btn-confirm" %>
+          <button id="btn-cancel" type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">
+            <%= t('cancel') %>
+          </button>
+        </center>
+        <% end %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script type="text/javascript">
+function submitForm(element){
+  element.find(".btn").prop("disabled", true)
+  $("body").css("cursor", "progress")
+}
+</script>
