@@ -1,11 +1,10 @@
-:verbose: true
-:concurrency: 5
-:pidfile: tmp/pids/sidekiq.pid
-staging:
-  :concurrency: 10
-production:
-  :concurrency: 25
+:verbose: false # ログの頻度
+:concurrency: <%= Integer(ENV['SIDEKIQ_CONCURRENCY'] || 4) %> # プロセス数 (環境変数で指定。環境編集になければ4を指定)
+:timeout: 600 # タイムアウトの設定
 :queues:
   - default
   - elasticsearch
   - crawler
+production:
+  :pidfile: ./tmp/pids/sidekiq.pid # PIDファイルのパス
+  :logfile: ./log/sidekiq.log # ログファイルのパス

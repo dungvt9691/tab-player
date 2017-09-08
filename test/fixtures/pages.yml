@@ -4,7 +4,7 @@
 #
 #  id           :integer          not null, primary key
 #  slug         :string(255)
-#  edit_content :boolean          default("0")
+#  edit_content :boolean          default(FALSE)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #

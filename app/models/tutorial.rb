@@ -6,16 +6,16 @@
 #  link                    :string(255)
 #  tab_id                  :integer
 #  video_id                :string(255)
-#  status                  :integer          default("1")
+#  status                  :integer          default(1)
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
-#  cached_votes_total      :integer          default("0")
-#  cached_votes_score      :integer          default("0")
-#  cached_votes_up         :integer          default("0")
-#  cached_votes_down       :integer          default("0")
-#  cached_weighted_score   :integer          default("0")
-#  cached_weighted_total   :integer          default("0")
-#  cached_weighted_average :float(24)        default("0")
+#  cached_votes_total      :integer          default(0)
+#  cached_votes_score      :integer          default(0)
+#  cached_votes_up         :integer          default(0)
+#  cached_votes_down       :integer          default(0)
+#  cached_weighted_score   :integer          default(0)
+#  cached_weighted_total   :integer          default(0)
+#  cached_weighted_average :float(24)        default(0.0)
 #
 # Indexes
 #

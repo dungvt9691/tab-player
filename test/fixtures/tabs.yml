@@ -13,10 +13,10 @@
 #  download_link      :string(255)
 #  pdf_download_link  :string(255)
 #  user_id            :integer
-#  status             :integer          default("1")
+#  status             :integer          default(1)
+#  cached_views       :integer          default(0)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
-#  cached_views       :integer          default("0")
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -19,7 +19,7 @@ gem 'mysql2'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Puma as the app server
-gem 'puma', '3.4.0'
+gem 'puma'
 gem 'puma_worker_killer'
 
 # Pagination
@@ -81,7 +81,7 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'globalize', '~> 5.0.0'
 
 # Ready guitar pro data
-gem 'guitar_pro_parser', git: 'git@github.com:dungvt9691/guitar_pro_parser.git'
+gem 'guitar_pro_parser', git: 'https://github.com/dungvt9691/guitar_pro_parser.git'
 
 # Javascript & Stylesheet plugins
 gem 'sass-rails', '~> 5.0'
@@ -117,8 +117,15 @@ group :development do
   gem 'spring'
 
   # Deploy
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'cap-ec2'
+  gem 'capistrano',         require: false
+  gem 'capistrano-rbenv',   require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'itamae'
+  gem 'itamae-secrets'
+end
+
+group :production do
+  gem 'dotenv-rails'
+  gem 'lograge'
 end

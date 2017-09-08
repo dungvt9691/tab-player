@@ -10,12 +10,12 @@
 #  phone                   :string(255)
 #  address                 :string(255)
 #  avatar                  :string(255)
-#  updated_password        :boolean          default("0")
+#  updated_password        :boolean          default(FALSE)
 #  last_update_password_at :datetime
 #  reset_password_token    :string(255)
 #  reset_password_sent_at  :datetime
 #  remember_created_at     :datetime
-#  sign_in_count           :integer          default("0"), not null
+#  sign_in_count           :integer          default(0), not null
 #  current_sign_in_at      :datetime
 #  last_sign_in_at         :datetime
 #  current_sign_in_ip      :string(255)

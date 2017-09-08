@@ -1,24 +1,19 @@
-<% if Rails.env.production? %>
-<% DBCONFIG_FILE = File.join(Rails.root, '..', '..', 'shared', 'config', 'dbconfig') %>
-<% else %>
-<% DBCONFIG_FILE = File.join(Rails.root, 'config', 'dbconfig') %>
-<% end %>
 default: &default
   adapter: mysql2
   encoding: utf8
+  charset: utf8
+  collation: utf8_general_ci
   pool: 5
-  username: <%= File.read(DBCONFIG_FILE).chomp.split("\n")[0] if File.readable? DBCONFIG_FILE %>
-  password: <%= File.read(DBCONFIG_FILE).chomp.split("\n")[1] if File.readable? DBCONFIG_FILE %>
-  host: <%= File.read(DBCONFIG_FILE).chomp.split("\n")[2] if File.readable? DBCONFIG_FILE %>
 
 development:
   <<: *default
-  database: tab_player_development
+  url: <%= ENV['DATABASE_URL'] %>
 
 test:
   <<: *default
-  database: tab_player_test
+  url: <%= ENV['DATABASE_URL'] %>
 
 production:
   <<: *default
-  database: tab_player_production
+  url: <%= ENV['DATABASE_URL'] %>
+  socket: /var/run/mysqld/mysqld.sock

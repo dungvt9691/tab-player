@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+# Rakeタスク経由ではOctopusを無効化
+ENV['DISABLE_OCTOPUS'] ||= '1'
+
 begin
   load File.expand_path('../spring', __FILE__)
 rescue LoadError => e

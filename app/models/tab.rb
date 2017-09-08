@@ -13,10 +13,10 @@
 #  download_link      :string(255)
 #  pdf_download_link  :string(255)
 #  user_id            :integer
-#  status             :integer          default("1")
+#  status             :integer          default(1)
+#  cached_views       :integer          default(0)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
-#  cached_views       :integer          default("0")
 #
 
 class Tab < ActiveRecord::Base
@@ -262,7 +262,6 @@ class Tab < ActiveRecord::Base
       self.save
     end
   rescue => e
-    binding.pry
     self.title = 'Untitled'
     self.artists << Artist.find_or_create_by(name: 'Unknown')
     self.save
