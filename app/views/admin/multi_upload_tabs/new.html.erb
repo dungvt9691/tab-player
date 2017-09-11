@@ -2,7 +2,7 @@
 <% provide(:og_description, Setting.seo_description) %>
 <% provide(:keywords, Setting.seo_keywords) %>
 <% provide(:meta_image, Setting.featured_image) %>
-<%= form_for(Tab.new, url: multi_upload_admin_tabs_path, remote: true, html: { method: :post, multipart: true, id: "fileupload", method: "post" }) do |f| %>
+<%= form_for(Tab.new, url: multi_upload_admin_tabs_path, remote: true, html: { method: :post, multipart: true, id: "fileupload" }) do |f| %>
 <div id="page-heading">
   <ol class="breadcrumb">
     <li>
@@ -103,6 +103,7 @@ $(function () {
     window.files = []
     disableButtonActions()
   }).on('fileuploadfail', function (e, data) {
+    console.log(data)
     showMessage("<%= t('alert.system_error') %>.", "error")
   })
 })

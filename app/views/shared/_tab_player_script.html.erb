@@ -76,7 +76,7 @@
   $(document).ready(function() {
     var tab_player = TabProPlayer.init(playerParams, playerSetts);
     TabProPlayer.loadTab(tabParams)
-    <% if !@tab.fill_full_informations? && @tab.uploader == current_user %>
+    <% if !@tab.fill_full_informations? && @tab.uploader && @tab.uploader == current_user %>
     if($.cookie('fill_informations') != "<%= @tab.id %>"){
       $("#launch-modal").html("<%=j render 'tabs/modal_update_tab' %>")
       $("#modal-update-tab").modal({

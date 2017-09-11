@@ -1,1 +1,47 @@
 en:
+  activerecord:
+    attributes:
+      setting:
+        app_name: "Website Name"
+        app_url: "Website Url"
+        app_email: "Email Address"
+        app_address: "Address"
+        app_phone: "Phone"
+        app_fax: "Fax"
+        app_hotline: "Hotline"
+        admin_username: "Admin Account"
+        admin_password: "Admin Password"
+        facebook_fanpage: "Fanpage Facebook"
+        facebook_app_id: "App ID"
+        facebook_app_secret: "App Secret"
+        google_app_id: "App ID"
+        google_api_key: "Api Key"
+        google_app_secret: "App Secret"
+        google_analytics_id: "Tracking ID"
+        youtube_endpoint: "API Endpoint"
+        youtube_thumbnail: "Thumbnail Url"
+        youtube_api_key: "API Key"
+        adfly_uid: "adFly UID"
+        adfly_key: "adFly Key"
+        adfly_secret_key: "adFly Secret Key"
+        adfly_group_id: "adFly Group ID"
+        adfly_api_endpoint: "adFly Api Endpoint"
+        keywords: "Seo Keywords"
+        description: "Seo Description"
+        featured_image: "Featured Image"
+        smtp_sender: "Sender"
+        smtp_address: "Address"
+        smtp_port: "Port"
+        smtp_username: "Username"
+        smtp_password: "Password"
+        smtp_authentication: "Authentication"
+        smtp_enable_starttls_auto: "Enable Starttls Auto"
+        recaptcha_publickey: "Public Key"
+        recaptcha_privatekey: "Private Key"
+        system: ""
+    errors:
+      models:
+        setting:
+          attributes:
+            system:
+              error: "Error."

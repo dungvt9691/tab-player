@@ -31,14 +31,20 @@ set :log_level, :info
 # Dotenv
 after 'deploy:updating',  'dotenv:upload'
 
-# Puma
-after 'deploy:published', 'puma:upgrade'
+# Migrate
+after 'deploy:updated',  'deploy:migrate'
+after 'deploy:reverted', 'deploy:migrate'
 
 # Sidekiq
 after 'deploy:starting',  'sidekiq:quiet'
 after 'deploy:updated',   'sidekiq:stop'
 after 'deploy:reverted',  'sidekiq:stop'
 after 'deploy:published', 'sidekiq:start'
+
+# Puma
+after 'deploy:updated',   'puma:stop'
+after 'deploy:reverted',  'puma:stop'
+after 'deploy:published', 'puma:start'
 
 #
 # Itamae

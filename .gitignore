@@ -29,5 +29,6 @@ config/deploy/production.rb
 config/deploy/staging.rb
 config/deploy/development.rb
 public/assets/*
-db/schema.rb
 note.txt
+.env
+dump.rdb

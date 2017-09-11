@@ -23,6 +23,39 @@
         </p>
       </div>
     </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:adfly_secret_key) %>">
+      <%= f.label :adfly_secret_key, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :adfly_secret_key, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:adfly_secret_key) %>
+          <%= @setting.errors[:adfly_secret_key].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:adfly_group_id) %>">
+      <%= f.label :adfly_group_id, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :adfly_group_id, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:adfly_group_id) %>
+          <%= @setting.errors[:adfly_group_id].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="form-group row <%= 'has-error' if @setting.errors.has_key?(:adfly_endpoint) %>">
+      <%= f.label :adfly_endpoint, class: 'control-label col-md-2 col-sm-4'  %>
+      <div class="col-md-6 col-sm-8">
+        <%= f.text_field :adfly_endpoint, class: "form-control" %>
+        <p class="help-block">
+          <% if @setting.errors.has_key?(:adfly_endpoint) %>
+          <%= @setting.errors[:adfly_endpoint].join('<br>').html_safe %>
+          <% end %>
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 <ul class="adfly-note">

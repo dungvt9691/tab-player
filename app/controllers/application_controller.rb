@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :allow_iframe_requests
 
+  before_action :basic_auth!
+
   def allow_iframe_requests
     response.headers.delete('X-Frame-Options')
   end
@@ -99,6 +101,14 @@ class ApplicationController < ActionController::Base
     else
       flash[:error] = I18n.t('permissions.access_denied')
       render 'errors/forbidden', status: 403
+    end
+  end
+
+  def basic_auth!
+    if ENV['BASIC_AUTH_ENABLE']
+      authenticate_or_request_with_http_basic do |username, password|
+        username == ENV['BASIC_AUTH_USERNAME'] && password == ENV['BASIC_AUTH_PASSWORD']
+      end
     end
   end
 

@@ -117,6 +117,7 @@ class Artist < ActiveRecord::Base
   private
 
   def set_avatar_file_name
+    return if avatar_content_type.nil?
     file_name = "#{format('IMG%010d', id)}.#{avatar_content_type.split('/').last}"
     return if avatar_file_name == file_name
     self.avatar_file_name = file_name
@@ -125,6 +126,7 @@ class Artist < ActiveRecord::Base
   end
 
   def set_cover_file_name
+    return if cover_content_type.nil?
     file_name = "#{format('IMG%010d', id)}.#{cover_content_type.split('/').last}"
     return if cover_file_name == file_name
     self.cover_file_name = file_name

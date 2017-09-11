@@ -36,12 +36,6 @@ GIT
     acts_as_votable (0.10.0)
 
 GIT
-  remote: https://github.com/dungvt9691/adfly
-  revision: e27bdaf22fafc83657ebbd696b2591306362d2b0
-  specs:
-    adfly (0.0.1)
-
-GIT
   remote: https://github.com/dungvt9691/guitar_pro_parser.git
   revision: ec318433fd2a7b4321210487557da77b84c422ce
   specs:
@@ -415,7 +409,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)!
-  adfly (~> 0.0.1)!
   annotate
   awesome_print
   babosa

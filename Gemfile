@@ -49,9 +49,6 @@ gem 'omniauth-google-oauth2'
 # HTTP Client
 gem 'rest-client', '~> 2.0.0'
 
-# Adfly
-gem 'adfly', '~> 0.0.1', git: 'https://github.com/dungvt9691/adfly'
-
 # Binding gem
 gem 'pry'
 
@@ -95,6 +92,7 @@ gem 'jquery-datatables-rails'
 gem 'select2-rails'
 gem 'speakingurl-rails'
 gem 'clipboard-rails'
+gem 'dotenv-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -126,6 +124,5 @@ group :development do
 end
 
 group :production do
-  gem 'dotenv-rails'
   gem 'lograge'
 end

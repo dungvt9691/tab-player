@@ -15,7 +15,7 @@ template '/etc/logrotate.d/puma' do
   group 'root'
   mode '0644'
   variables(
-    log_file: File.join(node[:web][:deploy_to], 'shared/log/puma.log'),
+    log_file: File.join(node[:web][:deploy_to], 'shared/log/production.log'),
     app_user: node[:web][:deploy_as]
   )
 end

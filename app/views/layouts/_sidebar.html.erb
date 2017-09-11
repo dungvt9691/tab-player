@@ -1,6 +1,20 @@
 <aside class="sidebar">
   <nav class="sidebar-nav">
     <%= link_to '', root_path, class: 'sidebar-logo' %>
+    <center>
+      <ul class="sidebar-languages">
+        <li class="app-language">
+          <%= link_to request.url.gsub('/vi', '/en'), class: "change-language #{'active' if I18n.locale == :en}" do %>
+          <%= image_tag "languages/en.png" %>
+          <% end %>
+        </li>
+        <li class="app-language">
+          <%= link_to request.url.gsub('/en', '/vi'), class: "change-language #{'active' if I18n.locale == :vi}" do %>
+          <%= image_tag "languages/vi.png" %>
+          <% end %>
+        </li>
+      </ul>
+    </center>
     <ul class="sidebar-items">
       <% if user_signed_in? %>
       <li class="sidebar-item" id="sidebar-profile">

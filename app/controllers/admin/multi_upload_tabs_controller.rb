@@ -19,7 +19,6 @@ class Admin::MultiUploadTabsController < ApplicationController
 
       if @tab.save
         @tab.seo = Seo.create object_id: @tab.id, object_type: 'Tab'
-
         data = {
           id: @tab.id,
           title: @tab.title,
@@ -27,22 +26,23 @@ class Admin::MultiUploadTabsController < ApplicationController
       else
         data = {
           title: params[:tab][:sheet].original_filename,
-          errors: @image.errors.full_messages
+          errors: @tab.errors.full_messages
         }
       end
 
       render json: data
     end
+  rescue => e
+    Rails.logger.error e.message
+    Rails.logger.error e.backtrace.join("\n")
+    ErrorNotification.send(e)
   end
 
   private
 
   def tab_params
     params[:tab][:status] = 2
-    params[:tab][:created_at] = DateTime.now - rand(1000..2000).hours
-    params[:tab][:updated_at] = DateTime.now - rand(1000..2000).hours
-
-    params.require(:tab).permit(:sheet, :status, :created_at, :updated_at)
+    params.require(:tab).permit(:sheet, :status)
   end
 
   def set_page

@@ -4,7 +4,7 @@
   </div>
   <div class="informations">
     <h3 class="title">
-      <%= tab.try(:highlight).try(:title) ? tab.highlight.title[0].html_safe : tab.title.html_safe %>
+      <%= tab.try(:highlight).try(:title) ? tab.highlight.title[0].upcase.html_safe : tab.title.upcase.html_safe %>
     </h3>
     <h4 class="artists">
       <% if tab.artists.empty? %>

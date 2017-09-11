@@ -22,6 +22,9 @@
 #  youtube_api_key           :string(255)
 #  adfly_uid                 :string(255)
 #  adfly_key                 :string(255)
+#  adfly_secret_key          :string(255)
+#  adfly_group_id            :string(255)
+#  adfly_endpoint            :string(255)
 #  smtp_sender               :string(255)
 #  smtp_address              :string(255)
 #  smtp_port                 :integer
@@ -187,6 +190,24 @@ class Setting < ActiveRecord::Base
 
     def adfly_key
       Setting.first.adfly_key
+    rescue
+      nil
+    end
+
+    def adfly_secret_key
+      Setting.first.adfly_secret_key
+    rescue
+      nil
+    end
+
+    def adfly_group_id
+      Setting.first.adfly_group_id
+    rescue
+      nil
+    end
+
+    def adfly_endpoint
+      Setting.first.adfly_endpoint
     rescue
       nil
     end

@@ -5,3 +5,6 @@ vi:
         hi: "Xin chào, %{email}"
         subject: "Kiểm tra chức năng gửi email"
         body: "Chức năng gửi email trên website vẫn hoạt động bình thường."
+    errors_mailer:
+      catch_exception:
+        subject: "Lỗi phát sinh từ Tab Player"

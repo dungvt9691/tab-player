@@ -5,9 +5,9 @@ namespace :db do
     begin
       [*10230000..50000000].each do |id|
         begin
-         clone_tabs(id)
+          clone_tabs(id)
         rescue Exception => e
-         current_index = id
+          current_index = id
         end
       end
     rescue Exception => e
