@@ -9,16 +9,18 @@ class Admin::MultiUploadTabsController < ApplicationController
     ActiveRecord::Base.transaction do
       @tab = Tab.new tab_params
 
-      @tab.categories = params[:tab][:category_ids].map do |id|
-        begin
-          Category.find(id)
-        rescue
-          nil
-        end
-      end.compact
-
       if @tab.save
         @tab.seo = Seo.create object_id: @tab.id, object_type: 'Tab'
+        @tab.categories = params[:tab][:category_ids].map do |id|
+          begin
+            Category.find(id)
+          rescue
+            nil
+          end
+        end.compact
+
+        @tab.save
+
         data = {
           id: @tab.id,
           title: @tab.title,
@@ -42,7 +44,8 @@ class Admin::MultiUploadTabsController < ApplicationController
 
   def tab_params
     params[:tab][:status] = 2
-    params.require(:tab).permit(:sheet, :status)
+    params[:tab][:title] = params[:tab][:sheet].original_filename.split('.').first
+    params.require(:tab).permit(:sheet, :status, :title)
   end
 
   def set_page

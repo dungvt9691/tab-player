@@ -35,9 +35,9 @@ en:
         signout: "Sign Out"
       socket_script:
         syncing: "Loading data..."
-        synced: "Synced artists"
-        done: "Synced artists successfully"
+        synced: "Synced tabs"
+        done: "Synced successfully"
       crawler_alert:
-        loading: "Sync artists from Mp3 Zing"
-        done: "Synced artists successfully"
+        loading: "Sync tabs from Songsterr"
+        done: "Synced tabs successfully"
         stop: "Stop sync"

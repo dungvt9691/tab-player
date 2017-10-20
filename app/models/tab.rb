@@ -13,8 +13,8 @@
 #  download_link      :string(255)
 #  adfly_url_id       :string(255)
 #  user_id            :integer
+#  songsterr_id       :integer
 #  status             :integer          default(1)
-#  can_parse_data     :boolean          default(FALSE)
 #  cached_views       :integer          default(0)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
@@ -58,11 +58,12 @@ class Tab < ActiveRecord::Base
   before_create :set_sid
   before_create :set_download_hash
   before_create :set_sheet_file_name
+  before_create :set_download_link
   before_destroy :clear_adfly_link
 
   # Associations
   has_many :tutorials, dependent: :destroy
-  has_one :rate_average, as: :cacheable, class_name: 'RatingCache', dependent: :destroy
+  has_one  :rate_average, as: :cacheable, class_name: 'RatingCache', dependent: :destroy
   has_many :tab_artists, dependent: :destroy
   has_many :artists, through: :tab_artists, source: :artist,
                      after_add: [->(a, _c) { Indexer.perform_async(:update, a.class.to_s, a.id) }],
@@ -238,42 +239,6 @@ class Tab < ActiveRecord::Base
     end
   end
 
-  def set_download_link
-    sleep 1
-    link = "#{Setting.app_url}#{download_path(hash: download_hash)}"
-    if Rails.env.production?
-      adfly_api = AdflyApi.new
-      response = adfly_api.shorten url: link, advert_type: :int, domain: 'adf.ly', group_id: Setting.adfly_group_id
-      if response['errors'] = []
-        link = response['data'].first['short_url']
-        adfly_url_id = response['data'].first['id']
-      end
-    end
-    update download_link: link, adfly_url_id: adfly_url_id
-  rescue => e
-    ErrorNotification.send(e)
-  end
-
-  def set_song_informations
-    if %w(.gp3 .gp4 .gp5).include? File.extname(sheet_file_name)
-      song = GuitarProParser.read_headers(sheet.path)
-      if song.title.blank?
-        self.title = 'Untitled'
-        self.status = 1
-      else
-        self.title = song.title.force_encoding("UTF-8")
-      end
-      song.artist = song.artist.blank? ? 'Unknown' : song.artist.force_encoding("UTF-8")
-      self.artists = [Artist.find_or_create_by(name: song.artist)]
-      self.update can_parse_data: true if self.save
-    end
-  rescue => e
-    self.title = 'Untitled'
-    self.artists = [Artist.find_or_create_by(name: 'Unknown')]
-    self.status = 1
-    self.save
-    ErrorNotification.send(e)
-  end
 
   private
 
@@ -283,6 +248,22 @@ class Tab < ActiveRecord::Base
       adfly_api = AdflyApi.new
       response = adfly_api.delete self.adfly_url_id
     end
+  end
+
+  def set_download_link
+    link = "#{Setting.app_url}#{download_path(hash: download_hash)}"
+    if Rails.env.production?
+      adfly_api = AdflyApi.new
+      response = adfly_api.shorten url: link, advert_type: :int, domain: 'adf.ly', group_id: Setting.adfly_group_id
+      if response['errors'] = []
+        link = response['data'].first['short_url']
+        adfly_url_id = response['data'].first['id']
+      end
+    end
+    self.download_link = link
+    self.adfly_url_id  = adfly_url_id
+  rescue => e
+    ErrorNotification.send(e)
   end
 
   def set_sheet_file_name

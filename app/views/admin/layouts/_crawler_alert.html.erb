@@ -5,7 +5,7 @@
     </h3>
     <p>
       <span class="sync-text"><i class="fa fa-spin fa-refresh"></i><%= t('.syncing') %></span>
-      <span class="artist-name"></span>
+      <span class="tab-title"></span>
     </p>
     <p>
       <%= button_tag '', class: 'btn btn-danger btn-sm', id: 'btn-stop-crawler' do %>
@@ -16,7 +16,7 @@
 </div>
 <script type="text/javascript">
 $("#btn-stop-crawler").click(function(){
-  $("#launch-modal").html("<%=j render 'admin/artists/modal_confirm_stop_crawler' %>")
+  $("#launch-modal").html("<%=j render 'admin/tabs/modal_confirm_stop_crawler' %>")
   $("#modal-confirm-stop-crawler").modal({
     keyboard: false,
     backdrop: 'static'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913022317) do
+ActiveRecord::Schema.define(version: 20171019041615) do
 
   create_table "admin_permissions", force: :cascade do |t|
     t.integer  "admin_id",      limit: 4,                 null: false
@@ -273,11 +273,11 @@ ActiveRecord::Schema.define(version: 20170913022317) do
     t.string   "download_link",      limit: 255
     t.string   "adfly_url_id",       limit: 255
     t.integer  "user_id",            limit: 4
+    t.integer  "songsterr_id",       limit: 4
     t.integer  "status",             limit: 4,   default: 1
-    t.boolean  "can_parse_data",                 default: false
     t.integer  "cached_views",       limit: 4,   default: 0
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
   create_table "tutorials", force: :cascade do |t|

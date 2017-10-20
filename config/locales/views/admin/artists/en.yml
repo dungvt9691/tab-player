@@ -14,13 +14,6 @@ en:
         destroy: "Delete artist"
         destroy_selected: "Delete selected artists"
         multi_destroy: "Delete selected artists"
-        crawler:
-          title: "Sync with Mp3 Zing"
-          loading: "Sync artists from Mp3 Zing"
-          done: "Synced artists successfully"
-          stop: "Stop sync"
-          syncing: "Loading data..."
-          synced: "Synced artist"
       new:
         title: "Add artist"
         form:
@@ -51,7 +44,3 @@ en:
           invalid_extension: "Only accept extension"
       show:
         title: "Artist informations"
-      modal_confirm_crawler:
-        are_you_sure: "Do you want to sync artists from Zing Mp3"
-      modal_confirm_stop_crawler:
-        are_you_sure: "Do you want stop sync artists"

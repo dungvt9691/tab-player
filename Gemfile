@@ -15,6 +15,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use mysql2 as the database for Active Record
 gem 'mysql2'
 
+# crawler
+gem 'nokogiri'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

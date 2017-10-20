@@ -14,13 +14,6 @@ vi:
         destroy: "Xoá nghệ sĩ"
         destroy_selected: "Xoá các nghệ sĩ đã chọn"
         multi_destroy: "Xoá nghệ sĩ đã chọn"
-        crawler:
-          title: "Đồng bộ với Mp3 Zing"
-          loading: "Đồng bộ nghệ sĩ từ Mp3 Zing"
-          done: "Đồng bộ thành công"
-          stop: "Dừng đồng bộ"
-          syncing: "Đang tìm kiếm dữ liệu..."
-          synced: "Đã đồng bộ nghệ sĩ"
       new:
         title: "Thêm nghệ sĩ"
         form:

@@ -1,3 +1,4 @@
+<% begin %>
 <% if @page <= 1 %>
 $("#panel-search .tab-results .tab").remove()
 <% end %>
@@ -14,5 +15,8 @@ $("#panel-search .tab-results .loading").before("<%=j render 'tab', tab: tab, in
 $("#panel-search .tab-results .tab").remove()
 $("#alert-no-tabs").remove()
 $("#panel-search .tab-results").append("<%=j render 'no_tabs' %>")
+<% end %>
+<% rescue %>
+$("#panel-search .loading").fadeOut(0)
 <% end %>
 $("#panel-search .loading").fadeOut(0)

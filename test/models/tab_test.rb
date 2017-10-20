@@ -13,8 +13,8 @@
 #  download_link      :string(255)
 #  adfly_url_id       :string(255)
 #  user_id            :integer
+#  songsterr_id       :integer
 #  status             :integer          default(1)
-#  can_parse_data     :boolean          default(FALSE)
 #  cached_views       :integer          default(0)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null

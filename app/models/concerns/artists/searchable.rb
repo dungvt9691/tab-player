@@ -53,10 +53,10 @@ module Concerns::Artists::Searchable
 
     # Set up callbacks for updating the index on model changes
     #
-    after_commit -> { Indexer.perform_async(:index,  self.class.to_s, id) }, on: :create
-    after_commit -> { Indexer.perform_async(:update, self.class.to_s, id) }, on: :update
-    after_commit -> { Indexer.perform_async(:delete, self.class.to_s, id) }, on: :destroy
-    after_touch  -> { Indexer.perform_async(:update, self.class.to_s, id) }
+    after_commit -> { Indexer.perform_async(:index,  self.class.to_s, self.id) }, on: :create
+    after_commit -> { Indexer.perform_async(:update, self.class.to_s, self.id) }, on: :update
+    after_commit -> { Indexer.perform_async(:delete, self.class.to_s, self.id) }, on: :destroy
+    after_touch  -> { Indexer.perform_async(:update, self.class.to_s, self.id) }
 
     # Customize the JSON serialization for Elasticsearch
     #

@@ -19,8 +19,6 @@ class TabsController < ApplicationController
       @tab = current_user.tabs.new tab_params
       if @tab.save
         @tab.seo = Seo.create object_id: @tab.id, object_type: 'Tab'
-        @tab.set_download_link
-
         flash[:success] = t_scope(params, 'success')
         cookies[:current_upload_tab] = { value: @tab.sid, expires: 1.month.from_now }
         redirect_to tab_show_path(t: @tab.sid)

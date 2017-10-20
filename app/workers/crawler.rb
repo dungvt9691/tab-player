@@ -4,59 +4,43 @@ class Crawler
 
   LOGGER = Sidekiq.logger.level == Logger::DEBUG ? Sidekiq.logger : nil
 
-  ZING_API_ENDPOINT   = 'http://api.mp3.zing.vn/api/mobile/artist/getartistinfo'
-  ZING_API_AVATAR_URL = "http://zmp3-photo.d.za.zdn.vn"
-  ZING_API_COVER_URL  = "http://image.mp3.zdn.vn"
-
-  def perform(last_mp3_zing_id, zing_mp3_id, count)
+  def perform(songsterr_id, count)
     if cancelled?
-      REDIS.publish "crawler_artist", { done: true, count: Artist.count - count }.to_json
+      REDIS.publish "crawler_tab", { done: true, count: Tab.count - count }.to_json
       return
     end
 
-    if zing_mp3_id > 1000 || zing_mp3_id - last_mp3_zing_id > 300
-      REDIS.publish "crawler_artist", { done: true, count: Artist.count - count }.to_json
-      return
-    end
+    REDIS.publish "crawler_tab", { done: false, songsterr_id: songsterr_id }.to_json
 
-    url = "#{ZING_API_ENDPOINT}?requestdata={\"id\":\"#{zing_mp3_id}\"}"
-    uri = URI.escape(url)
+    last_songsterr_id = Tab.last.nil? ? 1 : Tab.last.songsterr_id
 
-    response = begin
-                 JSON.parse(RestClient.get(uri).body)
-               rescue
-                 nil
-               end
+    url = "https://www.songsterr.com/a/wa/song?id=#{songsterr_id}"
 
-    if response && response['response']['is_error'].nil?
-      avatar = URI.parse("#{ZING_API_AVATAR_URL}/#{response['avatar']}")
-      avatar = nil if response['avatar'].blank?
+    doc = Nokogiri::HTML(open(url))
+    text = doc.search('script')[5].children.first.text
+    match = /\"revision.*?\"tracks/.match text
+    data = JSON.parse"{#{match[0]}\": 1}"
 
-      cover = URI.parse("#{ZING_API_COVER_URL}/#{response['cover3']}")
-      cover = nil if response["cover3"].blank?
+    artist = Artist.find_or_create_by(name: data['artist'])
 
-      params = {
-        name: response['name'],
-        name_alias: response['alias'].blank? ? nil : response['alias'],
-        birthname: response['birthname'].blank? ? nil : response['birthname'],
-        avatar: avatar,
-        cover: cover,
-        zing_mp3_id: zing_mp3_id
-      }
+    tab = Tab.new title: data['title'], sheet: data['source'], songsterr_id: data['song'], status: 2
 
-      artist = Artist.new params
 
-      if artist.save
-        data = { done: false, artist: artist.as_json(only: [:name]) }
-      else
-        data = { done: false, artist: response['name'], errors: artist.errors.full_messages }
-      end
-      REDIS.publish "crawler_artist", data.to_json
+    if tab.save
+      tab.seo = Seo.create object_id: tab.id, object_type: 'Tab'
+      tab.artists = [artist]
+      tab.save
+
+      data = { done: false, tab: tab.as_json(only: [:title]) }
     else
-      REDIS.publish "crawler_artist", { done: false }.to_json
+      data = { done: false, tab: data['title'], errors: tab.errors.full_messages }
     end
 
-    Crawler.perform_async(last_mp3_zing_id, zing_mp3_id + 1, count)
+    REDIS.publish "crawler_tab", data.to_json
+
+    Crawler.perform_async(songsterr_id + 1, count)
+  rescue
+    Crawler.perform_async(songsterr_id + 1, count)
   end
 
   def cancelled?

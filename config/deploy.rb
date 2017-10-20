@@ -31,10 +31,6 @@ set :log_level, :info
 # Dotenv
 after 'deploy:updating',  'dotenv:upload'
 
-# Migrate
-after 'deploy:updated',  'deploy:migrate'
-after 'deploy:reverted', 'deploy:migrate'
-
 # Sidekiq
 after 'deploy:starting',  'sidekiq:quiet'
 after 'deploy:updated',   'sidekiq:stop'

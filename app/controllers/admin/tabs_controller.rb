@@ -78,8 +78,6 @@ class Admin::TabsController < ApplicationController
       
       if @tab.save
         @tab.seo = Seo.create seo_params.merge(object_id: @tab.id, object_type: 'Tab')
-        @tab.set_download_link
-
         flash[:success] = t_scope(params, 'success', title: @tab.title)
         if params[:commit] == t('tabs.upload_and_next')
           redirect_to new_admin_tab_path(prev_tab: @tab.id)

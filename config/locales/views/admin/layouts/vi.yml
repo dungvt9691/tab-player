@@ -35,9 +35,9 @@ vi:
         signout: "Đăng xuất"
       socket_script:
         syncing: "Đang tìm kiếm dữ liệu..."
-        synced: "Đã đồng bộ nghệ sĩ"
+        synced: "Đã đồng bộ tab"
         done: "Hoàn thành đồng bộ"
       crawler_alert:
-        loading: "Đồng bộ nghệ sĩ từ Mp3 Zing"
+        loading: "Đồng bộ tab từ Songsterr"
         done: "Đồng bộ thành công"
         stop: "Dừng đồng bộ"

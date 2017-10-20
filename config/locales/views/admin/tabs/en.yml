@@ -16,6 +16,17 @@ en:
           views: "Views"
           view_on_web: "Preview"
           created_at: "Created at"
+        crawler:
+          title: "Sync with Songsterr"
+          loading: "Sync tab from Songsterr"
+          done: "Synced tabs successfully"
+          stop: "Stop sync"
+          syncing: "Loading data..."
+          synced: "Synced artist"
+      modal_confirm_crawler:
+        are_you_sure: "Do you want to sync tabs from Songsterr"
+      modal_confirm_stop_crawler:
+        are_you_sure: "Do you want stop sync tabs"
       new:
         title: "Upload Tab"
         form:

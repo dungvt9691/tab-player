@@ -45,10 +45,12 @@ activePanel = function(data_id){
       $(".sidebar-item").removeClass("active")   
       $('body').removeClass("panel-active")
       $('body').find(".backdrop").remove()
+      $('.loading').fadeOut(0)
     })
   }
   else{
     $('body').removeClass("panel-active")
+    $('.loading').fadeOut(0)
     $(".sidebar-item").removeClass("active")      
   }
 }

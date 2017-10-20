@@ -3,17 +3,11 @@ class Admin::CrawlerController < ApplicationController
   before_action :check_admin_permissions!
 
   def create
-    last_mp3_zing_id = begin
-                         Artist.order(zing_mp3_id: :desc).limit(1)[0].zing_mp3_id
-                       rescue
-                         0
-                       end
-
-    zing_mp3_id = last_mp3_zing_id + 1
+    songsterr_id = Tab.last.nil? ? 1 : Tab.last.songsterr_id + 1
 
     Sidekiq.redis {|c| c.del("cancelled") }
 
-    Crawler.perform_async(last_mp3_zing_id, zing_mp3_id, Artist.count)
+    Crawler.perform_async(songsterr_id, Tab.count)
   end
 
   def destroy

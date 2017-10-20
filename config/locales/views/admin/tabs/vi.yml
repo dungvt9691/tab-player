@@ -16,6 +16,17 @@ vi:
           views: "Lượt xem"
           view_on_web: "Xem trên web"
           created_at: "Ngày đăng"
+        crawler:
+          title: "Đồng bộ với Songsterr"
+          loading: "Đồng bộ tab từ Songsterr"
+          done: "Đồng bộ thành công"
+          stop: "Dừng đồng bộ"
+          syncing: "Đang tìm kiếm dữ liệu:"
+          synced: "Đã đồng bộ tab"
+      modal_confirm_crawler:
+        are_you_sure: "Bạn muốn đồng bộ tab với Songsterr"
+      modal_confirm_stop_crawler:
+        are_you_sure: "Bạn muốn dừng đồng bộ tab"
       new:
         title: "Đăng Tab"
         form:
