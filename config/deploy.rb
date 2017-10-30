@@ -23,7 +23,7 @@ set :rbenv_roles, :all
 
 ## Linked Files & Directories (Default None):
 # set :linked_files, %w{config/database.yml}
-set :linked_dirs,  %w{log tmp/pids tmp/cache tmp/sockets public/avatars public/artists public/sheets}
+set :linked_dirs,  %w{log tmp/pids tmp/cache tmp/sockets public/avatars public/artists public/sheets public/images}
 
 set :format, :pretty
 set :log_level, :info

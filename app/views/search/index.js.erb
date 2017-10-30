@@ -1,22 +1,37 @@
 <% begin %>
 <% if @page <= 1 %>
 $("#panel-search .tab-results .tab").remove()
+$(".mobile-search-results .results .tab").remove()
 <% end %>
 <% if @count > 0 %>
 <% if @tabs.blank? %>
 window.stopSearchLoading = true
 <% else %>
-$("#alert-no-tabs").remove()
+<% unless @query.blank? %>
+$(".mobile-search-results").fadeIn(100)
+<% end %>
+$("#panel-search #alert-no-tabs").remove()
+$(".mobile-search-results #alert-no-tabs").remove()
+$("#panel-search .tab-results").addClass("scroll-content")
+$(".mobile-search-results .results").addClass("scroll-content")
 <% @tabs.each_with_index do |tab, index| %>
 $("#panel-search .tab-results .loading").before("<%=j render 'tab', tab: tab, index: @page * 50 + (index + 1) - 50 %>")
+$(".mobile-search-results .results").append("<%=j render 'tab', tab: tab, index: @page * 50 + (index + 1) - 50 %>")
 <% end %>
 <% end %>
 <% else %>
 $("#panel-search .tab-results .tab").remove()
-$("#alert-no-tabs").remove()
+$(".mobile-search-results .results .tab").remove()
+$("#panel-search #alert-no-tabs").remove()
+$(".mobile-search-results #alert-no-tabs").remove()
 $("#panel-search .tab-results").append("<%=j render 'no_tabs' %>")
+$(".mobile-search-results .results").append("<%=j render 'search/no_tabs' %>")
+$("#panel-search .tab-results").removeClass("scroll-content")
+$(".mobile-search-results .results").removeClass("scroll-content")
 <% end %>
 <% rescue %>
 $("#panel-search .loading").fadeOut(0)
+$(".mobile-search-loading").fadeOut(0)
 <% end %>
 $("#panel-search .loading").fadeOut(0)
+$(".mobile-search-loading").fadeOut(0)

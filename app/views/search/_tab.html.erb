@@ -1,7 +1,4 @@
 <%= link_to tab_show_path(language: I18n.locale, t: tab.sid), class: 'tab' do %>
-  <div class="index">
-    <%= index %>.
-  </div>
   <div class="informations">
     <h3 class="title">
       <%= tab.try(:highlight).try(:title) ? tab.highlight.title[0].html_safe : tab.title.html_safe %>

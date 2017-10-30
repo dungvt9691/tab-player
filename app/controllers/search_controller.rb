@@ -3,6 +3,7 @@ class SearchController < ApplicationController
 
   def index
     @page  = params[:page].to_i.zero? ? 1 : params[:page].to_i
+    @query = params[:q]
     if params[:q].blank?
       @tabs = Tab.viewest.page(1).per(50)
     else

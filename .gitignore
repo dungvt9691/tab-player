@@ -19,6 +19,7 @@
 /public/avatars
 /public/artists
 /public/sheets
+/public/images
 
 /shared/log/puma.stderr.log
 /shared/log/puma.stdout.log

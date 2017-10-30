@@ -3,12 +3,14 @@ $("#panel-favorites .loading").fadeOut(0)
 <% if @tabs.blank? %>
 window.stopFavoriteLoading = true
 <% else %>
-$("#alert-no-tabs").remove()
+$("#panel-favorites #alert-no-tabs").remove()
+$("#panel-favorites .favorite-tabs").addClass("scroll-content")
 <% @tabs.each do |tab| %>
 $("#panel-favorites .favorite-tabs .loading").before("<%=j render 'tab', tab: tab %>")
 <% end %>
 <% end %>
 <% else %>
-$("#alert-no-tabs").remove()
+$("#panel-favorites #alert-no-tabs").remove()
 $("#panel-favorites .favorite-tabs").append("<%=j render 'no_tabs' %>")
+$("#panel-favorites .favorite-tabs").removeClass("scroll-content")
 <% end %>

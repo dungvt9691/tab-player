@@ -9,7 +9,7 @@
         <span data-i18n="player.Tuning"><%= t('.tunning') %></span>: <span class="_hxTuningNotes"></span>
       </span>
     </div>
-    <div class="pull-left tpp-dropdown">
+    <div class="pull-left hide tpp-dropdown">
       <div type="component" class="control-btn control-btn__zoom has_tooltip hxZoomOption">
         <div class="control-icon control-icon__sm control-icon__zoom"></div>
         <span class="control-val _hxZoomLabel">110%</span>
@@ -41,19 +41,19 @@
       <div class="fb-like" data-href="<%= request.url %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
       <div class="fb-send" data-href="<%= request.url %>"></div>
     </div>
-    <div class="control-txt control-txt__download pull-left">
+    <div class="visible-lg control-txt control-txt__download pull-left">
       <button id="btn-embed" class="btn has-text btn-default btn-xs">
         <i class="material-icons">code</i>
         <%= t('.embed_code') %>
       </button>
     </div>
-    <div class="control-txt control-txt__download pull-left">
+    <div class="visible-lg control-txt control-txt__download pull-left">
       <a target="_blank" href="<%= @tab.download_link %>" id="btn-download" class="btn has-text btn-primary btn-xs">
         <i class="material-icons">file_download</i>
         <%= t('.download_as_gp') %>
       </a>
     </div>
-    <div class="control-txt control-txt__print pull-left">
+    <div class="visible-lg control-txt control-txt__print pull-left">
       <button id="btn-print" class="btn has-text btn-secondary btn-xs">
         <i class="material-icons">print</i>
         <%= t('.print') %>

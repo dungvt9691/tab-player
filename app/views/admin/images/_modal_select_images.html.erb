@@ -53,7 +53,7 @@
               <div id="data-loading">
                 <center>
                   <br><br><br>
-                  <i class="fa fa-spin fa-spinner"></i>
+                  <i class="fa fa-spin fa-circle-o-notch"></i>
                   <br><br>
                   <h3><%= t(".loading") %></h3>
                 </center>
@@ -221,7 +221,7 @@ $('#modal-select-images a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
   if(id == "uploaded-images"){
     window.currentPage = 1
     window.stopLoading = false;
-    $("#uploaded-images").html('<div id="data-loading"><center><br><br><br><i class="fa fa-spin fa-spinner" style="font-size: 80px"></i><br><br><h3><%= t(".loading") %></h3></center></div>')
+    $("#uploaded-images").html('<div id="data-loading"><center><br><br><br><i class="fa fa-spin fa-circle-o-notch" style="font-size: 80px"></i><br><br><h3><%= t(".loading") %></h3></center></div>')
     $.ajax({
       method: "GET",
       dataType: "script",

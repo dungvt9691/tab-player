@@ -9,3 +9,6 @@ en:
       about: "About"
       sign_in: "Sign in"
       sign_out: "Sign out"
+    search_bar:
+      form:
+        search_placeholder: "Enter keyword to search..."

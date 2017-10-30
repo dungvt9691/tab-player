@@ -1,0 +1,126 @@
+@media (max-width: 1191px)
+  .b-tab-page
+    left: 0
+    margin-top: 70px
+  .sidebar
+    display: none
+  .search-bar
+    display: block
+  .panel
+    width: 50%
+    left: -50%
+    &.active
+      left: 0
+
+  // MOBILE MENU
+  .mobile-menu
+    position: fixed
+    top: 200px
+    right: 10px
+    z-index: 10
+    .menu
+      position: relative
+      margin: 0
+      padding: 0
+      li
+        position: absolute
+        right: 0
+        top: 0
+        width: 60px
+        height: 60px
+        cursor: pointer
+        background-color: $gray-color
+        list-style: none
+        line-height: 55px
+        text-align: center
+        border-radius: 50% !important
+        margin-bottom: 10px
+        +animation-common
+        &.menu-pink
+          background-color: $pink-color
+        &.menu-danger
+          background-color: red
+        &.menu-primary
+          background-color: $primary-color
+        a
+          text-decoration: none
+          -webkit-user-select: none
+          -moz-user-select: none
+          -ms-user-select: none
+          user-select: none
+          display: block
+          .material-icons
+            color: $white-color
+        img
+            width: 100%
+            border-radius: 50% !important
+        &#menu-profile
+          z-index: 10
+      &.active
+        li:nth-child(2)
+          top: 70px
+        li:nth-child(3)
+          top: 140px
+          
+
+  // MOBILE SEARCH BAR
+  .mobile-search-bar
+    line-height: 70px
+    border-bottom: 2px solid #ececec
+    height: 70px
+    position: fixed
+    top: 0
+    width: 100%
+    #search-form
+      position: absolute
+      left: 96px
+      top: 0
+      width: 100%
+      .form-control
+        border: none
+        height: 68px
+        font-size: $font-size-large
+        background-image: image-url('icon/search.png')
+        background-repeat: no-repeat
+        background-size: 25px
+        background-position: 20px
+        padding-left: 60px
+    .languages
+      margin: 0
+      padding: 0
+      display: inline-block
+      margin-left: 15px
+      li
+        display: inline-block
+        a
+          opacity: 0.3
+          margin-right: $margin-xmin
+          img
+            width: 30px
+          &.active
+            opacity: 1
+  .mobile-search-results
+    display: none
+    background-color: white
+    z-index: 20
+    position: fixed
+    left: 96px
+    right: 0
+    top: 70px
+    bottom: 68px
+  .mobile-search-loading
+    display: none
+    position: fixed
+    left: 96px
+    right: 0
+    top: 70px
+    bottom: 68px
+    background-color: rgba(0, 0, 0, 0.8)
+    z-index: 20
+    font-size: 200px
+    color: $white-color
+    text-align: center
+    padding-top: 20%
+    span
+      display: block
+      font-size: 70px

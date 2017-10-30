@@ -1,4 +1,4 @@
-#panel-search
+#panel-search, .mobile-search-results
   .panel-header
     background: $secondary-white-color
     .search
@@ -11,7 +11,7 @@
           background-position: $margin-min
           padding-left: 38px
           border-color: $secondary-white-color
-  .tab-results
+  .tab-results, .results
     position: relative
     overflow: scroll
     overflow-x: hidden
@@ -53,15 +53,8 @@
       display: block
       text-decoration: none
       +animation-common
-      .index
-        width: 20px
-        float: left
-        font-size: $font-size-large
-        color: $secondary-gray-color
-        text-align: right
-        margin-top: -4px
+      color: $secondary-color
       .informations
-        margin-left: $margin-base
         .title
           margin-top: 0
           margin-bottom: 5px

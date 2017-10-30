@@ -1,5 +1,5 @@
 <% if @error.nil? %>
-$("#test-smtp-alert .alert-icon").html("<i class='fa fa-spin fa-spinner'></i>")
+$("#test-smtp-alert .alert-icon").html("<i class='fa fa-spin fa-circle-o-notch'></i>")
 $("#test-smtp-alert").addClass("alert-warning")
 $("#test-smtp-alert").removeClass("alert-danger alert-success")
 $("#test-smtp-alert .alert-text").html("<%= t('.loading') %>")

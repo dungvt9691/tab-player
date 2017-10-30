@@ -56,6 +56,7 @@ class Tab < ActiveRecord::Base
   # Callback
   after_validation :clean_paperclip_errors
   before_create :set_sid
+  before_create :set_title
   before_create :set_download_hash
   before_create :set_sheet_file_name
   before_create :set_download_link
@@ -241,6 +242,11 @@ class Tab < ActiveRecord::Base
 
 
   private
+
+  def set_title
+    return unless title.blank?
+    self.title = File.basename(sheet_file_name, '.*')
+  end
 
   def clear_adfly_link
     return if self.adfly_url_id.nil?

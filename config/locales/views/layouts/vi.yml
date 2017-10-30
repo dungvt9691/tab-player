@@ -9,3 +9,6 @@ vi:
       about: "Giới thiệu"
       sign_in: "Đăng nhập"
       sign_out: "Đăng xuất"
+    search_bar:
+      form:
+        search_placeholder: "Nhập vào từ khoá để tìm kiếm..."

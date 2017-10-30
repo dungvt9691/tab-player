@@ -12,8 +12,6 @@ module Concerns::Tabs::Searchable
     #
     settings index:
     {
-      number_of_shards: 1,
-      number_of_replicas: 0,
       # Replicates the english analyzer but simply adds asciifolding
       analysis: {
         filter: {
@@ -60,11 +58,6 @@ module Concerns::Tabs::Searchable
           indexes :name_alias, type: :string, analyzer: 'english_with_folding'
           indexes :birthname, type: :string, analyzer: 'english_with_folding'
         end
-
-        indexes :categories, type: 'nested' do
-          indexes :name_en, type: :string, analyzer: 'english_with_folding'
-          indexes :name_vi, type: :string, analyzer: 'english_with_folding'
-        end
       end
     end
 
@@ -79,8 +72,7 @@ module Concerns::Tabs::Searchable
     #
     def as_indexed_json(_options = {})
       hash = as_json(
-        include: { artists: { methods: [:name, :name_alias, :birthname], only: [:name, :name_alias, :birthname] },
-                   categories: { methods: [:name_vi, :name_en], only: [:name_vi, :name_en] } }
+        include: { artists: { methods: [:name, :name_alias, :birthname], only: [:name, :name_alias, :birthname] } }
       )
       hash
     end
@@ -129,18 +121,6 @@ module Concerns::Tabs::Searchable
                     multi_match: {
                       query: query,
                       fields: %w(artists.name artists.name_alias artists.birthname),
-                      operator: 'or'
-                    }
-                  }
-                }
-              },
-              {
-                nested: {
-                  path: 'categories',
-                  query: {
-                    multi_match: {
-                      query: query,
-                      fields: %w(categories.name_en categories.name_vi),
                       operator: 'or'
                     }
                   }

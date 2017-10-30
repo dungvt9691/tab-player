@@ -20,6 +20,10 @@ class ContactController < ApplicationController
 
   private
 
+  def set_tab
+    @tab = current_tab.nil? ? Tab.viewest.limit(1).first : current_tab
+  end
+
   def contact_params
     params[:contact].each do |key, value|
       params[:contact][key] = value.blank? ? nil : value

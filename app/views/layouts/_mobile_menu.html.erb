@@ -1,0 +1,48 @@
+<div class="mobile-menu hidden-lg">
+  <ul class="menu">
+    <% if user_signed_in? %>
+    <li class="menu-item" id="menu-profile">
+      <%= link_to 'javascript:;', class: 'user-avatar' do %>
+      <span>
+        <%= image_tag current_user.avatar.url(:s300) %>
+      </span>
+      <% end %>
+    </li>
+    <li class="menu-item menu-pink" id="menu-favorites">
+      <%= link_to '#panel-favorites' do %>
+      <span>
+        <%= material_icon.favorite_border %>
+      </span>
+      <% end %>
+    </li>
+    <li class="menu-item menu-danger" id="menu-sign-out">
+      <%= link_to destroy_user_session_path, method: 'delete' do %>
+      <span>
+        <%= material_icon.power_settings_new %>
+      </span>
+      <% end %>
+    </li>
+    <% else %>
+    <li class="menu-item menu-primary" id="menu-sign-in">
+      <%= link_to '#panel-sign-in' do %>
+      <span>
+        <%= material_icon.person %>
+      </span>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<script type="text/javascript">
+$("#menu-profile").click(function(){
+  $(this).parents(".menu").toggleClass("active")
+})
+
+$("#menu-sign-in").click(function(){
+  activePanel($(this).find('a').attr('href'))
+})
+
+$("#menu-favorites").click(function(){
+  activePanel($(this).find('a').attr('href'))
+})
+</script>
