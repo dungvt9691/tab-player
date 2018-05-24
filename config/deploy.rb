@@ -12,16 +12,18 @@ set :use_sudo,        true
 set :stage,           :production
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
-set :ssh_options,     { user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+set :ssh_options, lambda {
+  ssh_key_file = Tempfile.open('capistrano-ssh') do |fp|
+    fp.puts secrets[:deploy_private_key]
+    fp
+  end
+  {
+    user: fetch(:user),
+    keys: [ssh_key_file.path]
+  }
+}
 
-# Rbenv
-set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.3.0'
-set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-set :rbenv_roles, :all
-
-## Linked Files & Directories (Default None):
+### Linked Files & Directories (Default None):
 # set :linked_files, %w{config/database.yml}
 set :linked_dirs,  %w{log tmp/pids tmp/cache tmp/sockets public/avatars public/artists public/sheets public/images}
 

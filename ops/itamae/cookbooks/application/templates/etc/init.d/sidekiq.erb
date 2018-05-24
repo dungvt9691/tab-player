@@ -14,9 +14,9 @@ RAILS_ENV=<%= @app_environment %>
 APP_ROOT=<%= @app_root %>
 APP_USER=<%= @app_user %>
 PID=$APP_ROOT/tmp/pids/sidekiq.pid
-CMD_START="<%= @rbenv %> exec bundle exec sidekiq -d -e $RAILS_ENV -C $APP_ROOT/config/sidekiq.yml"
-CMD_QUIET="<%= @rbenv %> exec bundle exec sidekiqctl quiet $PID"
-CMD_STOP="<%= @rbenv %> exec bundle exec sidekiqctl stop $PID"
+CMD_START="bundle exec sidekiq -d -e $RAILS_ENV -C $APP_ROOT/config/sidekiq.yml"
+CMD_QUIET="bundle exec sidekiqctl quiet $PID"
+CMD_STOP="bundle exec sidekiqctl stop $PID"
 
 action="$1"
 set -u

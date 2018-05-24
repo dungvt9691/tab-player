@@ -7,15 +7,6 @@ execute 'apt-get-update periodic' do
   only_if 'test `stat -c %Y /var/lib/apt/periodic/update-success-stamp` -lt `date --date "1 days ago" +%s`'
 end
 
-%w(
-  software-properties-common
-  python-software-properties
-  apt-transport-https
-  debconf-utils
-).each do |pkg|
-  package pkg
-end
-
 #
 # definition
 #

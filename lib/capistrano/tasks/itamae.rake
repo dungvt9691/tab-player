@@ -1,3 +1,4 @@
+require 'pry'
 namespace :itamae do
   desc 'Itamae plan(dry-run)'
   task :plan do
@@ -28,7 +29,6 @@ namespace :itamae do
   def node_json(server)
     attributes = fetch(:itamae_attributes)
     attributes[:roles] = server.roles.to_a.join(',')
-
     Tempfile.open('capistrano-itamae-node') do |fp|
       fp.puts attributes.to_json
       fp

@@ -1,3 +1,4 @@
+include_cookbook 'application::base'
 include_cookbook 'nginx'
 
 link '/etc/nginx/sites-enabled/app' do

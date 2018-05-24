@@ -1,4 +1,7 @@
 include_cookbook 'apt'
+include_cookbook 'swap'
+include_cookbook 'mysql2'
+include_cookbook 'application::elasticsearch'
 include_cookbook 'application::nginx'
-include_cookbook 'application::puma'
 include_cookbook 'application::sidekiq'
+include_cookbook 'application::puma'

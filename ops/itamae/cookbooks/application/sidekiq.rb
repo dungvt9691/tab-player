@@ -1,3 +1,5 @@
+include_cookbook 'application::base'
+
 template '/etc/init.d/sidekiq' do
   owner 'root'
   group 'root'

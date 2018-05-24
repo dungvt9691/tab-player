@@ -1,3 +1,5 @@
+include_cookbook 'application::base'
+
 template '/etc/init.d/puma' do
   owner 'root'
   group 'root'

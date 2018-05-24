@@ -21,15 +21,8 @@
 /public/sheets
 /public/images
 
-/shared/log/puma.stderr.log
-/shared/log/puma.stdout.log
-/shared/pids/puma.pid
-/shared/pids/puma.state
-
-config/deploy/production.rb
-config/deploy/staging.rb
-config/deploy/development.rb
 public/assets/*
 note.txt
+/ops/secrets/keys
 .env
 dump.rdb
